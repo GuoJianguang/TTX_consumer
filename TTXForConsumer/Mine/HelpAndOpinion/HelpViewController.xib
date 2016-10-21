@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HelpViewController">
+            <connections>
+                <outlet property="opinionBtn" destination="WSY-FA-7KZ" id="ufd-Gs-4za"/>
+                <outlet property="taleView" destination="EIN-5r-ePS" id="h1j-cu-PSS"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EIN-5r-ePS">
+                    <rect key="frame" x="0.0" y="74" width="600" height="431.5"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="si5-HF-ng9"/>
+                        <outlet property="delegate" destination="-1" id="vGE-7d-G2f"/>
+                    </connections>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xFZ-4d-yYf">
+                    <rect key="frame" x="0.0" y="505" width="600" height="94.5"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WSY-FA-7KZ">
+                            <rect key="frame" x="200" y="30.5" width="200" height="35"/>
+                            <color key="backgroundColor" red="0.8862745098" green="0.36470588240000001" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="35" id="39v-lk-tds"/>
+                                <constraint firstAttribute="width" constant="200" id="eUm-V5-frf"/>
+                            </constraints>
+                            <state key="normal" title="意见反馈">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="opinionBtn:" destination="-1" eventType="touchUpInside" id="Pyv-5C-zof"/>
+                            </connections>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GeH-dQ-K9V">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="1"/>
+                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="TLz-Er-kFE"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="xFZ-4d-yYf" secondAttribute="height" multiplier="750:118" id="J1b-Mm-gP6"/>
+                        <constraint firstItem="WSY-FA-7KZ" firstAttribute="centerY" secondItem="xFZ-4d-yYf" secondAttribute="centerY" id="Nff-Pl-Fax"/>
+                        <constraint firstAttribute="trailing" secondItem="GeH-dQ-K9V" secondAttribute="trailing" id="ahE-6E-0Tx"/>
+                        <constraint firstItem="GeH-dQ-K9V" firstAttribute="leading" secondItem="xFZ-4d-yYf" secondAttribute="leading" id="eAt-RH-5iN"/>
+                        <constraint firstItem="WSY-FA-7KZ" firstAttribute="centerX" secondItem="xFZ-4d-yYf" secondAttribute="centerX" id="fmm-BW-J2U"/>
+                        <constraint firstItem="GeH-dQ-K9V" firstAttribute="top" secondItem="xFZ-4d-yYf" secondAttribute="top" id="mWk-zr-pGb"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="EIN-5r-ePS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="74" id="B96-By-tjn"/>
+                <constraint firstAttribute="bottom" secondItem="xFZ-4d-yYf" secondAttribute="bottom" id="Emm-Ld-MhQ"/>
+                <constraint firstItem="xFZ-4d-yYf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Q5A-c4-QAI"/>
+                <constraint firstItem="EIN-5r-ePS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="STa-ww-vcu"/>
+                <constraint firstAttribute="trailing" secondItem="xFZ-4d-yYf" secondAttribute="trailing" id="cf7-vS-JW0"/>
+                <constraint firstAttribute="trailing" secondItem="EIN-5r-ePS" secondAttribute="trailing" id="gVN-51-CZt"/>
+                <constraint firstItem="xFZ-4d-yYf" firstAttribute="top" secondItem="EIN-5r-ePS" secondAttribute="bottom" id="iGW-71-395"/>
+            </constraints>
+            <point key="canvasLocation" x="362" y="168"/>
+        </view>
+    </objects>
+</document>

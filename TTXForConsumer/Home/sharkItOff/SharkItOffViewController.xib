@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SharkItOffViewController">
+            <connections>
+                <outlet property="remainingNum" destination="nnz-4U-1oW" id="ddu-bu-TlI"/>
+                <outlet property="rewardExplain" destination="cGh-wd-KyY" id="6Ay-MZ-nVh"/>
+                <outlet property="rewardRecord" destination="YaL-4r-ekU" id="vpX-qW-KJx"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nrj-5Q-RUM">
+                    <frame key="frameInset" minY="64" width="320" height="504"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="shake_bg" translatesAutoresizingMaskIntoConstraints="NO" id="dGf-T3-xdm">
+                            <frame key="frameInset" width="320" height="504"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="pic_title" translatesAutoresizingMaskIntoConstraints="NO" id="JOt-M1-wpX">
+                            <frame key="frameInset" minX="65" minY="5" width="190" height="124.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="JOt-M1-wpX" secondAttribute="height" multiplier="258:169" id="iEJ-ey-Ir4"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="您还剩2次摇奖机会" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nnz-4U-1oW">
+                            <frame key="frameInset" minX="91" minY="134" width="137.5" height="19.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="pic_hand" translatesAutoresizingMaskIntoConstraints="NO" id="rtO-xS-owF">
+                            <frame key="frameInset" minY="158" width="320" height="299"/>
+                        </imageView>
+                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MlX-HP-eVn">
+                            <frame key="frameInset" minY="429" width="320" height="38"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YaL-4r-ekU">
+                                    <frame key="frameInset" minX="175" width="105" height="38"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <state key="normal" title="我的福利记录" image="pic_title-1">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="rewardRecord:" destination="-1" eventType="touchUpInside" id="87y-J9-s5m"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGh-wd-KyY">
+                                    <frame key="frameInset" minX="40" width="105" height="38"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <state key="normal" title="查看福利说明" image="icon_welfare-note">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="rewardExplain:" destination="-1" eventType="touchUpInside" id="R38-EY-rPz"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="YaL-4r-ekU" firstAttribute="width" secondItem="cGh-wd-KyY" secondAttribute="width" id="18h-4X-pam"/>
+                                <constraint firstItem="cGh-wd-KyY" firstAttribute="top" secondItem="MlX-HP-eVn" secondAttribute="top" id="Glx-Cc-xQ2"/>
+                                <constraint firstAttribute="bottom" secondItem="cGh-wd-KyY" secondAttribute="bottom" id="HZ2-o2-CTS"/>
+                                <constraint firstAttribute="height" constant="38" id="I8b-g2-Dxi"/>
+                                <constraint firstItem="YaL-4r-ekU" firstAttribute="leading" secondItem="cGh-wd-KyY" secondAttribute="trailing" constant="30" id="d6l-4g-1UE"/>
+                                <constraint firstItem="YaL-4r-ekU" firstAttribute="leading" secondItem="cGh-wd-KyY" secondAttribute="trailing" constant="30" id="n4e-aU-ZOw"/>
+                                <constraint firstItem="cGh-wd-KyY" firstAttribute="leading" secondItem="MlX-HP-eVn" secondAttribute="leading" constant="40" id="uGS-eL-apH"/>
+                                <constraint firstAttribute="trailing" secondItem="YaL-4r-ekU" secondAttribute="trailing" constant="40" id="vCo-To-koq"/>
+                                <constraint firstAttribute="bottom" secondItem="YaL-4r-ekU" secondAttribute="bottom" id="x2g-Hh-Nmk"/>
+                                <constraint firstItem="YaL-4r-ekU" firstAttribute="top" secondItem="MlX-HP-eVn" secondAttribute="top" id="ycW-77-3iu"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="dGf-T3-xdm" firstAttribute="top" secondItem="nrj-5Q-RUM" secondAttribute="top" id="7yo-me-X1S"/>
+                        <constraint firstAttribute="trailing" secondItem="JOt-M1-wpX" secondAttribute="trailing" constant="65" id="F0u-gn-swo"/>
+                        <constraint firstAttribute="trailing" secondItem="dGf-T3-xdm" secondAttribute="trailing" id="Gmn-jF-pID"/>
+                        <constraint firstItem="JOt-M1-wpX" firstAttribute="leading" secondItem="nrj-5Q-RUM" secondAttribute="leading" constant="65" id="IRX-0h-Pb7"/>
+                        <constraint firstAttribute="bottom" secondItem="MlX-HP-eVn" secondAttribute="bottom" constant="37" id="JNb-w7-s0l"/>
+                        <constraint firstItem="dGf-T3-xdm" firstAttribute="leading" secondItem="nrj-5Q-RUM" secondAttribute="leading" id="Lcb-HR-MSF"/>
+                        <constraint firstItem="JOt-M1-wpX" firstAttribute="top" secondItem="nrj-5Q-RUM" secondAttribute="top" constant="5" id="Oa2-WW-ljZ"/>
+                        <constraint firstAttribute="trailing" secondItem="rtO-xS-owF" secondAttribute="trailing" id="QEV-ig-kOf"/>
+                        <constraint firstItem="nnz-4U-1oW" firstAttribute="top" secondItem="JOt-M1-wpX" secondAttribute="bottom" constant="5" id="ax8-ha-gGq"/>
+                        <constraint firstAttribute="trailing" secondItem="MlX-HP-eVn" secondAttribute="trailing" id="byB-mI-wEp"/>
+                        <constraint firstItem="rtO-xS-owF" firstAttribute="top" secondItem="nnz-4U-1oW" secondAttribute="bottom" constant="5" id="fVd-qG-UXi"/>
+                        <constraint firstAttribute="bottom" secondItem="dGf-T3-xdm" secondAttribute="bottom" id="kFV-52-TEM"/>
+                        <constraint firstItem="MlX-HP-eVn" firstAttribute="leading" secondItem="nrj-5Q-RUM" secondAttribute="leading" id="mIp-QP-nNY"/>
+                        <constraint firstItem="nnz-4U-1oW" firstAttribute="centerX" secondItem="nrj-5Q-RUM" secondAttribute="centerX" id="nYS-7h-CYp"/>
+                        <constraint firstItem="rtO-xS-owF" firstAttribute="leading" secondItem="nrj-5Q-RUM" secondAttribute="leading" id="vlr-Rj-bGF"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="nrj-5Q-RUM" secondAttribute="trailing" id="GwQ-KZ-bKh"/>
+                <constraint firstItem="nrj-5Q-RUM" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="Oc0-0k-25W"/>
+                <constraint firstItem="nrj-5Q-RUM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="jnA-Ak-ge0"/>
+                <constraint firstAttribute="bottom" secondItem="nrj-5Q-RUM" secondAttribute="bottom" id="zMu-tt-WaB"/>
+            </constraints>
+            <point key="canvasLocation" x="183" y="181"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_welfare-note" width="20" height="20"/>
+        <image name="pic_hand" width="375" height="299"/>
+        <image name="pic_title" width="258" height="169"/>
+        <image name="pic_title-1" width="20" height="20"/>
+        <image name="shake_bg" width="375" height="603"/>
+    </resources>
+</document>

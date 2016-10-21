@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BankCardManageViewController">
+            <connections>
+                <outlet property="tableView" destination="MS2-sf-dJR" id="UgE-Z9-oY9"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MS2-sf-dJR">
+                    <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="8Se-zi-H8L"/>
+                        <outlet property="delegate" destination="-1" id="ivj-Ad-3IP"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="MS2-sf-dJR" secondAttribute="bottom" id="MNT-SH-UUQ"/>
+                <constraint firstItem="MS2-sf-dJR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="R9f-bi-ber"/>
+                <constraint firstAttribute="trailing" secondItem="MS2-sf-dJR" secondAttribute="trailing" id="hqq-h6-dyn"/>
+                <constraint firstItem="MS2-sf-dJR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="z3E-m1-jeE"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

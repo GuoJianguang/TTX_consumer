@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GoodsDetailViewController">
+            <connections>
+                <outlet property="buyBtn" destination="tdq-wZ-heD" id="dRH-Oq-D2W"/>
+                <outlet property="buyBtnView" destination="YS8-vg-f9Z" id="NPC-Td-wGw"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YS8-vg-f9Z">
+                    <rect key="frame" x="0.0" y="540" width="600" height="60"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdq-wZ-heD">
+                            <rect key="frame" x="200" y="12.5" width="200" height="35"/>
+                            <color key="backgroundColor" red="0.8862745098" green="0.36470588240000001" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="35" id="3li-6E-SYU"/>
+                                <constraint firstAttribute="width" constant="200" id="lqr-ac-X8W"/>
+                            </constraints>
+                            <state key="normal" title="立即购买">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="buyBtn:" destination="-1" eventType="touchUpInside" id="ZKs-Kn-Z0h"/>
+                            </connections>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R5T-HJ-agp">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="1"/>
+                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="Gr1-Rt-zWG"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="tdq-wZ-heD" firstAttribute="centerY" secondItem="YS8-vg-f9Z" secondAttribute="centerY" id="09l-1V-ok7"/>
+                        <constraint firstItem="R5T-HJ-agp" firstAttribute="leading" secondItem="YS8-vg-f9Z" secondAttribute="leading" id="X5A-Zh-HzV"/>
+                        <constraint firstItem="tdq-wZ-heD" firstAttribute="centerX" secondItem="YS8-vg-f9Z" secondAttribute="centerX" id="ift-Un-Szw"/>
+                        <constraint firstItem="R5T-HJ-agp" firstAttribute="top" secondItem="YS8-vg-f9Z" secondAttribute="top" id="qx2-HT-Mb8"/>
+                        <constraint firstAttribute="height" constant="60" id="ugw-BE-X9X"/>
+                        <constraint firstAttribute="trailing" secondItem="R5T-HJ-agp" secondAttribute="trailing" id="y1j-Rv-dDp"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="YS8-vg-f9Z" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="U7y-uy-2Wx"/>
+                <constraint firstAttribute="trailing" secondItem="YS8-vg-f9Z" secondAttribute="trailing" id="Zmz-cz-PuB"/>
+                <constraint firstAttribute="bottom" secondItem="YS8-vg-f9Z" secondAttribute="bottom" id="jKX-Ce-P5F"/>
+            </constraints>
+            <point key="canvasLocation" x="517" y="172"/>
+        </view>
+    </objects>
+</document>

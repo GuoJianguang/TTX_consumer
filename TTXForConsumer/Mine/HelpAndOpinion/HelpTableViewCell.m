@@ -1,0 +1,52 @@
+//
+//  HelpTableViewCell.m
+//  TTXForConsumer
+//
+//  Created by ttx on 16/6/24.
+//  Copyright © 2016年 ttx. All rights reserved.
+//
+
+#import "HelpTableViewCell.h"
+
+@implementation HelpModel
+
++ (id)modelWithDic:(NSDictionary *)dic
+{
+    HelpModel *model = [[HelpModel alloc]init];
+    model.question = NullToSpace(dic[@"content"]);
+    model.answer = NullToSpace(dic[@"replyContent"]);
+    return model;
+}
+@end
+
+
+@implementation HelpTableViewCell
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    // Initialization code
+    self.contentView.backgroundColor = [UIColor whiteColor];
+    self.answerLabel.numberOfLines = 0;
+    self.detailView.hidden = YES;
+    
+    self.answerLabel.textColor = MacoDetailColor;
+    self.fengeView.backgroundColor = MacoGrayColor;
+    self.name.textColor = MacoTitleColor;
+}
+
+- (void)setDataModel:(HelpModel *)dataModel
+{
+    _dataModel = dataModel;
+    self.name.text = _dataModel.question;
+    self.answerLabel.text = _dataModel.answer;
+
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+
+}
+
+
+
+@end

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="96" id="KGk-i7-Jjw" customClass="LogisticsDetailTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="96"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="95.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gqs-vr-ZKn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="95.5"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Fg-0n-kHI">
+                                <rect key="frame" x="27" y="94" width="281" height="1"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="pGL-E3-cOd"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AGt-CU-0FX">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="IdL-8n-4ew"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_mine_past_logistics" translatesAutoresizingMaskIntoConstraints="NO" id="D78-eY-cmW">
+                                <rect key="frame" x="11" y="18" width="8" height="8"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hAM-nO-ECb">
+                                <rect key="frame" x="15" y="26" width="1" height="69.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="1" id="dac-pA-lvC"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xna-T8-WMK">
+                                <rect key="frame" x="15" y="0.0" width="1" height="18"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="8kB-9r-1g2"/>
+                                    <constraint firstAttribute="width" constant="1" id="Fdg-rz-b40"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016-03-24 17:55:42" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSH-bM-qYO">
+                                <rect key="frame" x="28" y="18" width="279.5" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.95686274510000002" green="0.3921568627" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="四川中和营业部的派件员 小区件王韬 正在派件" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHH-w2-Vez">
+                                <rect key="frame" x="29" y="42" width="279" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.95686274510000002" green="0.3921568627" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="RHH-w2-Vez" firstAttribute="top" secondItem="CSH-bM-qYO" secondAttribute="bottom" constant="10" id="5Ds-33-zrE"/>
+                            <constraint firstItem="Xna-T8-WMK" firstAttribute="leading" secondItem="gqs-vr-ZKn" secondAttribute="leading" constant="15" id="5W0-iu-ud9"/>
+                            <constraint firstItem="AGt-CU-0FX" firstAttribute="leading" secondItem="gqs-vr-ZKn" secondAttribute="leading" id="Cne-on-g2W"/>
+                            <constraint firstAttribute="bottom" secondItem="6Fg-0n-kHI" secondAttribute="bottom" id="H7K-xh-nyZ"/>
+                            <constraint firstItem="6Fg-0n-kHI" firstAttribute="leading" secondItem="gqs-vr-ZKn" secondAttribute="leading" constant="27" id="Hfm-Cw-JQp"/>
+                            <constraint firstItem="RHH-w2-Vez" firstAttribute="leading" secondItem="hAM-nO-ECb" secondAttribute="trailing" constant="13" id="IZT-FS-SEo"/>
+                            <constraint firstAttribute="trailing" secondItem="6Fg-0n-kHI" secondAttribute="trailing" constant="12" id="MGd-f5-Wy3"/>
+                            <constraint firstItem="hAM-nO-ECb" firstAttribute="leading" secondItem="gqs-vr-ZKn" secondAttribute="leading" constant="15" id="QKM-zf-BaU"/>
+                            <constraint firstItem="hAM-nO-ECb" firstAttribute="centerX" secondItem="D78-eY-cmW" secondAttribute="centerX" id="RKX-fQ-uKN"/>
+                            <constraint firstAttribute="trailing" secondItem="AGt-CU-0FX" secondAttribute="trailing" id="Vfx-Tu-ZyX"/>
+                            <constraint firstItem="Xna-T8-WMK" firstAttribute="top" secondItem="gqs-vr-ZKn" secondAttribute="top" id="Xoo-4I-GFp"/>
+                            <constraint firstItem="CSH-bM-qYO" firstAttribute="top" secondItem="gqs-vr-ZKn" secondAttribute="top" constant="18" id="Xvh-nC-BYG"/>
+                            <constraint firstAttribute="bottom" secondItem="hAM-nO-ECb" secondAttribute="bottom" id="Yen-Xz-u3V"/>
+                            <constraint firstItem="hAM-nO-ECb" firstAttribute="leading" secondItem="gqs-vr-ZKn" secondAttribute="leading" constant="15" id="bJd-0M-bua"/>
+                            <constraint firstItem="CSH-bM-qYO" firstAttribute="leading" secondItem="D78-eY-cmW" secondAttribute="trailing" constant="9" id="cyH-be-Dpm"/>
+                            <constraint firstAttribute="trailing" secondItem="CSH-bM-qYO" secondAttribute="trailing" constant="12" id="hNj-8T-who"/>
+                            <constraint firstItem="D78-eY-cmW" firstAttribute="top" secondItem="Xna-T8-WMK" secondAttribute="bottom" id="iCd-db-Fvq"/>
+                            <constraint firstAttribute="trailing" secondItem="RHH-w2-Vez" secondAttribute="trailing" constant="12" id="mmQ-SO-06w"/>
+                            <constraint firstItem="hAM-nO-ECb" firstAttribute="top" secondItem="D78-eY-cmW" secondAttribute="bottom" id="qBH-CW-xf5"/>
+                            <constraint firstItem="AGt-CU-0FX" firstAttribute="top" secondItem="gqs-vr-ZKn" secondAttribute="top" id="v2e-12-PGi"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="gqs-vr-ZKn" secondAttribute="bottom" id="M7a-E1-y73"/>
+                    <constraint firstAttribute="trailing" secondItem="gqs-vr-ZKn" secondAttribute="trailing" id="Rh5-An-Ynn"/>
+                    <constraint firstItem="gqs-vr-ZKn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="fa1-fx-r4I"/>
+                    <constraint firstItem="gqs-vr-ZKn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="iZg-1L-bdN"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="downView" destination="hAM-nO-ECb" id="wGY-iB-dk6"/>
+                <outlet property="firstLineView" destination="AGt-CU-0FX" id="Qn9-2v-Se0"/>
+                <outlet property="itemView" destination="gqs-vr-ZKn" id="ZMK-zz-D8q"/>
+                <outlet property="lineView" destination="6Fg-0n-kHI" id="KSP-0t-Yvl"/>
+                <outlet property="logisticsDeatilLabel" destination="RHH-w2-Vez" id="961-3o-d4v"/>
+                <outlet property="stautsImage" destination="D78-eY-cmW" id="ZWL-JK-q5m"/>
+                <outlet property="timeLabel" destination="CSH-bM-qYO" id="PJI-fb-8Wh"/>
+                <outlet property="upView" destination="Xna-T8-WMK" id="Y0Y-fU-Lic"/>
+            </connections>
+            <point key="canvasLocation" x="243" y="151"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="icon_mine_past_logistics" width="8" height="8"/>
+    </resources>
+</document>

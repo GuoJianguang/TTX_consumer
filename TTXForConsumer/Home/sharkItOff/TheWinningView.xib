@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TheWinningView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sSO-ye-dql">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                    <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PwW-6R-Zou">
+                    <rect key="frame" x="40" y="120" width="240" height="240"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="winning" translatesAutoresizingMaskIntoConstraints="NO" id="pcw-2F-XG6">
+                            <rect key="frame" x="30" y="50" width="171" height="140"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="pcw-2F-XG6" secondAttribute="height" multiplier="171:140" id="9az-Rc-txk"/>
+                            </constraints>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="am9-cZ-dEB">
+                            <rect key="frame" x="60" y="190" width="120" height="30"/>
+                            <color key="backgroundColor" red="0.8862745098" green="0.36470588240000001" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="QSx-jb-oAu"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="查看获奖记录">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="checkBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="K28-oY-M1M"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="apd-am-utS">
+                            <rect key="frame" x="185" y="12" width="40" height="40"/>
+                            <state key="normal" image="icon_close"/>
+                            <connections>
+                                <action selector="deletBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="xLl-ID-AsF"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="apd-am-utS" secondAttribute="trailing" constant="15" id="0fs-lv-han"/>
+                        <constraint firstItem="pcw-2F-XG6" firstAttribute="leading" secondItem="PwW-6R-Zou" secondAttribute="leading" constant="30" id="6dr-V9-h3L"/>
+                        <constraint firstAttribute="trailing" secondItem="am9-cZ-dEB" secondAttribute="trailing" constant="60" id="Y8P-Vz-33M"/>
+                        <constraint firstItem="am9-cZ-dEB" firstAttribute="leading" secondItem="PwW-6R-Zou" secondAttribute="leading" constant="60" id="YUP-xA-hpc"/>
+                        <constraint firstAttribute="width" secondItem="PwW-6R-Zou" secondAttribute="height" id="gRE-Gc-45v"/>
+                        <constraint firstAttribute="bottom" secondItem="am9-cZ-dEB" secondAttribute="bottom" constant="20" id="gYa-IV-YgV"/>
+                        <constraint firstItem="pcw-2F-XG6" firstAttribute="centerY" secondItem="PwW-6R-Zou" secondAttribute="centerY" id="nnp-Op-MVF"/>
+                        <constraint firstAttribute="trailing" secondItem="pcw-2F-XG6" secondAttribute="trailing" constant="39" id="qIf-rf-Tj8"/>
+                        <constraint firstItem="apd-am-utS" firstAttribute="top" secondItem="PwW-6R-Zou" secondAttribute="top" constant="12" id="qy4-OE-tBk"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="PwW-6R-Zou" secondAttribute="trailing" constant="40" id="2tu-jU-RPO"/>
+                <constraint firstItem="sSO-ye-dql" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="EF6-C3-2oQ"/>
+                <constraint firstAttribute="trailing" secondItem="sSO-ye-dql" secondAttribute="trailing" id="Rp0-Ei-jh6"/>
+                <constraint firstItem="PwW-6R-Zou" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="40" id="XKY-A6-47P"/>
+                <constraint firstItem="PwW-6R-Zou" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="aU6-9Y-PWG"/>
+                <constraint firstItem="sSO-ye-dql" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="gqh-Er-mcU"/>
+                <constraint firstAttribute="bottom" secondItem="sSO-ye-dql" secondAttribute="bottom" id="mXg-lb-zHP"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="checkBtn" destination="am9-cZ-dEB" id="0f4-Iw-EGd"/>
+                <outlet property="deletBtn" destination="apd-am-utS" id="r7C-ue-DwF"/>
+                <outlet property="itemView" destination="PwW-6R-Zou" id="mfH-ol-MtS"/>
+                <outlet property="winningImage" destination="pcw-2F-XG6" id="w1d-Ny-fzb"/>
+            </connections>
+            <point key="canvasLocation" x="326" y="135"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_close" width="40" height="40"/>
+        <image name="winning" width="478" height="316"/>
+    </resources>
+</document>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MerchantListViewController">
+            <connections>
+                <outlet property="sortCollectionView" destination="4tX-iJ-GbH" id="aQ5-Zb-mvl"/>
+                <outlet property="tableView" destination="R1g-WT-xpm" id="3ti-Bt-J3n"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="4tX-iJ-GbH">
+                    <rect key="frame" x="0.0" y="66" width="600" height="50"/>
+                    <color key="backgroundColor" red="0.80392156859999997" green="0.80392156859999997" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="5BK-zF-c2r"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rwD-hY-t1k">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="qj7-Cb-rgv"/>
+                        <outlet property="delegate" destination="-1" id="h1d-fu-QY8"/>
+                    </connections>
+                </collectionView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="R1g-WT-xpm">
+                    <rect key="frame" x="0.0" y="123" width="600" height="477"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="gZL-D4-XGu"/>
+                        <outlet property="delegate" destination="-1" id="TIs-W9-g1F"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="4tX-iJ-GbH" secondAttribute="trailing" id="InU-ix-2Mv"/>
+                <constraint firstItem="4tX-iJ-GbH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ReV-qK-qyy"/>
+                <constraint firstAttribute="trailing" secondItem="R1g-WT-xpm" secondAttribute="trailing" id="Sgz-51-9er"/>
+                <constraint firstItem="4tX-iJ-GbH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="66" id="cnw-T9-WiG"/>
+                <constraint firstItem="R1g-WT-xpm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="eaH-rK-fRO"/>
+                <constraint firstAttribute="bottom" secondItem="R1g-WT-xpm" secondAttribute="bottom" id="k9D-br-Agb"/>
+                <constraint firstItem="R1g-WT-xpm" firstAttribute="top" secondItem="4tX-iJ-GbH" secondAttribute="bottom" constant="7" id="zOX-TX-KD6"/>
+            </constraints>
+            <point key="canvasLocation" x="276" y="147"/>
+        </view>
+    </objects>
+</document>
