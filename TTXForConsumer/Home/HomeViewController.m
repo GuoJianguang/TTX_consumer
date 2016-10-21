@@ -94,6 +94,7 @@
     self.isAlreadyRefrefsh = YES;
     //开启定位服务
     [self loadDataUseLocation];
+    NSLog(@"guangao");
     [self performSelector:@selector(guanbi) withObject:nil afterDelay:5.];
 }
 

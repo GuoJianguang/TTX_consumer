@@ -1,5 +1,5 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "6d25ec79-ca60-9842-87a5-993906681732++1573",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "C8C67F15785E88C6FCAF82575C5DD9A7910912FE",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
     "6d25ec79-ca60-9842-87a5-993906681732++5306" : {
 
@@ -10,11 +10,13 @@
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
     "6d25ec79-ca60-9842-87a5-993906681732++5306" : 0,
+    "C8C67F15785E88C6FCAF82575C5DD9A7910912FE" : 9223372036854775807,
     "6d25ec79-ca60-9842-87a5-993906681732++1573" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "8D010D23-113B-406E-A411-854F7C24C228",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "6d25ec79-ca60-9842-87a5-993906681732++5306" : "%E5%A4%A9%E6%B7%BB%E8%96%AA%E6%96%B0%E7%89%88(ios)\/",
+    "C8C67F15785E88C6FCAF82575C5DD9A7910912FE" : "TTX_consumer\/",
     "6d25ec79-ca60-9842-87a5-993906681732++1573" : "ttx_ios_%E6%B6%88%E8%B4%B9%E8%80%85\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "TTXForConsumer",
@@ -30,6 +32,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/192.168.0.250\/svn\/fxpf",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6d25ec79-ca60-9842-87a5-993906681732++5306"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/GuoJianguang\/TTX_consumer.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C8C67F15785E88C6FCAF82575C5DD9A7910912FE"
     }
   ]
 }
