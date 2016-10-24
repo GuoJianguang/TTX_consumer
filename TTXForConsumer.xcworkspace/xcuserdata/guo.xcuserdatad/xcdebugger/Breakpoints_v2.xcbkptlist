@@ -42,7 +42,7 @@
                   moduleName = "TTXForConsumer"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/guo/Desktop/TTXForGit/TTX_consumer/TTXForConsumer/Home/GoodsList/OrderAndPay/PayView.m"
-                  timestampString = "498968340.705628"
+                  timestampString = "498982556.979612"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "164"
@@ -57,7 +57,7 @@
                   moduleName = "TTXForConsumer"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/guo/Desktop/TTXForGit/TTX_consumer/TTXForConsumer/Home/GoodsList/OrderAndPay/PayView.m"
-                  timestampString = "498968340.707331"
+                  timestampString = "498982556.981316"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "164"
@@ -234,7 +234,7 @@
                   moduleName = "TTXForConsumer"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/guo/Desktop/TTXForGit/TTX_consumer/TTXForConsumer/Mine/WithDrew/WithDrewSuccessView.m"
-                  timestampString = "498968340.736822"
+                  timestampString = "498982557.010559"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "63"
@@ -249,7 +249,7 @@
                   moduleName = "TTXForConsumer"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/guo/Desktop/TTXForGit/TTX_consumer/TTXForConsumer/Mine/WithDrew/WithDrewSuccessView.m"
-                  timestampString = "498968340.738219"
+                  timestampString = "498982557.011976"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "65"
@@ -304,6 +304,38 @@
             startingLineNumber = "379"
             endingLineNumber = "379"
             landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TTXForConsumer/Home/SubLBXScanViewController.m"
+            timestampString = "498982523.8357"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
+            landmarkName = "-showNextVCWithScanResult:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TTXForConsumer/Home/SubLBXScanViewController.m"
+            timestampString = "498982576.741685"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
+            landmarkName = "-showNextVCWithScanResult:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -151,6 +151,10 @@
             return;
         }
     }
+    if ([self.money doubleValue] < 20.) {
+        [[JAlertViewHelper shareAlterHelper]showTint:@"您消费的金额不能少于20元" duration:2.];
+        return;
+    }
     switch (self.payWay_type) {
         case Online_Payway_type_banlance://余额支付
         {

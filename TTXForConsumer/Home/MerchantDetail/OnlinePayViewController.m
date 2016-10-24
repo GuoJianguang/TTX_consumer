@@ -118,6 +118,9 @@
     if ([self.moneyTF.text isEqualToString:@""] ||[self.moneyTF.text doubleValue] ==0) {
         [[JAlertViewHelper shareAlterHelper]showTint:@"请输入正确的金额" duration:2.];
         return;
+    }else if ([self.moneyTF.text doubleValue] < 20.){
+        [[JAlertViewHelper shareAlterHelper]showTint:@"您消费的金额不能少于20元" duration:2.];
+        return;
     }
     
     switch (self.payWay_type) {
