@@ -33,6 +33,38 @@
             endingLineNumber = "164"
             landmarkName = "-sureBtn:"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[PayView sureBtn:]"
+                  moduleName = "TTXForConsumer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/guo/Desktop/TTXForGit/TTX_consumer/TTXForConsumer/Home/GoodsList/OrderAndPay/PayView.m"
+                  timestampString = "498968340.705628"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "164"
+                  endingLineNumber = "164"
+                  offsetFromSymbolStart = "2008">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[PayView sureBtn:]"
+                  moduleName = "TTXForConsumer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/guo/Desktop/TTXForGit/TTX_consumer/TTXForConsumer/Home/GoodsList/OrderAndPay/PayView.m"
+                  timestampString = "498968340.707331"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "164"
+                  endingLineNumber = "164"
+                  offsetFromSymbolStart = "2084">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -202,12 +234,12 @@
                   moduleName = "TTXForConsumer"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/guo/Desktop/TTXForGit/TTX_consumer/TTXForConsumer/Mine/WithDrew/WithDrewSuccessView.m"
-                  timestampString = "498966280.056409"
+                  timestampString = "498968340.736822"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "63"
                   endingLineNumber = "63"
-                  offsetFromSymbolStart = "16">
+                  offsetFromSymbolStart = "28">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -217,7 +249,7 @@
                   moduleName = "TTXForConsumer"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/guo/Desktop/TTXForGit/TTX_consumer/TTXForConsumer/Mine/WithDrew/WithDrewSuccessView.m"
-                  timestampString = "498966280.059313"
+                  timestampString = "498968340.738219"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "65"

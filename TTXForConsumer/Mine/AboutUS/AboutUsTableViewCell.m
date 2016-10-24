@@ -8,6 +8,9 @@
 
 #import "AboutUsTableViewCell.h"
 
+@interface AboutUsTableViewCell()<UIActionSheetDelegate>
+
+@end
 
 @implementation AboutUsTableViewCell
 
@@ -43,13 +46,23 @@
     
 }
 
+#pragma mark - 拨打客服电话
 - (IBAction)callBtn:(UIButton *)sender {
-    UIWebView *webView = (UIWebView*)[self.viewController.view viewWithTag:1000];
-    if (!webView) {
-        webView = [[UIWebView alloc]init];
+    NSArray *arry =  @[@"02862908389",@"02862908390",@"02862908391",@"02862908392"];
+    UIActionSheet *sheet = [[UIActionSheet alloc]initWithTitle:@"拨打客服电话" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles: nil];
+    for (int i = 0; i < arry.count; i ++) {
+        [sheet addButtonWithTitle:arry[i]];
     }
-    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",@"4001028997"]]]];
-    [self.viewController.view addSubview:webView];
-    
+    [sheet showInView:self.viewController.view];
 }
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0) {
+        return;
+    }
+    NSMutableString * str=[[NSMutableString alloc] initWithFormat:@"tel://%@",[actionSheet buttonTitleAtIndex:buttonIndex]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
+}
+
 @end
