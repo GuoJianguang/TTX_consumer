@@ -44,15 +44,6 @@
     self.mchInfo.textColor = MacoDetailColor;
     
     
-    
-    self.payWay_type = Online_Payway_type_wechat;
-    self.yueImage.image = [UIImage imageNamed:@"icon_scan_balance_payment_nor"];
-    self.wechatImage.image = [UIImage imageNamed:@"icon_scan_weixin_payment_sel"];
-    self.yueBtn.selected = NO;
-    self.wechatBtn.selected = YES;
-    self.wechatLabel.textColor = MacoColor;
-    self.yueLabel.textColor = MacoTitleColor;
-    
     self.moneyLabel.text = [NSString stringWithFormat:@"￥%.2f",[self.money doubleValue]];
     [self detailRequest:self.mchCode];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(weixinPayResult:) name:WeixinPayResult object:nil];
