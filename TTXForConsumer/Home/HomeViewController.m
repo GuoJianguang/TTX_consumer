@@ -89,7 +89,6 @@
     [self.tableView addNoDatasouceWithCallback:^{
         [self.tableView.mj_header beginRefreshing];
     } andAlertSting:@"暂时没有数据" andErrorImage:@"pic_2" andRefreshBtnHiden:YES];
-
     self.isHasActiviy = YES;
     self.isAlreadyRefrefsh = YES;
     //开启定位服务
