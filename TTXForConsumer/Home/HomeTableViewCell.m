@@ -31,6 +31,7 @@
     model.jumpWay = NullToSpace(dic[@"jumpWay"]);
     model.jumpValue = NullToSpace(dic[@"jumpValue"]);
     model.pic = NullToSpace(dic[@"pic"]);
+    model.name = NullToSpace(dic[@"name"]);
     return model;
 }
 @end
@@ -98,6 +99,14 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
     }];
+    
+//    [HttpClient POST:@"activity/index/list" parameters:parms success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+//        if (IsRequestTrue) {
+//        }
+//
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        
+//    }];
 }
 
 - (void)getActivityRequest
@@ -187,10 +196,21 @@
             break;
         case 3://跳转网页
         {
+            
             BaseHtmlViewController *htmlVC = [[BaseHtmlViewController alloc]init];
             htmlVC.htmlUrl = model.jumpValue;
-            htmlVC.htmlTitle = @"广告";
+            if ([htmlVC.htmlUrl containsString:@"E50BA6517F660E7CA4A40EFD4508217E"]) {
+                if (![TTXUserInfo shareUserInfos].currentLogined) {
+                    //判断是否先登录
+                    UINavigationController *navc = [LoginViewController controller];
+                    [self.viewController presentViewController:navc animated:YES completion:NULL];
+                    return;
+                }
+                htmlVC.htmlUrl = [NSString stringWithFormat:@"%@&token=%@",model.jumpValue,[TTXUserInfo shareUserInfos].token];
+            }
+            htmlVC.htmlTitle = model.name;
             [self.viewController.navigationController pushViewController:htmlVC animated:YES];
+            
         }
             break;
         default:

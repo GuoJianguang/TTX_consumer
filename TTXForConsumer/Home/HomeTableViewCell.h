@@ -26,6 +26,10 @@
  */
 @property (nonatomic, copy)NSString  *pic;
 
+/*
+ 名称
+ */
+@property (nonatomic, copy)NSString  *name;
 
 @end
 
