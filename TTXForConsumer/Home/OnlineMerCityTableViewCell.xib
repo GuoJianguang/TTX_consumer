@@ -54,7 +54,6 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="40" id="5fC-EU-UYt"/>
                             <constraint firstItem="bI2-s0-kg9" firstAttribute="top" secondItem="Hnx-rv-9hg" secondAttribute="top" id="9k3-6d-2h9"/>
                             <constraint firstItem="HEi-w5-Xul" firstAttribute="centerY" secondItem="Hnx-rv-9hg" secondAttribute="centerY" id="G3M-js-Ylj"/>
                             <constraint firstItem="bEi-j4-hsJ" firstAttribute="centerY" secondItem="Hnx-rv-9hg" secondAttribute="centerY" constant="1" id="Jcf-p9-Jwy"/>
@@ -77,6 +76,7 @@
                     <constraint firstItem="kI9-yy-Ijm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="6" id="Tat-8y-rwf"/>
                     <constraint firstAttribute="trailing" secondItem="kI9-yy-Ijm" secondAttribute="trailing" constant="6" id="abC-MJ-fc5"/>
                     <constraint firstAttribute="trailing" secondItem="Hnx-rv-9hg" secondAttribute="trailing" id="fjP-VB-5uY"/>
+                    <constraint firstItem="Hnx-rv-9hg" firstAttribute="top" secondItem="kI9-yy-Ijm" secondAttribute="bottom" id="oUc-Pc-BZT"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

@@ -35,8 +35,8 @@
 // GBK 编码
 #define GBKEncoding CFStringConvertEncodingToNSStringEncoding(0x0632)
 
-#define formal_base @"http://test.p.tiantianxcn.com/ttx-api/2.1.6/"
-//#define formal_base @"http://api.tiantianxcn.com/ttx-api/2.1.6/"
+//#define formal_base @"http://test.p.tiantianxcn.com/ttx-api/2.2.0/"
+#define formal_base @"http://api.tiantianxcn.com/ttx-api/2.2.0/"
 ////正式
 #define HttpClient_BaseUrl formal_base
 // 是否使用 AlertView 展示错误信息

@@ -16,7 +16,7 @@
 #import "SortCollectionViewCell.h"
 #import "GoodsSearchRsultViewController.h"
 #import "OnLineMerchantCityViewController.h"
-
+#import <SDWebImage/UIButton+WebCache.h>
 
 @interface BaseTableViewCell()<SwipeViewDelegate,SwipeViewDataSource>
 
@@ -99,14 +99,6 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
     }];
-    
-//    [HttpClient POST:@"activity/index/list" parameters:parms success:^(AFHTTPRequestOperation *operation, id jsonObject) {
-//        if (IsRequestTrue) {
-//        }
-//
-//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//        
-//    }];
 }
 
 - (void)getActivityRequest
@@ -115,17 +107,7 @@
         if (IsRequestTrue) {
             HomeActivityModel *model = [HomeActivityModel modelWithDic:jsonObject[@"data"]];
             self.seqId = model.seqId;
-            [[SDWebImageDownloader sharedDownloader]downloadImageWithURL:[NSURL URLWithString:model.coverImg] options:SDWebImageDownloaderUseNSURLCache progress:^(NSInteger receivedSize, NSInteger expectedSize) {
-                
-            } completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
-                if (finished) {
-                    [self.button1 setBackgroundImage:image forState:UIControlStateNormal];
-                }else{
-                    [self.button1 setBackgroundImage:BannerLoadingErrorImage forState:UIControlStateNormal];
-
-                }
-            }];
-            
+            [self.button1 sd_setBackgroundImageWithURL:[NSURL URLWithString:model.coverImg] forState:UIControlStateNormal placeholderImage:BannerLoadingErrorImage];
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
