@@ -37,5 +37,8 @@
 
 @property (nonatomic, assign)NSString *alerCode;
 
+- (void)buttonAction;
+
+
 
 @end

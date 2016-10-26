@@ -135,6 +135,7 @@
                         self.successView.alerCode = NullToNumber(jsonObject[@"code"]);
                         self.successView.alerString = NullToSpace(jsonObject[@"message"]);
                         [self.view addSubview:self.successView];
+                        [self.successView buttonAction];
                         return;
                     }
 //                    2035,"身份证实名认证失败"
@@ -157,6 +158,7 @@
                         self.successView.alerCode = NullToNumber(jsonObject[@"code"]);
                         self.successView.alerString = NullToSpace(jsonObject[@"message"]);
                         [self.view addSubview:self.successView];
+                        [self.successView buttonAction];
                         return;
                     }
 //                    2039,"实名认证信息与之前绑定银行卡信息不一致，银行卡信息已清空，是否现在去重新绑定？"
@@ -169,12 +171,12 @@
                         self.successView.alerCode = NullToNumber(jsonObject[@"code"]);
                         self.successView.alerString = NullToSpace(jsonObject[@"message"]);
                         [self.view addSubview:self.successView];
+                        [self.successView buttonAction];
                         return;
                     }else{
                         [[JAlertViewHelper shareAlterHelper]showTint:jsonObject[@"message"] duration:1.5];
                         return;
                     }
-                    
                 }
             }
             @catch (NSException *exception) {

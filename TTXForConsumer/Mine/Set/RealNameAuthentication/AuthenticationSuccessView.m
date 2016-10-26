@@ -20,7 +20,6 @@
 
 - (void)awakeFromNib
 {
-    
     self.bingdingBtn.layer.cornerRadius = 5;
     self.bingdingBtn.layer.masksToBounds = YES;
     self.bingdingBtn.layer.borderWidth = 1;
@@ -45,7 +44,7 @@
         self.anmintionView.backgroundColor = MacoColor;
         self.anmintionView.layer.cornerRadius = CGRectGetHeight(self.anmintionView.bounds)/2;
         self.anmintionView.layer.masksToBounds = YES;
-        [self buttonAction];
+//        [self buttonAction];
     }
     return self;
 }
