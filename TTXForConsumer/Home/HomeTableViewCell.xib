@@ -13,7 +13,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="411"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <frame key="frameInset" width="320" height="410"/>
+                <frame key="frameInset" width="320" height="410.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q9H-p9-pTh" customClass="SwipeView">
@@ -30,7 +30,6 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZUe-7O-dtv">
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OfS-WZ-S1e">
-                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="OfS-WZ-S1e" secondAttribute="height" multiplier="418:750" id="0k0-cL-Qq8"/>
                                 </constraints>
@@ -40,14 +39,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TZf-Df-1y7">
-                                <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" backgroundImage="OFFLINE_BUISNESSES"/>
                                 <connections>
                                     <action selector="button2:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="5gz-V9-q4F"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="per-S6-rXa">
-                                <color key="backgroundColor" red="0.60000002384185791" green="0.40000000596046448" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" backgroundImage="ONLINE_SHOPPING_MALL"/>
                                 <connections>
                                     <action selector="button3:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="86F-3i-Pw1"/>
@@ -88,7 +85,7 @@
                 <outlet property="pageView" destination="MPp-Hi-hGL" id="LAh-WD-V3U"/>
                 <outlet property="swipeView" destination="Q9H-p9-pTh" id="gkB-e8-6XT"/>
             </connections>
-            <point key="canvasLocation" x="-254" y="-29"/>
+            <point key="canvasLocation" x="3" y="-26"/>
         </tableViewCell>
     </objects>
     <resources>
