@@ -1,6 +1,6 @@
 target 'TTXForConsumer' do
 pod 'UMengAnalytics-NO-IDFA'
-pod "Qiniu", "~> 7.0"
+pod "Qiniu", "~> 7.1.1"
 pod 'ZXingObjC', '~> 3.1.0'
 pod 'MRProgress'
 pod 'IQKeyboardManager', '~> 3.3.4'
