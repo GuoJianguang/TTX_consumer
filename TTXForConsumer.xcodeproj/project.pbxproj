@@ -366,6 +366,10 @@
 		BCC876431DB5B72600E623F2 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCC876411DB5B72600E623F2 /* HomeTableViewCell.xib */; };
 		BCC8764C1DB6166B00E623F2 /* OnLineMerchantCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC8764A1DB6166B00E623F2 /* OnLineMerchantCityViewController.m */; };
 		BCC8764D1DB6166B00E623F2 /* OnLineMerchantCityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCC8764B1DB6166B00E623F2 /* OnLineMerchantCityViewController.xib */; };
+		BCF301C81DCAD8AC000C7BE7 /* BaseHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF301C01DCAD8AC000C7BE7 /* BaseHttpClient.m */; };
+		BCF301C91DCAD8AC000C7BE7 /* HttpClient_Readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = BCF301C11DCAD8AC000C7BE7 /* HttpClient_Readme.txt */; };
+		BCF301CA1DCAD8AC000C7BE7 /* HttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF301C31DCAD8AC000C7BE7 /* HttpClient.m */; };
+		BCF301CB1DCAD8AC000C7BE7 /* HttpClientAlertViewHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF301C51DCAD8AC000C7BE7 /* HttpClientAlertViewHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -976,6 +980,15 @@
 		BCC876491DB6166B00E623F2 /* OnLineMerchantCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnLineMerchantCityViewController.h; sourceTree = "<group>"; };
 		BCC8764A1DB6166B00E623F2 /* OnLineMerchantCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnLineMerchantCityViewController.m; sourceTree = "<group>"; };
 		BCC8764B1DB6166B00E623F2 /* OnLineMerchantCityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnLineMerchantCityViewController.xib; sourceTree = "<group>"; };
+		BCF301BF1DCAD8AC000C7BE7 /* BaseHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseHttpClient.h; sourceTree = "<group>"; };
+		BCF301C01DCAD8AC000C7BE7 /* BaseHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseHttpClient.m; sourceTree = "<group>"; };
+		BCF301C11DCAD8AC000C7BE7 /* HttpClient_Readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HttpClient_Readme.txt; sourceTree = "<group>"; };
+		BCF301C21DCAD8AC000C7BE7 /* HttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpClient.h; sourceTree = "<group>"; };
+		BCF301C31DCAD8AC000C7BE7 /* HttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpClient.m; sourceTree = "<group>"; };
+		BCF301C41DCAD8AC000C7BE7 /* HttpClientAlertViewHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpClientAlertViewHelper.h; sourceTree = "<group>"; };
+		BCF301C51DCAD8AC000C7BE7 /* HttpClientAlertViewHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpClientAlertViewHelper.m; sourceTree = "<group>"; };
+		BCF301C61DCAD8AC000C7BE7 /* HttpClientConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpClientConstant.h; sourceTree = "<group>"; };
+		BCF301C71DCAD8AC000C7BE7 /* NetworkRequestProtocal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkRequestProtocal.h; sourceTree = "<group>"; };
 		E774D5DE23C8831077C2BD2C /* libPods-TTXForConsumer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TTXForConsumer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F992577F931985D596080A76 /* Pods-TTXForConsumer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTXForConsumer.release.xcconfig"; path = "Pods/Target Support Files/Pods-TTXForConsumer/Pods-TTXForConsumer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1463,6 +1476,15 @@
 		2DA973721D125C6900A605F9 /* HttpClient */ = {
 			isa = PBXGroup;
 			children = (
+				BCF301BF1DCAD8AC000C7BE7 /* BaseHttpClient.h */,
+				BCF301C01DCAD8AC000C7BE7 /* BaseHttpClient.m */,
+				BCF301C11DCAD8AC000C7BE7 /* HttpClient_Readme.txt */,
+				BCF301C21DCAD8AC000C7BE7 /* HttpClient.h */,
+				BCF301C31DCAD8AC000C7BE7 /* HttpClient.m */,
+				BCF301C41DCAD8AC000C7BE7 /* HttpClientAlertViewHelper.h */,
+				BCF301C51DCAD8AC000C7BE7 /* HttpClientAlertViewHelper.m */,
+				BCF301C61DCAD8AC000C7BE7 /* HttpClientConstant.h */,
+				BCF301C71DCAD8AC000C7BE7 /* NetworkRequestProtocal.h */,
 			);
 			path = HttpClient;
 			sourceTree = "<group>";
@@ -2357,6 +2379,7 @@
 				2DE489021D23C8E900472681 /* Public.xcassets in Resources */,
 				2D67CC611D1B840600BB99B4 /* Login.storyboard in Resources */,
 				2D67CC991D1B878200BB99B4 /* UMSCommentInputControlleriPad.xib in Resources */,
+				BCF301C91DCAD8AC000C7BE7 /* HttpClient_Readme.txt in Resources */,
 				2DB94FFE1D2A8E33003A6DEA /* xiang.png in Resources */,
 				2D566D871D1916E500B19EC6 /* GoodsTableViewCell.xib in Resources */,
 				2DEE96031D279F9300B46AB1 /* GoodsSearchRsultViewController.xib in Resources */,
@@ -2604,6 +2627,7 @@
 				2DDEC9021D1A6E9C00C91DDF /* BankCardTableViewCell.m in Sources */,
 				2D89A2AD1D2524B50042019B /* MchAllCommentViewController.m in Sources */,
 				2DA974151D1290C700A605F9 /* UIActionSheet+LBXAlertAction.m in Sources */,
+				BCF301CA1DCAD8AC000C7BE7 /* HttpClient.m in Sources */,
 				2DD916521D2B919900C9D988 /* GoodsMoreIntroduceView.m in Sources */,
 				2DB94F8E1D2A8CCF003A6DEA /* BussessMapViewController.m in Sources */,
 				2D95D86A1D225BB000021F31 /* MoCurveLayer.m in Sources */,
@@ -2712,9 +2736,11 @@
 				2DA974291D1291C000A605F9 /* BaseTableViewCell.m in Sources */,
 				2D95D8631D225B4800021F31 /* SureOrderViewController.m in Sources */,
 				2DB950131D2A8E33003A6DEA /* ZLPhotoPickerCollectionView.m in Sources */,
+				BCF301C81DCAD8AC000C7BE7 /* BaseHttpClient.m in Sources */,
 				2DA973BD1D127DCF00A605F9 /* ChineseInclude.m in Sources */,
 				2D95D86D1D225BDB00021F31 /* Watch.m in Sources */,
 				2D95D8781D227D4C00021F31 /* LoginViewController.m in Sources */,
+				BCF301CB1DCAD8AC000C7BE7 /* HttpClientAlertViewHelper.m in Sources */,
 				2DB94F901D2A8CCF003A6DEA /* LineDashPolyline.m in Sources */,
 				2D4C439A1D17EE690011C48F /* SortCollectionViewCell.m in Sources */,
 				2DA974051D128FFE00A605F9 /* LBXScanViewController.m in Sources */,
