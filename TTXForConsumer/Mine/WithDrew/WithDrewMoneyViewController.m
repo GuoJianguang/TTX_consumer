@@ -22,7 +22,6 @@
     self.naviBar.title = @"金额提现";
     self.naviBar.hiddenDetailBtn = NO;
     self.naviBar.showJianbianColor = YES;
-    
 }
 
 #pragma mark - UITableView

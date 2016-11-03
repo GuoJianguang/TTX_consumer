@@ -131,10 +131,6 @@
 		2DA9734B1D124F3000A605F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DA9734A1D124F3000A605F9 /* Assets.xcassets */; };
 		2DA973591D124F3000A605F9 /* TTXForConsumerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA973581D124F3000A605F9 /* TTXForConsumerTests.m */; };
 		2DA973641D124F3000A605F9 /* TTXForConsumerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA973631D124F3000A605F9 /* TTXForConsumerUITests.m */; };
-		2DA9737C1D125C6900A605F9 /* BaseHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA973741D125C6900A605F9 /* BaseHttpClient.m */; };
-		2DA9737D1D125C6900A605F9 /* HttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA973761D125C6900A605F9 /* HttpClient.m */; };
-		2DA9737E1D125C6900A605F9 /* HttpClient_Readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2DA973771D125C6900A605F9 /* HttpClient_Readme.txt */; };
-		2DA9737F1D125C6900A605F9 /* HttpClientAlertViewHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA973791D125C6900A605F9 /* HttpClientAlertViewHelper.m */; };
 		2DA973831D125D2A00A605F9 /* JAlertViewHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA973821D125D2A00A605F9 /* JAlertViewHelper.m */; };
 		2DA973871D125FDE00A605F9 /* TTXUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA973861D125FDE00A605F9 /* TTXUserInfo.m */; };
 		2DA9738B1D12704000A605F9 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA9738A1D12704000A605F9 /* HomeViewController.m */; };
@@ -592,15 +588,6 @@
 		2DA9735F1D124F3000A605F9 /* TTXForConsumerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TTXForConsumerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DA973631D124F3000A605F9 /* TTXForConsumerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTXForConsumerUITests.m; sourceTree = "<group>"; };
 		2DA973651D124F3000A605F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2DA973731D125C6900A605F9 /* BaseHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseHttpClient.h; sourceTree = "<group>"; };
-		2DA973741D125C6900A605F9 /* BaseHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseHttpClient.m; sourceTree = "<group>"; };
-		2DA973751D125C6900A605F9 /* HttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpClient.h; sourceTree = "<group>"; };
-		2DA973761D125C6900A605F9 /* HttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpClient.m; sourceTree = "<group>"; };
-		2DA973771D125C6900A605F9 /* HttpClient_Readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HttpClient_Readme.txt; sourceTree = "<group>"; };
-		2DA973781D125C6900A605F9 /* HttpClientAlertViewHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpClientAlertViewHelper.h; sourceTree = "<group>"; };
-		2DA973791D125C6900A605F9 /* HttpClientAlertViewHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpClientAlertViewHelper.m; sourceTree = "<group>"; };
-		2DA9737A1D125C6900A605F9 /* HttpClientConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpClientConstant.h; sourceTree = "<group>"; };
-		2DA9737B1D125C6900A605F9 /* NetworkRequestProtocal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkRequestProtocal.h; sourceTree = "<group>"; };
 		2DA973801D125CD600A605F9 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		2DA973811D125D2A00A605F9 /* JAlertViewHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JAlertViewHelper.h; sourceTree = "<group>"; };
 		2DA973821D125D2A00A605F9 /* JAlertViewHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JAlertViewHelper.m; sourceTree = "<group>"; };
@@ -1476,15 +1463,6 @@
 		2DA973721D125C6900A605F9 /* HttpClient */ = {
 			isa = PBXGroup;
 			children = (
-				2DA973731D125C6900A605F9 /* BaseHttpClient.h */,
-				2DA973741D125C6900A605F9 /* BaseHttpClient.m */,
-				2DA973751D125C6900A605F9 /* HttpClient.h */,
-				2DA973761D125C6900A605F9 /* HttpClient.m */,
-				2DA973771D125C6900A605F9 /* HttpClient_Readme.txt */,
-				2DA973781D125C6900A605F9 /* HttpClientAlertViewHelper.h */,
-				2DA973791D125C6900A605F9 /* HttpClientAlertViewHelper.m */,
-				2DA9737A1D125C6900A605F9 /* HttpClientConstant.h */,
-				2DA9737B1D125C6900A605F9 /* NetworkRequestProtocal.h */,
 			);
 			path = HttpClient;
 			sourceTree = "<group>";
@@ -2482,7 +2460,6 @@
 				2D67CCB11D1BCEA700BB99B4 /* WalletTableViewCell.xib in Resources */,
 				2DB94FF91D2A8E33003A6DEA /* shanguangdeng@2x.png in Resources */,
 				2DE220241D20F99B008D7F05 /* OnlinePayViewController.xib in Resources */,
-				2DA9737E1D125C6900A605F9 /* HttpClient_Readme.txt in Resources */,
 				2DA973BA1D127DCF00A605F9 /* citydict.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2556,7 +2533,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DA9737D1D125C6900A605F9 /* HttpClient.m in Sources */,
 				2D7216931D12A10A00D3F7D6 /* HomeBannerTableViewCell.m in Sources */,
 				2DE220231D20F99B008D7F05 /* OnlinePayViewController.m in Sources */,
 				2D452B831D50951B00C9D897 /* OtherdiquRealNameAutViewController.m in Sources */,
@@ -2692,7 +2668,6 @@
 				2D566D811D18F88000B19EC6 /* GoodsListViewController.m in Sources */,
 				2DBDB3B71D1CE6630033F09E /* ShippingAlerTableViewCell.m in Sources */,
 				2DBDB3C81D1D12E90033F09E /* HelpViewController.m in Sources */,
-				2DA9737F1D125C6900A605F9 /* HttpClientAlertViewHelper.m in Sources */,
 				2DA974261D1291C000A605F9 /* BaseHtmlViewController.m in Sources */,
 				2DB950121D2A8E33003A6DEA /* ZLPhotoPickerViewController.m in Sources */,
 				2DE220131D20D128008D7F05 /* AboutUsTableViewCell.m in Sources */,
@@ -2712,7 +2687,6 @@
 				2DB950021D2A8E33003A6DEA /* ZLAnimationScrollView.m in Sources */,
 				2DB950051D2A8E33003A6DEA /* ZLCameraView.m in Sources */,
 				2DE489061D23CA9700472681 /* MessageDetailViewController.m in Sources */,
-				2DA9737C1D125C6900A605F9 /* BaseHttpClient.m in Sources */,
 				2DBDB3CD1D1D13F00033F09E /* OpinionViewController.m in Sources */,
 				2DE2202E1D2104EE008D7F05 /* GoodsIntroduceViewController.m in Sources */,
 				2DEE96151D27B60100B46AB1 /* LogisticsCompanyTableViewCell.m in Sources */,

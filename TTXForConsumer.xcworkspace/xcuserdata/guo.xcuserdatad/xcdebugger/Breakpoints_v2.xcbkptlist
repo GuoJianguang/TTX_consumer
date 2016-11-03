@@ -33,38 +33,6 @@
             endingLineNumber = "164"
             landmarkName = "-sureBtn:"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[PayView sureBtn:]"
-                  moduleName = "TTXForConsumer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/guo/Desktop/TTXForGit/TTX_consumer/TTXForConsumer/Home/GoodsList/OrderAndPay/PayView.m"
-                  timestampString = "499081867.285732"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "164"
-                  endingLineNumber = "164"
-                  offsetFromSymbolStart = "2008">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[PayView sureBtn:]"
-                  moduleName = "TTXForConsumer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/guo/Desktop/TTXForGit/TTX_consumer/TTXForConsumer/Home/GoodsList/OrderAndPay/PayView.m"
-                  timestampString = "499081867.287821"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "164"
-                  endingLineNumber = "164"
-                  offsetFromSymbolStart = "2084">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -234,12 +202,12 @@
                   moduleName = "TTXForConsumer"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/guo/Desktop/TTXForGit/TTX_consumer/TTXForConsumer/Mine/WithDrew/WithDrewSuccessView.m"
-                  timestampString = "499081867.34874"
+                  timestampString = "499766750.047677"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "63"
                   endingLineNumber = "63"
-                  offsetFromSymbolStart = "28">
+                  offsetFromSymbolStart = "16">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -249,7 +217,7 @@
                   moduleName = "TTXForConsumer"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/guo/Desktop/TTXForGit/TTX_consumer/TTXForConsumer/Mine/WithDrew/WithDrewSuccessView.m"
-                  timestampString = "499081867.351973"
+                  timestampString = "499766750.050363"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "65"
@@ -288,22 +256,6 @@
             startingLineNumber = "17"
             endingLineNumber = "17"
             landmarkName = "-init"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TTXForConsumer/Home/HomeViewController.m"
-            timestampString = "498552655.635067"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "379"
-            endingLineNumber = "379"
-            landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
