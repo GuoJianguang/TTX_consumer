@@ -200,7 +200,7 @@
     NSString *json = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
     NSDictionary *prams = @{@"reqData":json};
     [SVProgressHUD showWithStatus:@"正在加载..." maskType:SVProgressHUDMaskTypeBlack];
-    [HttpClient POST:@"shop/goodsPrice/get" parameters:prams success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+    [HttpClient POST:@"shop/goodsPrice/get" parameters:prams success:^(NSURLSessionDataTask *operation, id jsonObject) {
         [SVProgressHUD dismiss];
         if (IsRequestTrue) {
             self.goodsPrice.text = [NSString stringWithFormat:@"￥ %.2f",[NullToNumber(jsonObject[@"data"][@"price"]) doubleValue]];
@@ -215,7 +215,7 @@
                 [((GoodsDetailNewViewController *)self.viewController) setOrderViewSureBtn:NO];
             }
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
         [SVProgressHUD dismiss];
         self.dataModel.actualPrice = [self.dataModel.price doubleValue];
 //        [((BaseMchViewController *)self.viewController) setOrderViewSureBtn:NO];

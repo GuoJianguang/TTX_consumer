@@ -311,7 +311,7 @@
     NSDictionary *parms = @{@"bank":NullToSpace(self.bankLabel.text),
                             @"province":NullToSpace(self.provincesTF.text)};
     
-    [HttpClient POST:@"user/withdraw/bindBankcard/getBankPoint" parameters:parms success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+    [HttpClient POST:@"user/withdraw/bindBankcard/getBankPoint" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
         if (IsRequestTrue) {
             NSArray *array = jsonObject[@"data"][@"points"];
             NSMutableArray *datasoucearray = [NSMutableArray array];
@@ -333,7 +333,7 @@
             
             //            [self.wangdianTF becomeFirstResponder];
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
         [[JAlertViewHelper shareAlterHelper]showTint:@"抱歉,暂时没有找到相关开户网点" duration:2.0];
         [self.wangdianTF resignFirstResponder];
     }];
@@ -346,7 +346,7 @@
                             @"province":NullToSpace(self.provincesTF.text),
                             @"point":NullToSpace(self.wangdianTF.text)};
     
-    [HttpClient POST:@"user/withdraw/bindBankcard/getBankPoint" parameters:parms success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+    [HttpClient POST:@"user/withdraw/bindBankcard/getBankPoint" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
         if (IsRequestTrue) {
             NSArray *array = jsonObject[@"data"][@"childs"];
             NSMutableArray *datasoucearray = [NSMutableArray array];
@@ -367,7 +367,7 @@
             }
 //                        [self.kaihuhangTF becomeFirstResponder];
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
         [[JAlertViewHelper shareAlterHelper]showTint:@"抱歉,暂时没有找到相关开户行" duration:2.0];
         [self.kaihuhangTF resignFirstResponder];
     }];
@@ -424,7 +424,7 @@
                                 @"bankBranchNo":NullToSpace(kaihuhNum)};
         if (self.isYetBingdingCard) {
             [SVProgressHUD showWithStatus:@"正在提交..." maskType:SVProgressHUDMaskTypeBlack];
-            [HttpClient POST:@"user/withdraw/bindBankcard/update" parameters:parms success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+            [HttpClient POST:@"user/withdraw/bindBankcard/update" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
                 [SVProgressHUD dismiss];
                 if (IsRequestTrue) {
                     [[JAlertViewHelper shareAlterHelper]showTint:@"修改成功" duration:1.5];
@@ -433,7 +433,7 @@
                     [TTXUserInfo shareUserInfos].bindingFlag = @"1";
                     [self.viewController.navigationController popViewControllerAnimated:YES];
                 }
-            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            } failure:^(NSURLSessionDataTask *operation, NSError *error) {
                 [SVProgressHUD dismiss];
                 
             }];
@@ -441,7 +441,7 @@
         }
         [SVProgressHUD showWithStatus:@"正在提交..." maskType:SVProgressHUDMaskTypeBlack];
         
-        [HttpClient POST:@"user/withdraw/bindBankcard/add" parameters:parms success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+        [HttpClient POST:@"user/withdraw/bindBankcard/add" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
             [SVProgressHUD dismiss];
             if (IsRequestTrue) {
                 [[JAlertViewHelper shareAlterHelper]showTint:@"绑定成功" duration:1.5];
@@ -450,7 +450,7 @@
                 [TTXUserInfo shareUserInfos].bindingFlag = @"1";
                 [self.viewController.navigationController popViewControllerAnimated:YES];
             }
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        } failure:^(NSURLSessionDataTask *operation, NSError *error) {
             [SVProgressHUD dismiss];
             
         }];
@@ -738,7 +738,7 @@
                                 @"bankBranch":NullToSpace(self.inputKaihuhangTF.text),
                                 @"bankBranchNo":NullToSpace(kaihuhNum)};
             [SVProgressHUD showWithStatus:@"正在提交..." maskType:SVProgressHUDMaskTypeBlack];
-            [HttpClient POST:@"user/withdraw/bindBankcard/update" parameters:parms success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+            [HttpClient POST:@"user/withdraw/bindBankcard/update" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
                 [SVProgressHUD dismiss];
                 if (IsRequestTrue) {
                     [[JAlertViewHelper shareAlterHelper]showTint:@"修改成功" duration:1.5];
@@ -747,7 +747,7 @@
                     [TTXUserInfo shareUserInfos].bindingFlag = @"1";
                     [self.viewController.navigationController popViewControllerAnimated:YES];
                 }
-            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            } failure:^(NSURLSessionDataTask *operation, NSError *error) {
                 [SVProgressHUD dismiss];
                 
             }];

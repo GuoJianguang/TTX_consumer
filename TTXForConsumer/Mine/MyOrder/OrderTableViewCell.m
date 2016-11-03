@@ -221,12 +221,12 @@
     if (buttonIndex == 1) {
         NSDictionary *params = @{@"token":[TTXUserInfo shareUserInfos].token,
                                  @"orderId":self.dataModel.orderId};
-        [HttpClient POST:@"shop/order/update" parameters:params success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+        [HttpClient POST:@"shop/order/update" parameters:params success:^(NSURLSessionDataTask *operation, id jsonObject) {
             if (IsRequestTrue) {
                 [[JAlertViewHelper shareAlterHelper]showTint:@"确认收货成功" duration:2.];
                 [((OderListViewController *)self.viewController).tableView.mj_header beginRefreshing];
             }
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        } failure:^(NSURLSessionDataTask *operation, NSError *error) {
             [[JAlertViewHelper shareAlterHelper]showTint:@"数据提交失败，请重试" duration:1.5];
         }];
     }

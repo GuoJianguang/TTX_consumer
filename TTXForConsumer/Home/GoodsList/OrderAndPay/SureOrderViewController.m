@@ -102,7 +102,7 @@
 - (void)addressRequest
 {
     NSDictionary *parms = @{@"token":[TTXUserInfo shareUserInfos].token};
-    [HttpClient POST:@"user/userInfo/address/get" parameters:parms success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+    [HttpClient POST:@"user/userInfo/address/get" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
         if (IsRequestTrue) {
             NSArray *array = jsonObject[@"data"];
             for (NSDictionary *dic in array) {
@@ -113,7 +113,7 @@
             }
             [self.tableView reloadData];
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
         
     }];
 }

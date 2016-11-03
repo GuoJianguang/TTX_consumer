@@ -78,14 +78,14 @@
             NSDictionary *parms = @{@"token":[TTXUserInfo shareUserInfos].token,
                                     @"id":self.dataModel.commentId,
                                     @"content":self.textView.text};
-            [HttpClient POST:@"user/comment/add" parameters:parms success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+            [HttpClient POST:@"user/comment/add" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
                 if (IsRequestTrue) {
                     [[JAlertViewHelper shareAlterHelper]showTint:@"评论提交成功" duration:1.5];
                     [[NSNotificationCenter defaultCenter]postNotificationName:@"commentSuccess" object:nil];
                     [self.navigationController popViewControllerAnimated:YES];
                 }
                 
-            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            } failure:^(NSURLSessionDataTask *operation, NSError *error) {
                 [[JAlertViewHelper shareAlterHelper]showTint:@"评论失败，请重试" duration:1.5];
                 
             }];
@@ -97,14 +97,14 @@
             NSDictionary *parms = @{@"token":[TTXUserInfo shareUserInfos].token,
                                     @"id":self.dataModel.commentId,
                                     @"content":self.textView.text};
-            [HttpClient POST:@"shop/goodsComment/add" parameters:parms success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+            [HttpClient POST:@"shop/goodsComment/add" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
                 if (IsRequestTrue) {
                     [[JAlertViewHelper shareAlterHelper]showTint:@"评论提交成功" duration:1.5];
                     [[NSNotificationCenter defaultCenter]postNotificationName:@"commentSuccess" object:nil];
                     [self.navigationController popViewControllerAnimated:YES];
                 }
                 
-            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            } failure:^(NSURLSessionDataTask *operation, NSError *error) {
                 [[JAlertViewHelper shareAlterHelper]showTint:@"评论失败，请重试" duration:1.5];
                 
             }];

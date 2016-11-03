@@ -120,7 +120,7 @@
 {
     NSString *searchCity = [[TTXUserInfo shareUserInfos].locationCity substringToIndex:2];
     NSDictionary *parms = @{@"city":searchCity};
-    [HttpClient GET:@"activity/index/list" parameters:parms success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+    [HttpClient GET:@"activity/index/list" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
         if (IsRequestTrue) {
             self.tableView.scrollEnabled = YES;
             NSArray *array = jsonObject[@"data"];
@@ -131,7 +131,7 @@
             }
             [self.tableView reloadData];
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
         self.tableView.scrollEnabled = NO;
         [self.tableView showRereshBtnwithALerString:@"网络连接不好"];
 
@@ -289,7 +289,7 @@
                             @"longitude":NullToNumber(@([TTXUserInfo shareUserInfos].locationCoordinate.longitude)),
                             @"latitude":NullToNumber(@([TTXUserInfo shareUserInfos].locationCoordinate.latitude))};
     
-    [HttpClient GET:@"mch/highQuality" parameters:parms success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+    [HttpClient GET:@"mch/highQuality" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
         self.tableView.scrollEnabled = YES;
         if (IsRequestTrue) {
             if (isHeader) {
@@ -311,7 +311,7 @@
             [self.tableView reloadData];
         }
         
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
         self.isAlreadyRefrefsh = NO;
         self.tableView.scrollEnabled = NO;
         if (isHeader) {

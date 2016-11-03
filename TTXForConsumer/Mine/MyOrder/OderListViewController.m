@@ -105,7 +105,7 @@
                             @"pageNo":@(self.page),
                             @"pageSize":MacoRequestPageCount};
     
-    [HttpClient POST:@"user/order/get" parameters:prams success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+    [HttpClient POST:@"user/order/get" parameters:prams success:^(NSURLSessionDataTask *operation, id jsonObject) {
         if (IsRequestTrue) {
             if (isHeader) {
                 [self.datasouceArray removeAllObjects];
@@ -130,7 +130,7 @@
             [self.tableView.mj_footer endRefreshing];
         }
         
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
         if (isHeader) {
             [self.tableView.mj_header endRefreshing];
         }else{

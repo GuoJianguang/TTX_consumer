@@ -59,7 +59,7 @@
 
 - (void)venceRequest
 {
-    [HttpClient POST:@"shop/goodsPavilions" parameters:nil success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+    [HttpClient POST:@"shop/goodsPavilions" parameters:nil success:^(NSURLSessionDataTask *operation, id jsonObject) {
         if (IsRequestTrue) {
             [self.venueDataSouceArray removeAllObjects];
             NSArray *array = jsonObject[@"data"];
@@ -68,7 +68,7 @@
             }
             [self.tableView reloadData];
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
         
     }];
 }
@@ -118,7 +118,7 @@
                             @"activityId":@"",
                             @"recommend":@"1"};
     [SVProgressHUD showWithStatus:@"正在加载..." maskType:SVProgressHUDMaskTypeBlack];
-    [HttpClient GET:@"shop/goodsList/get" parameters:parms success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+    [HttpClient GET:@"shop/goodsList/get" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
         [SVProgressHUD dismiss];
         if (IsRequestTrue) {
             if (isHeader) {
@@ -143,7 +143,7 @@
                 [self.tableView hiddenNoDataSouce];
             }
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
         [SVProgressHUD dismiss];
         if (isHeader) {
             [self.tableView.mj_header endRefreshing];

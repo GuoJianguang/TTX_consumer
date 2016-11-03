@@ -36,7 +36,7 @@
                              @"logisticsCompanyCode":model.logisticsCompanyCode,
                             @"token":[TTXUserInfo shareUserInfos].token};
     [SVProgressHUD showWithStatus:@"正在加载..."];
-    [HttpClient POST:@"shop/order/logistics/get" parameters:parms success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+    [HttpClient POST:@"shop/order/logistics/get" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
         [SVProgressHUD  dismiss];
         if (IsRequestTrue) {
             if ([NullToNumber(jsonObject[@"data"][@"Success"]) isEqualToString:@"1"]) {
@@ -49,7 +49,7 @@
             }
         }
         
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
         [SVProgressHUD  dismiss];
 
     }];

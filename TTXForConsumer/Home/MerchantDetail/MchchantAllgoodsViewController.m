@@ -63,7 +63,7 @@
     NSDictionary *parms = @{@"pageNo":@(self.page),
                             @"pageSize":MacoRequestPageCount,
                             @"mchCode":NullToSpace(self.mchChantCode)};
-    [HttpClient GET:@"mch/goods/get" parameters:parms success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+    [HttpClient GET:@"mch/goods/get" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
         if (IsRequestTrue) {
             if (isHeader) {
                 [self.dataSouceArray removeAllObjects];
@@ -82,7 +82,7 @@
             [self.tableView judgeIsHaveDataSouce:self.dataSouceArray];
             [self.tableView reloadData];
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
         //        self.keyWord = @"";
         [self.tableView.mj_header endRefreshing];
         [self.tableView.mj_footer endRefreshing];

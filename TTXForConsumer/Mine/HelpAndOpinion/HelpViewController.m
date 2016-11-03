@@ -51,7 +51,7 @@
 #pragma mark - 网络数据请求、
 - (void)getRequest
 {
-    [HttpClient POST:@"user/question/common/get" parameters:nil success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+    [HttpClient POST:@"user/question/common/get" parameters:nil success:^(NSURLSessionDataTask *operation, id jsonObject) {
         [self.taleView.mj_header endRefreshing];
         if (IsRequestTrue) {
             NSArray *array = jsonObject[@"data"];
@@ -63,7 +63,7 @@
             [self.taleView reloadData];
         }
         
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
         [self.taleView.mj_header endRefreshing];
         
     }];

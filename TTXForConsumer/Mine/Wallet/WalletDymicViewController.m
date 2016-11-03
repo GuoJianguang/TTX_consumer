@@ -138,7 +138,7 @@
             break;
     }
     
-    [HttpClient POST:urlstirng parameters:parms success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+    [HttpClient POST:urlstirng parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
         if (IsRequestTrue) {
             if (isHeader) {
                 [self.datasouceArray removeAllObjects];
@@ -183,7 +183,7 @@
             [self.tableView.mj_footer endRefreshing];
         }
         
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
         if (isHeader) {
             [self.tableView.mj_header  endRefreshing];
         }else{

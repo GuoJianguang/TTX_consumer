@@ -106,7 +106,7 @@
 {
     NSDictionary *prams = @{@"id":goodsCode};
     [SVProgressHUD showWithStatus:@"正在加载..." maskType:SVProgressHUDMaskTypeGradient];
-    [HttpClient GET:@"shop/goodsInfo/get" parameters:prams success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+    [HttpClient GET:@"shop/goodsInfo/get" parameters:prams success:^(NSURLSessionDataTask *operation, id jsonObject) {
         [SVProgressHUD dismiss];
         if (IsRequestTrue) {
             self.dataModel = [Watch modelWithDic:jsonObject[@"data"]];
@@ -121,7 +121,7 @@
             [self addFengeView:detailViewHeight +THeight*(528/1334.) withImageArray:jsonObject[@"data"][@"picDesc"] withDetaiViewheight:detailViewHeight];
             
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
         [SVProgressHUD dismiss];
     }];
 }

@@ -86,7 +86,7 @@
 - (void)sortRequest
 {
     
-    [HttpClient GET:@"mch/trades" parameters:nil success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+    [HttpClient GET:@"mch/trades" parameters:nil success:^(NSURLSessionDataTask *operation, id jsonObject) {
         if (IsRequestTrue) {
             [self.sortDataSouceArray removeAllObjects];
             NSArray *array = jsonObject[@"data"];
@@ -95,7 +95,7 @@
             }
             [self.collectionView reloadData];
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
         
     }];
 }

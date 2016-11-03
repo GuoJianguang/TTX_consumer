@@ -190,7 +190,7 @@ minimumLineSpacingForSectionAtIndex:(NSInteger)section
 #pragma mark - 商家类别的请求
 - (void)sortRequest
 {
-    [HttpClient GET:@"mch/trades" parameters:nil success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+    [HttpClient GET:@"mch/trades" parameters:nil success:^(NSURLSessionDataTask *operation, id jsonObject) {
         if (IsRequestTrue) {
             [self.sortDataSouceArray removeAllObjects];
             NSArray *array = jsonObject[@"data"];
@@ -215,7 +215,7 @@ minimumLineSpacingForSectionAtIndex:(NSInteger)section
             [self.sortCollectionView reloadData];
             [self.tableView.mj_header beginRefreshing];
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
         
     }];
 }
@@ -239,7 +239,7 @@ minimumLineSpacingForSectionAtIndex:(NSInteger)section
                             @"keyword":NullToSpace(self.keyWord),
                             @"longitude":@([TTXUserInfo shareUserInfos].locationCoordinate.longitude),
                             @"latitude":@([TTXUserInfo shareUserInfos].locationCoordinate.latitude)};
-    [HttpClient GET:@"mch/search" parameters:parms success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+    [HttpClient GET:@"mch/search" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
         if (IsRequestTrue) {
             if (self.page == [NullToNumber(jsonObject[@"data"][@"totalPage"]) integerValue]) {
                 self.isContinueRequest= NO;
@@ -262,7 +262,7 @@ minimumLineSpacingForSectionAtIndex:(NSInteger)section
             [self.tableView judgeIsHaveDataSouce:self.dataSouceArray];
             [self.tableView reloadData];
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
         //        self.keyWord = @"";
         [self.tableView.mj_header endRefreshing];
         [self.tableView.mj_footer endRefreshing];

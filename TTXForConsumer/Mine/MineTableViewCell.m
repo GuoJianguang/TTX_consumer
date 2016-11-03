@@ -98,7 +98,7 @@
 {
     NSString *token = [TTXUserInfo shareUserInfos].token;
     //获取用户最新消息
-    [HttpClient POST:@"user/userBaseInfo/get" parameters:@{@"token":token} success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+    [HttpClient POST:@"user/userBaseInfo/get" parameters:@{@"token":token} success:^(NSURLSessionDataTask *operation, id jsonObject) {
         if (IsRequestTrue) {
             [[TTXUserInfo shareUserInfos]setUserinfoWithdic:jsonObject[@"data"]];
             if ([[TTXUserInfo shareUserInfos].messageCount isEqualToString:@"0"]) {
@@ -133,7 +133,7 @@
              self.totalConsumeAmount.text = [NSString stringWithFormat:@"%.2f",[[TTXUserInfo shareUserInfos].totalConsumeAmount doubleValue]];
             [self setYetWihtMessage];
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
     }];
     
     
@@ -189,7 +189,7 @@
 - (void)getMyGrade
 {
     NSDictionary *parms = @{@"token":[TTXUserInfo shareUserInfos].token};
-    [HttpClient POST:@"user/grade" parameters:parms success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+    [HttpClient POST:@"user/grade" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
         if (IsRequestTrue) {
             [self setVipImage:[NullToNumber(jsonObject[@"data"][@"grade"]) integerValue]];
             [self.vip setTitle:[NSString stringWithFormat:@"VIP %@",NullToNumber(jsonObject[@"data"][@"grade"])] forState:UIControlStateNormal];
@@ -221,7 +221,7 @@
             } completion:^(BOOL finished) {
             }];
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
         
     }];
 }
@@ -454,7 +454,7 @@
     if ([[TTXUserInfo shareUserInfos].bindingFlag isEqualToString:@"1"]){
         sender.enabled = NO;
         NSDictionary *parms = @{@"token":[TTXUserInfo shareUserInfos].token};
-        [HttpClient GET:@"user/withdraw/bindBankcard/get" parameters:parms success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+        [HttpClient GET:@"user/withdraw/bindBankcard/get" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
             if (IsRequestTrue) {
                 BankCardManageViewController *bankcardVC = [[BankCardManageViewController alloc]init];
                 bankcardVC.isYetBingdingCard = YES;
@@ -462,7 +462,7 @@
                 [self.viewController.navigationController pushViewController:bankcardVC animated:YES];
             }
             sender.enabled = YES;
-        }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        }failure:^(NSURLSessionDataTask *operation, NSError *error) {
                     sender.enabled = YES;
                 }];
         return;

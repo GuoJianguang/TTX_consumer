@@ -90,11 +90,11 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 1) {
-        [HttpClient POST:@"user/userInfo/address/update" parameters:@{@"id":self.dataModel.addressId,@"defaultFlag":@"1",@"token":[TTXUserInfo shareUserInfos].token,@"userId":[TTXUserInfo shareUserInfos].userid} success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+        [HttpClient POST:@"user/userInfo/address/update" parameters:@{@"id":self.dataModel.addressId,@"defaultFlag":@"1",@"token":[TTXUserInfo shareUserInfos].token,@"userId":[TTXUserInfo shareUserInfos].userid} success:^(NSURLSessionDataTask *operation, id jsonObject) {
             if (IsRequestTrue) {
                 [((MallSelectShippingAddressViewController *)self.viewController) addressRequest];
             }
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        } failure:^(NSURLSessionDataTask *operation, NSError *error) {
             
         }];
     }

@@ -59,7 +59,7 @@
                             @"activityId":NullToSpace(self.activityId),
                             @"recommend":@""};
     [SVProgressHUD showWithStatus:@"正在加载..." maskType:SVProgressHUDMaskTypeBlack];
-    [HttpClient GET:@"shop/goodsList/get" parameters:parms success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+    [HttpClient GET:@"shop/goodsList/get" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
         [SVProgressHUD dismiss];
         if (IsRequestTrue) {
             if (isHeader) {
@@ -84,7 +84,7 @@
                 [self.tableView hiddenNoDataSouce];
             }
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
         [SVProgressHUD dismiss];
         if (isHeader) {
             [self.tableView.mj_header endRefreshing];

@@ -83,7 +83,7 @@
 {
     NSString *searchCity = [[TTXUserInfo shareUserInfos].locationCity substringToIndex:2];
     NSDictionary *parms = @{@"city":searchCity};
-    [HttpClient GET:@"advert/index/list" parameters:parms success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+    [HttpClient GET:@"advert/index/list" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
         if (IsRequestTrue) {
             [self.bannerArray removeAllObjects];
             NSArray *array = jsonObject[@"data"];
@@ -96,20 +96,20 @@
         }
         self.pageView.numberOfPages = self.bannerArray.count;
         [self.swipeView reloadData];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
         
     }];
 }
 
 - (void)getActivityRequest
 {
-    [HttpClient POST:@"activity/index" parameters:nil success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+    [HttpClient POST:@"activity/index" parameters:nil success:^(NSURLSessionDataTask *operation, id jsonObject) {
         if (IsRequestTrue) {
             HomeActivityModel *model = [HomeActivityModel modelWithDic:jsonObject[@"data"]];
             self.seqId = model.seqId;
             [self.button1 sd_setBackgroundImageWithURL:[NSURL URLWithString:model.coverImg] forState:UIControlStateNormal placeholderImage:BannerLoadingErrorImage];
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
         
     }];
     

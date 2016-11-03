@@ -72,7 +72,7 @@
                                 @"deviceToken":[TTXUserInfo shareUserInfos].devicetoken,
                                 @"deviceType":@"ios",
                                 @"password":password};
-        [HttpClient POST:@"user/login" parameters:parms success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+        [HttpClient POST:@"user/login" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
             [SVProgressHUD dismiss];
             if (IsRequestTrue) {
                 //设置用户信息
@@ -86,7 +86,7 @@
                 [MobClick profileSignInWithPUID:[TTXUserInfo shareUserInfos].userid];
                 [self dismissViewControllerAnimated:YES completion:NULL];
             }
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        } failure:^(NSURLSessionDataTask *operation, NSError *error) {
             [SVProgressHUD dismiss];
         }];
     }

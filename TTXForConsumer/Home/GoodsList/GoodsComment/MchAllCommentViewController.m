@@ -68,7 +68,7 @@ static NSInteger pangeCount = 20;
                             @"pageNo":@(self.page),
                             @"pageSize":@(pangeCount)};
     
-    [HttpClient POST:@"shop/goodsComment/get" parameters:parms success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+    [HttpClient POST:@"shop/goodsComment/get" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
         if (IsRequestTrue) {
             if (isHeader) {
                 [self.dataSouceArray removeAllObjects];
@@ -98,7 +98,7 @@ static NSInteger pangeCount = 20;
             [self.tableView reloadData];
         }
         
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
         [self.tableView showRereshBtnwithALerString:@"网络连接不好"];
         if (isHeader) {
             [self.tableView.mj_header endRefreshing];

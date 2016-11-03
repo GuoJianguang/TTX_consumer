@@ -145,9 +145,9 @@
     switch (buttonIndex) {
         case 0:
         {
-                [HttpClient POST:@"user/logout" parameters:@{@"token":[TTXUserInfo shareUserInfos].token} success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+                [HttpClient POST:@"user/logout" parameters:@{@"token":[TTXUserInfo shareUserInfos].token} success:^(NSURLSessionDataTask *operation, id jsonObject) {
                     
-                } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                } failure:^(NSURLSessionDataTask *operation, NSError *error) {
                 }];
                 [TTXUserInfo shareUserInfos].currentLogined = NO;
                 [self.viewController.navigationController popToRootViewControllerAnimated:YES];
@@ -173,9 +173,9 @@
 {
     for (NSString *title in titles) {
         UIAlertAction *action = [UIAlertAction actionWithTitle:title style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-            [HttpClient POST:@"user/logout" parameters:@{@"token":[TTXUserInfo shareUserInfos].token} success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+            [HttpClient POST:@"user/logout" parameters:@{@"token":[TTXUserInfo shareUserInfos].token} success:^(NSURLSessionDataTask *operation, id jsonObject) {
                 
-            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            } failure:^(NSURLSessionDataTask *operation, NSError *error) {
             }];
             [TTXUserInfo shareUserInfos].currentLogined = NO;
             [self.viewController.navigationController popToRootViewControllerAnimated:YES];

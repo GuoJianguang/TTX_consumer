@@ -38,7 +38,7 @@
         NSDictionary *parms = @{@"realName":self.editTF.text,
                                 @"token":[TTXUserInfo shareUserInfos].token};
         [SVProgressHUD showWithStatus:@"正在加载..." maskType:SVProgressHUDMaskTypeBlack];
-                [HttpClient POST:@"user/userInfo/update" parameters:parms success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+                [HttpClient POST:@"user/userInfo/update" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
             [SVProgressHUD dismiss];
             if (IsRequestTrue) {
                 [TTXUserInfo shareUserInfos].nickName = jsonObject[@"data"][@"nickName"];
@@ -47,7 +47,7 @@
 //                [[JAlertViewHelper shareAlterHelper]showTint:@"昵称修改成功" duration:1.5];
 //                [self.navigationController popViewControllerAnimated:YES];
             }
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        } failure:^(NSURLSessionDataTask *operation, NSError *error) {
             [SVProgressHUD dismiss];
             
         }];

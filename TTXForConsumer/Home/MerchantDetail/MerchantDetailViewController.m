@@ -49,7 +49,7 @@
 - (void)detailRequest:(NSString *)mchCode
 {
     NSDictionary *parms = @{@"code":mchCode};
-    [HttpClient GET:@"mch/get" parameters:parms success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+    [HttpClient GET:@"mch/get" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
         if (IsRequestTrue) {
 //            self.dataSouceDic = jsonObject[@"data"];
             self.dataModel = [BussessDetailModel modelWithDic:jsonObject[@"data"]];
@@ -63,7 +63,7 @@
             }
         }
         
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
         
     }];
 }
@@ -74,7 +74,7 @@
     NSDictionary *prams = @{@"mchCode":mchCode,
                             @"pageNo":@(1),
                             @"pageSize":@(2)};
-    [HttpClient POST:@"mch/goods/get" parameters:prams success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+    [HttpClient POST:@"mch/goods/get" parameters:prams success:^(NSURLSessionDataTask *operation, id jsonObject) {
         if (IsRequestTrue) {
             [self.goodsArray removeAllObjects];
             NSArray *array = jsonObject[@"data"][@"data"];
@@ -88,7 +88,7 @@
             [self commentRequest:self.merchantCode];
           
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
         
         
     }];
@@ -118,7 +118,7 @@
     NSDictionary *parms = @{@"mchCode":mchCode,
                             @"pageNo":@"1",
                             @"pageSize":@"5"};
-    [HttpClient POST:@"mch/comment" parameters:parms success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+    [HttpClient POST:@"mch/comment" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
         if (IsRequestTrue) {
             NSArray *array = jsonObject[@"data"][@"data"];
             [self.commentArray removeAllObjects];
@@ -139,7 +139,7 @@
             self.height += 80;
             [self.tableView reloadData];
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
         
     }];
 }

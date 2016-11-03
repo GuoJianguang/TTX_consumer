@@ -22,7 +22,7 @@
     [super handleWithOperation:operation responseObject:responseObject success:success];
 }
 
-//+(void)failureHandleWithOperation:(AFHTTPRequestOperation *)operation error:(NSError *)error callBack:(void (^)(AFHTTPRequestOperation *, NSError *))failure{
+//+(void)failureHandleWithOperation:(NSURLSessionDataTask *)operation error:(NSError *)error callBack:(void (^)(NSURLSessionDataTask *, NSError *))failure{
 //    
 //    [super failureHandleWithOperation:operation error:error callBack:failure];
 //    

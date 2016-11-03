@@ -70,7 +70,7 @@
                             @"longitude":@([TTXUserInfo shareUserInfos].locationCoordinate.longitude),
                             @"latitude":@([TTXUserInfo shareUserInfos].locationCoordinate.latitude),
                             @"seqId":NullToSpace(self.seqId)};
-    [HttpClient GET:@"mch/search" parameters:parms success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+    [HttpClient GET:@"mch/search" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
         if (IsRequestTrue) {
             if (self.page == [NullToNumber(jsonObject[@"data"][@"totalPage"]) integerValue]) {
                 self.isContinueRequest= NO;
@@ -93,7 +93,7 @@
             [self.tableView judgeIsHaveDataSouce:self.dataSouceArray];
             [self.tableView reloadData];
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
         //        self.keyWord = @"";
         [self.tableView.mj_header endRefreshing];
         [self.tableView.mj_footer endRefreshing];

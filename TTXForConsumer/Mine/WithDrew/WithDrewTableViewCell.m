@@ -87,7 +87,7 @@
         return;
     }
     sender.enabled = NO;
-    [HttpClient POST:@"user/withdraw/sendVerifyCode" parameters:@{@"token":[TTXUserInfo shareUserInfos].token} success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+    [HttpClient POST:@"user/withdraw/sendVerifyCode" parameters:@{@"token":[TTXUserInfo shareUserInfos].token} success:^(NSURLSessionDataTask *operation, id jsonObject) {
         sender.enabled = YES;
         if (IsRequestTrue) {
             [self.sendCodeBtn setTitle:@"重新获取(60)" forState:UIControlStateNormal];
@@ -95,7 +95,7 @@
             self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timeLeft:) userInfo:nil repeats:YES];
             [[NSRunLoop currentRunLoop]addTimer:self.timer forMode:NSRunLoopCommonModes];
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
         sender.enabled = YES;
     }];
 }
@@ -133,7 +133,7 @@
                                 @"password":password,
                                 @"withdrawAmount":self.editMoneyTF.text};
         [SVProgressHUD showWithStatus:@"正在提交申请"];
-        [HttpClient POST:@"user/withdraw/add" parameters:parms success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+        [HttpClient POST:@"user/withdraw/add" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
             sender.enabled = YES;
             [SVProgressHUD dismiss];
             if (IsRequestTrue) {
@@ -141,7 +141,7 @@
                 self.successView.infoDic = dic;
                 [self withDrawalSuccess];
             }
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        } failure:^(NSURLSessionDataTask *operation, NSError *error) {
             [SVProgressHUD dismiss];
             sender.enabled = YES;
         }];

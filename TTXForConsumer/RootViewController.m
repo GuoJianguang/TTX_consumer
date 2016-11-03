@@ -117,7 +117,7 @@ static NSString *waitReceive = @"waitReceive";//待收货
                                 @"deviceToken":[TTXUserInfo shareUserInfos].devicetoken,
                                 @"deviceType":@"ios",
                                 @"password":password};
-        [HttpClient POST:@"user/login" parameters:parms success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+        [HttpClient POST:@"user/login" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
             if (IsRequestTrue) {
                 //设置用户信息
                 [TTXUserInfo shareUserInfos].currentLogined = YES;
@@ -129,7 +129,7 @@ static NSString *waitReceive = @"waitReceive";//待收货
                     [TTXUserInfo shareUserInfos].islaunchFormNotifi = NO;
                 }
             }
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        } failure:^(NSURLSessionDataTask *operation, NSError *error) {
         }];
     }
 }

@@ -129,7 +129,7 @@
 
 - (void)RecommendMerchantListRequest
 {
-    [HttpClient POST:@"user/recommendProfit/mch/get" parameters:@{@"token":[TTXUserInfo shareUserInfos].token} success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+    [HttpClient POST:@"user/recommendProfit/mch/get" parameters:@{@"token":[TTXUserInfo shareUserInfos].token} success:^(NSURLSessionDataTask *operation, id jsonObject) {
         [self.mchDataSouceArray removeAllObjects];
         if (IsRequestTrue) {
             NSArray *array = jsonObject[@"data"];
@@ -143,7 +143,7 @@
             [self.tableView reloadData];
         }
         
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
         
     }];
     
@@ -157,7 +157,7 @@
                             @"pageSize":MacoRequestPageCount,
                             @"token":[TTXUserInfo shareUserInfos].token,
                             @"targetMchCode":targetMchCode};
-    [HttpClient POST:@"user/recommendProfit/get" parameters:parms success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+    [HttpClient POST:@"user/recommendProfit/get" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
         if (IsRequestTrue) {
             if (self.page == 1) {
                 self.moneyLabel.text = [NSString stringWithFormat:@"%.2f",[NullToNumber(jsonObject[@"data"][@"totalqueryAmount"]) floatValue]];
@@ -186,7 +186,7 @@
 //            }
         }
         
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
         if (isHeader) {
             [self.collectionView.mj_header endRefreshing];
         }else{
@@ -363,7 +363,7 @@ minimumLineSpacingForSectionAtIndex:(NSInteger)section
 
 - (IBAction)invitationBtn:(UIButton *)sender {
     
-    [HttpClient POST:@"user/recomendInfo/get" parameters:@{@"token":[TTXUserInfo shareUserInfos].token} success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+    [HttpClient POST:@"user/recomendInfo/get" parameters:@{@"token":[TTXUserInfo shareUserInfos].token} success:^(NSURLSessionDataTask *operation, id jsonObject) {
         if (IsRequestTrue) {
             [UMSocialData defaultData].extConfig.wechatSessionData.url = NullToSpace(jsonObject[@"data"][@"url"]);
             [UMSocialData defaultData].extConfig.wechatTimelineData.url = NullToSpace(jsonObject[@"data"][@"url"]);
@@ -389,7 +389,7 @@ minimumLineSpacingForSectionAtIndex:(NSInteger)section
                                         shareToSnsNames:[NSArray arrayWithObjects:UMShareToWechatSession,UMShareToWechatTimeline,nil]
                                                delegate:self];
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
         
     }];
 }

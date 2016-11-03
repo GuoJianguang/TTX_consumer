@@ -51,11 +51,11 @@
 {
     NSDictionary *dic = @{@"id":@"",
                           @"token":[TTXUserInfo shareUserInfos].token};
-    [HttpClient POST:@"user/message/update" parameters:dic success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+    [HttpClient POST:@"user/message/update" parameters:dic success:^(NSURLSessionDataTask *operation, id jsonObject) {
         if (IsRequestTrue) {
             [self.tableView.mj_header beginRefreshing];
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
         [[JAlertViewHelper shareAlterHelper]showTint:@"网络连接不好，请稍后重试" duration:2.];
     }];
 }
@@ -65,7 +65,7 @@
     NSDictionary *parms = @{@"pageNo":@(self.page),
                             @"pageSize":MacoRequestPageCount,
                             @"token":[TTXUserInfo shareUserInfos].token};
-    [HttpClient GET:@"user/message/get" parameters:parms success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+    [HttpClient GET:@"user/message/get" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
         if (IsRequestTrue) {
             if (isHeader) {
                 [self.datasouceArray removeAllObjects];
@@ -89,7 +89,7 @@
         }else{
             [self.tableView.mj_footer endRefreshing];
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
         [self.tableView.mj_header endRefreshing];
         [self.tableView.mj_footer endRefreshing];
         [self.tableView showRereshBtnwithALerString:@"网络连接不好"];
@@ -133,11 +133,11 @@
     NSString *messageid = ((MessafeModel*)self.datasouceArray[indexPath.row]).messageid;
     NSDictionary *dic = @{@"id":messageid,
                           @"token":[TTXUserInfo shareUserInfos].token};
-    [HttpClient POST:@"user/message/update" parameters:dic success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+    [HttpClient POST:@"user/message/update" parameters:dic success:^(NSURLSessionDataTask *operation, id jsonObject) {
         if (IsRequestTrue) {
             [self.tableView.mj_header beginRefreshing];
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
         
     }];
 

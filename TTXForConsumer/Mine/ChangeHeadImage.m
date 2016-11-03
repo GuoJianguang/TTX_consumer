@@ -111,13 +111,13 @@
     
     __weak __typeof(self) weakSelf = self;
     
-    [HttpClient POST:@"user/getQiniuToken" parameters:nil success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+    [HttpClient POST:@"user/getQiniuToken" parameters:nil success:^(NSURLSessionDataTask *operation, id jsonObject) {
         
         NSString *qiniuToken = jsonObject[@"data"];
         
         [weakSelf upLoadImage:image withToken:qiniuToken];
         
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
         
     }];
 
@@ -168,7 +168,7 @@
                   }
                   NSDictionary *prams = @{@"avatar":resp[@"key"],
                                           @"token":[TTXUserInfo shareUserInfos].token};
-                  [HttpClient POST:@"user/userInfo/update" parameters:prams success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+                  [HttpClient POST:@"user/userInfo/update" parameters:prams success:^(NSURLSessionDataTask *operation, id jsonObject) {
                       if (IsRequestTrue) {
                           [TTXUserInfo shareUserInfos].avatar = jsonObject[@"data"][@"avatar"];
                           [SVProgressHUD showSuccessWithStatus:@"头像修改成功"];
@@ -176,7 +176,7 @@
 
                       }
                       
-                  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                  } failure:^(NSURLSessionDataTask *operation, NSError *error) {
                       
                   }];
                   

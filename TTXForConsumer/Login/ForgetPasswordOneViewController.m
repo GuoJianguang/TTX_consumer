@@ -92,13 +92,13 @@
             AFHTTPSessionManager *manager = [self defaultManager];
             NSMutableDictionary *mutalbleParameter = [NSMutableDictionary dictionaryWithDictionary:parms];
             NSString *url = [NSString stringWithFormat:@"%@%@",HttpClient_BaseUrl,@"verifyCode/getImageVerifyCode"];
-            [manager POST:url parameters:mutalbleParameter success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            [manager POST:url parameters:mutalbleParameter success:^(NSURLSessionDataTask *operation, id responseObject) {
                 [SVProgressHUD dismiss];
                 UIImage *image = [[UIImage alloc]initWithData:responseObject];
                 [self.getGraphBtn setBackgroundImage:image forState:UIControlStateNormal];
                 [self.getGraphBtn setTitle:@"" forState:UIControlStateNormal];
                 sender.enabled = YES;
-            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            } failure:^(NSURLSessionDataTask *operation, NSError *error) {
                 [[JAlertViewHelper shareAlterHelper]showTint:@"图形验证码获取失败，请重试" duration:2.];
                 sender.enabled = YES;
             }];
@@ -121,7 +121,7 @@
             //获取验证码
             NSDictionary *parms = @{@"phone":self.phone_num_tf.text,
                                     @"imageVerifyCode":self.grapTF.text};
-            [HttpClient POST:@"sms/sendForgetPwdCode" parameters:parms success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+            [HttpClient POST:@"sms/sendForgetPwdCode" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
                 sender.enabled = YES;
                 if (IsRequestTrue) {
                     [self.codeBtn setTitle:@"重新获取(60)" forState:UIControlStateNormal];
@@ -132,7 +132,7 @@
                     [[NSRunLoop currentRunLoop]addTimer:self.timer forMode:NSRunLoopCommonModes];
                 }
                 
-            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            } failure:^(NSURLSessionDataTask *operation, NSError *error) {
                 sender.enabled = YES;
             }];
             

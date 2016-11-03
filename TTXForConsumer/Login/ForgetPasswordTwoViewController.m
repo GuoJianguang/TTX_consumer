@@ -72,14 +72,14 @@
         NSDictionary *parms = @{@"phone":self.userName,
                                 @"verifyCode":self.verifyCode,
                                 @"password":password};
-        [HttpClient POST:@"user/findPassword" parameters:parms success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+        [HttpClient POST:@"user/findPassword" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
             [SVProgressHUD dismiss];
             if (IsRequestTrue) {
                 //设置用户信息
                 [SVProgressHUD showSuccessWithStatus:@"找回密码成功,请重新登录"];
                 [self.navigationController popToRootViewControllerAnimated:YES];
             }
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        } failure:^(NSURLSessionDataTask *operation, NSError *error) {
         }];
     }
 }

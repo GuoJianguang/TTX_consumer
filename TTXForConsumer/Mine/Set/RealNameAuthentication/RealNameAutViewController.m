@@ -108,7 +108,7 @@
         NSMutableDictionary *mutalbleParameter = [NSMutableDictionary dictionaryWithDictionary:parms];
         NSString *url = [NSString stringWithFormat:@"%@%@",HttpClient_BaseUrl,@"user/verifyIdcard"];
         [SVProgressHUD showWithStatus:@"正在请求..."];
-        [manager POST:url parameters:mutalbleParameter success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [manager POST:url parameters:mutalbleParameter success:^(NSURLSessionDataTask *operation, id responseObject) {
             [SVProgressHUD dismiss];
             sender.enabled = YES;
             @try {
@@ -185,7 +185,7 @@
             @finally {
             }
 
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        } failure:^(NSURLSessionDataTask *operation, NSError *error) {
             sender.enabled = YES;
             [SVProgressHUD dismiss];
             [[JAlertViewHelper shareAlterHelper]showTint:@"网络请求失败，请重试" duration:2.];

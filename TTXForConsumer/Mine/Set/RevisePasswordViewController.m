@@ -53,7 +53,7 @@
         NSDictionary *parms = @{@"oldPassword":oldPassword,
                                 @"token":[TTXUserInfo shareUserInfos].token,
                                 @"newPassword":newPassword};
-        [HttpClient POST:@"user/updatePassword" parameters:parms success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+        [HttpClient POST:@"user/updatePassword" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
             [SVProgressHUD dismiss];
             if (IsRequestTrue) {
                 //设置用户信息
@@ -61,7 +61,7 @@
                 [[NSUserDefaults standardUserDefaults]setObject:self.pasword_tf.text forKey:LoginUserPassword];
                 [self.navigationController popViewControllerAnimated:YES];
             }
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        } failure:^(NSURLSessionDataTask *operation, NSError *error) {
             [SVProgressHUD dismiss];
         }];
     }

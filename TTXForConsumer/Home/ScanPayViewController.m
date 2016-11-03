@@ -55,12 +55,12 @@
 - (void)detailRequest:(NSString *)code
 {
     NSDictionary *parms = @{@"code":code};
-    [HttpClient GET:@"mch/get" parameters:parms success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+    [HttpClient GET:@"mch/get" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
         if (IsRequestTrue) {
             self.mchInfo.text = [NSString stringWithFormat:@"商家信息：%@",NullToSpace(jsonObject[@"data"][@"name"])] ;
             self.mchName = [NSString stringWithFormat:@"商家信息：%@",NullToSpace(jsonObject[@"data"][@"name"])];
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
         
     }];
 }

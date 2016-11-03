@@ -94,7 +94,7 @@
 #pragma mark - 获取商品规格
 - (void)getGoodsSpec:(NSString *)goodsId
 {
-    [HttpClient GET:@"shop/goodsSpec/get" parameters:@{@"id":goodsId} success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+    [HttpClient GET:@"shop/goodsSpec/get" parameters:@{@"id":goodsId} success:^(NSURLSessionDataTask *operation, id jsonObject) {
         if (IsRequestTrue) {
             NSArray *array = jsonObject[@"data"];
             self.guigeArray = array;
@@ -110,7 +110,7 @@
             
             [self.tableView reloadData];
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
         
     }];
 }

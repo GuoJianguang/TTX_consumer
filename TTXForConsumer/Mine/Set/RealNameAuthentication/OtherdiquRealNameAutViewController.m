@@ -82,13 +82,13 @@
     if ([self valueValidated]) {
         __weak __typeof(self) weakSelf = self;
         [SVProgressHUD showWithStatus:@"正在发送请求" maskType:SVProgressHUDMaskTypeBlack];
-        [HttpClient POST:@"user/getQiniuToken" parameters:nil success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+        [HttpClient POST:@"user/getQiniuToken" parameters:nil success:^(NSURLSessionDataTask *operation, id jsonObject) {
             
             NSString *qiniuToken = jsonObject[@"data"];
             
             [weakSelf upLoadImage:self.uploadImageBtn.currentBackgroundImage withToken:qiniuToken];
             
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        } failure:^(NSURLSessionDataTask *operation, NSError *error) {
             [SVProgressHUD dismiss];
             sender.enabled = YES;
         }];
@@ -272,7 +272,7 @@
                                           @"cardNo":self.idCardNumTF.text,
                                           @"idcardName":self.nameTF.text,
                                           @"idPhoto":NullToSpace(self.idPhoto)};
-                  [HttpClient POST:@"user/verifyIdcardReq" parameters:parms success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+                  [HttpClient POST:@"user/verifyIdcardReq" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
                       self.sureBtn.enabled = YES;
                       [SVProgressHUD dismiss];
                       if (IsRequestTrue) {
@@ -282,7 +282,7 @@
                           [self.navigationController pushViewController:waitingVC animated:YES];
                       }
                       
-                  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                  } failure:^(NSURLSessionDataTask *operation, NSError *error) {
                       [SVProgressHUD dismiss];
                       [[JAlertViewHelper shareAlterHelper]showTint:@"认证失败,请稍后重试" duration:1.5];
                       self.sureBtn.enabled = YES;

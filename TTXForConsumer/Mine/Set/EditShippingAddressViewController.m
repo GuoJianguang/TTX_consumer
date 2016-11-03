@@ -93,13 +93,13 @@
     if (buttonIndex == 1) {
         NSDictionary *parms = @{@"token":[TTXUserInfo shareUserInfos].token,
                                 @"id":self.addressModel.addressId};
-        [HttpClient POST:@"user/userInfo/address/delete" parameters:parms success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+        [HttpClient POST:@"user/userInfo/address/delete" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
             if (IsRequestTrue) {
                 [[JAlertViewHelper shareAlterHelper]showTint:@"地址删除成功" duration:1.5];
                 [self.navigationController popViewControllerAnimated:YES];
             }
             
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        } failure:^(NSURLSessionDataTask *operation, NSError *error) {
             
         }];
     }
@@ -150,12 +150,12 @@
                                 @"defaultFlag":@"",
                                 };
         
-        [HttpClient POST:@"user/userInfo/address/add" parameters:parms success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+        [HttpClient POST:@"user/userInfo/address/add" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
             if (IsRequestTrue) {
                 [[JAlertViewHelper shareAlterHelper]showTint:@"地址添加成功" duration:1.5];
                 [self.navigationController popViewControllerAnimated:YES];
             }
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        } failure:^(NSURLSessionDataTask *operation, NSError *error) {
             
         }];
         
@@ -172,12 +172,12 @@
                             @"defaultFlag":self.addressModel.defaultFlag,
                             @"zipCode":self.ZipCodeTF.text,
                             @"id":self.addressModel.addressId};
-    [HttpClient POST:@"user/userInfo/address/update" parameters:parms success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+    [HttpClient POST:@"user/userInfo/address/update" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
         if (IsRequestTrue) {
             [[JAlertViewHelper shareAlterHelper]showTint:@"地址修改成功" duration:1.5];
             [self.navigationController popViewControllerAnimated:YES];
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
         
     }];
 

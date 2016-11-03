@@ -107,14 +107,14 @@
     [self.password_tf resignFirstResponder];
     if (self.payType == PayType_mallOrder) {//商品我的余额支付
         [self.mallOrderParms setObject:password forKey:@"password"];
-        [HttpClient POST:@"pay/balance" parameters:self.mallOrderParms success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+        [HttpClient POST:@"pay/balance" parameters:self.mallOrderParms success:^(NSURLSessionDataTask *operation, id jsonObject) {
             sender.enabled = YES;
             if (IsRequestTrue) {
                 if ([self.delegate respondsToSelector:@selector(paysuccess:)]) {
                     [self.delegate paysuccess:@"余额支付"];
                 }
             }
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        } failure:^(NSURLSessionDataTask *operation, NSError *error) {
             sender.enabled = YES;
             if ([self.delegate respondsToSelector:@selector(payfail)]) {
                 [self.delegate payfail];
@@ -126,7 +126,7 @@
                                 @"orderId":self.dataModel.orderId,
                                 @"flag":@"true",
                                 @"password":password};
-        [HttpClient POST:@"user/order/confirm" parameters:prams success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+        [HttpClient POST:@"user/order/confirm" parameters:prams success:^(NSURLSessionDataTask *operation, id jsonObject) {
             sender.enabled = YES;
             if (IsRequestTrue) {
                 self.password_view.hidden = YES;
@@ -158,19 +158,19 @@
                 }
             }
             
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        } failure:^(NSURLSessionDataTask *operation, NSError *error) {
             sender.enabled = YES;
         }];
     }else if (self.payType == PayType_OnlineMchantOrder){
         [self.mallOrderParms setObject:password forKey:@"password"];
-        [HttpClient POST:@"pay/mch/balance" parameters:self.mallOrderParms success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+        [HttpClient POST:@"pay/mch/balance" parameters:self.mallOrderParms success:^(NSURLSessionDataTask *operation, id jsonObject) {
             sender.enabled = YES;
             if (IsRequestTrue) {
                 if ([self.delegate respondsToSelector:@selector(paysuccess:)]) {
                     [self.delegate paysuccess:@"余额支付"];
                 }
             }
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        } failure:^(NSURLSessionDataTask *operation, NSError *error) {
             sender.enabled = YES;
             if ([self.delegate respondsToSelector:@selector(payfail)]) {
                 [self.delegate payfail];

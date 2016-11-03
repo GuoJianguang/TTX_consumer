@@ -64,14 +64,14 @@
     }
     NSDictionary *parms = @{@"token":[TTXUserInfo shareUserInfos].token,
                             @"content":self.textView.text};
-    [HttpClient POST:@"user/question/add" parameters:parms success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+    [HttpClient POST:@"user/question/add" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
         if (IsRequestTrue) {
             self.alerLabel.hidden = NO;
             self.textView.text = @"";
             [[JAlertViewHelper shareAlterHelper]showTint:@"我们已经收到您的宝贵意见,我们会即使处理，谢谢！" duration:1.5];
         }
         
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
         
     }];
 }

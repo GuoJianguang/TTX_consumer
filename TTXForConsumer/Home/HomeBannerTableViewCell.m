@@ -120,7 +120,7 @@
 {
     NSString *searchCity = [[TTXUserInfo shareUserInfos].locationCity substringToIndex:2];
     NSDictionary *parms = @{@"city":searchCity};
-    [HttpClient GET:@"advert/index/list" parameters:parms success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+    [HttpClient GET:@"advert/index/list" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
         if (IsRequestTrue) {
             [self.bannerArray removeAllObjects];
             NSArray *array = jsonObject[@"data"];
@@ -133,7 +133,7 @@
         }
         self.pageView.numberOfPages = self.bannerArray.count;
         [self.swipeView reloadData];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
         
     }];
 }
@@ -143,7 +143,7 @@
 {
     NSString *searchCity = [[TTXUserInfo shareUserInfos].locationCity substringToIndex:2];
     NSDictionary *parms = @{@"city":searchCity};
-    [HttpClient GET:@"activity/index/list" parameters:parms success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+    [HttpClient GET:@"activity/index/list" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
         if (IsRequestTrue) {
             [self.activityArray removeAllObjects];
             NSArray *array = jsonObject[@"data"];
@@ -177,7 +177,7 @@
                 self.fiveView.hidden = YES;
             }
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
         
     }];
 }
@@ -238,7 +238,7 @@
 //获取所有商品类型
 - (void)getGoodsTypeRequest
 {
-    [HttpClient GET:@"shop/goodsType/get" parameters:nil success:^(AFHTTPRequestOperation *operation, id jsonObject) {
+    [HttpClient GET:@"shop/goodsType/get" parameters:nil success:^(NSURLSessionDataTask *operation, id jsonObject) {
         if (IsRequestTrue) {
             [self.sortDatasouceArray removeAllObjects];
             NSArray *array = jsonObject[@"data"];
@@ -265,7 +265,7 @@
             self.specialImage3.layer.masksToBounds = YES;
             self.specialLabel3.text = model3.name;
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
         
     }];
 }
