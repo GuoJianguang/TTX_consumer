@@ -110,7 +110,7 @@
 // * 传递 token 的具体实现。如果需要传递token 请实现子类的该方法
 // * 可以通过 parameters 参数进行传递，也可以通过manager 在 HttpHeader中添加
 // */
-//+(void) addTokenWithParameter:(NSMutableDictionary*) parameters manager:(AFHTTPRequestOperationManager*)manager;
+//+(void) addTokenWithParameter:(NSMutableDictionary*) parameters manager:(AFHTTPSessionManager*)manager;
 //
 ///*
 // * 文件的上传和下载

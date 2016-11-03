@@ -89,7 +89,7 @@
         if (success) {
             NSDictionary *parms = @{@"phone":self.phone_num_tf.text,
                                     @"key":@"forgetPwd"};
-            AFHTTPRequestOperationManager *manager = [self defaultManager];
+            AFHTTPSessionManager *manager = [self defaultManager];
             NSMutableDictionary *mutalbleParameter = [NSMutableDictionary dictionaryWithDictionary:parms];
             NSString *url = [NSString stringWithFormat:@"%@%@",HttpClient_BaseUrl,@"verifyCode/getImageVerifyCode"];
             [manager POST:url parameters:mutalbleParameter success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -257,8 +257,8 @@
 
 
 
--(AFHTTPRequestOperationManager*) defaultManager {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+-(AFHTTPSessionManager*) defaultManager {
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     AFHTTPRequestSerializer *requestSerializer = [AFHTTPRequestSerializer serializer];
     requestSerializer.stringEncoding = RequestSerializerEncoding;
     requestSerializer.timeoutInterval = TimeoutInterval;

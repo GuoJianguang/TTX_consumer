@@ -104,7 +104,7 @@
         NSDictionary *parms = @{@"token":[TTXUserInfo shareUserInfos].token,
                                 @"cardNo":self.idCardNumTF.text,
                                 @"idcardName":self.nameTF.text};
-        AFHTTPRequestOperationManager *manager = [self defaultManager];
+        AFHTTPSessionManager *manager = [self defaultManager];
         NSMutableDictionary *mutalbleParameter = [NSMutableDictionary dictionaryWithDictionary:parms];
         NSString *url = [NSString stringWithFormat:@"%@%@",HttpClient_BaseUrl,@"user/verifyIdcard"];
         [SVProgressHUD showWithStatus:@"正在请求..."];
@@ -234,8 +234,8 @@
 }
 
 
--(AFHTTPRequestOperationManager*) defaultManager {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+-(AFHTTPSessionManager*) defaultManager {
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     AFHTTPRequestSerializer *requestSerializer = [AFHTTPRequestSerializer serializer];
     requestSerializer.stringEncoding = RequestSerializerEncoding;
     requestSerializer.timeoutInterval = TimeoutInterval;
