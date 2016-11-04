@@ -31,6 +31,9 @@
  */
 @property (nonatomic, copy)NSString  *name;
 
+//是否有跳转
+@property (nonatomic, assign)BOOL isJump;
+
 @end
 
 @interface  HomeActivityModel: BaseModel

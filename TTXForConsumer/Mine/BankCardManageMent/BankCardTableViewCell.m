@@ -72,8 +72,8 @@
     self.kaihuhangTF.inputView = self.kaihuhangPicker;
     
     self.tempProName = self.cityPicker.dataSouceArray[0][@"bankName"];
-    self.tempBankName = @"农业银行";
-    self.bank_id = @"2";
+    self.tempBankName = @"";
+    self.bank_id = @"";
     self.bankCardNu.delegate = self;
     
     self.zhiHangViewH.constant = 0;
@@ -149,9 +149,9 @@
         self.bingdingBtn.hidden = YES;
         self.editView.hidden = YES;
     }else{
-        self.tempBankName = @"农业银行";
-        self.bank_id = @"2";
-        self.bankLabel.text = self.tempBankName;
+        self.tempBankName = @"中国银行";
+        self.bank_id = @"1";
+//        self.bankLabel.text = self.tempBankName;
         self.bingdingBtn.hidden = NO;
         self.editView.hidden = YES;
     }
@@ -407,10 +407,10 @@
         }else{
             self.inputKaihuhangTF.text = @"";
         }
-        if (![self.bank_id isEqualToString:@"2"]) {
-            [[JAlertViewHelper shareAlterHelper]showTint:@"您只能绑定农业银行的银行卡" duration:1.5];
-            return;
-        }
+//        if (![self.bank_id isEqualToString:@"2"]) {
+//            [[JAlertViewHelper shareAlterHelper]showTint:@"您只能绑定农业银行的银行卡" duration:1.5];
+//            return;
+//        }
         NSDictionary *parms = @{@"bankId":self.bank_id,
                                 @"bankAccount":bankNum,
                                 @"realName":self.nameTF.text,
@@ -491,10 +491,10 @@
         [[JAlertViewHelper shareAlterHelper]showTint:@"您输入的开户行号只能是12位的数字" duration:1.];
         return NO;
     }
-    if (![self.bank_id isEqualToString:@"2"]) {
-        [[JAlertViewHelper shareAlterHelper]showTint:@"您只能绑定农业银行的银行卡" duration:1.5];
-        return NO;
-    }
+//    if (![self.bank_id isEqualToString:@"2"]) {
+//        [[JAlertViewHelper shareAlterHelper]showTint:@"您只能绑定农业银行的银行卡" duration:1.5];
+//        return NO;
+//    }
     if (!self.selcetZHNumBtn.selected) {
         if ([self emptyTextOfTextField:self.wangdianTF]) {
             [[JAlertViewHelper shareAlterHelper]showTint:@"请选择开户网点" duration:1.];
@@ -640,7 +640,6 @@
         [self.provincesTF setText:[NSString stringWithFormat:@"%@",self.tempProName]];
     }
     if (textField == self.bankLabel) {
-        self.bank_id = @"2";
         [self.bankLabel setText:[NSString stringWithFormat:@"%@",self.tempBankName]];
     }
     if (textField == self.kaihuhangTF) {

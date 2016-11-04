@@ -57,7 +57,6 @@
         self.bgimage.contentMode = UIViewContentModeScaleAspectFill;
         self.bgimage.layer.masksToBounds = YES;
     }
-    
 }
 
 - (IBAction)login_btn:(UIButton *)sender

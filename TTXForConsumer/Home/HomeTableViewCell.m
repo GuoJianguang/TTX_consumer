@@ -89,14 +89,23 @@
             NSArray *array = jsonObject[@"data"];
             for (NSDictionary *dic in array) {
                 HomeModel *model = [HomeModel modelWithDic:dic];
+                model.isJump = YES;
                 [self.bannerArray addObject:model];
             }
             [self.swipeView reloadData];
             [[AutoScroller shareAutoScroller]autoSwipeView:self.swipeView WithPageView:self.pageView WithDataSouceArray:self.bannerArray];
         }
+        self.pageView.hidden = NO;
         self.pageView.numberOfPages = self.bannerArray.count;
         [self.swipeView reloadData];
     } failure:^(NSURLSessionDataTask *operation, NSError *error) {
+        [self.bannerArray removeAllObjects];
+        HomeModel *model = [[HomeModel alloc]init];
+        model.pic = @"";
+        model.isJump = NO;
+        [self.bannerArray addObject:model];
+        self.pageView.hidden = YES;
+        [self.swipeView reloadData];
         
     }];
 }
@@ -162,6 +171,9 @@
 -(void)swipeView:(SwipeView *)swipeView didSelectItemAtIndex:(NSInteger)index
 {
     HomeModel *model = self.bannerArray[index];
+    if (!model.isJump) {
+        return;
+    }
     switch ([model.jumpWay integerValue]) {
         case 1://跳转app商户详情
         {
