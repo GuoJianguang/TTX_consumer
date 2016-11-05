@@ -9,7 +9,7 @@
 #ifndef BaiduMobAdSdk_BaiduMobAdCommonConfig_h
 #define BaiduMobAdSdk_BaiduMobAdCommonConfig_h
 // SDK版本号
-#define SDK_VERSION_IN_MSSP @"4.2"
+#define SDK_VERSION_IN_MSSP @"4.4"
 
 typedef enum {
     NORMAL, // 一般图文或图片广告
@@ -70,5 +70,13 @@ typedef enum {
     BaiduMobAdLpStyleLightBlue,
     BaiduMobAdLpStyleBlack
 } BaiduMobAdLpStyle;
+
+/**
+ *  度宝初始化位置，在屏幕左侧还是右侧
+ */
+typedef enum {
+    BaiduMobAdDubaoPositionLeft,
+    BaiduMobAdDubaoPositionRight
+} BaiduMobAdDubaoPosition;
 
 #endif

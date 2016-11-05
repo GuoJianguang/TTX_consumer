@@ -93,18 +93,18 @@
     self.isAlreadyRefrefsh = YES;
     //开启定位服务
     [self loadDataUseLocation];
-    [self performSelector:@selector(guanbi) withObject:nil afterDelay:5.];
+//    [self performSelector:@selector(guanbi) withObject:nil afterDelay:5.];
 }
 
 #pragma mark - 关闭广告
-- (void)guanbi
-{
-    if (((AppDelegate *)[UIApplication sharedApplication].delegate).splash) {
-        ((AppDelegate *)[UIApplication sharedApplication].delegate).splash.delegate = nil;
-        ((AppDelegate *)[UIApplication sharedApplication].delegate).splash = nil;
-        [((AppDelegate *)[UIApplication sharedApplication].delegate).customSplashView removeFromSuperview];
-    }
-}
+//- (void)guanbi
+//{
+//    if (((AppDelegate *)[UIApplication sharedApplication].delegate).splash) {
+//        ((AppDelegate *)[UIApplication sharedApplication].delegate).splash.delegate = nil;
+//        ((AppDelegate *)[UIApplication sharedApplication].delegate).splash = nil;
+//        [((AppDelegate *)[UIApplication sharedApplication].delegate).customSplashView removeFromSuperview];
+//    }
+//}
 - (MerchantSearchViewController *)searchVC
 {
     if (!_searchVC) {

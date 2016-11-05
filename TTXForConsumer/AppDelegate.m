@@ -75,7 +75,7 @@
 //    label.textAlignment = NSTextAlignmentCenter;
 //    [self.customSplashView addSubview:label];
 //在的baiduSplashContainer里展现百度广告
-    [splash loadAndDisplayUsingContainerView:baiduSplashContainer];
+    [splash loadAndDisplayUsingContainerView:self.customSplashView];
     return YES;
 }
 

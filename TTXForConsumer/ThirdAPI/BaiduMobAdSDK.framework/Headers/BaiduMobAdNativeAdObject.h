@@ -27,6 +27,17 @@
  * 大图 url
  */
 @property (copy, nonatomic) NSString *mainImageURLString;
+
+/**
+ * 广告标识图标 url
+ */
+@property (copy, nonatomic) NSString *adLogoURLString;
+
+/**
+ * 百度logo图标 url
+ */
+@property (copy, nonatomic) NSString *baiduLogoURLString;
+
 /**
  * 多图信息流的image url array
  */
@@ -59,7 +70,7 @@
  */
 -(BOOL) isExpired;
 
-#warning 重要，一定要调用这个方法发送视频状态事件和当前视频播放的位置，
+//#warning 重要，一定要调用这个方法发送视频状态事件和当前视频播放的位置
 /**
  * 发送视频广告相关日志
  * @param currentPlaybackTime 播放器当前时间，单位为s

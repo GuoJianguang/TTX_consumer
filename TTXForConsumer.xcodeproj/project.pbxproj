@@ -357,7 +357,7 @@
 		2DEE96211D27BE5800B46AB1 /* SharkItOff.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DEE96201D27BE5800B46AB1 /* SharkItOff.xcassets */; };
 		2DF504F01D3237C000F18498 /* SureGoodsOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DF504EF1D3237C000F18498 /* SureGoodsOrderTableViewCell.xib */; };
 		8F88938659FF13352B77A710 /* libPods-TTXForConsumer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E774D5DE23C8831077C2BD2C /* libPods-TTXForConsumer.a */; };
-		BCB06D821D740AF70035A369 /* BaiduMobAdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCB06D811D740AF70035A369 /* BaiduMobAdSDK.framework */; };
+		BC0A21A51DCE06B6003DA687 /* BaiduMobAdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC0A21A41DCE06B6003DA687 /* BaiduMobAdSDK.framework */; };
 		BCBA43681DB61A6200E9E7E8 /* OnlineMerCityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBA43661DB61A6200E9E7E8 /* OnlineMerCityTableViewCell.m */; };
 		BCBA43691DB61A6200E9E7E8 /* OnlineMerCityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCBA43671DB61A6200E9E7E8 /* OnlineMerCityTableViewCell.xib */; };
 		BCBA436D1DB61C9200E9E7E8 /* OnlineMerCityCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBA436B1DB61C9200E9E7E8 /* OnlineMerCityCollectionViewCell.m */; };
@@ -966,7 +966,7 @@
 		2DEE96201D27BE5800B46AB1 /* SharkItOff.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SharkItOff.xcassets; sourceTree = "<group>"; };
 		2DF504EF1D3237C000F18498 /* SureGoodsOrderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SureGoodsOrderTableViewCell.xib; sourceTree = "<group>"; };
 		9224DB1A4C1073BF7D34FE20 /* Pods-TTXForConsumer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTXForConsumer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TTXForConsumer/Pods-TTXForConsumer.debug.xcconfig"; sourceTree = "<group>"; };
-		BCB06D811D740AF70035A369 /* BaiduMobAdSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMobAdSDK.framework; sourceTree = "<group>"; };
+		BC0A21A41DCE06B6003DA687 /* BaiduMobAdSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMobAdSDK.framework; sourceTree = "<group>"; };
 		BCBA43651DB61A6200E9E7E8 /* OnlineMerCityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlineMerCityTableViewCell.h; sourceTree = "<group>"; };
 		BCBA43661DB61A6200E9E7E8 /* OnlineMerCityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlineMerCityTableViewCell.m; sourceTree = "<group>"; };
 		BCBA43671DB61A6200E9E7E8 /* OnlineMerCityTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnlineMerCityTableViewCell.xib; sourceTree = "<group>"; };
@@ -1017,7 +1017,7 @@
 				2D67CCA11D1B878200BB99B4 /* libWeChatSDK.a in Frameworks */,
 				2D67CC921D1B878200BB99B4 /* TencentOpenAPI.framework in Frameworks */,
 				2DA973CE1D1283B100A605F9 /* AMapLocationKit.framework in Frameworks */,
-				BCB06D821D740AF70035A369 /* BaiduMobAdSDK.framework in Frameworks */,
+				BC0A21A51DCE06B6003DA687 /* BaiduMobAdSDK.framework in Frameworks */,
 				2DA973D01D1283B100A605F9 /* MAMapKit.framework in Frameworks */,
 				2D67CC911D1B878200BB99B4 /* libSocialQQ.a in Frameworks */,
 				2D67CCA01D1B878200BB99B4 /* libSocialWechat.a in Frameworks */,
@@ -1526,7 +1526,7 @@
 		2DA9738E1D127BC500A605F9 /* ThirdAPI */ = {
 			isa = PBXGroup;
 			children = (
-				BCB06D811D740AF70035A369 /* BaiduMobAdSDK.framework */,
+				BC0A21A41DCE06B6003DA687 /* BaiduMobAdSDK.framework */,
 				2DB94F9C1D2A8E33003A6DEA /* ZLPhotoLib */,
 				2D67CC671D1B878200BB99B4 /* share */,
 				2D7216951D12A55000D3F7D6 /* SwipeView */,

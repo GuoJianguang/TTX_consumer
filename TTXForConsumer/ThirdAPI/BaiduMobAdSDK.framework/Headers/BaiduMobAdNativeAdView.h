@@ -55,6 +55,16 @@ typedef void (^BaiduMobAdViewCompletionBlock)(NSArray *errors);
  * 大图
  */
 @property (assign, nonatomic)  UIImageView *mainImageView;
+
+/**
+ * 广告标示
+ */
+@property (assign, nonatomic)  UIImageView *adLogoImageView;
+/**
+ * 百度广告logo
+ */
+@property (assign, nonatomic)  UIImageView *baiduLogoImageView;
+
 /**
  * 标题 view
  */
