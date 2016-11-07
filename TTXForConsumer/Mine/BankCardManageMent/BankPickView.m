@@ -62,8 +62,9 @@
                                                                @{@"bankId":@"5",@"bankName":@"招商银行"},
                                                                @{@"bankId":@"6",@"bankName":@"成都银行"},
                                                                @{@"bankId":@"7",@"bankName":@"民生银行"},
-                                                               @{@"bankId":@"8",@"bankName":@"邮储银行"},
-                                                               @{@"bankId":@"9",@"bankName":@"农村信用社"},]];
+                                                               @{@"bankId":@"30",@"bankName":@"交通银行"}]];
+//        @{@"bankId":@"8",@"bankName":@"邮储银行"},
+//        @{@"bankId":@"9",@"bankName":@"农村信用社"}
     }else{
         [self.dataSouceArray removeAllObjects];
         NSBundle *bundle=[NSBundle mainBundle];
