@@ -40,7 +40,7 @@
 
 //账户余额
 @property (weak, nonatomic) IBOutlet UILabel *accountBalance;
-//待返现金额
+//待回馈金额
 @property (weak, nonatomic) IBOutlet UILabel *WaitCashbackAmount;
 //总消费金额
 @property (weak, nonatomic) IBOutlet UILabel *totalConsumeAmount;

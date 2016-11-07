@@ -12,7 +12,7 @@
 #import "OderListViewController.h"
 
 static NSString *infomation = @"infomation";//消息列表
-static NSString *feedback = @"feedback";//账户返现
+static NSString *feedback = @"feedback";//账户回馈
 static NSString *withdraw = @"withdraw";//账户提现
 static NSString *waitPay = @"waitPay";//待付款
 static NSString *waitReceive = @"waitReceive";//待收货
@@ -52,7 +52,7 @@ static NSString *waitReceive = @"waitReceive";//待收货
     }
 }
 
-//接收返现信息的推送
+//接收回馈信息的推送
 
 - (void)fanxian:(NSNotification *)faication
 {

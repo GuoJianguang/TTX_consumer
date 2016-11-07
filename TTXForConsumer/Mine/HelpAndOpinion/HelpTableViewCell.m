@@ -37,10 +37,19 @@
 - (void)setDataModel:(HelpModel *)dataModel
 {
     _dataModel = dataModel;
+    self.name.numberOfLines = 0;
     self.name.text = _dataModel.question;
     self.answerLabel.text = _dataModel.answer;
+    self.itemViewHeight.constant = [self cellQuestionrHeight:_dataModel];
 
 }
+
+- (CGFloat)cellQuestionrHeight:(HelpModel *)model
+{
+    CGSize size = [model.question boundingRectWithSize:CGSizeMake(TWitdh  - 62, 0) font:[UIFont systemFontOfSize:15]] ;
+    return size.height + 20;
+}
+
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

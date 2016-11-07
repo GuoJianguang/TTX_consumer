@@ -108,7 +108,7 @@
 }
 
 #pragma mark - 网络数据请求
-//每日返现
+//每日回馈
 - (void)RequestIsHeader:(BOOL)isHeader withType:(WalletDymic_type)type
 {
     

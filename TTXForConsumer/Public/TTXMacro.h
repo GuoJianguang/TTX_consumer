@@ -64,7 +64,7 @@
 //微信支付的结果回调
 #define WeixinPayResult @"WeixinPayResult"
 
-//接收返现信息的推送
+//接收回馈信息的推送
 #define Upush_Notifi @"Upush_Fanxian_Notifi"
 //账户提现信息推送
 #define Upush_tixian_Notifi @"Upush_tixian_Notifi"

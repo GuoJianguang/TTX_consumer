@@ -86,7 +86,7 @@
 
 //消费的model
 @property (nonatomic, strong)XiaofeiModel *xiaofeiDataModel;
-////返现的model
+////回馈的model
 //@property (nonatomic, strong)FanXianModel *fanXianDataModel;
 //提现的model
 //@property (nonatomic, strong)TixianModel *tixianDataModel;

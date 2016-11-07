@@ -40,8 +40,6 @@
 // GBK 编码
 #define GBKEncoding CFStringConvertEncodingToNSStringEncoding(0x0632)
 
-#define formal_baseTest @"http://192.168.0.118:8080/ttx-api/2.1.1/"
-
 //#define formal_base @"http://test.p.tiantianxcn.com/ttx-api/2.2.1/"
 #define formal_base @"http://api.tiantianxcn.com/ttx-api/2.2.1/"
 

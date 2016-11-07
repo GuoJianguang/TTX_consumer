@@ -83,8 +83,7 @@
 {
     HelpTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[HelpTableViewCell indentify]];
     if (!cell) {
-        cell = [HelpTableViewCell
-                newCell];
+        cell = [HelpTableViewCell newCell];
     }
     cell.dataModel = self.dataSouceArray[indexPath.row];
     if (temp == indexPath.row && isOpen) {
@@ -110,11 +109,18 @@
 {
     if (isOpen) {
         if (indexPath.row == temp) {
-            return  50 + [self cellHeight:self.dataSouceArray[indexPath.row]];
+            return  [self cellQuestionrHeight:self.dataSouceArray[indexPath.row]] + [self cellHeight:self.dataSouceArray[indexPath.row]];
         }
     }
-    return 50;
+    return [self cellQuestionrHeight:self.dataSouceArray[indexPath.row]];
 }
+
+- (CGFloat)cellQuestionrHeight:(HelpModel *)model
+{
+    CGSize size = [model.question boundingRectWithSize:CGSizeMake(TWitdh  - 62, 0) font:[UIFont systemFontOfSize:15]] ;
+    return size.height + 20;
+}
+
 
 - (CGFloat)cellHeight:(HelpModel *)model
 {
