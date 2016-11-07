@@ -52,7 +52,7 @@
     NSDictionary *dic3 = @{@"name":@"推荐收益",
                            @"isSelect":@0};
     MerchantSort *sort3 =[MerchantSort modelWithDic:dic3];
-    NSDictionary *dic4 = @{@"name":@"每日返现",
+    NSDictionary *dic4 = @{@"name":@"每日回馈",
                            @"isSelect":@0};
     MerchantSort *sort4 =[MerchantSort modelWithDic:dic4];
     if ([[TTXUserInfo shareUserInfos].feedbackCount integerValue] > 0) {

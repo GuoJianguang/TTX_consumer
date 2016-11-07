@@ -71,7 +71,7 @@
     [self functionItem:self.withDraw withImageNamed:@"icon_mine_cash_withdrawal" title:@"金额提现"];
     [self functionItem:self.walltDynamic withImageNamed:@"icon_mine_purse_dynamics" title:@"钱包动态"];
     [self functionItem:self.bankManagement withImageNamed:@"icon_mine_managing_bank_card" title:@"管理银行卡"];
-    self.backTotal.text = [NSString stringWithFormat:@"欢迎您加入天添薪返现平台！"];
+    self.backTotal.text = [NSString stringWithFormat:@"欢迎您加入天添薪平台！"];
 
     
     [self searchUserInfor];

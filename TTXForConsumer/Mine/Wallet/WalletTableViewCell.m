@@ -118,7 +118,6 @@
             break;
         case 3:
             self.typeImage.image = [UIImage imageNamed:@"icon_mine_balance_cash_withdrawal_successful"];
-
             self.name.text = @"余额提现-提现成功";
             break;
         case 4:
@@ -135,7 +134,7 @@
 - (void)setFanxianModel:(FanXianModel *)fanxianModel
 {
     _fanxianModel = fanxianModel;
-    self.name.text = @"平台返现";
+    self.name.text = @"平台回馈";
     self.typeImage.image = [UIImage imageNamed:@"icon_mine_platform_return"];
     self.money.text = [NSString stringWithFormat:@"%.2f",[_fanxianModel.amount doubleValue]] ;
     self.time.text = _fanxianModel.tranTime;

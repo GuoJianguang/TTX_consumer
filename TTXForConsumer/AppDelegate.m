@@ -69,13 +69,7 @@
 //在baiduSplashContainer用做上展现百度广告的容器，注意尺寸必须大于200*200，并且baiduSplashContainer需要全部在window内，同时开机画面不建议旋转
     UIView * baiduSplashContainer = [[UIView alloc]initWithFrame:CGRectMake(0, 0, screenWidth, screenHeight)];
     [self.customSplashView addSubview:baiduSplashContainer];
-    
-//    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, screenHeight, screenWidth, 20)];
-//    label.text = @"上方为开屏广告位";
-//    label.textAlignment = NSTextAlignmentCenter;
-//    [self.customSplashView addSubview:label];
-//在的baiduSplashContainer里展现百度广告
-    [splash loadAndDisplayUsingContainerView:self.customSplashView];
+    [splash loadAndDisplayUsingContainerView:baiduSplashContainer];
     return YES;
 }
 
