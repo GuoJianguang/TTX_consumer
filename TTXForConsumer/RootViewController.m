@@ -28,7 +28,6 @@ static NSString *waitReceive = @"waitReceive";//待收货
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationBar.hidden = YES;
-    
     //接收的推送
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fanxian:) name:Upush_Notifi object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(autoLogin) name:AutoLoginAfterGetDeviceToken object:nil];

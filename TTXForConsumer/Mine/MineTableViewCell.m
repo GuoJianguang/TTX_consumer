@@ -19,6 +19,9 @@
 #import "MineViewController.h"
 #import "CustomIOSAlertView.h"
 #import "RealNameAutViewController.h"
+#import "MyLoveAccountViewController.h"
+#import "JoinLoveAccountViewController.h"
+
 
 
 @interface MineTableViewCell()
@@ -50,6 +53,7 @@
     self.myWalletLabel.textColor = MacoTitleColor;
     self.mytuijianLabel.textColor = MacoColor;
     self.mySetLabel.textColor = MacoTitleColor;
+    self.myloveLabel.textColor = MacoTitleColor;
     self.myHelpLabel.textColor = MacoTitleColor;
     self.myAboutLabel.textColor = MacoTitleColor;
     self.accountBalance.textColor = MacoColor;
@@ -497,6 +501,16 @@
 - (IBAction)aboutUsBtn:(UIButton *)sender {
     AboutUsViewController *aboutsVC = [[AboutUsViewController alloc]init];
     [self.viewController.navigationController pushViewController:aboutsVC animated:YES];
+}
+
+//我的爱心账户
+- (IBAction)mylvoeBtn:(UIButton *)sender {
+//    MyLoveAccountViewController *loveAccountVC = [[MyLoveAccountViewController alloc]init];
+//    [self.viewController.navigationController pushViewController:loveAccountVC animated:YES];
+    
+    JoinLoveAccountViewController *joinVC = [[JoinLoveAccountViewController alloc]init];
+    [self.viewController.navigationController pushViewController:joinVC animated:YES];
+    
 }
 
 

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JoinLoveAccountViewController">
+            <connections>
+                <outlet property="expainTextView" destination="8WU-yr-7oS" id="uTd-C8-RbC"/>
+                <outlet property="joinBtn" destination="KAR-Ja-12x" id="dvj-fC-Rrd"/>
+                <outlet property="view" destination="jPL-I3-lXd" id="OgD-0F-kaA"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="jPL-I3-lXd">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zdV-1n-OiN">
+                    <rect key="frame" x="0.0" y="572" width="375" height="95"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zbu-Is-oA6">
+                            <rect key="frame" x="0.0" y="25" width="375" height="70"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您还不是爱心协会会员，可微信支付9元成为会员，点击按钮立即加入" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5SI-1G-fkh">
+                                    <rect key="frame" x="30" y="23.5" width="315" height="33.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <color key="textColor" red="0.8862745098" green="0.36470588240000001" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="70" id="6uN-HW-Vih"/>
+                                <constraint firstItem="5SI-1G-fkh" firstAttribute="leading" secondItem="Zbu-Is-oA6" secondAttribute="leading" constant="30" id="Ohq-ZZ-HkO"/>
+                                <constraint firstItem="5SI-1G-fkh" firstAttribute="centerY" secondItem="Zbu-Is-oA6" secondAttribute="centerY" constant="5" id="TlV-FC-PRN"/>
+                                <constraint firstAttribute="trailing" secondItem="5SI-1G-fkh" secondAttribute="trailing" constant="30" id="Zbu-Tp-v3n"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zgx-FY-pIT">
+                            <rect key="frame" x="0.0" y="24" width="375" height="1"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="dXL-Z8-X1D"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KAR-Ja-12x">
+                            <rect key="frame" x="163" y="-0.5" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="wIE-U1-oJF"/>
+                                <constraint firstAttribute="height" constant="50" id="xxi-Tw-8wr"/>
+                            </constraints>
+                            <state key="normal" image="icon_mine_invite_business">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="joinBtn:" destination="-1" eventType="touchUpInside" id="xgU-Pj-rwY"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="Zbu-Is-oA6" firstAttribute="top" secondItem="zgx-FY-pIT" secondAttribute="bottom" id="1Ed-ZD-cId"/>
+                        <constraint firstItem="Zbu-Is-oA6" firstAttribute="leading" secondItem="zdV-1n-OiN" secondAttribute="leading" id="LBg-dd-AyE"/>
+                        <constraint firstItem="zgx-FY-pIT" firstAttribute="leading" secondItem="zdV-1n-OiN" secondAttribute="leading" id="Qg8-hp-YTR"/>
+                        <constraint firstAttribute="height" constant="95" id="dFo-1z-59t"/>
+                        <constraint firstItem="KAR-Ja-12x" firstAttribute="centerX" secondItem="zdV-1n-OiN" secondAttribute="centerX" id="fMz-Vs-Zmc"/>
+                        <constraint firstAttribute="trailing" secondItem="Zbu-Is-oA6" secondAttribute="trailing" id="p3w-b6-Cm3"/>
+                        <constraint firstAttribute="bottom" secondItem="Zbu-Is-oA6" secondAttribute="bottom" id="r0U-Tu-SM4"/>
+                        <constraint firstItem="KAR-Ja-12x" firstAttribute="centerY" secondItem="zgx-FY-pIT" secondAttribute="centerY" id="yaY-cj-dA8"/>
+                        <constraint firstAttribute="trailing" secondItem="zgx-FY-pIT" secondAttribute="trailing" id="ymD-53-WnM"/>
+                    </constraints>
+                </view>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8WU-yr-7oS">
+                    <rect key="frame" x="10" y="64" width="355" height="508"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="8WU-yr-7oS" firstAttribute="leading" secondItem="jPL-I3-lXd" secondAttribute="leading" constant="10" id="3Yp-AJ-P6P"/>
+                <constraint firstItem="zdV-1n-OiN" firstAttribute="top" secondItem="8WU-yr-7oS" secondAttribute="bottom" id="FQE-lK-FZb"/>
+                <constraint firstAttribute="bottom" secondItem="zdV-1n-OiN" secondAttribute="bottom" id="JyV-5M-dEU"/>
+                <constraint firstItem="8WU-yr-7oS" firstAttribute="top" secondItem="jPL-I3-lXd" secondAttribute="top" constant="64" id="M7L-FS-gif"/>
+                <constraint firstAttribute="trailing" secondItem="8WU-yr-7oS" secondAttribute="trailing" constant="10" id="Rfy-hx-T8L"/>
+                <constraint firstAttribute="trailing" secondItem="zdV-1n-OiN" secondAttribute="trailing" id="nY9-cT-gfj"/>
+                <constraint firstItem="zdV-1n-OiN" firstAttribute="leading" secondItem="jPL-I3-lXd" secondAttribute="leading" id="x3A-Yg-brp"/>
+            </constraints>
+            <point key="canvasLocation" x="452" y="319"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_mine_invite_business" width="40" height="40"/>
+    </resources>
+</document>

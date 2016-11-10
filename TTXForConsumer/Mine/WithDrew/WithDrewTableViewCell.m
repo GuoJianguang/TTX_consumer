@@ -25,7 +25,7 @@
     [super awakeFromNib];
     // Initialization code
     timeLefted = 60;
-    [TTXUserInfo setjianpianColorwithView:self.showMoneyView withWidth:TWitdh withHeight:TWitdh/2];
+//    [TTXUserInfo setjianpianColorwithView:self.showMoneyView withWidth:TWitdh withHeight:TWitdh/2];
     self.tixianLabel.textColor = MacoTitleColor;
     self.codeLabel.textColor = MacoTitleColor;
     self.alerLabel.textColor = MacoDetailColor;

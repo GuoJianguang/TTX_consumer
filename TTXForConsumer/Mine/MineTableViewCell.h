@@ -44,8 +44,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *WaitCashbackAmount;
 //总消费金额
 @property (weak, nonatomic) IBOutlet UILabel *totalConsumeAmount;
+
 @property (weak, nonatomic) IBOutlet UIImageView *mineBgIamge;
 
+@property (weak, nonatomic) IBOutlet UILabel *myloveLabel;
 
 #pragma mark - 我的订单
 - (IBAction)checkAllOrder:(UIButton *)sender;
@@ -78,6 +80,7 @@
 
 - (IBAction)aboutUsBtn:(UIButton *)sender;
 
+- (IBAction)mylvoeBtn:(UIButton *)sender;
 
 
 #pragma mark - 加载头像
