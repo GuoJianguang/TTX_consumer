@@ -28,7 +28,6 @@
 //头像路径
 @property (nonatomic, copy)NSString *avatar;
 
-
 @property (nonatomic, copy)NSString *userid;
 //昵称
 @property (nonatomic, copy)NSString *nickName;
@@ -118,6 +117,11 @@
  * 实名认证申请标志(0无待审核请求   1有待审核请求  )
  */
 @property (nonatomic, assign)BOOL idVerifyReqFlag;
+
+/*
+ 所绑定银行卡的银行名字
+ */
+@property (nonatomic, strong)NSString *bankname;
 
 //手机号
 @property (nonatomic, copy)NSString *phone;

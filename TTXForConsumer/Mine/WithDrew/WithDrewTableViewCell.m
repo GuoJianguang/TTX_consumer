@@ -28,8 +28,9 @@
 //    [TTXUserInfo setjianpianColorwithView:self.showMoneyView withWidth:TWitdh withHeight:TWitdh/2];
     self.tixianLabel.textColor = MacoTitleColor;
     self.codeLabel.textColor = MacoTitleColor;
-    self.alerLabel.textColor = MacoDetailColor;
-    self.alerLabel.adjustsFontSizeToFitWidth = YES;
+    self.alerLabel.textColor = self.alerLabel1.textColor = MacoDetailColor;
+    self.alerLabel.adjustsFontSizeToFitWidth = self.alerLabel1.adjustsFontSizeToFitWidth = YES;
+    self.actualAmount.textColor = MacoColor;
     
     self.withDrewMoenyView.layer.borderWidth = 1;
     self.withDrewMoenyView.layer.borderColor = MacolayerColor.CGColor;
@@ -54,6 +55,28 @@
     }else{
         self.alerGradeLabel.text = [NSString stringWithFormat:@"当前等级VIP%@,提现额度为1000",[TTXUserInfo shareUserInfos].grade];
     }
+    
+    [self checkWhatMybank];
+}
+
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [super touchesBegan:touches withEvent:event];
+    [self.editMoneyTF resignFirstResponder];
+}
+
+#pragma mark - 检查当前绑定的是什么银行卡
+- (void)checkWhatMybank
+{
+    NSDictionary *parms = @{@"token":[TTXUserInfo shareUserInfos].token};
+    [HttpClient GET:@"user/withdraw/bindBankcard/get" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
+        if (IsRequestTrue) {
+            
+            [TTXUserInfo shareUserInfos].bankname = NullToSpace(jsonObject[@"data"][@"bankId"]);
+        }
+    }failure:^(NSURLSessionDataTask *operation, NSError *error) {
+    }];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -170,9 +193,6 @@
     if ([self emptyTextOfTextField:self.editMoneyTF]) {
         [[JAlertViewHelper shareAlterHelper]showTint:@"请输入提现金额" duration:1.];
         return NO;
-    }else if ([self emptyTextOfTextField:self.codeTF]) {
-        [[JAlertViewHelper shareAlterHelper]showTint:@"请输入密码" duration:1.5];
-        return NO;
     }else if ([self.moneyLabel.text doubleValue] < [self.editMoneyTF.text doubleValue]) {
         [[JAlertViewHelper shareAlterHelper]showTint:@"您的可提现余额不足，请重新输入" duration:1.5];
         return NO;
@@ -181,6 +201,9 @@
         return NO;
     }else if (([self.editMoneyTF.text integerValue] <100 || [self.editMoneyTF.text integerValue] >1000) &&![[TTXUserInfo shareUserInfos].grade isEqualToString:@"10"]){
         [[JAlertViewHelper shareAlterHelper]showTint:@"您的提现金额不能小于100，并且不能超过1000" duration:1.5];
+        return NO;
+    }else if ([self emptyTextOfTextField:self.codeTF]) {
+        [[JAlertViewHelper shareAlterHelper]showTint:@"请输入密码" duration:1.5];
         return NO;
     }
     return YES;
@@ -195,9 +218,29 @@
     
 }
 
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    if (self.editMoneyTF == textField) {
+        
+        if ([textField.text  isEqualToString: @""] || !textField.text) {
+            return;
+        }
+        
+        double money = [textField.text doubleValue];
+        if ([[TTXUserInfo shareUserInfos].bankname isEqualToString:@"2"]) {
+            double actualMoney = money*0.91 - 2;
+            self.actualAmount.text = [NSString stringWithFormat:@"实到金额：%.2f元",actualMoney];
+        }else{
+            double actualMoney = money*0.91 - 6;
+            self.actualAmount.text = [NSString stringWithFormat:@"实到金额：%.2f元",actualMoney];
+        }
+    }
+}
+
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
     if (textField == self.editMoneyTF) {
+        self.actualAmount.text = [NSString stringWithFormat:@"实到金额：--元"];
         NSScanner      *scanner    = [NSScanner scannerWithString:string];
         NSCharacterSet *numbers;
         NSRange         pointRange = [textField.text rangeOfString:@"."];
@@ -256,6 +299,7 @@
     [self.viewController.navigationController popViewControllerAnimated:YES];
 }
 
+
 - (IBAction)tixianAction:(UIButton *)sender {
     BaseHtmlViewController *htmelVC = [[BaseHtmlViewController alloc]init];
     htmelVC.htmlTitle = @"提现说明";
@@ -263,4 +307,7 @@
     [self.viewController.navigationController pushViewController:htmelVC animated:YES];
     
 }
+
+
+
 @end

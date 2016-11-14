@@ -431,6 +431,7 @@
                     [TTXUserInfo shareUserInfos].bankAccount = bankNum;
                     [TTXUserInfo shareUserInfos].bankAccountRealName = self.nameTF.text;
                     [TTXUserInfo shareUserInfos].bindingFlag = @"1";
+                    [TTXUserInfo shareUserInfos].bankname= self.bank_id;
                     [self.viewController.navigationController popViewControllerAnimated:YES];
                 }
             } failure:^(NSURLSessionDataTask *operation, NSError *error) {
@@ -444,6 +445,7 @@
         [HttpClient POST:@"user/withdraw/bindBankcard/add" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
             [SVProgressHUD dismiss];
             if (IsRequestTrue) {
+                [TTXUserInfo shareUserInfos].bankname= self.bank_id;
                 [[JAlertViewHelper shareAlterHelper]showTint:@"绑定成功" duration:1.5];
                 [TTXUserInfo shareUserInfos].bankAccount = bankNum;
                 [TTXUserInfo shareUserInfos].bankAccountRealName = self.nameTF.text;

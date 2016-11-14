@@ -44,6 +44,10 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *alerGradeLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *actualAmount;
+
+@property (weak, nonatomic) IBOutlet UILabel *alerLabel1;
+
 
 
 

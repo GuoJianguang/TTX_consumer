@@ -22,6 +22,7 @@
     self.naviBar.title = @"金额提现";
     self.naviBar.hiddenDetailBtn = NO;
     self.naviBar.showJianbianColor = YES;
+
 }
 
 #pragma mark - UITableView
@@ -41,7 +42,7 @@
     if (THeight <500) {
         return THeight*1.2;
     }
-    return THeight;
+    return THeight * 1.2;
     
     
 }
