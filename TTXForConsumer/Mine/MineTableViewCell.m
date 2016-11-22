@@ -21,10 +21,17 @@
 #import "RealNameAutViewController.h"
 #import "MyLoveAccountViewController.h"
 #import "JoinLoveAccountViewController.h"
+#import "BaiduMobAdSDK/BaiduMobAdDelegateProtocol.h"
+#import "BaiduMobAdSDK/BaiduMobAdView.h"
+#import "BaiduMobAdSDK/BaiduMobAdSetting.h"
 
 
+@interface MineTableViewCell()<BaiduMobAdViewDelegate>
 
-@interface MineTableViewCell()
+{
+    BaiduMobAdView* sharedAdView;
+
+}
 
 @property (nonatomic, strong)ChangeHeadImage *changeIamge;
 
@@ -94,6 +101,8 @@
     [self searchUserInfor];
     //获取我的等级信息
     [self getMyGrade];
+    
+//    [self addAdView];
 }
 
 #pragma mark - 获取个人信息
@@ -553,6 +562,57 @@
         [alertcontroller addAction:cancelAction];
         [alertcontroller addAction:otherAction];
         [self.viewController presentViewController:alertcontroller animated:YES completion:NULL];
+}
+
+#pragma mark - 百度广告
+- (void)addAdView {
+    //lp颜色配置
+    CGFloat height = TWitdh*(963/750.) + 385 + 44;
+    
+    [BaiduMobAdSetting setLpStyle:BaiduMobAdLpStyleDefault];
+    //使用嵌入广告的方法实例。
+    sharedAdView = [[BaiduMobAdView alloc] init];
+    sharedAdView.AdUnitTag = @"2959722";
+    sharedAdView.AdType = BaiduMobAdViewTypeBanner;
+    CGFloat bannerY = height - 0.15*TWitdh;
+    sharedAdView.frame = CGRectMake(0, bannerY, TWitdh, 0.15*TWitdh);
+    [self.contentView addSubview:sharedAdView];
+    sharedAdView.delegate = self;
+    [sharedAdView start];
+    
+}
+
+- (NSString *)publisherId
+{
+    return  @"dad9db17"; //@"your_own_app_id";注意，iOS和android的app请使用不同的app ID
+}
+-(BOOL) enableLocation
+{
+    //启用location会有一次alert提示
+    return YES;
+}
+
+-(void) willDisplayAd:(BaiduMobAdView*) adview
+{
+    NSLog(@"delegate: will display ad");
+}
+
+-(void) failedDisplayAd:(BaiduMobFailReason) reason;
+{
+    NSLog(@"delegate: failedDisplayAd %d", reason);
+}
+
+- (void)didAdImpressed {
+    NSLog(@"delegate: didAdImpressed");
+    
+}
+
+- (void)didAdClicked {
+    NSLog(@"delegate: didAdClicked");
+}
+
+- (void)didAdClose {
+    NSLog(@"delegate: didAdClose");
 }
 
 
