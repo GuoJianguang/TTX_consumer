@@ -28,7 +28,19 @@
 +(NSURLSessionDataTask *)POSTWithFullUrl:(NSString *)URLString parameters:(id)parameters success:(void (^)(NSURLSessionDataTask *, id))success failure:(void (^)(NSURLSessionDataTask *, NSError *))failure {
     
     Class class = [self class];
+//    NSString *cerPath = [[NSBundle mainBundle] pathForResource:@"213955937960616" ofType:@"cer"];
+//    NSData * certData =[NSData dataWithContentsOfFile:cerPath];
+//    NSSet * certSet = [[NSSet alloc] initWithObjects:certData, nil];
+//    AFSecurityPolicy *securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];
+//
+//    [securityPolicy setAllowInvalidCertificates:YES];
+//    [securityPolicy setPinnedCertificates:certSet];
+//    [securityPolicy setValidatesDomainName:NO];
+    //    manager.securityPolicy = securityPolicy;
+    //    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     NSMutableDictionary *mutalbleParameter = [NSMutableDictionary dictionaryWithDictionary:parameters];
     [class additionalOperatingWithManager:manager parameter:mutalbleParameter];
@@ -73,6 +85,7 @@
 +(NSURLSessionDataTask *)GETWithFullUrl:(NSString *)URLString parameters:(id)parameters success:(void (^)(NSURLSessionDataTask *, id))success failure:(void (^)(NSURLSessionDataTask *, NSError *))failure {
 
     Class class = [self class];
+
     AFHTTPSessionManager *manager = [class defaultManager];
     NSMutableDictionary *mutalbleParameter = [NSMutableDictionary dictionaryWithDictionary:parameters];
     [class additionalOperatingWithManager:manager parameter:mutalbleParameter];

@@ -83,7 +83,7 @@
 {
     NSString *searchCity = [[TTXUserInfo shareUserInfos].locationCity substringToIndex:2];
     NSDictionary *parms = @{@"city":searchCity};
-    [HttpClient GET:@"advert/index/list" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
+    [HttpClient POST:@"advert/index/list" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
         if (IsRequestTrue) {
             [self.bannerArray removeAllObjects];
             NSArray *array = jsonObject[@"data"];

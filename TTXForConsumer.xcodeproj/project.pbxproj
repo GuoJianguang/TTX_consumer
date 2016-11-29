@@ -364,6 +364,7 @@
 		BC39747B1DD440AF008DDF67 /* LoveAccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC3974791DD440AF008DDF67 /* LoveAccountTableViewCell.xib */; };
 		BC39747F1DD445EB008DDF67 /* JoinLoveAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC39747D1DD445EB008DDF67 /* JoinLoveAccountViewController.m */; };
 		BC3974801DD445EB008DDF67 /* JoinLoveAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC39747E1DD445EB008DDF67 /* JoinLoveAccountViewController.xib */; };
+		BCA19E8F1DED675A0089C1FC /* 213955937960616.cer in Resources */ = {isa = PBXBuildFile; fileRef = BCA19E8E1DED675A0089C1FC /* 213955937960616.cer */; };
 		BCBA43681DB61A6200E9E7E8 /* OnlineMerCityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBA43661DB61A6200E9E7E8 /* OnlineMerCityTableViewCell.m */; };
 		BCBA43691DB61A6200E9E7E8 /* OnlineMerCityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCBA43671DB61A6200E9E7E8 /* OnlineMerCityTableViewCell.xib */; };
 		BCBA436D1DB61C9200E9E7E8 /* OnlineMerCityCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBA436B1DB61C9200E9E7E8 /* OnlineMerCityCollectionViewCell.m */; };
@@ -982,6 +983,7 @@
 		BC39747C1DD445EB008DDF67 /* JoinLoveAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoinLoveAccountViewController.h; sourceTree = "<group>"; };
 		BC39747D1DD445EB008DDF67 /* JoinLoveAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoinLoveAccountViewController.m; sourceTree = "<group>"; };
 		BC39747E1DD445EB008DDF67 /* JoinLoveAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JoinLoveAccountViewController.xib; sourceTree = "<group>"; };
+		BCA19E8E1DED675A0089C1FC /* 213955937960616.cer */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 213955937960616.cer; sourceTree = "<group>"; };
 		BCBA43651DB61A6200E9E7E8 /* OnlineMerCityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlineMerCityTableViewCell.h; sourceTree = "<group>"; };
 		BCBA43661DB61A6200E9E7E8 /* OnlineMerCityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlineMerCityTableViewCell.m; sourceTree = "<group>"; };
 		BCBA43671DB61A6200E9E7E8 /* OnlineMerCityTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnlineMerCityTableViewCell.xib; sourceTree = "<group>"; };
@@ -1492,6 +1494,7 @@
 		2DA973721D125C6900A605F9 /* HttpClient */ = {
 			isa = PBXGroup;
 			children = (
+				BCA19E8E1DED675A0089C1FC /* 213955937960616.cer */,
 				BCF301BF1DCAD8AC000C7BE7 /* BaseHttpClient.h */,
 				BCF301C01DCAD8AC000C7BE7 /* BaseHttpClient.m */,
 				BCF301C11DCAD8AC000C7BE7 /* HttpClient_Readme.txt */,
@@ -2480,6 +2483,7 @@
 				2DBDB3A91D1CD1C50033F09E /* RevisePasswordViewController.xib in Resources */,
 				2D566D821D18F88000B19EC6 /* GoodsListViewController.xib in Resources */,
 				2DE488F81D23BFD000472681 /* MessageTableViewCell.xib in Resources */,
+				BCA19E8F1DED675A0089C1FC /* 213955937960616.cer in Resources */,
 				2D67CC9C1D1B878200BB99B4 /* UMSLoginViewController.xib in Resources */,
 				2DE4890C1D23CB5900472681 /* MessageDetailTableViewCell.xib in Resources */,
 				2DE2202F1D2104EE008D7F05 /* GoodsIntroduceViewController.xib in Resources */,
