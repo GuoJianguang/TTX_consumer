@@ -20,6 +20,8 @@
 #import "RootViewController.h"
 #import "MineViewController.h"
 #import "HomeViewController.h"
+#import "BaiduMobAdSDK/BaiduMobAdSetting.h"
+
 
 
 
@@ -57,6 +59,7 @@
     splash.delegate = self;
     splash.AdUnitTag = @"2828600";
     splash.canSplashClick = YES;
+    [BaiduMobAdSetting sharedInstance].supportHttps = YES;
 //    [splash loadAndDisplayUsingKeyWindow:self.window];
     self.splash = splash;
     //可以在customSplashView上显示包含icon的自定义开屏

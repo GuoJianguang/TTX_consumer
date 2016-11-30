@@ -220,7 +220,6 @@
     
     if (!self.btnLP) {
         self.btnLP = [[UIButton alloc]init];
-
         BaiduMobNativeAdActionType type = _associatedObject.actType;
         if (type == BaiduMobNativeAdActionTypeDL) {
             [_btnLP setImage:[self imageResoureForName:@"click_download"] forState:UIControlStateNormal];
