@@ -140,7 +140,7 @@
             }
             
             CGFloat cumCashback = [[TTXUserInfo shareUserInfos].totalConsumeAmount doubleValue] -[[TTXUserInfo shareUserInfos].totalExpectAmount doubleValue]-[[TTXUserInfo shareUserInfos].wiatJoinAmunt doubleValue];
-//            self.backTotal.text = [NSString stringWithFormat:@"您已累计回馈%.2f元",cumCashback];
+//            self.backTotal.text = [NSString stringWithFormat:@"您已累计让利回馈%.2f元",cumCashback];
             self.accountBalance.text = [NSString stringWithFormat:@"%.2f",[[TTXUserInfo shareUserInfos].aviableBalance doubleValue]];
             self.WaitCashbackAmount.text = [NSString stringWithFormat:@"%.2f",[[TTXUserInfo shareUserInfos].totalExpectAmount doubleValue] + [[TTXUserInfo shareUserInfos].wiatJoinAmunt doubleValue]];
              self.totalConsumeAmount.text = [NSString stringWithFormat:@"%.2f",[[TTXUserInfo shareUserInfos].totalConsumeAmount doubleValue]];

@@ -87,9 +87,9 @@
 //- (void)setFanXianDataModel:(FanXianModel *)fanXianDataModel
 //{
 //    _fanXianDataModel = fanXianDataModel;
-//    self.name_label.text = @"平台回馈";
+//    self.name_label.text = @"平台让利回馈";
 //    self.stauts_label.text = [NSString stringWithFormat:@"+%.2f",[_fanXianDataModel.amount floatValue]];
-//    self.detail_label.text = [NSString stringWithFormat:@"%@\n回馈%.2f元",_fanXianDataModel.tranTime ,[_fanXianDataModel.amount floatValue]];
+//    self.detail_label.text = [NSString stringWithFormat:@"%@\n让利回馈%.2f元",_fanXianDataModel.tranTime ,[_fanXianDataModel.amount floatValue]];
 //}
 
 //- (void)setTixianDataModel:(TixianModel *)tixianDataModel

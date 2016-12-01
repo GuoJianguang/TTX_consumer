@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,19 +18,21 @@
                 <rect key="frame" x="0.0" y="0.0" width="126" height="45"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="美食" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="at4-vT-iLk">
-                        <frame key="frameInset" minX="49" minY="14" width="28" height="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="美食" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="at4-vT-iLk">
+                        <rect key="frame" x="12" y="14" width="102" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DKh-Pe-XCb">
+                        <rect key="frame" x="0.0" y="43" width="126" height="2"/>
                         <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="2" id="0YT-G0-Tgs"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4UD-dW-GCK">
+                        <rect key="frame" x="119" y="20" width="6" height="6"/>
                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="6" id="Shx-ur-mum"/>
@@ -39,9 +44,10 @@
             <constraints>
                 <constraint firstItem="DKh-Pe-XCb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="1yP-1Y-YN4"/>
                 <constraint firstItem="4UD-dW-GCK" firstAttribute="leading" secondItem="at4-vT-iLk" secondAttribute="trailing" constant="5" id="3zW-9A-0kX"/>
-                <constraint firstItem="at4-vT-iLk" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Dqo-JN-oA5"/>
                 <constraint firstItem="at4-vT-iLk" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="En5-cq-7qR"/>
                 <constraint firstItem="4UD-dW-GCK" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="Nvf-Cs-ujZ"/>
+                <constraint firstAttribute="trailing" secondItem="at4-vT-iLk" secondAttribute="trailing" constant="12" id="Rw5-6q-eKC"/>
+                <constraint firstItem="at4-vT-iLk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="12" id="btT-ik-pvY"/>
                 <constraint firstAttribute="bottom" secondItem="DKh-Pe-XCb" secondAttribute="bottom" id="iiw-QK-poj"/>
                 <constraint firstAttribute="trailing" secondItem="DKh-Pe-XCb" secondAttribute="trailing" id="qU3-78-QKV"/>
             </constraints>

@@ -359,6 +359,8 @@
 		8F88938659FF13352B77A710 /* libPods-TTXForConsumer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E774D5DE23C8831077C2BD2C /* libPods-TTXForConsumer.a */; };
 		BC166E1F1DEF2D5A00D4E284 /* BaiduMobAdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC166E1E1DEF2D5A00D4E284 /* BaiduMobAdSDK.framework */; };
 		BC166E231DEF2ECF00D4E284 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC166E221DEF2ECF00D4E284 /* SafariServices.framework */; };
+		BC172B5C1DF00393005467D6 /* OldWithDrewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC172B591DF00393005467D6 /* OldWithDrewTableViewCell.m */; };
+		BC172B5D1DF00393005467D6 /* OldWithDrewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC172B5B1DF00393005467D6 /* OldWithDrewTableViewCell.xib */; };
 		BC3974751DD43F68008DDF67 /* MyLoveAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3974731DD43F68008DDF67 /* MyLoveAccountViewController.m */; };
 		BC3974761DD43F68008DDF67 /* MyLoveAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC3974741DD43F68008DDF67 /* MyLoveAccountViewController.xib */; };
 		BC39747A1DD440AF008DDF67 /* LoveAccountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3974781DD440AF008DDF67 /* LoveAccountTableViewCell.m */; };
@@ -977,6 +979,9 @@
 		BC166E1E1DEF2D5A00D4E284 /* BaiduMobAdSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMobAdSDK.framework; sourceTree = "<group>"; };
 		BC166E201DEF2EA900D4E284 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		BC166E221DEF2ECF00D4E284 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		BC172B591DF00393005467D6 /* OldWithDrewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OldWithDrewTableViewCell.m; sourceTree = "<group>"; };
+		BC172B5A1DF00393005467D6 /* OldWithDrewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OldWithDrewTableViewCell.h; sourceTree = "<group>"; };
+		BC172B5B1DF00393005467D6 /* OldWithDrewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OldWithDrewTableViewCell.xib; sourceTree = "<group>"; };
 		BC3974721DD43F68008DDF67 /* MyLoveAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLoveAccountViewController.h; sourceTree = "<group>"; };
 		BC3974731DD43F68008DDF67 /* MyLoveAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLoveAccountViewController.m; sourceTree = "<group>"; };
 		BC3974741DD43F68008DDF67 /* MyLoveAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyLoveAccountViewController.xib; sourceTree = "<group>"; };
@@ -2030,6 +2035,9 @@
 				2DDEC8F91D1A3D1800C91DDF /* WithDrewTableViewCell.h */,
 				2DDEC8FA1D1A3D1800C91DDF /* WithDrewTableViewCell.m */,
 				2DDEC8FB1D1A3D1800C91DDF /* WithDrewTableViewCell.xib */,
+				BC172B5A1DF00393005467D6 /* OldWithDrewTableViewCell.h */,
+				BC172B591DF00393005467D6 /* OldWithDrewTableViewCell.m */,
+				BC172B5B1DF00393005467D6 /* OldWithDrewTableViewCell.xib */,
 				2D0092621D30BAB000E00DB8 /* WithDrewSuccessView.h */,
 				2D0092631D30BAB000E00DB8 /* WithDrewSuccessView.m */,
 				2D0092651D30BAC800E00DB8 /* WithDrewSuccessView.xib */,
@@ -2432,6 +2440,7 @@
 				2D67CC9B1D1B878200BB99B4 /* UMShareEditViewControlleriPad.xib in Resources */,
 				2DE489001D23C7FB00472681 /* NothingView.xib in Resources */,
 				2DB94F7F1D2A700A003A6DEA /* MchchantAllgoodsViewController.xib in Resources */,
+				BC172B5D1DF00393005467D6 /* OldWithDrewTableViewCell.xib in Resources */,
 				2DA9734B1D124F3000A605F9 /* Assets.xcassets in Resources */,
 				2DA973FF1D128FFE00A605F9 /* CodeScan.bundle in Resources */,
 				2D7216941D12A10A00D3F7D6 /* HomeBannerTableViewCell.xib in Resources */,
@@ -2623,6 +2632,7 @@
 				2DA974451D1291E600A605F9 /* MASConstraintMaker.m in Sources */,
 				2D566D8F1D191FD200B19EC6 /* MineTableViewCell.m in Sources */,
 				2DB94FF21D2A8E33003A6DEA /* DACircularProgressView.m in Sources */,
+				BC172B5C1DF00393005467D6 /* OldWithDrewTableViewCell.m in Sources */,
 				2DE488FF1D23C7FB00472681 /* NothingView.m in Sources */,
 				2DB950031D2A8E33003A6DEA /* ZLCamera.m in Sources */,
 				2D89A2A91D2522CD0042019B /* MchcommentDetailTableViewCell.m in Sources */,

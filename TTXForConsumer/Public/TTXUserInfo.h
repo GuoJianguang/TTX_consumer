@@ -39,9 +39,9 @@
 @property (nonatomic, copy)NSString *aviableBalance;
 //总消费金额
 @property (nonatomic, copy)NSString *totalConsumeAmount;
-//待回馈金额
+//待让利回馈金额
 @property (nonatomic, copy)NSString *totalExpectAmount;
-//未参与回馈金额
+//未参与让利回馈金额
 @property (nonatomic, copy)NSString *wiatJoinAmunt;
 //区县
 @property (nonatomic, copy)NSString *zone;
@@ -66,7 +66,7 @@
  */
 @property (nonatomic, copy)NSString *withdrawCount;
 /**
- * 我的回馈
+ * 我的让利回馈
  */
 @property (nonatomic, copy)NSString *feedbackCount;
 

@@ -197,7 +197,7 @@
 }
 
 
-//回馈规则
+//让利回馈规则
 - (void)detailBtnClick
 {
     BaseHtmlViewController *htmlVC = [[BaseHtmlViewController alloc]init];

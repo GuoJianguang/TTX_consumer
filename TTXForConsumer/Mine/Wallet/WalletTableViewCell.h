@@ -10,19 +10,19 @@
 #import "MyWallectCollectionViewCell.h"
 
 
-#pragma mark - 回馈的Model
+#pragma mark - 让利回馈的Model
 @interface FanXianModel :BaseModel
 
 /**
- * 回馈记录单号
+ * 让利回馈记录单号
  */
 @property (nonatomic,copy)NSString *fanxianId;
 /**
- * 回馈时间
+ * 让利回馈时间
  */
 @property (nonatomic,copy)NSString *tranTime;
 /**
- * 回馈金额
+ * 让利回馈金额
  */
 @property (nonatomic,copy)NSString *amount;
 

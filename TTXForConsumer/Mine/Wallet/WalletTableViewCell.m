@@ -134,7 +134,7 @@
 - (void)setFanxianModel:(FanXianModel *)fanxianModel
 {
     _fanxianModel = fanxianModel;
-    self.name.text = @"平台回馈";
+    self.name.text = @"平台让利回馈";
     self.typeImage.image = [UIImage imageNamed:@"icon_mine_platform_return"];
     self.money.text = [NSString stringWithFormat:@"%.2f",[_fanxianModel.amount doubleValue]] ;
     self.time.text = _fanxianModel.tranTime;

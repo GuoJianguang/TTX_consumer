@@ -99,7 +99,7 @@
             <connections>
                 <outlet property="explainTextView" destination="inC-ut-RnP" id="xSj-3N-sqP"/>
             </connections>
-            <point key="canvasLocation" x="10" y="121"/>
+            <point key="canvasLocation" x="-55" y="-10"/>
         </tableViewCell>
     </objects>
     <resources>

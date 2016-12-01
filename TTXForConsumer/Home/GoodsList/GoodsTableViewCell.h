@@ -22,7 +22,7 @@
 //价格
 @property (weak, nonatomic) IBOutlet UILabel *price;
 
-//回馈标记
+//让利回馈标记
 @property (weak, nonatomic) IBOutlet UILabel *fanMark;
 //推荐标记
 @property (weak, nonatomic) IBOutlet UILabel *jianMark;
