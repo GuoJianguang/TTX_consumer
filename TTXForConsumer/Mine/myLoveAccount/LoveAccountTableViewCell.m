@@ -74,7 +74,6 @@
                 [[NSNotificationCenter defaultCenter]removeObserver:self name:WeixinPayResult object:nil];
                 [weak_self.viewController.navigationController popToRootViewControllerAnimated:YES];
             }];
-
         }
             break;
         case WXErrCodeCommon:

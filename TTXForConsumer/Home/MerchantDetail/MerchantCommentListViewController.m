@@ -64,20 +64,12 @@
             if (array.count > 0) {
                 self.page ++;
             }
-            CGFloat tableHeight = 0;
             for (NSDictionary *dic in array) {
                 BussessComment *comment = [BussessComment modelWithDic:dic];
                 [self.dataSouceArray addObject:comment];
             }
             
-            BussessComment *comment1 = [[BussessComment alloc]init];
-            comment1.content = @"点击当会计课佳节快到家 记得哦我就到家当空间看大家快点放假啊姐姐地久服务看到就卡即可大家分开健康大家分开撒娇发的空间打开了减肥的空间当空间的空间打开垃圾的空间当空间疯狂啦时间的疯狂减肥的空间疯狂啦手机发的空间放的开减肥的空间发的快乐手机发的哭了说减肥的了空间打开减肥的空间fdklj";
-            comment1.commentId = @"12";
-            comment1.mchName = @"222";
-            comment1.createTime = @"2016.2.3";
-            comment1.userNickName = @"但都没看到";
-            //            [self.dataSouceArray addObject:comment1];
-            //判断数据源有无数据
+                       //判断数据源有无数据
             [self.tableView judgeIsHaveDataSouce:self.dataSouceArray];
             [self.tableView reloadData];
         }
