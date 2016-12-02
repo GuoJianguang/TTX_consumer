@@ -21,4 +21,9 @@
 
 + (void)srarMachantWexinPay:(NSDictionary *)parms;
 
+
+//爱心账户充值
+
++ (void)loveAcountWexinPay:(NSDictionary *)parms;
+
 @end

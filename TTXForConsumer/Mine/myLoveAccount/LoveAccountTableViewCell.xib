@@ -53,10 +53,22 @@
                                             <action selector="backBtn:" destination="zOI-iP-pbr" eventType="touchUpInside" id="ZiO-Li-kSv"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3TP-YB-VBY">
+                                        <rect key="frame" x="267" y="6" width="33" height="32"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="充值">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="rechargeBtn:" destination="zOI-iP-pbr" eventType="touchUpInside" id="jvg-OJ-ZJS"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="3TP-YB-VBY" firstAttribute="centerY" secondItem="qSr-Kp-AEZ" secondAttribute="centerY" id="3cG-BT-gYV"/>
                                     <constraint firstItem="gxe-zT-p57" firstAttribute="centerX" secondItem="qSr-Kp-AEZ" secondAttribute="centerX" id="cSc-8V-pp9"/>
+                                    <constraint firstAttribute="trailing" secondItem="3TP-YB-VBY" secondAttribute="trailing" constant="20" id="k56-qz-Tm4"/>
                                     <constraint firstItem="cIw-J3-IzS" firstAttribute="centerY" secondItem="qSr-Kp-AEZ" secondAttribute="centerY" id="rIA-nP-ROF"/>
                                     <constraint firstAttribute="height" constant="44" id="wPj-UE-tJ2"/>
                                     <constraint firstItem="gxe-zT-p57" firstAttribute="centerY" secondItem="qSr-Kp-AEZ" secondAttribute="centerY" id="wwG-xj-YdP"/>
@@ -98,8 +110,10 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="explainTextView" destination="inC-ut-RnP" id="xSj-3N-sqP"/>
+                <outlet property="loveAccountMoeny" destination="7sO-rg-tsd" id="i6I-5e-CiO"/>
+                <outlet property="rechargeBtn" destination="3TP-YB-VBY" id="fTe-9Q-6Dy"/>
             </connections>
-            <point key="canvasLocation" x="-55" y="-10"/>
+            <point key="canvasLocation" x="-240" y="-141"/>
         </tableViewCell>
     </objects>
     <resources>

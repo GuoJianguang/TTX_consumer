@@ -514,13 +514,65 @@
 
 //我的爱心账户
 - (IBAction)mylvoeBtn:(UIButton *)sender {
-//    MyLoveAccountViewController *loveAccountVC = [[MyLoveAccountViewController alloc]init];
-//    [self.viewController.navigationController pushViewController:loveAccountVC animated:YES];
+
+    __weak MineTableViewCell *weak_self = self;
+    NSDictionary *prams = @{@"token":[TTXUserInfo shareUserInfos].token};
+    AFHTTPSessionManager *manager = [self defaultManager];
+    NSMutableDictionary *mutalbleParameter = [NSMutableDictionary dictionaryWithDictionary:prams];
+    NSString *url = [NSString stringWithFormat:@"%@%@",HttpClient_BaseUrl,@"user/donate/get"];
     
-    JoinLoveAccountViewController *joinVC = [[JoinLoveAccountViewController alloc]init];
-    [self.viewController.navigationController pushViewController:joinVC animated:YES];
+    [SVProgressHUD showWithStatus:@"正在请求数据..."];
+   [manager POST:url parameters:mutalbleParameter progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+       [SVProgressHUD dismiss];
+       @try {
+           NSError *error = nil;
+           //    id jsonObject = [responseObject objectFromJSONData];//
+           id jsonObject=[NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&error];
+           NSString *responseString = [[NSString alloc] initWithData:responseObject encoding:ResponseSerializerEncoding];
+           NSString *err_string = [NSString stringWithFormat:@"json 格式错误.返回字符串：%@",responseString];
+           NSAssert(error==nil, err_string);
+           if ([NullToSpace(jsonObject[@"code"]) isEqualToString:@"0"]) {
+               MyLoveAccountViewController *loveAccountVC = [[MyLoveAccountViewController alloc]init];
+               if (![jsonObject[@"data"] isKindOfClass:[NSDictionary class]]) {
+                   return ;
+               }
+               loveAccountVC.loveAccountDic = jsonObject[@"data"];
+               [weak_self.viewController.navigationController pushViewController:loveAccountVC animated:YES];
+           }else if([NullToSpace(jsonObject[@"code"]) isEqualToString:@"2048"]){
+               JoinLoveAccountViewController *joinVC = [[JoinLoveAccountViewController alloc]init];
+               [self.viewController.navigationController pushViewController:joinVC animated:YES];
+           }else{
+               [[ JAlertViewHelper shareAlterHelper]showTint:NullToSpace(jsonObject[@"message"] )duration:2.0];
+           }
+       } @catch (NSException *exception) {
+           
+       } @finally {
+           
+       }
+
     
+   } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+       [SVProgressHUD dismiss];
+       [[JAlertViewHelper shareAlterHelper]showTint:@"网络请求错误，请稍后重试..." duration:2.];
+
+   }];
+
 }
+
+-(AFHTTPSessionManager*) defaultManager {
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    AFHTTPRequestSerializer *requestSerializer = [AFHTTPRequestSerializer serializer];
+    requestSerializer.stringEncoding = RequestSerializerEncoding;
+    requestSerializer.timeoutInterval = TimeoutInterval;
+    AFHTTPResponseSerializer *responseSerializer = [AFHTTPResponseSerializer serializer];
+    responseSerializer.stringEncoding = ResponseSerializerEncoding;
+    
+    manager.requestSerializer = requestSerializer;
+    manager.responseSerializer = responseSerializer;
+    
+    return manager;
+}
+
 
 
 #pragma mark - 去进行实名认证

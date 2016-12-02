@@ -15,4 +15,15 @@
 
 - (IBAction)backBtn:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UIButton *rechargeBtn;
+
+
+@property (nonatomic, strong)NSDictionary *dataModel;
+
+- (IBAction)rechargeBtn:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UILabel *loveAccountMoeny;
+
+
+
 @end

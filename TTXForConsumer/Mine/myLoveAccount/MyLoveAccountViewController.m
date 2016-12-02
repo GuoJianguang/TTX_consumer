@@ -29,6 +29,7 @@
     if (!cell) {
         cell = [LoveAccountTableViewCell newCell];
     }
+    cell.dataModel = self.loveAccountDic;
     return cell;
 }
 

@@ -108,7 +108,7 @@
         NSMutableDictionary *mutalbleParameter = [NSMutableDictionary dictionaryWithDictionary:parms];
         NSString *url = [NSString stringWithFormat:@"%@%@",HttpClient_BaseUrl,@"user/verifyIdcard"];
         [SVProgressHUD showWithStatus:@"正在请求..."];
-        [manager POST:url parameters:mutalbleParameter success:^(NSURLSessionDataTask *operation, id responseObject) {
+        [manager POST:url parameters:mutalbleParameter progress:NULL success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             [SVProgressHUD dismiss];
             sender.enabled = YES;
             @try {
@@ -138,17 +138,17 @@
                         [self.successView buttonAction];
                         return;
                     }
-//                    2035,"身份证实名认证失败"
+                    //                    2035,"身份证实名认证失败"
                     else if ([NullToNumber(jsonObject[@"code"]) isEqualToString:@"2035"]) {
                         [[JAlertViewHelper shareAlterHelper]showTint:jsonObject[@"message"] duration:1.5];
                         return;
                     }
-//                    2036,"实名认证失败,身份证与姓名不匹配"
+                    //                    2036,"实名认证失败,身份证与姓名不匹配"
                     else if ([NullToNumber(jsonObject[@"code"]) isEqualToString:@"2036"]) {
                         [[JAlertViewHelper shareAlterHelper]showTint:jsonObject[@"message"] duration:1.5];
                         return;
                     }
-//                    2037,"未绑卡，现在去绑定银行卡吗？"
+                    //                    2037,"未绑卡，现在去绑定银行卡吗？"
                     else if ([NullToNumber(jsonObject[@"code"]) isEqualToString:@"2037"]) {
                         [TTXUserInfo shareUserInfos].identityFlag = YES;
                         self.successView.infoDic = @{@"name":self.nameTF.text,
@@ -161,7 +161,7 @@
                         [self.successView buttonAction];
                         return;
                     }
-//                    2039,"实名认证信息与之前绑定银行卡信息不一致，银行卡信息已清空，是否现在去重新绑定？"
+                    //                    2039,"实名认证信息与之前绑定银行卡信息不一致，银行卡信息已清空，是否现在去重新绑定？"
                     else if ([NullToNumber(jsonObject[@"code"]) isEqualToString:@"2039"]) {
                         [TTXUserInfo shareUserInfos].identityFlag = YES;
                         self.successView.infoDic = @{@"name":self.nameTF.text,
@@ -183,16 +183,16 @@
                 
             }
             @finally {
+                
             }
-
-        } failure:^(NSURLSessionDataTask *operation, NSError *error) {
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             sender.enabled = YES;
             [SVProgressHUD dismiss];
             [[JAlertViewHelper shareAlterHelper]showTint:@"网络请求失败，请重试" duration:2.];
         }];
     }else{
         sender.enabled = YES;
-
+        
     }
 }
 
