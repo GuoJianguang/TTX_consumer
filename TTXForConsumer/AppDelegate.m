@@ -79,7 +79,6 @@
 - (void)SetTheThirdParty:(NSDictionary*)launchOptions{
     
     NSString *bundleID =  [[NSBundle mainBundle] bundleIdentifier];
-    
     //因为企业版本喝appstore版本的bundledID有区别，所有key也要分开写
     if ([bundleID isEqualToString:@"com.ttx.tiantianxcn"]) {
         //高德地图

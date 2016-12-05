@@ -162,6 +162,7 @@
      [SVProgressHUD showWithStatus:@"正在上传头像"];
     [upManager putData:imageData key:randomDkey token:qiniuToken
               complete: ^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
+                  [SVProgressHUD dismiss];
                   if (info.error) {
                       [[JAlertViewHelper shareAlterHelper]showTint:@"头像上传失败,请稍后重试" duration:1.5];
                       return;
@@ -177,7 +178,7 @@
                       }
                       
                   } failure:^(NSURLSessionDataTask *operation, NSError *error) {
-                      
+                      [SVProgressHUD dismiss];
                   }];
                   
               } option:nil];

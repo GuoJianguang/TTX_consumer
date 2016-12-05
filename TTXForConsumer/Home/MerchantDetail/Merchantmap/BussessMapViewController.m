@@ -350,54 +350,54 @@ updatingLocation:(BOOL)updatingLocation
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     
-    NSString *buttonTitle = [actionSheet buttonTitleAtIndex:buttonIndex];
-    NSString *type = @"path";
-    NSString *sourceApplication = @"THYY";
-    NSString *backScheme = @"THYYGaode";
-    //源id
-    NSString *sid = @"BGVIS1";
-    //起点名称
-    NSString *sname = @"";
-    //目的地id
-    NSString *did = @"BGVIS2";
-    //起点经纬度
-    NSString *lat = @"";
-    NSString *lon = @"";
-    //终点经纬度
-    NSString *dlat = [NSString stringWithFormat:@"%f",self.stopcoordinate.latitude];
-    NSString *dlon = [NSString stringWithFormat:@"%f",self.stopcoordinate.longitude];
-    //终点名称
-    NSString *dname = self.dataModel.name;
-    //线路类型
-    NSString *m = @"0";
-    //导航类型
-    NSString *t = [NSString stringWithFormat:@"%d",0];
-    NSString *dev = @"1";
-    
-    MANaviConfig * config = [[MANaviConfig alloc] init];
-    config.destination = self.stopcoordinate;
-    config.appScheme = backScheme;
-    config.appName = sourceApplication;
-    config.strategy = MADrivingStrategyShortest;
-    
-    if ([buttonTitle isEqualToString:@"使用自带地图导航"]) {
-        //当前的位置
-        MKMapItem *currentLocation = [MKMapItem mapItemForCurrentLocation];
-        //起点
-        //目的地的位置
-        MKMapItem *toLocation = [[MKMapItem alloc] initWithPlacemark:[[MKPlacemark alloc] initWithCoordinate:self.stopcoordinate addressDictionary:nil]];
-        
-        toLocation.name = self.dataModel.name;
-        NSArray *items = [NSArray arrayWithObjects:currentLocation, toLocation, nil];
-        NSDictionary *options = @{ MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeDriving, MKLaunchOptionsMapTypeKey: [NSNumber numberWithInteger:MKMapTypeStandard], MKLaunchOptionsShowsTrafficKey:@YES };
-        //打开苹果自身地图应用，并呈现特定的item
-        [MKMapItem openMapsWithItems:items launchOptions:options];
-        
-    }else if ([buttonTitle isEqualToString:@"使用高德地图导航"]){
-        NSString *str = [NSString stringWithFormat:@"iosamap://%@?sourceApplication=%@&sid=%@&slat=%@&slon=%@&sname=%@&did=%@&dlat=%@&dlon=%@&dname=%@&dev=%@&m=%@&t=%@",type,sourceApplication,sid,lat,lon,sname,did,dlat,dlon,dname,dev,m,t];
-        NSString *str1 = [str stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-        [[UIApplication sharedApplication]openURL:[NSURL URLWithString:str1]];
-    }
+//    NSString *buttonTitle = [actionSheet buttonTitleAtIndex:buttonIndex];
+//    NSString *type = @"path";
+//    NSString *sourceApplication = @"THYY";
+//    NSString *backScheme = @"THYYGaode";
+//    //源id
+//    NSString *sid = @"BGVIS1";
+//    //起点名称
+//    NSString *sname = @"";
+//    //目的地id
+//    NSString *did = @"BGVIS2";
+//    //起点经纬度
+//    NSString *lat = @"";
+//    NSString *lon = @"";
+//    //终点经纬度
+//    NSString *dlat = [NSString stringWithFormat:@"%f",self.stopcoordinate.latitude];
+//    NSString *dlon = [NSString stringWithFormat:@"%f",self.stopcoordinate.longitude];
+//    //终点名称
+//    NSString *dname = self.dataModel.name;
+//    //线路类型
+//    NSString *m = @"0";
+//    //导航类型
+//    NSString *t = [NSString stringWithFormat:@"%d",0];
+//    NSString *dev = @"1";
+//    
+//    MANaviConfig * config = [[MANaviConfig alloc] init];
+//    config.destination = self.stopcoordinate;
+//    config.appScheme = backScheme;
+//    config.appName = sourceApplication;
+//    config.strategy = MADrivingStrategyShortest;
+//    
+//    if ([buttonTitle isEqualToString:@"使用自带地图导航"]) {
+//        //当前的位置
+//        MKMapItem *currentLocation = [MKMapItem mapItemForCurrentLocation];
+//        //起点
+//        //目的地的位置
+//        MKMapItem *toLocation = [[MKMapItem alloc] initWithPlacemark:[[MKPlacemark alloc] initWithCoordinate:self.stopcoordinate addressDictionary:nil]];
+//        
+//        toLocation.name = self.dataModel.name;
+//        NSArray *items = [NSArray arrayWithObjects:currentLocation, toLocation, nil];
+//        NSDictionary *options = @{ MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeDriving, MKLaunchOptionsMapTypeKey: [NSNumber numberWithInteger:MKMapTypeStandard], MKLaunchOptionsShowsTrafficKey:@YES };
+//        //打开苹果自身地图应用，并呈现特定的item
+//        [MKMapItem openMapsWithItems:items launchOptions:options];
+//        
+//    }else if ([buttonTitle isEqualToString:@"使用高德地图导航"]){
+//        NSString *str = [NSString stringWithFormat:@"iosamap://%@?sourceApplication=%@&sid=%@&slat=%@&slon=%@&sname=%@&did=%@&dlat=%@&dlon=%@&dname=%@&dev=%@&m=%@&t=%@",type,sourceApplication,sid,lat,lon,sname,did,dlat,dlon,dname,dev,m,t];
+//        NSString *str1 = [str stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+//        [[UIApplication sharedApplication]openURL:[NSURL URLWithString:str1]];
+//    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated

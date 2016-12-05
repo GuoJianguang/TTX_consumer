@@ -70,6 +70,7 @@
     
     self.WaitCashbackAmount.textColor =MacoColor;
     self.totalConsumeAmount.textColor = MacoColor;
+    self.alerLabel.adjustsFontSizeToFitWidth = YES;
 
 
     self.vipView.layer.cornerRadius = 2.5;

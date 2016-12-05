@@ -154,10 +154,6 @@
 		2DA973C51D127DCF00A605F9 /* ZYPinYinSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA973B21D127DCF00A605F9 /* ZYPinYinSearch.m */; };
 		2DA973C61D127DCF00A605F9 /* SelectAreaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA973B41D127DCF00A605F9 /* SelectAreaView.m */; };
 		2DA973C71D127DCF00A605F9 /* SelectAreaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DA973B51D127DCF00A605F9 /* SelectAreaView.xib */; };
-		2DA973CD1D1283B100A605F9 /* AMap.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2DA973C91D1283B100A605F9 /* AMap.bundle */; };
-		2DA973CE1D1283B100A605F9 /* AMapLocationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DA973CA1D1283B100A605F9 /* AMapLocationKit.framework */; };
-		2DA973CF1D1283B100A605F9 /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DA973CB1D1283B100A605F9 /* AMapSearchKit.framework */; };
-		2DA973D01D1283B100A605F9 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DA973CC1D1283B100A605F9 /* MAMapKit.framework */; };
 		2DA973D21D12850600A605F9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DA973D11D12850600A605F9 /* CoreGraphics.framework */; };
 		2DA973D41D12851B00A605F9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DA973D31D12851B00A605F9 /* QuartzCore.framework */; };
 		2DA973D81D12853400A605F9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DA973D71D12853400A605F9 /* CoreLocation.framework */; };
@@ -372,6 +368,10 @@
 		BCBA43691DB61A6200E9E7E8 /* OnlineMerCityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCBA43671DB61A6200E9E7E8 /* OnlineMerCityTableViewCell.xib */; };
 		BCBA436D1DB61C9200E9E7E8 /* OnlineMerCityCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBA436B1DB61C9200E9E7E8 /* OnlineMerCityCollectionViewCell.m */; };
 		BCBA436E1DB61C9200E9E7E8 /* OnlineMerCityCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCBA436C1DB61C9200E9E7E8 /* OnlineMerCityCollectionViewCell.xib */; };
+		BCC2CF0D1DF562F800189BC2 /* AMap.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BCC2CF091DF562F800189BC2 /* AMap.bundle */; };
+		BCC2CF0E1DF562F800189BC2 /* AMapLocationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC2CF0A1DF562F800189BC2 /* AMapLocationKit.framework */; };
+		BCC2CF0F1DF562F800189BC2 /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC2CF0B1DF562F800189BC2 /* AMapSearchKit.framework */; };
+		BCC2CF101DF562F800189BC2 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC2CF0C1DF562F800189BC2 /* MAMapKit.framework */; };
 		BCC876421DB5B72600E623F2 /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC876401DB5B72600E623F2 /* HomeTableViewCell.m */; };
 		BCC876431DB5B72600E623F2 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCC876411DB5B72600E623F2 /* HomeTableViewCell.xib */; };
 		BCC8764C1DB6166B00E623F2 /* OnLineMerchantCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC8764A1DB6166B00E623F2 /* OnLineMerchantCityViewController.m */; };
@@ -645,10 +645,6 @@
 		2DA973B31D127DCF00A605F9 /* SelectAreaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectAreaView.h; sourceTree = "<group>"; };
 		2DA973B41D127DCF00A605F9 /* SelectAreaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectAreaView.m; sourceTree = "<group>"; };
 		2DA973B51D127DCF00A605F9 /* SelectAreaView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectAreaView.xib; sourceTree = "<group>"; };
-		2DA973C91D1283B100A605F9 /* AMap.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AMap.bundle; sourceTree = "<group>"; };
-		2DA973CA1D1283B100A605F9 /* AMapLocationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapLocationKit.framework; sourceTree = "<group>"; };
-		2DA973CB1D1283B100A605F9 /* AMapSearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapSearchKit.framework; sourceTree = "<group>"; };
-		2DA973CC1D1283B100A605F9 /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
 		2DA973D11D12850600A605F9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2DA973D31D12851B00A605F9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		2DA973D51D12852300A605F9 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -999,6 +995,10 @@
 		BCBA436B1DB61C9200E9E7E8 /* OnlineMerCityCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlineMerCityCollectionViewCell.m; sourceTree = "<group>"; };
 		BCBA436C1DB61C9200E9E7E8 /* OnlineMerCityCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnlineMerCityCollectionViewCell.xib; sourceTree = "<group>"; };
 		BCBAA68E1D8FD3720090CDE6 /* TTXForConsumer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TTXForConsumer.entitlements; sourceTree = "<group>"; };
+		BCC2CF091DF562F800189BC2 /* AMap.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AMap.bundle; sourceTree = "<group>"; };
+		BCC2CF0A1DF562F800189BC2 /* AMapLocationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapLocationKit.framework; sourceTree = "<group>"; };
+		BCC2CF0B1DF562F800189BC2 /* AMapSearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapSearchKit.framework; sourceTree = "<group>"; };
+		BCC2CF0C1DF562F800189BC2 /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
 		BCC8763F1DB5B72600E623F2 /* HomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
 		BCC876401DB5B72600E623F2 /* HomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
 		BCC876411DB5B72600E623F2 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
@@ -1042,12 +1042,12 @@
 				2D67CC941D1B878200BB99B4 /* libUMessage_Sdk_1.2.3.a in Frameworks */,
 				2D67CCA11D1B878200BB99B4 /* libWeChatSDK.a in Frameworks */,
 				2D67CC921D1B878200BB99B4 /* TencentOpenAPI.framework in Frameworks */,
-				2DA973CE1D1283B100A605F9 /* AMapLocationKit.framework in Frameworks */,
 				BC166E1F1DEF2D5A00D4E284 /* BaiduMobAdSDK.framework in Frameworks */,
-				2DA973D01D1283B100A605F9 /* MAMapKit.framework in Frameworks */,
 				2D67CC911D1B878200BB99B4 /* libSocialQQ.a in Frameworks */,
+				BCC2CF0F1DF562F800189BC2 /* AMapSearchKit.framework in Frameworks */,
+				BCC2CF0E1DF562F800189BC2 /* AMapLocationKit.framework in Frameworks */,
 				2D67CCA01D1B878200BB99B4 /* libSocialWechat.a in Frameworks */,
-				2DA973CF1D1283B100A605F9 /* AMapSearchKit.framework in Frameworks */,
+				BCC2CF101DF562F800189BC2 /* MAMapKit.framework in Frameworks */,
 				8F88938659FF13352B77A710 /* libPods-TTXForConsumer.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1633,10 +1633,10 @@
 		2DA973C81D1283B100A605F9 /* GDMap */ = {
 			isa = PBXGroup;
 			children = (
-				2DA973C91D1283B100A605F9 /* AMap.bundle */,
-				2DA973CA1D1283B100A605F9 /* AMapLocationKit.framework */,
-				2DA973CB1D1283B100A605F9 /* AMapSearchKit.framework */,
-				2DA973CC1D1283B100A605F9 /* MAMapKit.framework */,
+				BCC2CF091DF562F800189BC2 /* AMap.bundle */,
+				BCC2CF0A1DF562F800189BC2 /* AMapLocationKit.framework */,
+				BCC2CF0B1DF562F800189BC2 /* AMapSearchKit.framework */,
+				BCC2CF0C1DF562F800189BC2 /* MAMapKit.framework */,
 			);
 			path = GDMap;
 			sourceTree = "<group>";
@@ -2401,6 +2401,7 @@
 				2DE2201A1D20DA03008D7F05 /* OderListViewController.xib in Resources */,
 				2DE220141D20D128008D7F05 /* AboutUsTableViewCell.xib in Resources */,
 				2DBDB3BD1D1CEC670033F09E /* EditShippingAddressViewController.xib in Resources */,
+				BCC2CF0D1DF562F800189BC2 /* AMap.bundle in Resources */,
 				2D7216A01D12AE3600D3F7D6 /* HomeBusinessListTableViewCell.xib in Resources */,
 				2D4C43771D17A1220011C48F /* MerchantDetailTableViewCell.xib in Resources */,
 				2D0092661D30BAC800E00DB8 /* WithDrewSuccessView.xib in Resources */,
@@ -2410,7 +2411,6 @@
 				BCBA43691DB61A6200E9E7E8 /* OnlineMerCityTableViewCell.xib in Resources */,
 				2DE2201F1D20DB3E008D7F05 /* OrderTableViewCell.xib in Resources */,
 				2DA09D1A1D2D0CC8000DC714 /* Mine1.xcassets in Resources */,
-				2DA973CD1D1283B100A605F9 /* AMap.bundle in Resources */,
 				2DB94FF51D2A8E33003A6DEA /* AssetsPickerChecked@3x.png in Resources */,
 				2DEE96161D27B60100B46AB1 /* LogisticsCompanyTableViewCell.xib in Resources */,
 				2DE489071D23CA9700472681 /* MessageDetailViewController.xib in Resources */,

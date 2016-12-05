@@ -70,15 +70,18 @@
         {
             __weak JoinLoveAccountViewController *weak_self = self;
             NSDictionary *prams = @{@"token":[TTXUserInfo shareUserInfos].token};
+            [SVProgressHUD showWithStatus:@"爱心帐户更新中..."];
             [HttpClient POST:@"user/donate/get" parameters:prams success:^(NSURLSessionDataTask *operation, id jsonObject) {
+                [SVProgressHUD dismiss];
                 MyLoveAccountViewController *loveAccountVC = [[MyLoveAccountViewController alloc]init];
-                if ([jsonObject[@"data"] isKindOfClass:[NSDictionary class]]) {
+                if ([NullToNumber(jsonObject[@"data"][@"recharge"]) isEqualToString:@"0"]) {
                     [self.navigationController popViewControllerAnimated:YES];
                     return ;
                 }
                 loveAccountVC.loveAccountDic = jsonObject[@"data"];
                 [weak_self.navigationController pushViewController:loveAccountVC animated:YES];
             } failure:^(NSURLSessionDataTask *operation, NSError *error) {
+                [SVProgressHUD dismiss];
                 [self.navigationController popViewControllerAnimated:YES];
             }];
         }
@@ -109,6 +112,7 @@
 
 - (void)backBtnClick
 {
+    [SVProgressHUD dismiss];
     [[NSNotificationCenter defaultCenter]removeObserver:self name:WeixinPayResult object:nil];
     [self.navigationController popViewControllerAnimated:YES];
 }
