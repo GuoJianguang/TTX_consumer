@@ -34,8 +34,7 @@
     self.yetAutLabel.layer.masksToBounds = YES;
     self.yetAutLabel.hidden = YES;
     self.yetAutLabel.text = @"已认证";
-    self.alerLabel.text = @"提示：为保障您的资金安全需进行实名认证，一经认证不可修改。海外、港澳台地区及无法认证的消费者请手动认证";
-    
+    self.alerLabel.text = @"提示：为保障您的资金安全需进行实名认证，一经认证不可修改。海外、港澳台地区及无法认证的消费者请手动认证，您每天最多有3次机会可以进行实名认证，请仔细核对认证信息！";
     self.sureBtn.layer.cornerRadius = self.ManualCerBtn.layer.cornerRadius= 20.;
     self.sureBtn.layer.masksToBounds =  self.ManualCerBtn.layer.masksToBounds = YES;
     
@@ -62,6 +61,11 @@
         [self.view addSubview:waitingVC.view];
     }
     
+    UIAlertController *alertcontroller = [UIAlertController alertControllerWithTitle:@"重要提示" message:@"您每天有3次机会可以进行实名认证，请仔细核实您的实名认证信息" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+    }];
+    [alertcontroller addAction:cancelAction];
+    [self presentViewController:alertcontroller animated:YES completion:NULL];
 }
 
 - (void)viewWillAppear:(BOOL)animated

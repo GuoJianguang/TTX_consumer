@@ -30,9 +30,9 @@
 {
     _dataModel = dataModel;
     if ([NullToNumber(_dataModel[@"recharge"]) isEqualToString:@"0"]) {
-        self.rechargeBtn.hidden = NO;
-    }else{
         self.rechargeBtn.hidden = YES;
+    }else{
+        self.rechargeBtn.hidden = NO;
     }
     self.loveAccountMoeny.text = [NSString stringWithFormat:@"%.2f",[NullToNumber(_dataModel[@"amount"]) doubleValue]];
 }
