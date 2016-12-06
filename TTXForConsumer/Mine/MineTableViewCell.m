@@ -358,8 +358,16 @@
 
 - (void)loadingHeadImage
 {
-    [self.headImage sd_setImageWithURL:[NSURL URLWithString:[TTXUserInfo shareUserInfos].avatar] placeholderImage:[UIImage imageNamed:@"head_sculpture"] completed:NULL];
-
+//    [self.headImage sd_setImageWithURL:[NSURL URLWithString:[TTXUserInfo shareUserInfos].avatar] placeholderImage:[UIImage imageNamed:@"head_sculpture"] completed:NULL];
+    NSLog(@"---------%@",[TTXUserInfo shareUserInfos].avatar);
+    NSString *str = [NSString stringWithFormat:@"%@", [TTXUserInfo shareUserInfos].avatar];
+    
+//    [self.headImage sd_setImageWithURL:[NSURL URLWithString:@"https://7xohgl.com1.z0.glb.clouddn.com/20161206100526178685.jpg"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+//        
+//    }];
+//
+    
+    [self.headImage sd_setImageWithURL:[NSURL URLWithString:@"https://www.dmall.com/images/section1_img.jpg"] placeholderImage:BannerLoadingErrorImage];
 }
 
 #pragma mark - 修改昵称成功

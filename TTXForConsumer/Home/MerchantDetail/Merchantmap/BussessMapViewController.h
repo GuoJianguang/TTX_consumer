@@ -9,23 +9,24 @@
 #import <CoreLocation/CoreLocation.h>
 #import "BaseViewController.h"
 #import "BussessDetailModel.h"
+#import <MAMapKit/MAMapKit.h>
 
-typedef NS_ENUM(NSInteger, AMapRoutePlanningType)
-{
-    AMapRoutePlanningTypeDrive = 0,
-    AMapRoutePlanningTypeWalk,
-    AMapRoutePlanningTypeBus
-};
+
 
 
 @interface BussessMapViewController : BaseViewController
 
 @property (nonatomic, strong)BussessDetailModel *dataModel;
 
+//@property (nonatomic, strong) MAMapView *mapView;
+
+
 //起点
 @property (nonatomic, assign) CLLocationCoordinate2D startcoordinate;
 //终点
 @property (nonatomic, assign) CLLocationCoordinate2D stopcoordinate;
+
+
 
 @property (weak, nonatomic) IBOutlet UIView *naviView;
 

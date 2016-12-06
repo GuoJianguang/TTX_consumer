@@ -155,11 +155,21 @@
         imageData = UIImagePNGRepresentation(image);
         imageSuffix = @"png";
     }
-    QNUploadManager *upManager = [[QNUploadManager alloc] init];
+    
+    QNConfiguration *config = [QNConfiguration build:^(QNConfigurationBuilder *builder) {
+        QNServiceAddress *s1 = [[QNServiceAddress alloc] init:@"https://upload.qbox.me" ips:@"183.136.139.16"];
+        QNServiceAddress *s2 = [[QNServiceAddress alloc] init:@"https://up.qbox.me" ips:@"183.136.139.16"];
+        builder.zone = [[QNZone alloc] initWithUp:s1 upBackup:s2];
+    }];
+    
+//    QNUploadManager *upManager = [[QNUploadManager alloc] init];
+    QNUploadManager *upManager = [[QNUploadManager alloc] initWithConfiguration:config];
     NSString *randomDkey = [NSString stringWithFormat:@"%@.%@",[string stringByAppendingString:strRandom],imageSuffix];
     
     
      [SVProgressHUD showWithStatus:@"正在上传头像"];
+    
+
     [upManager putData:imageData key:randomDkey token:qiniuToken
               complete: ^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
                   [SVProgressHUD dismiss];

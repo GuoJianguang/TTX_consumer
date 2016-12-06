@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 #import <AMapLocationKit/AMapLocationKit.h>
-#import <MAMapKit/MAMapKit.h>
 
 typedef void(^LocationFinish)(NSString *city,NSString *areaName,NSError*error,BOOL success);
 

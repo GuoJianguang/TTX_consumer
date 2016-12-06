@@ -7,21 +7,19 @@
 //
 
 #import "AppDelegate.h"
-#import <MAMapKit/MAMapKit.h>
 #import "UMSocial.h"
 #import "UMSocialWechatHandler.h"
 #import "UMSocialQQHandler.h"
 #import "UMessage.h"
 //#import "ZWIntroductionViewController.h"
-#import <AMapLocationKit/AMapLocationKit.h>
-#import <AMapSearchKit/AMapSearchKit.h>
 #import "WXApi.h"
 #import "WeXinPayObject.h"
 #import "RootViewController.h"
 #import "MineViewController.h"
 #import "HomeViewController.h"
 #import "BaiduMobAdSDK/BaiduMobAdSetting.h"
-
+#import <AMapLocationKit/AMapLocationKit.h>
+#import <AMapFoundationKit/AMapFoundationKit.h>
 
 
 
@@ -77,37 +75,19 @@
 }
 
 - (void)SetTheThirdParty:(NSDictionary*)launchOptions{
-    
-    NSString *bundleID =  [[NSBundle mainBundle] bundleIdentifier];
-    //因为企业版本喝appstore版本的bundledID有区别，所有key也要分开写
-    if ([bundleID isEqualToString:@"com.ttx.tiantianxcn"]) {
-        //高德地图
-        [MAMapServices sharedServices].apiKey = MaP_AppKey_INHOuse;
-        [AMapLocationServices sharedServices].apiKey = MaP_AppKey_INHOuse;
-        [AMapSearchServices sharedServices].apiKey = MaP_AppKey_INHOuse;
-        //友盟分享的key
-        [UMSocialData setAppKey:YoumengKey_Inhouse];
-        //set AppKey and LaunchOptions
-        //友盟推送设置
-        [UMessage startWithAppkey:@"56a9b2dae0f55ae6190022b1" launchOptions:launchOptions];
-        //友盟统计设置
-//        [MobClick startWithAppkey:@"56a9b2dae0f55ae6190022b1" reportPolicy:BATCH   channelId:nil];
-    }else{
-        //高德地图
-        [MAMapServices sharedServices].apiKey = MAP_APPKEY_APPSTORE;
-        [AMapLocationServices sharedServices].apiKey = MAP_APPKEY_APPSTORE;
-        [AMapSearchServices sharedServices].apiKey = MAP_APPKEY_APPSTORE;
-        //友盟分享的key
-        [UMSocialData setAppKey:YoumengKey];
-        //set AppKey and LaunchOptions
-        //友盟推送设置
-        [UMessage startWithAppkey:YoumengKey launchOptions:launchOptions];
-        //友盟统计设置
-        UMConfigInstance.appKey = YoumengKey;
-        UMConfigInstance.channelId = @"App Store";
-        [MobClick startWithConfigure:UMConfigInstance];
+    //高德地图
+    [[AMapServices sharedServices] setEnableHTTPS:YES];
+    [AMapServices sharedServices].apiKey = MAP_APPKEY_APPSTORE;
+    //友盟分享的key
+    [UMSocialData setAppKey:YoumengKey];
+    //set AppKey and LaunchOptions
+    //友盟推送设置
+    [UMessage startWithAppkey:YoumengKey launchOptions:launchOptions];
+    //友盟统计设置
+    UMConfigInstance.appKey = YoumengKey;
+    UMConfigInstance.channelId = @"App Store";
+    [MobClick startWithConfigure:UMConfigInstance];
 //        [MobClick startWithAppkey:YoumengKey reportPolicy:BATCH   channelId:nil];
-    }
     
 //    
 //    //微信支付

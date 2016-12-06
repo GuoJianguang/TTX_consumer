@@ -26,7 +26,7 @@
 @property (nonatomic, copy)NSString *locationCity;
 
 //头像路径
-@property (nonatomic, copy)NSString *avatar;
+@property (nonatomic, strong)NSString *avatar;
 
 @property (nonatomic, copy)NSString *userid;
 //昵称

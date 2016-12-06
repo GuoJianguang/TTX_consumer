@@ -155,8 +155,11 @@
         imageView = (UIImageView*)[view viewWithTag:10];
     }
     HomeModel *model = self.bannerArray[index];
+//    [imageView sd_setImageWithURL:[NSURL URLWithString:model.pic] placeholderImage:BannerLoadingErrorImage options:SDWebImageAllowInvalidSSLCertificates];
     [imageView sd_setImageWithURL:[NSURL URLWithString:model.pic] placeholderImage:BannerLoadingErrorImage];
-    
+//    [imageView sd_setImageWithURL:[NSURL URLWithString:model.pic] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        
+//    }];
     return view;
 }
 

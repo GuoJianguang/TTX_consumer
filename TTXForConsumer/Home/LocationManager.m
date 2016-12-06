@@ -55,7 +55,7 @@
 }
 
 
-#pragma mark location manager delegate
+#pragma mark - location manager delegate
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
 
 //    NSLog(@"---%f",manager.location.coordinate.latitude);
@@ -107,6 +107,9 @@
 - (void)startLocationWithGDManager
 {
     [self.gdLocationManager setDesiredAccuracy:kCLLocationAccuracyHundredMeters];
+    self.gdLocationManager.locationTimeout =2;
+    //   逆地理请求超时时间，最低2s，此处设置为2s
+    self.gdLocationManager.reGeocodeTimeout = 2;
     [self.gdLocationManager requestLocationWithReGeocode:YES completionBlock:^(CLLocation *location, AMapLocationReGeocode *regeocode, NSError *error) {
         [TTXUserInfo shareUserInfos].locationCoordinate = location.coordinate;
         if (error)
@@ -120,7 +123,6 @@
                 return;
             }
         }
-        
         NSLog(@"location:%@", location);
         
         if (regeocode)
