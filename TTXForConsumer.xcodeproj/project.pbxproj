@@ -367,6 +367,7 @@
 		BCC876431DB5B72600E623F2 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCC876411DB5B72600E623F2 /* HomeTableViewCell.xib */; };
 		BCC8764C1DB6166B00E623F2 /* OnLineMerchantCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC8764A1DB6166B00E623F2 /* OnLineMerchantCityViewController.m */; };
 		BCC8764D1DB6166B00E623F2 /* OnLineMerchantCityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCC8764B1DB6166B00E623F2 /* OnLineMerchantCityViewController.xib */; };
+		BCDB18181DF7B2A200E99BED /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCDB18171DF7B2A200E99BED /* MAMapKit.framework */; };
 		BCF301C81DCAD8AC000C7BE7 /* BaseHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF301C01DCAD8AC000C7BE7 /* BaseHttpClient.m */; };
 		BCF301C91DCAD8AC000C7BE7 /* HttpClient_Readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = BCF301C11DCAD8AC000C7BE7 /* HttpClient_Readme.txt */; };
 		BCF301CA1DCAD8AC000C7BE7 /* HttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF301C31DCAD8AC000C7BE7 /* HttpClient.m */; };
@@ -987,6 +988,7 @@
 		BCC876491DB6166B00E623F2 /* OnLineMerchantCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnLineMerchantCityViewController.h; sourceTree = "<group>"; };
 		BCC8764A1DB6166B00E623F2 /* OnLineMerchantCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnLineMerchantCityViewController.m; sourceTree = "<group>"; };
 		BCC8764B1DB6166B00E623F2 /* OnLineMerchantCityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnLineMerchantCityViewController.xib; sourceTree = "<group>"; };
+		BCDB18171DF7B2A200E99BED /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
 		BCF301BF1DCAD8AC000C7BE7 /* BaseHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseHttpClient.h; sourceTree = "<group>"; };
 		BCF301C01DCAD8AC000C7BE7 /* BaseHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseHttpClient.m; sourceTree = "<group>"; };
 		BCF301C11DCAD8AC000C7BE7 /* HttpClient_Readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HttpClient_Readme.txt; sourceTree = "<group>"; };
@@ -1033,6 +1035,7 @@
 				2DA973D21D12850600A605F9 /* CoreGraphics.framework in Frameworks */,
 				2D67CC941D1B878200BB99B4 /* libUMessage_Sdk_1.2.3.a in Frameworks */,
 				2D67CCA11D1B878200BB99B4 /* libWeChatSDK.a in Frameworks */,
+				BCDB18181DF7B2A200E99BED /* MAMapKit.framework in Frameworks */,
 				2D67CC921D1B878200BB99B4 /* TencentOpenAPI.framework in Frameworks */,
 				BC166E1F1DEF2D5A00D4E284 /* BaiduMobAdSDK.framework in Frameworks */,
 				2D67CC911D1B878200BB99B4 /* libSocialQQ.a in Frameworks */,
@@ -1722,6 +1725,7 @@
 		2DB94F821D2A8CC0003A6DEA /* Merchantmap */ = {
 			isa = PBXGroup;
 			children = (
+				BCDB18171DF7B2A200E99BED /* MAMapKit.framework */,
 				BCF7D5DB1DF6AF2100D912CA /* Utility */,
 				2DB94F831D2A8CCF003A6DEA /* BussessMapViewController.h */,
 				2DB94F841D2A8CCF003A6DEA /* BussessMapViewController.m */,
@@ -2953,6 +2957,7 @@
 					"$(PROJECT_DIR)/TTXForConsumer/ThirdAPI/GDMap",
 					"$(PROJECT_DIR)/TTXForConsumer/ThirdAPI/share/TencentOpenAPI",
 					"$(PROJECT_DIR)/TTXForConsumer/ThirdAPI",
+					"$(PROJECT_DIR)/TTXForConsumer/Home/MerchantDetail/Merchantmap",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TTXForConsumer/Public/PrefixHeader.pch";
 				INFOPLIST_FILE = TTXForConsumer/Info.plist;
@@ -3023,6 +3028,7 @@
 					"$(PROJECT_DIR)/TTXForConsumer/ThirdAPI/GDMap",
 					"$(PROJECT_DIR)/TTXForConsumer/ThirdAPI/share/TencentOpenAPI",
 					"$(PROJECT_DIR)/TTXForConsumer/ThirdAPI",
+					"$(PROJECT_DIR)/TTXForConsumer/Home/MerchantDetail/Merchantmap",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TTXForConsumer/Public/PrefixHeader.pch";
 				INFOPLIST_FILE = TTXForConsumer/Info.plist;

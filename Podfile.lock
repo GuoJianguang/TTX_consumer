@@ -14,8 +14,6 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - AMap2DMap (4.3.0):
-    - AMapFoundation (~> 1.2)
   - AMapFoundation (1.2.0)
   - AMapLocation (2.1.1):
     - AMapFoundation (~> 1.2)
@@ -65,7 +63,6 @@ PODS:
   - ZXingObjC/All (3.1.0)
 
 DEPENDENCIES:
-  - AMap2DMap (~> 4.3.0)
   - AMapLocation
   - AMapSearch
   - IQKeyboardManager (~> 3.3.4)
@@ -79,7 +76,6 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  AMap2DMap: f3f0fc5cdbf0242ff22da0c8605f24f8d7187b35
   AMapFoundation: 8acc2bf4eed79aab4d21002ddb8b24a6f3f3621c
   AMapLocation: dd203f76b034ef5cb546600f4e1ffad2a3a14072
   AMapSearch: 788020fca7ed18819e8bc2bfca716a6775a05ada
@@ -93,6 +89,6 @@ SPEC CHECKSUMS:
   UMengAnalytics-NO-IDFA: 1064992c1b7aaa22823179c0b33a664813fd7a85
   ZXingObjC: bf15b3814f7a105b6d99f47da2333c93a063650a
 
-PODFILE CHECKSUM: d1eebf4808be0f18f85d31351cc8181adb7c3d2f
+PODFILE CHECKSUM: 812442931e4fbfb5ec9621ee9f2fcb5acf72d620
 
 COCOAPODS: 1.1.0.beta.1

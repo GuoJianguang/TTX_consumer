@@ -7,10 +7,13 @@
 //
 
 #import "BussessMapViewController.h"
-#import <MapKit/MapKit.h>
 #import <AMapSearchKit/AMapSearchKit.h>
+#import <AMapFoundationKit/AMapFoundationKit.h>
 #import "CommonUtility.h"
 #import "MANaviRoute.h"
+#import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
+
 
 
 
@@ -20,12 +23,9 @@ const NSInteger RoutePlanningPaddingEdge                    = 20;
 
 @interface BussessMapViewController ()<UIActionSheetDelegate,MAMapViewDelegate,AMapSearchDelegate>
 
-//@property (nonatomic, strong)MAMapView *mapView;
 
 @property (nonatomic, strong) AMapSearchAPI *search;
 
-/* 路径规划类型 */
-//@property (nonatomic) AMapRoutePlanningType routePlanningType;
 
 @property (nonatomic, strong) AMapRoute *route;
 
@@ -36,9 +36,6 @@ const NSInteger RoutePlanningPaddingEdge                    = 20;
 @property (nonatomic) NSInteger totalCourse;
 
 
-/* 起始点经纬度. */
-@property (nonatomic) CLLocationCoordinate2D startCoordinate;
-/* 终点经纬度. */
 /* 用于显示当前路线方案. */
 @property (nonatomic) MANaviRoute * naviRoute;
 @property (nonatomic, strong) MAPointAnnotation *startAnnotation;
@@ -47,36 +44,30 @@ const NSInteger RoutePlanningPaddingEdge                    = 20;
 //是否已经规划路线
 @property (nonatomic,assign)BOOL isGuihua;
 
+@property (nonatomic, strong) MAMapView *mapView;
 
 @end
 
 @implementation BussessMapViewController
 
-{
-    MAMapView *_mapview;
 
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.naviBar.title = @"商家地图";
 
-//    [_mapview setCenterCoordinate:self.stopcoordinate animated:YES];
-    self.stopcoordinate        = CLLocationCoordinate2DMake(45.793617, 126.649628);
     
-    ///初始化地图
-    if (_mapview == nil)
-    {
-        CGRect rect = CGRectMake(0, 64, self.view.bounds.size.width, self.view.bounds.size.height - 64 - 85);
-        _mapview = [[MAMapView alloc] initWithFrame:rect];
-        [_mapview setDelegate:self];
-        [self.view addSubview:_mapview];
-    }
+    CGRect rect = CGRectMake(0, 64, self.view.bounds.size.width, self.view.bounds.size.height - 64 - 85);
+    self.mapView = [[MAMapView alloc] initWithFrame:rect];
+    [self.mapView setDelegate:self];
+    [self.view addSubview:self.mapView];
     
-    [_mapview setUserTrackingMode:MAUserTrackingModeFollow animated:YES];
-
+    [self.mapView setUserTrackingMode:MAUserTrackingModeFollow animated:YES];
+    [AMapServices sharedServices].apiKey = MAP_APPKEY_APPSTORE;
     self.search = [[AMapSearchAPI alloc] init];
     self.search.delegate = self;
+    
+    [self addDefaultAnnotations];
     
     ///把地图添加至view
     
@@ -88,100 +79,72 @@ const NSInteger RoutePlanningPaddingEdge                    = 20;
 
     self.address_label.text = self.dataModel.address;
     
-    [self.view bringSubviewToFront:self.naviBar];
-    [self.view bringSubviewToFront:self.naviView];
-    
-    [self addDefaultAnnotations];
-
-
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
-#pragma mark -  导航按钮点击事件
-- (IBAction)naviBtn:(UIButton *)sender
+- (void)viewDidAppear:(BOOL)animated
 {
-    
-}
+    [super viewDidAppear:animated];
 
-#pragma mark - 定位按钮点击事件
-- (IBAction)location_btn:(UIButton *)sender
-{
-}
-
-
-#pragma mark -  路径规划
-- (void)searchRoutePlanningDrive
-{
-    self.isGuihua = YES;
-//    self.startAnnotation.coordinate = self.startCoordinate;
-//    self.destinationAnnotation.coordinate = self.destinationCoordinate;
-    
-    NSLog(@"startLat==%f  startlong==%f",self.startcoordinate.latitude,self.startcoordinate.longitude);
-    NSLog(@"stopLat==%f  stoplong==%f",self.destinationAnnotation.coordinate.latitude,self.destinationAnnotation.coordinate.longitude);
-
-    
-    AMapDrivingRouteSearchRequest *navi = [[AMapDrivingRouteSearchRequest alloc] init];
-    navi.waypoints = @[[AMapGeoPoint locationWithLatitude:45.780563 longitude:126.651764]];
-    navi.requireExtension = YES;
-    //    navi.strategy = 5;
-    /* 出发点. */
-    navi.origin = [AMapGeoPoint locationWithLatitude:self.startCoordinate.latitude
-                                           longitude:self.startCoordinate.longitude];
-    /* 目的地. */
-    navi.destination = [AMapGeoPoint locationWithLatitude:self.stopcoordinate.latitude
-                                                longitude:self.stopcoordinate.longitude];
-    [self.search AMapDrivingRouteSearch:navi];
 
 }
 
 
+#pragma mark - 在地图上加起始点和终点
 - (void)addDefaultAnnotations
 {
     MAPointAnnotation *startAnnotation = [[MAPointAnnotation alloc] init];
     startAnnotation.coordinate = self.startCoordinate;
     startAnnotation.title      = (NSString*)RoutePlanningViewControllerStartTitle;
-    startAnnotation.subtitle   = [NSString stringWithFormat:@"{%f, %f}", self.startCoordinate.latitude, self.startCoordinate.longitude];
+    startAnnotation.subtitle   = @"当前位置";
     self.startAnnotation = startAnnotation;
     
     MAPointAnnotation *destinationAnnotation = [[MAPointAnnotation alloc] init];
-    destinationAnnotation.coordinate = self.stopcoordinate;
+    destinationAnnotation.coordinate = self.destinationCoordinate;
     destinationAnnotation.title      = (NSString*)RoutePlanningViewControllerDestinationTitle;
-    destinationAnnotation.subtitle   = [NSString stringWithFormat:@"{%f, %f}", self.stopcoordinate.latitude, self.stopcoordinate.longitude];
+    destinationAnnotation.subtitle   = self.dataModel.name;;
     self.destinationAnnotation = destinationAnnotation;
     
-    [_mapview addAnnotation:startAnnotation];
-    [_mapview addAnnotation:destinationAnnotation];
-
+    [self.mapView addAnnotation:startAnnotation];
+    [self.mapView addAnnotation:destinationAnnotation];
 }
 
-#pragma mark - AMapSearchDelegate
-- (void)AMapSearchRequest:(id)request didFailWithError:(NSError *)error
-{
-    NSLog(@"Error: %@", error);
-}
 
-/* 路径规划搜索回调. */
-- (void)onRouteSearchDone:(AMapRouteSearchBaseRequest *)request response:(AMapRouteSearchResponse *)response
+#pragma mark - 开始搜索路线
+- (void)searchRoutePlanningDrive
 {
-    if (response.route == nil)
-    {
-        return;
-    }
+    self.isGuihua = YES;
+    self.startAnnotation.coordinate = self.startCoordinate;
+    self.destinationAnnotation.coordinate = self.destinationCoordinate;
     
-    self.route = response.route;
-    self.currentCourse = 0;
-    if (response.count > 0)
-    {
-        [self presentCurrentCourse];
-    }
+    AMapDrivingRouteSearchRequest *navi = [[AMapDrivingRouteSearchRequest alloc] init];
+    //    navi.waypoints = @[[AMapGeoPoint locationWithLatitude:45.780563 longitude:126.651764]];
+    //    navi.requireExtension = YES;
+    //    navi.strategy = 5;
+    /* 出发点. */
+    navi.origin = [AMapGeoPoint locationWithLatitude:self.startCoordinate.latitude
+                                           longitude:self.startCoordinate.longitude];
+    /* 目的地. */
+    navi.destination = [AMapGeoPoint locationWithLatitude:self.destinationCoordinate.latitude
+                                                longitude:self.destinationCoordinate.longitude];
+    
+    [self.search AMapDrivingRouteSearch:navi];
+
 }
 
+#pragma mark - 定位到当前位置
+-(void)mapView:(MAMapView *)mapView didUpdateUserLocation:(MAUserLocation *)userLocation
+updatingLocation:(BOOL)updatingLocation
+{
+    if(updatingLocation)
+    {
+        self.startCoordinate = userLocation.coordinate;
+        //取出当前位置的坐标
+        if (!self.isGuihua) {
+            [self.mapView setCenterCoordinate:userLocation.coordinate animated:YES];
+            [self searchRoutePlanningDrive];
+        }
+    }
+}
 
 
 /* 展示当前路线方案. */
@@ -189,29 +152,18 @@ const NSInteger RoutePlanningPaddingEdge                    = 20;
 {
     MANaviAnnotationType type = MANaviAnnotationTypeDrive;
     self.naviRoute = [MANaviRoute naviRouteForPath:self.route.paths[self.currentCourse] withNaviType:type showTraffic:YES startPoint:[AMapGeoPoint locationWithLatitude:self.startAnnotation.coordinate.latitude longitude:self.startAnnotation.coordinate.longitude] endPoint:[AMapGeoPoint locationWithLatitude:self.destinationAnnotation.coordinate.latitude longitude:self.destinationAnnotation.coordinate.longitude]];
-    [self.naviRoute addToMapView:_mapview];
+    [self.naviRoute addToMapView:self.mapView];
     
     /* 缩放地图使其适应polylines的展示. */
-    [_mapview showOverlays:self.naviRoute.routePolylines edgePadding:UIEdgeInsetsMake(RoutePlanningPaddingEdge, RoutePlanningPaddingEdge, RoutePlanningPaddingEdge, RoutePlanningPaddingEdge) animated:YES];
+    [self.mapView showOverlays:self.naviRoute.routePolylines edgePadding:UIEdgeInsetsMake(RoutePlanningPaddingEdge, RoutePlanningPaddingEdge, RoutePlanningPaddingEdge, RoutePlanningPaddingEdge) animated:YES];
 }
 
-#pragma mark - MAMapViewDelegate
-
-
--(void)mapView:(MAMapView *)mapView didUpdateUserLocation:(MAUserLocation *)userLocation
-updatingLocation:(BOOL)updatingLocation
+/* 清空地图上已有的路线. */
+- (void)clear
 {
-    if(updatingLocation)
-    {
-        //        [_mapView setCenterCoordinate:userLocation.coordinate animated:YES];
-        
-        self.startcoordinate = userLocation.coordinate;
-        //取出当前位置的坐标
-        if (!self.isGuihua) {
-            [self searchRoutePlanningDrive];
-        }
-    }
+    [self.naviRoute removeFromMapView];
 }
+#pragma mark - MAMapViewDelegate
 
 - (MAOverlayRenderer *)mapView:(MAMapView *)mapView rendererForOverlay:(id<MAOverlay>)overlay
 {
@@ -266,7 +218,7 @@ updatingLocation:(BOOL)updatingLocation
     {
         static NSString *routePlanningCellIdentifier = @"RoutePlanningCellIdentifier";
         
-        MAAnnotationView *poiAnnotationView = (MAAnnotationView*)[_mapview dequeueReusableAnnotationViewWithIdentifier:routePlanningCellIdentifier];
+        MAAnnotationView *poiAnnotationView = (MAAnnotationView*)[self.mapView dequeueReusableAnnotationViewWithIdentifier:routePlanningCellIdentifier];
         if (poiAnnotationView == nil)
         {
             poiAnnotationView = [[MAAnnotationView alloc] initWithAnnotation:annotation
@@ -312,6 +264,7 @@ updatingLocation:(BOOL)updatingLocation
             {
                 poiAnnotationView.image = [UIImage imageNamed:@"endPoint"];
             }
+            
         }
         
         return poiAnnotationView;
@@ -321,12 +274,123 @@ updatingLocation:(BOOL)updatingLocation
 }
 
 
+#pragma mark - AMapSearchDelegate
+- (void)AMapSearchRequest:(id)request didFailWithError:(NSError *)error
+{
+    NSLog(@"Error: %@", error);
+}
+
+/* 路径规划搜索回调. */
+- (void)onRouteSearchDone:(AMapRouteSearchBaseRequest *)request response:(AMapRouteSearchResponse *)response
+{
+    if (response.route == nil)
+    {
+        return;
+    }
+    
+    self.route = response.route;
+    [self updateTotal];
+    self.currentCourse = 0;
+    
+    
+    if (response.count > 0)
+    {
+        [self presentCurrentCourse];
+    }
+}
+- (void)updateTotal
+{
+    self.totalCourse = self.route.paths.count;
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+
+#pragma mark -  导航按钮点击事件
+- (IBAction)naviBtn:(UIButton *)sender
+{
+    NSString *gaode;
+    
+    UIActionSheet *sheetView = [[UIActionSheet alloc]initWithTitle:@"请选择地图" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"使用自带地图导航" otherButtonTitles:nil];
+    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"iosamap://"]]) {
+        gaode = @"使用高德地图导航";
+        [sheetView addButtonWithTitle:gaode];
+    }else{
+        gaode = nil;
+    }
+    
+    [sheetView showInView:self.view];
+}
+
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    
+    NSString *buttonTitle = [actionSheet buttonTitleAtIndex:buttonIndex];
+    NSString *type = @"path";
+    NSString *sourceApplication = @"THYY";
+    NSString *backScheme = @"THYYGaode";
+    //源id
+    NSString *sid = @"BGVIS1";
+    //起点名称
+    NSString *sname = @"";
+    //目的地id
+    NSString *did = @"BGVIS2";
+    //起点经纬度
+    NSString *lat = @"";
+    NSString *lon = @"";
+    //终点经纬度
+    NSString *dlat = [NSString stringWithFormat:@"%f",self.destinationCoordinate.latitude];
+    NSString *dlon = [NSString stringWithFormat:@"%f",self.destinationCoordinate.longitude];
+    //终点名称
+    NSString *dname = self.dataModel.name;
+    //线路类型
+    NSString *m = @"0";
+    //导航类型
+    NSString *t = [NSString stringWithFormat:@"%d",0];
+    NSString *dev = @"1";
+    
+//    MANaviConfig * config = [[MANaviConfig alloc] init];
+//    config.destination = self.destinationCoordinate;
+//    config.appScheme = backScheme;
+//    config.appName = sourceApplication;
+//    config.strategy = MADrivingStrategyShortest;
+    
+    if ([buttonTitle isEqualToString:@"使用自带地图导航"]) {
+        //当前的位置
+        MKMapItem *currentLocation = [MKMapItem mapItemForCurrentLocation];
+        //起点
+        //目的地的位置
+        MKMapItem *toLocation = [[MKMapItem alloc] initWithPlacemark:[[MKPlacemark alloc] initWithCoordinate:self.destinationCoordinate addressDictionary:nil]];
+        
+        toLocation.name = self.dataModel.name;
+        NSArray *items = [NSArray arrayWithObjects:currentLocation, toLocation, nil];
+        NSDictionary *options = @{ MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeDriving, MKLaunchOptionsMapTypeKey: [NSNumber numberWithInteger:MKMapTypeStandard], MKLaunchOptionsShowsTrafficKey:@YES };
+        //打开苹果自身地图应用，并呈现特定的item
+        [MKMapItem openMapsWithItems:items launchOptions:options];
+        
+    }else if ([buttonTitle isEqualToString:@"使用高德地图导航"]){
+        NSString *str = [NSString stringWithFormat:@"iosamap://%@?sourceApplication=%@&sid=%@&slat=%@&slon=%@&sname=%@&did=%@&dlat=%@&dlon=%@&dname=%@&dev=%@&m=%@&t=%@",type,sourceApplication,sid,lat,lon,sname,did,dlat,dlon,dname,dev,m,t];
+        NSString *str1 = [str stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        [[UIApplication sharedApplication]openURL:[NSURL URLWithString:str1]];
+    }
+}
+
+
+
+
+
+
+
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    [_mapview clearDisk];
-    _mapview = nil;
+//    [self.mapView clearDisk];
+//    self.mapView = nil;
 }
 
 

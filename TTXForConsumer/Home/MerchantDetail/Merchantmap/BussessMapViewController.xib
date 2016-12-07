@@ -12,7 +12,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BussessMapViewController">
             <connections>
                 <outlet property="address_label" destination="LBd-mW-Cmu" id="1ot-2P-ger"/>
-                <outlet property="location_btn" destination="y5N-q9-VNc" id="cU7-EO-K6r"/>
                 <outlet property="name_label" destination="XaV-DC-Pcl" id="R0P-LG-gwR"/>
                 <outlet property="naviBtn" destination="JPm-9i-sFN" id="VVC-ZM-Fwv"/>
                 <outlet property="naviBtn_view" destination="Egn-Nt-gAT" id="qf9-oP-4mH"/>
@@ -99,20 +98,11 @@
                         <constraint firstItem="SR5-L8-4eu" firstAttribute="leading" secondItem="tdg-0N-psp" secondAttribute="leading" id="vKp-J7-nIs"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y5N-q9-VNc">
-                    <rect key="frame" x="326" y="532" width="31" height="30"/>
-                    <state key="normal" title="定位"/>
-                    <connections>
-                        <action selector="location_btn:" destination="-1" eventType="touchUpInside" id="EzV-D8-fH6"/>
-                    </connections>
-                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="tdg-0N-psp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="0yB-bg-d1r"/>
-                <constraint firstAttribute="trailing" secondItem="y5N-q9-VNc" secondAttribute="trailing" constant="18" id="Cid-Up-fRa"/>
                 <constraint firstAttribute="bottom" secondItem="tdg-0N-psp" secondAttribute="bottom" id="FcK-9T-8Lx"/>
-                <constraint firstItem="tdg-0N-psp" firstAttribute="top" secondItem="y5N-q9-VNc" secondAttribute="bottom" constant="20" id="Z2l-kC-GxY"/>
                 <constraint firstAttribute="trailing" secondItem="tdg-0N-psp" secondAttribute="trailing" id="vhE-JF-KFN"/>
             </constraints>
             <point key="canvasLocation" x="205" y="40"/>

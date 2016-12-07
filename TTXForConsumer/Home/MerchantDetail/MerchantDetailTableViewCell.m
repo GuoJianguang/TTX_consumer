@@ -272,9 +272,8 @@
         [[JAlertViewHelper shareAlterHelper]showTint:@"该商户暂时没有位置信息" duration:1.5];
         return;
     }
-    NSLog(@"stopLat==%f  stoplong==%f",d.latitude,d.longitude);
 
-    mapVC.stopcoordinate = d;
+    mapVC.destinationCoordinate = d;
     mapVC.dataModel = self.dataModel;
     [self.viewController.navigationController pushViewController:mapVC animated:YES];
 }
