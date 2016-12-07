@@ -17,6 +17,7 @@
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
     self.titleLabel.textColor = MacoTitleColor;
     
     self.money.textColor = self.tixianLabel.textColor = self.timeLabel.textColor = self.time.textColor = MacoDetailColor;

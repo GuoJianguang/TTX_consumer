@@ -358,16 +358,10 @@
 
 - (void)loadingHeadImage
 {
-//    [self.headImage sd_setImageWithURL:[NSURL URLWithString:[TTXUserInfo shareUserInfos].avatar] placeholderImage:[UIImage imageNamed:@"head_sculpture"] completed:NULL];
-    NSLog(@"---------%@",[TTXUserInfo shareUserInfos].avatar);
-    NSString *str = [NSString stringWithFormat:@"%@", [TTXUserInfo shareUserInfos].avatar];
-    
-//    [self.headImage sd_setImageWithURL:[NSURL URLWithString:@"https://7xohgl.com1.z0.glb.clouddn.com/20161206100526178685.jpg"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-//        
-//    }];
+    [self.headImage sd_setImageWithURL:[NSURL URLWithString:[TTXUserInfo shareUserInfos].avatar] placeholderImage:[UIImage imageNamed:@"head_sculpture"] completed:NULL];
 //
     
-    [self.headImage sd_setImageWithURL:[NSURL URLWithString:@"https://www.dmall.com/images/section1_img.jpg"] placeholderImage:BannerLoadingErrorImage];
+//    [self.headImage sd_setImageWithURL:[NSURL URLWithString:@"https://www.dmall.com/images/section1_img.jpg"] placeholderImage:BannerLoadingErrorImage];
 }
 
 #pragma mark - 修改昵称成功
@@ -531,7 +525,9 @@
     NSString *url = [NSString stringWithFormat:@"%@%@",HttpClient_BaseUrl,@"user/donate/get"];
     
     [SVProgressHUD showWithStatus:@"正在请求数据..."];
+    sender.enabled = NO;
    [manager POST:url parameters:mutalbleParameter progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+       sender.enabled = YES;
        [SVProgressHUD dismiss];
        @try {
            NSError *error = nil;
@@ -561,6 +557,7 @@
 
     
    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+       sender.enabled = YES;
        [SVProgressHUD dismiss];
        [[JAlertViewHelper shareAlterHelper]showTint:@"网络请求错误，请稍后重试..." duration:2.];
 

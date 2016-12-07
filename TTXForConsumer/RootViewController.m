@@ -97,12 +97,15 @@ static NSString *waitReceive = @"waitReceive";//待收货
         return;
     }else if(alertView.tag == 20){
         return;
+    }else if(alertView.tag == 10 && buttonIndex == 0){
+        return;
     }else{
         //去登录
         if (buttonIndex == 1) {
             UINavigationController *logvc = [LoginViewController controller];
             [self presentViewController:logvc animated:YES completion:NULL];
         }
+        
     }
 }
 

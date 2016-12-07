@@ -11,7 +11,6 @@
 @interface OldWithDrewTableViewCell()<UITextFieldDelegate>
 @property (nonatomic,strong) NSTimer *timer;
 
-
 @end
 
 
@@ -19,7 +18,6 @@
 {
     int timeLefted;
 
-    
 }
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -62,6 +60,7 @@
     // Configure the view for the selected state
 }
 
+#pragma mark - 提现成功的界面
 - (WithDrewSuccessView *)successView
 {
     if (!_successView) {
@@ -69,6 +68,16 @@
     }
     return  _successView;
 }
+
+#pragma mark - 爱心账户
+- (LoveAccountAlerView *)loveAccountView
+{
+    if (!_loveAccountView) {
+        _loveAccountView = [[LoveAccountAlerView alloc]init];
+    }
+    return _loveAccountView;
+}
+
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
@@ -127,27 +136,28 @@
 }
 
 - (IBAction)commitBtn:(UIButton *)sender {
+
     [self.codeTF resignFirstResponder];
     [self.editMoneyTF resignFirstResponder];
-    
     sender.enabled = NO;
     if ([self valueValidated]) {
-        //提现的接口请求
         NSString *password = [[NSString stringWithFormat:@"%@%@",self.codeTF.text,PasswordKey]md5_32];
-        NSDictionary *parms = @{@"token":[TTXUserInfo shareUserInfos].token,
-                                @"password":password,
-                                @"withdrawAmount":self.editMoneyTF.text};
-        [SVProgressHUD showWithStatus:@"正在提交申请"];
-        [HttpClient POST:@"user/withdraw/add" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
-            sender.enabled = YES;
-            [SVProgressHUD dismiss];
+        NSDictionary *prms = @{@"token":[TTXUserInfo shareUserInfos].token,
+                               @"password":password};
+        [HttpClient POST:@"user/donate/notify/get" parameters:prms success:^(NSURLSessionDataTask *operation, id jsonObject) {
             if (IsRequestTrue) {
-                NSDictionary *dic = @{@"money":self.editMoneyTF.text};
-                self.successView.infoDic = dic;
-                [self withDrawalSuccess];
+                if ([NullToNumber(jsonObject[@"data"][@"notifyFlag"]) isEqualToString:@"0"]) {
+                    [self withDrewQequest:sender];
+                }else{
+                    sender.enabled = YES;
+                    if ([jsonObject[@"data"] isKindOfClass:[NSDictionary class]]) {
+                        [self isLoveAccount:jsonObject[@"data"]];
+                    }
+                }
+                return ;
             }
+            sender.enabled = YES;
         } failure:^(NSURLSessionDataTask *operation, NSError *error) {
-            [SVProgressHUD dismiss];
             sender.enabled = YES;
         }];
     }else{
@@ -266,6 +276,46 @@
     htmelVC.htmlTitle = @"提现说明";
     htmelVC.htmlUrl = @"http://www.tiantianxcn.com/html5/forapp/getMoney-notice.html";
     [self.viewController.navigationController pushViewController:htmelVC animated:YES];
-    
 }
+
+#pragma mark - 首先请求是否是爱心账户
+- (void)isLoveAccount:(NSDictionary *)parms
+{
+    [self.viewController.view addSubview:self.loveAccountView];
+    NSString *password = [[NSString stringWithFormat:@"%@%@",self.codeTF.text,PasswordKey]md5_32];
+    NSMutableDictionary *datamodel = [NSMutableDictionary dictionaryWithDictionary:@{@"content":NullToSpace(parms[@"content"]),
+                                @"password":password,
+                                @"withdrawAmount":self.editMoneyTF.text}];
+    self.loveAccountView.dataModelDic = datamodel;
+    [self.loveAccountView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(@0);
+        make.leading.equalTo(self.viewController.view);
+        make.trailing.equalTo(self.viewController.view);
+        make.bottom.equalTo(self.viewController.view);
+    }];
+}
+
+#pragma  mark - 发起提现请求
+- (void)withDrewQequest:(UIButton *)sender
+{
+        //提现的接口请求
+    NSString *password = [[NSString stringWithFormat:@"%@%@",self.codeTF.text,PasswordKey]md5_32];
+    NSDictionary *parms = @{@"token":[TTXUserInfo shareUserInfos].token,
+                            @"password":password,
+                            @"withdrawAmount":self.editMoneyTF.text};
+    [SVProgressHUD showWithStatus:@"正在提交申请"];
+    [HttpClient POST:@"user/withdraw/add" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
+        [SVProgressHUD dismiss];
+        sender.enabled = YES;
+        if (IsRequestTrue) {
+            NSDictionary *dic = @{@"money":self.editMoneyTF.text};
+            self.successView.infoDic = dic;
+            [self withDrawalSuccess];
+        }
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
+        sender.enabled = YES;
+        [SVProgressHUD dismiss];
+    }];
+}
+
 @end

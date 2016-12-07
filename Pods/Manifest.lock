@@ -71,7 +71,7 @@ DEPENDENCIES:
   - Qiniu (~> 7.1.1)
   - SDWebImage (~> 3.8.2)
   - SVProgressHUD-0.8.1
-  - UMengAnalytics-NO-IDFA
+  - UMengAnalytics-NO-IDFA (~> 4.1.1)
   - ZXingObjC (~> 3.1.0)
 
 SPEC CHECKSUMS:
@@ -89,6 +89,6 @@ SPEC CHECKSUMS:
   UMengAnalytics-NO-IDFA: 1064992c1b7aaa22823179c0b33a664813fd7a85
   ZXingObjC: bf15b3814f7a105b6d99f47da2333c93a063650a
 
-PODFILE CHECKSUM: 812442931e4fbfb5ec9621ee9f2fcb5acf72d620
+PODFILE CHECKSUM: c079fade9b4cb6b243c449a5a61f52690c243ab0
 
 COCOAPODS: 1.1.0.beta.1

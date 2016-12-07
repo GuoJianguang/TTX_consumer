@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "WithDrewSuccessView.h"
+#import "LoveAccountAlerView.h"
 
 @interface OldWithDrewTableViewCell : BaseTableViewCell
 
@@ -15,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIView *showMoneyView;
 
 @property (nonatomic, strong)WithDrewSuccessView *successView;
+@property (nonatomic, strong)LoveAccountAlerView *loveAccountView;
 
 
 @property (weak, nonatomic) IBOutlet UILabel *moneyLabel;

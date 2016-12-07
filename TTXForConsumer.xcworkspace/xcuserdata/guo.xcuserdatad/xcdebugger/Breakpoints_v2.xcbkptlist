@@ -42,7 +42,7 @@
                   moduleName = "TTXForConsumer"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/guo/Desktop/TTXForGit/TTX_consumer/TTXForConsumer/Home/GoodsList/OrderAndPay/PayView.m"
-                  timestampString = "502773866.156233"
+                  timestampString = "502794427.212086"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "164"
@@ -57,7 +57,7 @@
                   moduleName = "TTXForConsumer"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/guo/Desktop/TTXForGit/TTX_consumer/TTXForConsumer/Home/GoodsList/OrderAndPay/PayView.m"
-                  timestampString = "502773866.157703"
+                  timestampString = "502794427.214842"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "164"
@@ -80,102 +80,6 @@
             startingLineNumber = "100"
             endingLineNumber = "100"
             landmarkName = "-sureBtn:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TTXForConsumer/Mine/WithDrew/WithDrewSuccessView.m"
-            timestampString = "497606266.805867"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "-init"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TTXForConsumer/Mine/WithDrew/WithDrewSuccessView.m"
-            timestampString = "497607736.640891"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "-buttonAction"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TTXForConsumer/Mine/WithDrew/WithDrewSuccessView.m"
-            timestampString = "497609175.274988"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "-success"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[WithDrewSuccessView success]"
-                  moduleName = "TTXForConsumer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/guo/Desktop/TTXForGit/TTX_consumer/TTXForConsumer/Mine/WithDrew/WithDrewSuccessView.m"
-                  timestampString = "502773866.167154"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "63"
-                  endingLineNumber = "63"
-                  offsetFromSymbolStart = "28">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__30-[WithDrewSuccessView success]_block_invoke"
-                  moduleName = "TTXForConsumer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/guo/Desktop/TTXForGit/TTX_consumer/TTXForConsumer/Mine/WithDrew/WithDrewSuccessView.m"
-                  timestampString = "502773866.168544"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "65"
-                  endingLineNumber = "65"
-                  offsetFromSymbolStart = "12">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TTXForConsumer/Mine/WithDrew/WithDrewSuccessView.m"
-            timestampString = "497609175.274988"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "-success"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -272,6 +176,70 @@
             startingLineNumber = "164"
             endingLineNumber = "164"
             landmarkName = "-upLoadImage:withToken:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TTXForConsumer/AppDelegate.m"
+            timestampString = "502795981.472809"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "204"
+            endingLineNumber = "204"
+            landmarkName = "-application:didReceiveRemoteNotification:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TTXForConsumer/AppDelegate.m"
+            timestampString = "502795981.472809"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "235"
+            endingLineNumber = "235"
+            landmarkName = "-userNotificationCenter:willPresentNotification:withCompletionHandler:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TTXForConsumer/RootViewController.m"
+            timestampString = "502794425.597065"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "-fanxian:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TTXForConsumer/RootViewController.m"
+            timestampString = "502794427.357176"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "-alertView:clickedButtonAtIndex:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
