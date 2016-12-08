@@ -358,6 +358,7 @@
 
 - (void)loadingHeadImage
 {
+    NSLog(@"--------%@",[TTXUserInfo shareUserInfos].avatar);
     [self.headImage sd_setImageWithURL:[NSURL URLWithString:[TTXUserInfo shareUserInfos].avatar] placeholderImage:[UIImage imageNamed:@"head_sculpture"] completed:NULL];
 //
     

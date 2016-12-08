@@ -44,7 +44,7 @@
 #define LoadingErrorImage ([UIImage imageNamed:@"loading_error"])
 #define BannerLoadingErrorImage ([UIImage imageNamed:@"banner_loading_error"])
 #define HeaderLoadingErrorImage ([UIImage imageNamed:@"user_defalut_icon"])
-#define AppIconImage ([UIImage imageNamed:@"appDefaltIcon"])
+#define AppIconImage ([UIImage imageNamed:@"AppIcon"])
 
 
 

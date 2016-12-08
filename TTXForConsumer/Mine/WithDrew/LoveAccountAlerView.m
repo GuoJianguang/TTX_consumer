@@ -62,8 +62,8 @@
 
 - (IBAction)protcolBtn:(id)sender {
     BaseHtmlViewController *htmelVC = [[BaseHtmlViewController alloc]init];
-    htmelVC.htmlTitle = @"提现说明";
-    htmelVC.htmlUrl = @"http://www.tiantianxcn.com/html5/forapp/getMoney-notice.html";
+    htmelVC.htmlTitle = @"账户协议";
+    htmelVC.htmlUrl = [NSString stringWithFormat:@"%@%@",formal_html_base,@"loveNotice.html"];
     [self.viewController.navigationController pushViewController:htmelVC animated:YES];
 }
 

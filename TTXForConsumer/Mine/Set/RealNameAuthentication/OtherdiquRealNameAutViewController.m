@@ -257,11 +257,18 @@
         imageData = UIImagePNGRepresentation(image);
         imageSuffix = @"png";
     }
-    QNUploadManager *upManager = [[QNUploadManager alloc] init];
+    
+    QNConfiguration *config = [QNConfiguration build:^(QNConfigurationBuilder *builder) {
+        QNServiceAddress *s1 = [[QNServiceAddress alloc] init:@"https://upload.qbox.me" ips:@[@"183.136.139.16"]];
+        QNServiceAddress *s2 = [[QNServiceAddress alloc] init:@"https://up.qbox.me" ips:@[@"183.136.139.16"]];
+        builder.zone = [[QNZone alloc] initWithUp:s1 upBackup:s2];
+    }];
+    QNUploadManager *upManager = [[QNUploadManager alloc] initWithConfiguration:config];
     NSString *randomDkey = [NSString stringWithFormat:@"%@.%@",[string stringByAppendingString:strRandom],imageSuffix];
     [upManager putData:imageData key:randomDkey token:qiniuToken
               complete: ^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
                   if (info.error) {
+                      [SVProgressHUD dismiss];
                       self.sureBtn.enabled = YES;
                       [[JAlertViewHelper shareAlterHelper]showTint:@"头像上传失败,请稍后重试" duration:1.5];
                       return;

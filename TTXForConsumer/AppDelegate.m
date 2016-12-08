@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "UMSocial.h"
 #import "UMSocialWechatHandler.h"
 #import "UMessage.h"
 //#import "ZWIntroductionViewController.h"
@@ -79,7 +78,7 @@
     [[AMapServices sharedServices] setEnableHTTPS:YES];
     [AMapServices sharedServices].apiKey = MAP_APPKEY_APPSTORE;
     //友盟分享的key
-    [UMSocialData setAppKey:YoumengKey];
+    [[UMSocialManager defaultManager] setUmSocialAppkey:YoumengKey];
     
     //set AppKey and LaunchOptions
     //友盟推送设置
@@ -88,7 +87,6 @@
     UMConfigInstance.appKey = YoumengKey;
     UMConfigInstance.channelId = @"App Store";
     [MobClick startWithConfigure:UMConfigInstance];
-    
 //        [MobClick startWithAppkey:YoumengKey reportPolicy:BATCH   channelId:nil];
     
 //    
@@ -98,8 +96,7 @@
     [self setUMPush:launchOptions];
 //
 //    //设置微信AppId，设置分享url，默认使用友盟的网址
-    [UMSocialWechatHandler setWXAppId:@"wxcc1bde9f6a54571b" appSecret:@"171a3f441c98d00c3d48790758a3a41c" url:@"http://www.umeng.com/social"];
-    [UMSocialConfig hiddenNotInstallPlatforms:nil];
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wxcc1bde9f6a54571b" appSecret:@"171a3f441c98d00c3d48790758a3a41c" redirectURL:@"http://mobile.umeng.com/social"];
     [TTXUserInfo shareUserInfos].devicetoken = @"1ab38c03b38f4461725d39d8fb143b898279eaa0ee59ea90e057a536a1aecfbd";
 }
 
@@ -209,7 +206,7 @@
 #pragma mark - 私有方法-获取deviceToken
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
 {
-//    [UMessage registerDeviceToken:deviceToken];
+    [UMessage registerDeviceToken:deviceToken];
     NSString *token = [[deviceToken description] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]];
     NSString *str = [token stringByReplacingOccurrencesOfString:@" " withString:@""];
     [TTXUserInfo shareUserInfos].devicetoken = str;
@@ -221,6 +218,8 @@
     //        [_gexinPusher registerDeviceToken:_deviceToken];
     //    }
 }
+
+
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
 {
     //如果注册不成功，打印错误信息，可以在网上找到对应的解决方案
@@ -228,7 +227,7 @@
     NSLog(@"application:didFailToRegisterForRemoteNotificationsWithError: %@", error);
 }
 
-#pragma amrk - UNUserNotificationCenterDelegate
+#pragma mark - UNUserNotificationCenterDelegate
 //iOS10新增：处理前台收到通知的代理方法
 -(void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler{
     NSDictionary * userInfo = notification.request.content.userInfo;
@@ -258,7 +257,6 @@
     }else{
         //应用处于后台时的本地推送接受
     }
-    
 }
 
 

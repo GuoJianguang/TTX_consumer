@@ -17,4 +17,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *expainTextView;
 
 
+@property (weak, nonatomic) IBOutlet UIWebView *webview;
+
+
 @end

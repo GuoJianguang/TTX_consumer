@@ -13,7 +13,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.explainTextView.text = @"账户说明：\nXCode工程目录里面,有时你会发现2个不同颜色的文件夹,一种是蓝色的,一种是黄色的,最常见的是黄色的,我也是最近学习html5的时候,发现还有蓝色的文件夹呢, 来上...";
+    self.explainTextView.text = @"";
     self.explainTextView.textColor = MacoTitleColor;
     self.explainTextView.editable = NO;
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(weixinPayResult:) name:WeixinPayResult object:nil];

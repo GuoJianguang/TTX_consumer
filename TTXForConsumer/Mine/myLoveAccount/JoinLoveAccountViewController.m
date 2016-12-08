@@ -26,10 +26,18 @@
     self.joinBtn.layer.masksToBounds = YES;
     self.joinBtn.backgroundColor = MacoColor;
     
-    self.expainTextView.text = @"账户说明：\nXCode工程目录里面,有时你会发现2个不同颜色的文件夹,一种是蓝色的,一种是黄色的,最常见的是黄色的,我也是最近学习html5的时候,发现还有蓝色的文件夹呢, 来上...";
+    self.expainTextView.text = @"";
     self.expainTextView.textColor = MacoTitleColor;
     self.expainTextView.editable = NO;
+    self.naviBar.hiddenDetailBtn = NO;
+    self.naviBar.detailTitle = @"账户协议";
     self.expainTextView.backgroundColor = [UIColor clearColor];
+    
+    NSURL  *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",formal_html_base,@"loveNotice.html"]];
+    NSURLRequest *request = [[NSURLRequest alloc]initWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:15.];
+//    self.webview.delegate = self;
+    [self.webview loadRequest:request];
+    
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(weixinPayResult:) name:WeixinPayResult object:nil];
 
@@ -117,5 +125,13 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (void)detailBtnClick
+{
+
+    BaseHtmlViewController *htmelVC = [[BaseHtmlViewController alloc]init];
+    htmelVC.htmlTitle = @"账户协议";
+    htmelVC.htmlUrl = [NSString stringWithFormat:@"%@%@",formal_html_base,@"loveNotice.html"];
+    [self.navigationController pushViewController:htmelVC animated:YES];
+}
 
 @end

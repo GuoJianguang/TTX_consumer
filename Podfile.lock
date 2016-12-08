@@ -57,7 +57,6 @@ PODS:
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
   - SVProgressHUD-0.8.1 (0.8)
-  - UMengAnalytics-NO-IDFA (4.1.1)
   - ZXingObjC (3.1.0):
     - ZXingObjC/All (= 3.1.0)
   - ZXingObjC/All (3.1.0)
@@ -71,7 +70,6 @@ DEPENDENCIES:
   - Qiniu (~> 7.1.1)
   - SDWebImage (~> 3.8.2)
   - SVProgressHUD-0.8.1
-  - UMengAnalytics-NO-IDFA (~> 4.1.1)
   - ZXingObjC (~> 3.1.0)
 
 SPEC CHECKSUMS:
@@ -86,9 +84,8 @@ SPEC CHECKSUMS:
   Qiniu: 5e5d7d759d22393bb4b87cdfacf8fab951260f3e
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SVProgressHUD-0.8.1: ee9e6e58b5b5ffaf3f1a62c2dc409763470df143
-  UMengAnalytics-NO-IDFA: 1064992c1b7aaa22823179c0b33a664813fd7a85
   ZXingObjC: bf15b3814f7a105b6d99f47da2333c93a063650a
 
-PODFILE CHECKSUM: c079fade9b4cb6b243c449a5a61f52690c243ab0
+PODFILE CHECKSUM: 8422ee2f456d58f1295a8d7c66597fc6cb232f57
 
 COCOAPODS: 1.1.0.beta.1

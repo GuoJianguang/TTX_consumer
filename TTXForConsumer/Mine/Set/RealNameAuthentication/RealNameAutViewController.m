@@ -51,14 +51,16 @@
         self.ManualCerBtn.hidden = YES;
         self.alerLabel.hidden = YES;
         [self hideIDCardNum];
+        return;
     }
     
     //手动认证是否正在审核
     if ([TTXUserInfo shareUserInfos].idVerifyReqFlag) {
         WaitingAuthenticationViewController *waitingVC = [[WaitingAuthenticationViewController alloc]init];
+        waitingVC.view.backgroundColor = [UIColor whiteColor];
         [self addChildViewController:waitingVC];
-//        [self.navigationController pushViewController:waitingVC animated:YES];
         [self.view addSubview:waitingVC.view];
+        return;
     }
     
     UIAlertController *alertcontroller = [UIAlertController alertControllerWithTitle:@"重要提示" message:@"您每天有3次机会可以进行实名认证，请仔细核实您的实名认证信息" preferredStyle:UIAlertControllerStyleAlert];

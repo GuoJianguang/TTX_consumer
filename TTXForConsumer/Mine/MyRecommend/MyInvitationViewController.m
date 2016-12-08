@@ -8,7 +8,8 @@
 
 #import "MyInvitationViewController.h"
 #import "MyWallectCollectionViewCell.h"
-#import "UMSocial.h"
+#import <UShareUI/UShareUI.h>
+
 
 
 @implementation RecommendMerchantModel
@@ -25,7 +26,7 @@
 @end
 
 
-@interface MyInvitationViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UITableViewDataSource,UITableViewDelegate,BasenavigationDelegate,UMSocialUIDelegate>
+@interface MyInvitationViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UITableViewDataSource,UITableViewDelegate,BasenavigationDelegate>
 
 @property (nonatomic, assign)NSInteger page;//页数
 
@@ -99,6 +100,13 @@
     self.alerLabel.textColor  = MacoColor;
     
 }
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [SVProgressHUD dismiss];
+}
+
 - (NSMutableArray *)dataSouceArray
 {
     if (!_dataSouceArray) {
@@ -363,57 +371,60 @@ minimumLineSpacingForSectionAtIndex:(NSInteger)section
 
 - (IBAction)invitationBtn:(UIButton *)sender {
     
+    //设置用户自定义的平台
+    [UMSocialUIManager setPreDefinePlatforms:@[@(UMSocialPlatformType_WechatSession),
+                                               @(UMSocialPlatformType_WechatTimeLine),
+                                               ]];
+    [SVProgressHUD showWithStatus:@"正在加载..."];
     [HttpClient POST:@"user/recomendInfo/get" parameters:@{@"token":[TTXUserInfo shareUserInfos].token} success:^(NSURLSessionDataTask *operation, id jsonObject) {
+        [SVProgressHUD dismiss];
         if (IsRequestTrue) {
-            [UMSocialData defaultData].extConfig.wechatSessionData.url = NullToSpace(jsonObject[@"data"][@"url"]);
-            [UMSocialData defaultData].extConfig.wechatTimelineData.url = NullToSpace(jsonObject[@"data"][@"url"]);
-            [UMSocialData defaultData].extConfig.wxMessageType = UMSocialWXMessageTypeWeb;
-            [UMSocialData defaultData].extConfig.wechatSessionData.title = @"推荐商家";
-            [UMSocialData defaultData].extConfig.wechatTimelineData.title = @"推荐商家";
-            //先判断bundleId是什么（有企业版）
-            NSString *bundleID =  [[NSBundle mainBundle] bundleIdentifier];
-            if ([bundleID isEqualToString:@"com.ttx.tiantianxcn"]) {
-                
-                [UMSocialSnsService presentSnsIconSheetView:self
-                                                     appKey:YoumengKey_Inhouse
-                                                  shareText:NullToSpace(jsonObject[@"data"][@"title"])
-                                                 shareImage:AppIconImage
-                                            shareToSnsNames:[NSArray arrayWithObjects:UMShareToWechatSession,UMShareToWechatTimeline,nil]
-                                                   delegate:self];
-                return ;
-            }
-            [UMSocialSnsService presentSnsIconSheetView:self
-                                                 appKey:YoumengKey
-                                              shareText:NullToSpace(jsonObject[@"data"][@"title"])
-                                             shareImage:AppIconImage
-                                        shareToSnsNames:[NSArray arrayWithObjects:UMShareToWechatSession,UMShareToWechatTimeline,nil]
-                                               delegate:self];
+            [UMSocialUIManager removeAllCustomPlatformWithoutFilted];
+            [UMSocialShareUIConfig shareInstance].sharePageGroupViewConfig.sharePageGroupViewPostionType = UMSocialSharePageGroupViewPositionType_Bottom;
+            [UMSocialShareUIConfig shareInstance].sharePageScrollViewConfig.shareScrollViewPageItemStyleType = UMSocialPlatformItemViewBackgroudType_IconAndBGRadius;
+            [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
+                [self runShareWithType:platformType withTitle:@"推荐商家" withUrl:NullToSpace(jsonObject[@"data"][@"url"])];
+            }];
         }
     } failure:^(NSURLSessionDataTask *operation, NSError *error) {
-        
+        [SVProgressHUD dismiss];
     }];
 }
 
 
-- (void)didSelectSocialPlatform:(NSString *)platformName withSocialData:(UMSocialData *)socialData
+- (void)runShareWithType:(UMSocialPlatformType)type withTitle:(NSString *)title withUrl:(NSString *)url
 {
-    //    UMSocialWXMessageTypeWeb
-    //    if (platformName == UMShareToQzone) {
-    //        socialData.shareText = @"分享到QQ空间的文字内容";
-    //        socialData.shareImage = LoadingErrorImage;
-    //    }
-    //    else{
-    //
-    //    }
+    //创建分享消息对象
+    UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
+    
+    //创建网页内容对象
+    UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:title descr:title thumImage:AppIconImage];
+    //设置网页地址
+    shareObject.webpageUrl = url;
+    
+    //分享消息对象设置分享内容对象
+    messageObject.shareObject = shareObject;
+    //调用分享接口
+    [[UMSocialManager defaultManager] shareToPlatform:type messageObject:messageObject currentViewController:self completion:^(id data, NSError *error) {
+        if (error) {
+            UMSocialLogInfo(@"************Share fail with error %@*********",error);
+        }else{
+            if ([data isKindOfClass:[UMSocialShareResponse class]]) {
+                UMSocialShareResponse *resp = data;
+                //分享结果消息
+                UMSocialLogInfo(@"response message is %@",resp.message);
+                //第三方原始返回的数据
+                UMSocialLogInfo(@"response originalResponse data is %@",resp.originalResponse);
+                
+            }else{
+                UMSocialLogInfo(@"response data is %@",data);
+            }
+        }
+        [[JAlertViewHelper shareAlterHelper]showTint:@"分享失败，请重试..." duration:2.];
+        //        [self alertWithError:error];
+    }];
+    
 }
 
-- (void)didFinishGetUMSocialDataInViewController:(UMSocialResponseEntity *)response
-{
-    //根据`responseCode`得到发送结果,如果分享成功
-    if(response.responseCode == UMSResponseCodeSuccess)
-    {
-        //得到分享到的微博平台名
-        NSLog(@"share to sns name is %@",[[response.data allKeys] objectAtIndex:0]);
-    }
-}
+
 @end
