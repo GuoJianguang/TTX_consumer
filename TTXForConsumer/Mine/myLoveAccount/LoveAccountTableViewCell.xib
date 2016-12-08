@@ -91,29 +91,27 @@
                             <constraint firstItem="qSr-Kp-AEZ" firstAttribute="leading" secondItem="hfW-gm-gzK" secondAttribute="leading" id="yVD-GV-pPK"/>
                         </constraints>
                     </view>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="账户说明" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="inC-ut-RnP">
-                        <rect key="frame" x="10" y="235" width="300" height="364.5"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                    </textView>
+                    <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VdZ-uS-bq3">
+                        <rect key="frame" x="0.0" y="225" width="320" height="374.5"/>
+                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </webView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="hfW-gm-gzK" firstAttribute="top" secondItem="EN5-Qq-pQ0" secondAttribute="top" id="EJ2-tQ-BUH"/>
-                    <constraint firstItem="inC-ut-RnP" firstAttribute="top" secondItem="hfW-gm-gzK" secondAttribute="bottom" constant="10" id="UPf-cy-9Uc"/>
+                    <constraint firstItem="VdZ-uS-bq3" firstAttribute="leading" secondItem="EN5-Qq-pQ0" secondAttribute="leading" id="Rmj-44-KHD"/>
+                    <constraint firstAttribute="bottom" secondItem="VdZ-uS-bq3" secondAttribute="bottom" id="SPQ-et-GFX"/>
                     <constraint firstAttribute="trailing" secondItem="hfW-gm-gzK" secondAttribute="trailing" id="ZNe-Xn-lzx"/>
-                    <constraint firstAttribute="bottom" secondItem="inC-ut-RnP" secondAttribute="bottom" id="eQD-eC-G08"/>
-                    <constraint firstAttribute="trailing" secondItem="inC-ut-RnP" secondAttribute="trailing" constant="10" id="eTo-8y-40G"/>
                     <constraint firstItem="hfW-gm-gzK" firstAttribute="leading" secondItem="EN5-Qq-pQ0" secondAttribute="leading" id="fWc-FW-LL0"/>
-                    <constraint firstItem="inC-ut-RnP" firstAttribute="leading" secondItem="EN5-Qq-pQ0" secondAttribute="leading" constant="10" id="hbb-xy-Cec"/>
+                    <constraint firstItem="VdZ-uS-bq3" firstAttribute="top" secondItem="hfW-gm-gzK" secondAttribute="bottom" id="rlS-cV-Nkw"/>
+                    <constraint firstAttribute="trailing" secondItem="VdZ-uS-bq3" secondAttribute="trailing" id="tOu-Xt-vaj"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="explainTextView" destination="inC-ut-RnP" id="xSj-3N-sqP"/>
                 <outlet property="loveAccountMoeny" destination="7sO-rg-tsd" id="i6I-5e-CiO"/>
                 <outlet property="rechargeBtn" destination="3TP-YB-VBY" id="fTe-9Q-6Dy"/>
+                <outlet property="webView" destination="VdZ-uS-bq3" id="nJ1-Hr-Ggw"/>
             </connections>
-            <point key="canvasLocation" x="-240" y="-141"/>
+            <point key="canvasLocation" x="-428" y="-165"/>
         </tableViewCell>
     </objects>
     <resources>

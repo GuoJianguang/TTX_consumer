@@ -29,13 +29,14 @@
     self.expainTextView.text = @"";
     self.expainTextView.textColor = MacoTitleColor;
     self.expainTextView.editable = NO;
-    self.naviBar.hiddenDetailBtn = NO;
+    self.naviBar.hiddenDetailBtn = YES;
     self.naviBar.detailTitle = @"账户协议";
     self.expainTextView.backgroundColor = [UIColor clearColor];
     
     NSURL  *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",formal_html_base,@"loveNotice.html"]];
     NSURLRequest *request = [[NSURLRequest alloc]initWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:15.];
 //    self.webview.delegate = self;
+    self.webview.backgroundColor = MacoGrayColor;
     [self.webview loadRequest:request];
     
     

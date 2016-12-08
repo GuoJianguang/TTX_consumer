@@ -25,5 +25,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *loveAccountMoeny;
 
 
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
+
 
 @end

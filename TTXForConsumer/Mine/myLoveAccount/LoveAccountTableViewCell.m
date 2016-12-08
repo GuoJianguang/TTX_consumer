@@ -18,6 +18,12 @@
     self.explainTextView.editable = NO;
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(weixinPayResult:) name:WeixinPayResult object:nil];
     
+    NSURL  *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",formal_html_base,@"loveNotice.html"]];
+    NSURLRequest *request = [[NSURLRequest alloc]initWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:15.];
+    //    self.webview.delegate = self;
+    self.webView.backgroundColor = MacoGrayColor;
+    [self.webView loadRequest:request];
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

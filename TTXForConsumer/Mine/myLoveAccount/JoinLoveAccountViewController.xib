@@ -11,7 +11,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JoinLoveAccountViewController">
             <connections>
-                <outlet property="expainTextView" destination="8WU-yr-7oS" id="uTd-C8-RbC"/>
                 <outlet property="joinBtn" destination="KAR-Ja-12x" id="dvj-fC-Rrd"/>
                 <outlet property="view" destination="jPL-I3-lXd" id="OgD-0F-kaA"/>
                 <outlet property="webview" destination="b2Z-KV-dCh" id="CEO-OF-cCa"/>
@@ -22,12 +21,6 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8WU-yr-7oS">
-                    <rect key="frame" x="10" y="64" width="355" height="508"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                </textView>
                 <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b2Z-KV-dCh">
                     <rect key="frame" x="0.0" y="64" width="375" height="533"/>
                     <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -38,7 +31,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zbu-Is-oA6">
                             <rect key="frame" x="0.0" y="25" width="375" height="70"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您还不是爱心协会会员，可微信支付9元成为会员，点击按钮立即加入" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5SI-1G-fkh">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="充值9元，加入中华天添薪慈善基金会，为您及家人的生活保驾护航。" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5SI-1G-fkh">
                                     <rect key="frame" x="30" y="23.5" width="315" height="33.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <color key="textColor" red="0.8862745098" green="0.36470588240000001" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -90,13 +83,9 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="8WU-yr-7oS" firstAttribute="leading" secondItem="jPL-I3-lXd" secondAttribute="leading" constant="10" id="3Yp-AJ-P6P"/>
-                <constraint firstItem="zdV-1n-OiN" firstAttribute="top" secondItem="8WU-yr-7oS" secondAttribute="bottom" id="FQE-lK-FZb"/>
                 <constraint firstAttribute="bottom" secondItem="zdV-1n-OiN" secondAttribute="bottom" id="JyV-5M-dEU"/>
-                <constraint firstItem="8WU-yr-7oS" firstAttribute="top" secondItem="jPL-I3-lXd" secondAttribute="top" constant="64" id="M7L-FS-gif"/>
                 <constraint firstItem="zdV-1n-OiN" firstAttribute="top" secondItem="b2Z-KV-dCh" secondAttribute="bottom" constant="-25" id="NVx-De-11q"/>
                 <constraint firstItem="b2Z-KV-dCh" firstAttribute="leading" secondItem="jPL-I3-lXd" secondAttribute="leading" id="Qdv-o9-cPD"/>
-                <constraint firstAttribute="trailing" secondItem="8WU-yr-7oS" secondAttribute="trailing" constant="10" id="Rfy-hx-T8L"/>
                 <constraint firstAttribute="trailing" secondItem="b2Z-KV-dCh" secondAttribute="trailing" id="d3Q-I6-b1j"/>
                 <constraint firstItem="b2Z-KV-dCh" firstAttribute="top" secondItem="jPL-I3-lXd" secondAttribute="top" constant="64" id="nXm-Ux-Bv7"/>
                 <constraint firstAttribute="trailing" secondItem="zdV-1n-OiN" secondAttribute="trailing" id="nY9-cT-gfj"/>
