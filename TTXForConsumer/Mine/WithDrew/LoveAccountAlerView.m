@@ -84,7 +84,7 @@
         [SVProgressHUD dismiss];
         sender.enabled = YES;
         if (IsRequestTrue) {
-            NSDictionary *dic = @{@"money":_dataModelDic[@"withdrawAmount"]};
+            NSDictionary *dic = @{@"money":NullToNumber(jsonObject[@"data"])};
             self.successView.infoDic = dic;
             [self withDrawalSuccess];
         }
