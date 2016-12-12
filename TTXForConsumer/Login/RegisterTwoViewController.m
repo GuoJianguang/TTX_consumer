@@ -70,7 +70,7 @@
 {
     BaseHtmlViewController *htmlVC = [[BaseHtmlViewController alloc]init];
     htmlVC.htmlTitle = @"用户使用条款及服务协议";
-    htmlVC.htmlUrl = @"http://www.tiantianxcn.com/html5/forapp/xy_user.html";
+    htmlVC.htmlUrl = @"https://www.tiantianxcn.com/html5/forapp/xy_user.html";
     [self.navigationController pushViewController:htmlVC animated:YES];
 }
 

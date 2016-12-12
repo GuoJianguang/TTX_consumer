@@ -40,18 +40,12 @@
 // GBK 编码
 #define GBKEncoding CFStringConvertEncodingToNSStringEncoding(0x0632)
 
-#define formal_html_base @"https://test.p.tiantianxcn.com/ttx-api/"
-
-#define formal_base @"https://test.p.tiantianxcn.com/ttx-api/2.2.2/"
-//#define formal_base @"http://api.tiantianxcn.com/ttx-api/2.2.2/"
-//13551198939
+//#define formal_html_base @"https://test.p.tiantianxcn.com/ttx-api/"
+#define formal_html_base @"https://api.tiantianxcn.com/ttx-api/"
+//#define formal_base @"https://test.p.tiantianxcn.com/ttx-api/2.2.2/"
+#define formal_base @"https://api.tiantianxcn.com/ttx-api/2.2.2/"
 ////正式
 #define HttpClient_BaseUrl formal_base
-
-
-
-//#define HttpClient_IMAGE_BASE_URL  formal_image_base
-//#define HttpClinet_Html_Base_Url formal_html_base
 
 #define HttpClient_MusicOrVideo_BASE_URL linux_musicorvideo_base
 

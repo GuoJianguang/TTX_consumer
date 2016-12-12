@@ -360,8 +360,6 @@
 {
     NSLog(@"--------%@",[TTXUserInfo shareUserInfos].avatar);
     [self.headImage sd_setImageWithURL:[NSURL URLWithString:[TTXUserInfo shareUserInfos].avatar] placeholderImage:[UIImage imageNamed:@"head_sculpture"] completed:NULL];
-//
-    
 //    [self.headImage sd_setImageWithURL:[NSURL URLWithString:@"https://www.dmall.com/images/section1_img.jpg"] placeholderImage:BannerLoadingErrorImage];
 }
 
@@ -374,7 +372,6 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
 }
 
 - (IBAction)integralHelf:(UIButton *)sender {
@@ -518,7 +515,6 @@
 
 //我的爱心账户
 - (IBAction)mylvoeBtn:(UIButton *)sender {
-
     __weak MineTableViewCell *weak_self = self;
     NSDictionary *prams = @{@"token":[TTXUserInfo shareUserInfos].token};
     AFHTTPSessionManager *manager = [self defaultManager];

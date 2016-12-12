@@ -34,7 +34,6 @@
     [self.tableView reloadData];
 }
 
-
 - (UITableView *)tableView
 {
     if (!_tableView) {
@@ -53,7 +52,8 @@
     MineTableViewCell *cell = self.tableView.visibleCells[0];
     [cell loadingHeadImage];
     [cell searchUserInfor];
-    [cell getMyGrade];}
+    [cell getMyGrade];
+}
 
 
 - (void)detailBtnClick
@@ -85,7 +85,6 @@
     return TWitdh*(963/750.) + 385 + 44;
 }
 
-
 #pragma mark - 退出登录的操作
 - (void)logout:(NSNotification *)notification
 {
@@ -100,7 +99,6 @@
     [cell searchUserInfor];
     [cell getMyGrade];
 }
-
 
 - (void)viewWillDisappear:(BOOL)animated
 {

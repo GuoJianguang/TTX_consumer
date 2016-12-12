@@ -38,11 +38,11 @@
     
 }
 - (IBAction)companyWebsite:(UIButton *)sender {
-    if (![[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"http://www.tiantianxcn.com"]]) {
+    if (![[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"https://www.tiantianxcn.com"]]) {
         [[JAlertViewHelper shareAlterHelper]showTint:@"暂时不能浏览官网" duration:1.5];
         return;
     }
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.tiantianxcn.com"]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.tiantianxcn.com"]];
     
 }
 

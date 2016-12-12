@@ -209,7 +209,7 @@
 - (void)detailBtnClick
 {
     BaseHtmlViewController *htmlVC = [[BaseHtmlViewController alloc]init];
-    htmlVC.htmlUrl = @"http://www.tiantianxcn.com/html5/forapp/introduce-notice.html";
+    htmlVC.htmlUrl = @"https://www.tiantianxcn.com/html5/forapp/introduce-notice.html";
     htmlVC.htmlTitle = @"邀请规则";
     [self.navigationController pushViewController:htmlVC animated:YES];
 }
