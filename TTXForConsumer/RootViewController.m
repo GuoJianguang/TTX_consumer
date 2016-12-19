@@ -52,7 +52,6 @@ static NSString *waitReceive = @"waitReceive";//待收货
 }
 
 //接收让利回馈信息的推送
-
 - (void)fanxian:(NSNotification *)faication
 {
     if ([TTXUserInfo shareUserInfos].currentLogined) {
@@ -135,7 +134,6 @@ static NSString *waitReceive = @"waitReceive";//待收货
         }];
     }
 }
-
 
 
 - (void)didReceiveMemoryWarning {

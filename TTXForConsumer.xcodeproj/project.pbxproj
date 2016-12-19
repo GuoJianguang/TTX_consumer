@@ -331,7 +331,7 @@
 		2DEE96211D27BE5800B46AB1 /* SharkItOff.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DEE96201D27BE5800B46AB1 /* SharkItOff.xcassets */; };
 		2DF504F01D3237C000F18498 /* SureGoodsOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DF504EF1D3237C000F18498 /* SureGoodsOrderTableViewCell.xib */; };
 		8F88938659FF13352B77A710 /* libPods-TTXForConsumer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E774D5DE23C8831077C2BD2C /* libPods-TTXForConsumer.a */; };
-		BC166E1F1DEF2D5A00D4E284 /* BaiduMobAdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC166E1E1DEF2D5A00D4E284 /* BaiduMobAdSDK.framework */; };
+		BC021E9A1E07739F0080E844 /* BaiduMobAdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC021E991E07739F0080E844 /* BaiduMobAdSDK.framework */; };
 		BC166E231DEF2ECF00D4E284 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC166E221DEF2ECF00D4E284 /* SafariServices.framework */; };
 		BC172B5C1DF00393005467D6 /* OldWithDrewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC172B591DF00393005467D6 /* OldWithDrewTableViewCell.m */; };
 		BC172B5D1DF00393005467D6 /* OldWithDrewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC172B5B1DF00393005467D6 /* OldWithDrewTableViewCell.xib */; };
@@ -918,7 +918,7 @@
 		2DEE96201D27BE5800B46AB1 /* SharkItOff.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SharkItOff.xcassets; sourceTree = "<group>"; };
 		2DF504EF1D3237C000F18498 /* SureGoodsOrderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SureGoodsOrderTableViewCell.xib; sourceTree = "<group>"; };
 		9224DB1A4C1073BF7D34FE20 /* Pods-TTXForConsumer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTXForConsumer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TTXForConsumer/Pods-TTXForConsumer.debug.xcconfig"; sourceTree = "<group>"; };
-		BC166E1E1DEF2D5A00D4E284 /* BaiduMobAdSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMobAdSDK.framework; sourceTree = "<group>"; };
+		BC021E991E07739F0080E844 /* BaiduMobAdSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMobAdSDK.framework; sourceTree = "<group>"; };
 		BC166E201DEF2EA900D4E284 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		BC166E221DEF2ECF00D4E284 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		BC172B591DF00393005467D6 /* OldWithDrewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OldWithDrewTableViewCell.m; sourceTree = "<group>"; };
@@ -1010,10 +1010,10 @@
 				2DA973D81D12853400A605F9 /* CoreLocation.framework in Frameworks */,
 				2DA973D41D12851B00A605F9 /* QuartzCore.framework in Frameworks */,
 				BCDB18241DF80EB800E99BED /* libWeChatSDK.a in Frameworks */,
+				BC021E9A1E07739F0080E844 /* BaiduMobAdSDK.framework in Frameworks */,
 				2DA973D21D12850600A605F9 /* CoreGraphics.framework in Frameworks */,
 				BCAE31031DF9290F0026E231 /* UMSocialNetwork.framework in Frameworks */,
 				BCDB18181DF7B2A200E99BED /* MAMapKit.framework in Frameworks */,
-				BC166E1F1DEF2D5A00D4E284 /* BaiduMobAdSDK.framework in Frameworks */,
 				8F88938659FF13352B77A710 /* libPods-TTXForConsumer.a in Frameworks */,
 				BCAE31051DF9290F0026E231 /* UShareUI.framework in Frameworks */,
 			);
@@ -1475,8 +1475,8 @@
 		2DA9738E1D127BC500A605F9 /* ThirdAPI */ = {
 			isa = PBXGroup;
 			children = (
+				BC021E991E07739F0080E844 /* BaiduMobAdSDK.framework */,
 				BCAE30F81DF925C30026E231 /* UMStatistics_4.1.4 */,
-				BC166E1E1DEF2D5A00D4E284 /* BaiduMobAdSDK.framework */,
 				2DB94F9C1D2A8E33003A6DEA /* ZLPhotoLib */,
 				2D67CC671D1B878200BB99B4 /* share */,
 				2D7216951D12A55000D3F7D6 /* SwipeView */,
