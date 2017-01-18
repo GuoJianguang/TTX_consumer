@@ -8,7 +8,7 @@
 
 #import "WithDrewMoneyViewController.h"
 #import "WithDrewTableViewCell.h"
-#import "OldWithDrewTableViewCell.h"
+//#import "OldWithDrewTableViewCell.h"
 
 @interface WithDrewMoneyViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -30,9 +30,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    OldWithDrewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[OldWithDrewTableViewCell indentify]];
+//    OldWithDrewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[OldWithDrewTableViewCell indentify]];
+//    if (!cell) {
+//        cell = [OldWithDrewTableViewCell newCell];
+//    }
+    WithDrewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[WithDrewTableViewCell indentify]];
     if (!cell) {
-        cell = [OldWithDrewTableViewCell newCell];
+        cell = [WithDrewTableViewCell newCell];
     }
     return cell;
 }
