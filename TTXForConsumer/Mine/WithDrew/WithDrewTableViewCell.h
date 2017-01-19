@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "WithDrewSuccessView.h"
+#import "LoveAccountAlerView.h"
+
 
 @interface WithDrewTableViewCell : BaseTableViewCell
 
@@ -48,6 +50,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *alerLabel1;
 
+@property (nonatomic, strong)LoveAccountAlerView *loveAccountView;
 
 
 

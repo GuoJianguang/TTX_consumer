@@ -154,7 +154,7 @@
                         [self isLoveAccount:jsonObject[@"data"]];
                     }
                 }
-                return ;
+                return;
             }
             sender.enabled = YES;
         } failure:^(NSURLSessionDataTask *operation, NSError *error) {

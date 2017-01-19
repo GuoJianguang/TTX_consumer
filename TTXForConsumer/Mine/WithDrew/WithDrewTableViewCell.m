@@ -11,6 +11,8 @@
 @interface WithDrewTableViewCell()<UITextFieldDelegate>
 @property (nonatomic,strong) NSTimer *timer;
 
+@property (nonatomic,strong)NSString *rate;
+
 
 @end
 
@@ -56,7 +58,25 @@
         self.alerGradeLabel.text = [NSString stringWithFormat:@"当前等级VIP%@,提现额度为1000",[TTXUserInfo shareUserInfos].grade];
     }
     
+    
     [self checkWhatMybank];
+}
+
+- (NSString *)rate
+{
+    if (!_rate) {
+        _rate = [NSString string];
+    }
+    return _rate;
+}
+
+
+- (LoveAccountAlerView *)loveAccountView
+{
+    if (!_loveAccountView) {
+        _loveAccountView = [[LoveAccountAlerView alloc]init];
+    }
+    return _loveAccountView;
 }
 
 
@@ -72,8 +92,10 @@
     NSDictionary *parms = @{@"token":[TTXUserInfo shareUserInfos].token};
     [HttpClient GET:@"user/withdraw/bindBankcard/get" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
         if (IsRequestTrue) {
-            
             [TTXUserInfo shareUserInfos].bankname = NullToSpace(jsonObject[@"data"][@"bankId"]);
+            self.rate = NullToNumber(jsonObject[@"data"][@"withdrawRate"]);
+            self.alerLabel.text = NullToSpace(jsonObject[@"data"][@"withdrawRateDesc"]);
+            
         }
     }failure:^(NSURLSessionDataTask *operation, NSError *error) {
     }];
@@ -145,33 +167,62 @@
 }
 
 - (IBAction)commitBtn:(UIButton *)sender {
+//    [self.codeTF resignFirstResponder];
+//    [self.editMoneyTF resignFirstResponder];
+//    
+//    sender.enabled = NO;
+//    if ([self valueValidated]) {
+//        //提现的接口请求
+//        NSString *password = [[NSString stringWithFormat:@"%@%@",self.codeTF.text,PasswordKey]md5_32];
+//        NSDictionary *parms = @{@"token":[TTXUserInfo shareUserInfos].token,
+//                                @"password":password,
+//                                @"withdrawAmount":self.editMoneyTF.text};
+//        [SVProgressHUD showWithStatus:@"正在提交申请"];
+//        [HttpClient POST:@"user/withdraw/add" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
+//            sender.enabled = YES;
+//            [SVProgressHUD dismiss];
+//            if (IsRequestTrue) {
+//                NSDictionary *dic = @{@"money":self.editMoneyTF.text};
+//                self.successView.infoDic = dic;
+//                [self withDrawalSuccess];
+//            }
+//        } failure:^(NSURLSessionDataTask *operation, NSError *error) {
+//            [SVProgressHUD dismiss];
+//            sender.enabled = YES;
+//        }];
+//    }else{
+//        sender.enabled = YES;
+//    }
+    
     [self.codeTF resignFirstResponder];
     [self.editMoneyTF resignFirstResponder];
-    
     sender.enabled = NO;
     if ([self valueValidated]) {
-        //提现的接口请求
         NSString *password = [[NSString stringWithFormat:@"%@%@",self.codeTF.text,PasswordKey]md5_32];
-        NSDictionary *parms = @{@"token":[TTXUserInfo shareUserInfos].token,
-                                @"password":password,
-                                @"withdrawAmount":self.editMoneyTF.text};
-        [SVProgressHUD showWithStatus:@"正在提交申请"];
-        [HttpClient POST:@"user/withdraw/add" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
-            sender.enabled = YES;
-            [SVProgressHUD dismiss];
+        NSDictionary *prms = @{@"token":[TTXUserInfo shareUserInfos].token,
+                               @"password":password};
+        //判断是否加入了爱心账户
+        [HttpClient POST:@"user/donate/notify/get" parameters:prms success:^(NSURLSessionDataTask *operation, id jsonObject) {
             if (IsRequestTrue) {
-                NSDictionary *dic = @{@"money":self.editMoneyTF.text};
-                self.successView.infoDic = dic;
-                [self withDrawalSuccess];
+                if ([NullToNumber(jsonObject[@"data"][@"notifyFlag"]) isEqualToString:@"0"]) {
+                    [self withDrewQequest:sender];
+                }else{
+                    sender.enabled = YES;
+                    if ([jsonObject[@"data"] isKindOfClass:[NSDictionary class]]) {
+                        [self isLoveAccount:jsonObject[@"data"]];
+                        return ;
+                    }
+                    [[JAlertViewHelper shareAlterHelper]showTint:@"数据异常，请稍后重试" duration:2.];
+                }
+                return;
             }
+            sender.enabled = YES;
         } failure:^(NSURLSessionDataTask *operation, NSError *error) {
-            [SVProgressHUD dismiss];
             sender.enabled = YES;
         }];
     }else{
         sender.enabled = YES;
     }
-    
 }
 
 #pragma mark - 提现成功
@@ -199,8 +250,8 @@
     }else if ([self.editMoneyTF.text integerValue]%10 !=0){
         [[JAlertViewHelper shareAlterHelper]showTint:@"您的提现金额必须是10的整数倍" duration:1.5];
         return NO;
-    }else if (([self.editMoneyTF.text integerValue] <100 || [self.editMoneyTF.text integerValue] >1000) &&![[TTXUserInfo shareUserInfos].grade isEqualToString:@"10"]){
-        [[JAlertViewHelper shareAlterHelper]showTint:@"您的提现金额不能小于100，并且不能超过1000" duration:1.5];
+    }else if (([self.editMoneyTF.text integerValue] <300 || [self.editMoneyTF.text integerValue] >1000) &&![[TTXUserInfo shareUserInfos].grade isEqualToString:@"10"]){
+        [[JAlertViewHelper shareAlterHelper]showTint:@"您的提现金额不能小于300，并且不能超过1000" duration:1.5];
         return NO;
     }else if ([self emptyTextOfTextField:self.codeTF]) {
         [[JAlertViewHelper shareAlterHelper]showTint:@"请输入密码" duration:1.5];
@@ -225,13 +276,13 @@
         if ([textField.text  isEqualToString: @""] || !textField.text) {
             return;
         }
-        
+        double withRate = 1 -  [self.rate doubleValue];
         double money = [textField.text doubleValue];
         if ([[TTXUserInfo shareUserInfos].bankname isEqualToString:@"2"]) {
-            double actualMoney = money*0.91 - 2;
+            double actualMoney = money*withRate - 2;
             self.actualAmount.text = [NSString stringWithFormat:@"实到金额：%.2f元",actualMoney];
         }else{
-            double actualMoney = money*0.91 - 6;
+            double actualMoney = money*withRate - 6;
             self.actualAmount.text = [NSString stringWithFormat:@"实到金额：%.2f元",actualMoney];
         }
     }
@@ -309,5 +360,45 @@
 }
 
 
+#pragma  mark - 发起提现请求
+- (void)withDrewQequest:(UIButton *)sender
+{
+    //提现的接口请求
+    NSString *password = [[NSString stringWithFormat:@"%@%@",self.codeTF.text,PasswordKey]md5_32];
+    NSDictionary *parms = @{@"token":[TTXUserInfo shareUserInfos].token,
+                            @"password":password,
+                            @"withdrawAmount":self.editMoneyTF.text};
+    [SVProgressHUD showWithStatus:@"正在提交申请"];
+    [HttpClient POST:@"user/withdraw/add" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
+        [SVProgressHUD dismiss];
+        sender.enabled = YES;
+        if (IsRequestTrue) {
+            NSDictionary *dic = @{@"money":self.editMoneyTF.text};
+            self.successView.infoDic = dic;
+            [self withDrawalSuccess];
+        }
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
+        sender.enabled = YES;
+        [SVProgressHUD dismiss];
+    }];
+}
+
+#pragma mark - 是否加入爱心账户
+
+- (void)isLoveAccount:(NSDictionary *)parms
+{
+    [self.viewController.view addSubview:self.loveAccountView];
+    NSString *password = [[NSString stringWithFormat:@"%@%@",self.codeTF.text,PasswordKey]md5_32];
+    NSMutableDictionary *datamodel = [NSMutableDictionary dictionaryWithDictionary:@{@"content":NullToSpace(parms[@"content"]),
+                                                                                     @"password":password,
+                                                                                     @"withdrawAmount":self.editMoneyTF.text}];
+    self.loveAccountView.dataModelDic = datamodel;
+    [self.loveAccountView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(@0);
+        make.leading.equalTo(self.viewController.view);
+        make.trailing.equalTo(self.viewController.view);
+        make.bottom.equalTo(self.viewController.view);
+    }];
+}
 
 @end
