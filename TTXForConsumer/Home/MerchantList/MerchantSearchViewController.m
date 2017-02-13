@@ -152,9 +152,7 @@
     self.selectCityname = [TTXUserInfo shareUserInfos].locationCity;
     [self.navigationController pushViewController:resultVC animated:YES];
     [self.view removeFromSuperview];
-    
 }
-
 
 //定义每个UICollectionView 的大小
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath

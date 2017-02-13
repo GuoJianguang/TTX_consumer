@@ -21,6 +21,7 @@
 #import "MerchantSearchResultViewController.h"
 #import "AppDelegate.h"
 #import "HomeTableViewCell.h"
+#import "NewHomeTableViewCell.h"
 
 
 
@@ -341,9 +342,9 @@
 //    cell.dataModel = self.highQualityArray[indexPath.row - 1];
 //    return cell;
     
-    HomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[HomeTableViewCell indentify]];
+    NewHomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[HomeTableViewCell indentify]];
     if (!cell) {
-        cell = [HomeTableViewCell newCell];
+        cell = [NewHomeTableViewCell newCell];
     }
     cell.isAlreadyRefrefsh = self.isAlreadyRefrefsh;
 

@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="IndustryCollectionViewCell">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="NewIndustryCollectionViewCell">
             <rect key="frame" x="0.0" y="0.0" width="104" height="79"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -35,33 +35,13 @@
                                     <constraint firstAttribute="width" secondItem="Gek-hF-ye2" secondAttribute="height" multiplier="1:1" id="85m-Ir-WBk"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="br3-bL-CfR">
-                                <rect key="frame" x="20" y="78" width="64" height="1"/>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="SoU-28-q4i"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lLC-ir-WRL">
-                                <rect key="frame" x="103" y="20" width="1" height="39"/>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="1" id="0oN-LM-JAn"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="br3-bL-CfR" secondAttribute="bottom" id="7c0-MI-cV8"/>
                             <constraint firstAttribute="bottom" secondItem="kuo-hQ-azg" secondAttribute="bottom" constant="10" id="Dff-Ov-rlo"/>
-                            <constraint firstAttribute="trailing" secondItem="lLC-ir-WRL" secondAttribute="trailing" id="IYQ-NK-1cW"/>
                             <constraint firstItem="Gek-hF-ye2" firstAttribute="top" secondItem="4Kc-U6-yyI" secondAttribute="top" constant="8" id="KPb-jD-6nU"/>
-                            <constraint firstAttribute="trailing" secondItem="br3-bL-CfR" secondAttribute="trailing" constant="20" id="Nyd-o7-4Gl"/>
                             <constraint firstItem="kuo-hQ-azg" firstAttribute="centerX" secondItem="4Kc-U6-yyI" secondAttribute="centerX" id="OWk-A1-dZE"/>
                             <constraint firstItem="Gek-hF-ye2" firstAttribute="centerX" secondItem="4Kc-U6-yyI" secondAttribute="centerX" id="YHe-ae-DKv"/>
-                            <constraint firstAttribute="bottom" secondItem="lLC-ir-WRL" secondAttribute="bottom" constant="20" id="jVh-UE-gqb"/>
-                            <constraint firstItem="lLC-ir-WRL" firstAttribute="top" secondItem="4Kc-U6-yyI" secondAttribute="top" constant="20" id="jkR-SA-FQL"/>
-                            <constraint firstItem="br3-bL-CfR" firstAttribute="leading" secondItem="4Kc-U6-yyI" secondAttribute="leading" constant="20" id="zCa-PM-O1Q"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -80,7 +60,7 @@
                 <outlet property="item_view" destination="4Kc-U6-yyI" id="z39-4D-WTr"/>
                 <outlet property="name_label" destination="kuo-hQ-azg" id="KqH-3u-CbJ"/>
             </connections>
-            <point key="canvasLocation" x="262" y="157.5"/>
+            <point key="canvasLocation" x="92" y="94"/>
         </collectionViewCell>
     </objects>
     <resources>
