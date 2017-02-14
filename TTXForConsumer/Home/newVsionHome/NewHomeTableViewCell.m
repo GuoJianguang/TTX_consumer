@@ -18,7 +18,7 @@
 #import "OnLineMerchantCityViewController.h"
 #import "NewIndustryCollectionViewCell.h"
 
-@interface NewHomeTableViewCell()<SwipeViewDelegate,SwipeViewDataSource,UICollectionViewDelegate,UICollectionViewDataSource>
+@interface NewHomeTableViewCell()<SwipeViewDelegate,SwipeViewDataSource>
 
 @end
 
@@ -36,18 +36,6 @@
 }
 @end
 
-@implementation NewHomeActivityModel
-
-+ (id)modelWithDic:(NSDictionary *)dic
-{
-    NewHomeActivityModel *model = [[NewHomeActivityModel alloc]init];
-    model.name = NullToSpace(dic[@"name"]);
-    model.seqId = NullToSpace(dic[@"seqId"]);
-    model.coverImg = NullToSpace(dic[@"coverImg"]);
-    model.sort = NullToNumber(dic[@"sort"]);
-    return model;
-}
-@end
 
 @implementation NewHomeTableViewCell
 
@@ -56,9 +44,6 @@
     // Initialization code
     self.swipeView.dataSource = self;
     self.swipeView.delegate = self;
-    self.industryCollectionView.delegate = self;
-    self.industryCollectionView.dataSource = self;
-    self.industryCollectionView.pagingEnabled = NO;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -72,7 +57,7 @@
 {
     _isAlreadyRefrefsh = isAlreadyRefrefsh;
     [self getBannerRequest];
-    [self getGoodsTypeRequest];
+    
     
 }
 #pragma mark - 懒加载
@@ -123,23 +108,7 @@
     }];
 }
 
-//获取所有商品类型
-- (void)getGoodsTypeRequest
-{
-    [HttpClient GET:@"shop/goodsType/get" parameters:nil success:^(NSURLSessionDataTask *operation, id jsonObject) {
-        if (IsRequestTrue) {
-            [self.sortDataSouceArray removeAllObjects];
-            NSArray *array = jsonObject[@"data"];
-            for (NSDictionary *dic in array) {
-                GoodsSort *model = [GoodsSort modelWithDic:dic];
-                [self.sortDataSouceArray addObject:model];
-            }
-            [self.industryCollectionView reloadData];
-        }
-    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
-        
-    }];
-}
+
 
 #pragma mark - banner
 
@@ -230,133 +199,4 @@
 
 
 
-#pragma mark - 行业分类
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
-{
-    return self.sortDataSouceArray.count;
-    
-}
-
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
-{
-    return 1;
-}
-
-//每个UICollectionView展示的内容
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-    NSString *identifier =[NewIndustryCollectionViewCell indentify];
-    static BOOL nibri =NO;
-    if(!nibri)
-    {
-        UINib *nib = [NewIndustryCollectionViewCell newCell];
-        [collectionView registerNib:nib forCellWithReuseIdentifier:identifier];
-        nibri =YES;
-    }
-    NewIndustryCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
-    if (self.sortDataSouceArray.count > 0) {
-        cell.goodsSortModel = self.sortDataSouceArray[indexPath.item];
-    }
-    nibri=NO;
-    return cell;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-{
-//    GoodsSort *model = self.sortDataSouceArray[indexPath.item];
-//    [self.view removeFromSuperview];
-//    GoodsSearchRsultViewController *resultVC = [[GoodsSearchRsultViewController alloc]init];
-//    resultVC.typeId = model.sortId;
-//    resultVC.searchName = @"";
-//    [self.navigationController pushViewController:resultVC animated:YES];
-}
-
-//定义每个UICollectionView 的大小
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    //    if (self.sortDataSouceArray.count < 5) {
-    //        return CGSizeMake(TWitdh/self.sortDataSouceArray.count, 50);
-    //    }
-    return CGSizeMake(TWitdh/4, TWitdh*(32/75.)/2.);
-//    return CGSizeMake(TWitdh/4, TWitdh/3. *0.6);
-}
-
-- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView
-                        layout:(UICollectionViewLayout *)collectionViewLayout
-        insetForSectionAtIndex:(NSInteger)section
-{
-    return UIEdgeInsetsMake(0, 0, 0, 0);
-}
-
-- (CGFloat)collectionView:(UICollectionView *)collectionView
-                   layout:(UICollectionViewLayout *)collectionViewLayout
-minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
-{
-    return 0;
-}
-
-- (CGFloat)collectionView:(UICollectionView *)collectionView
-                   layout:(UICollectionViewLayout *)collectionViewLayout
-minimumLineSpacingForSectionAtIndex:(NSInteger)section
-{
-    return 0;
-}
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-//    NSLog(@"33333");
-}
-
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-
-//    NSLog(@"44");
-//    float x = scrollView.contentOffset.x/TWitdh;
-//    int y = (int)x;
-//    float z = x - y;
-//    
-//    if (z > 0.25) {
-//        self.industryCollectionView.contentOffset = CGPointMake((y+ 1)*TWitdh, 0);
-//    }else{
-//        self.industryCollectionView.contentOffset = CGPointMake(y*TWitdh, 0);
-//    }
-}
-
-- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
-{
-    float x = scrollView.contentOffset.x/TWitdh;
-    int y = (int)x;
-    float z = x - y;
-    
-    if (z > 0.25) {
-        self.industryCollectionView.contentOffset = CGPointMake((y+ 1)*TWitdh, 0);
-    }else{
-        self.industryCollectionView.contentOffset = CGPointMake(y*TWitdh, 0);
-    }
-}
-
-- (CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset withScrollingVelocity:(CGPoint)velocity
-{
-    return CGPointMake(0, 0);
-}
-
-- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
-    CGPoint orifinalTargetContentOffset = CGPointMake(targetContentOffset->x, targetContentOffset->y);
-    float x = scrollView.contentOffset.x/TWitdh;
-    int y = (int)x;
-    float z = x - y;
-    
-    if (z > 0.25) {
-        scrollView.contentOffset = CGPointMake((y+ 1)*TWitdh, 0);
-    }else{
-        scrollView.contentOffset = CGPointMake(y*TWitdh, 0);
-    }
-//    if (z > 0.4) {
-//        *targetContentOffset = CGPointMake((y+ 1)*TWitdh, 0);
-//    }else{
-//        *targetContentOffset = CGPointMake(y*TWitdh, 0);
-//
-//    }
-    //计算出想要其停止的位置
-//    NSLog(@"%.3f",x);
-}
 @end

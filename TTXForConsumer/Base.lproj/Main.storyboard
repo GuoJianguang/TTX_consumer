@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6EA-xn-RF9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6EA-xn-RF9">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -45,6 +45,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vax-aP-b7C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="337" y="116"/>
+        </scene>
+        <!--商城-->
+        <scene sceneID="d4J-sr-e4c">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="rTA-I1-edr" customClass="OnLineMerchantCityViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="r6b-rl-RnK"/>
+                        <viewControllerLayoutGuide type="bottom" id="4xT-7n-ozX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CN2-yo-XZg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Jbz-M7-YKu">
+                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="rTA-I1-edr" id="Mhu-1q-tqS"/>
+                                    <outlet property="delegate" destination="rTA-I1-edr" id="DMP-tU-7uj"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Jbz-M7-YKu" secondAttribute="trailing" id="4wp-A2-af7"/>
+                            <constraint firstItem="Jbz-M7-YKu" firstAttribute="top" secondItem="CN2-yo-XZg" secondAttribute="top" constant="44" id="CGR-nf-6tB"/>
+                            <constraint firstItem="Jbz-M7-YKu" firstAttribute="leading" secondItem="CN2-yo-XZg" secondAttribute="leading" id="bYj-XY-YsN"/>
+                            <constraint firstItem="4xT-7n-ozX" firstAttribute="top" secondItem="Jbz-M7-YKu" secondAttribute="bottom" id="gxP-vA-GLh"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="商城" image="tab_mall_nor" selectedImage="tab_mall_sel" id="BZz-bM-fdq"/>
+                    <connections>
+                        <outlet property="tableView" destination="Jbz-M7-YKu" id="w3w-Jf-B3G"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9mk-EY-WSk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1033" y="304"/>
         </scene>
         <!--首页-->
         <scene sceneID="fPu-xr-5e9">
@@ -193,6 +231,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="tw4-yF-y3x" kind="relationship" relationship="viewControllers" id="tRN-uB-8IL"/>
+                        <segue destination="rTA-I1-edr" kind="relationship" relationship="viewControllers" id="TKd-rR-qQ5"/>
                         <segue destination="N6L-cC-2Ok" kind="relationship" relationship="viewControllers" id="ijw-qS-9Od"/>
                     </connections>
                 </tabBarController>
@@ -207,6 +246,8 @@
         <image name="search" width="40" height="40"/>
         <image name="tab_home_nor" width="30" height="30"/>
         <image name="tab_home_sel" width="30" height="30"/>
+        <image name="tab_mall_nor" width="30" height="30"/>
+        <image name="tab_mall_sel" width="30" height="30"/>
         <image name="tab_mine_nor" width="30" height="30"/>
         <image name="tab_mine_sel" width="30" height="30"/>
     </resources>

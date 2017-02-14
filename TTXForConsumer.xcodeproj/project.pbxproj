@@ -335,6 +335,13 @@
 		BC166E231DEF2ECF00D4E284 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC166E221DEF2ECF00D4E284 /* SafariServices.framework */; };
 		BC172B5C1DF00393005467D6 /* OldWithDrewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC172B591DF00393005467D6 /* OldWithDrewTableViewCell.m */; };
 		BC172B5D1DF00393005467D6 /* OldWithDrewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC172B5B1DF00393005467D6 /* OldWithDrewTableViewCell.xib */; };
+		BC2CF8411E52A27D00A69A94 /* HomeIndustryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2CF83F1E52A27D00A69A94 /* HomeIndustryTableViewCell.m */; };
+		BC2CF8421E52A27D00A69A94 /* HomeIndustryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC2CF8401E52A27D00A69A94 /* HomeIndustryTableViewCell.xib */; };
+		BC2CF8471E52A2A400A69A94 /* SquaredUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2CF8441E52A2A400A69A94 /* SquaredUpView.m */; };
+		BC2CF8481E52A2A400A69A94 /* CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2CF8461E52A2A400A69A94 /* CustomButton.m */; };
+		BC2CF84C1E52B28300A69A94 /* PopularMerchantsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2CF84A1E52B28300A69A94 /* PopularMerchantsTableViewCell.m */; };
+		BC2CF84D1E52B28300A69A94 /* PopularMerchantsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC2CF84B1E52B28300A69A94 /* PopularMerchantsTableViewCell.xib */; };
+		BC2CF84F1E52B3DF00A69A94 /* NewVisonHome.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC2CF84E1E52B3DF00A69A94 /* NewVisonHome.xcassets */; };
 		BC3974751DD43F68008DDF67 /* MyLoveAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3974731DD43F68008DDF67 /* MyLoveAccountViewController.m */; };
 		BC3974761DD43F68008DDF67 /* MyLoveAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC3974741DD43F68008DDF67 /* MyLoveAccountViewController.xib */; };
 		BC39747A1DD440AF008DDF67 /* LoveAccountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3974781DD440AF008DDF67 /* LoveAccountTableViewCell.m */; };
@@ -359,7 +366,6 @@
 		BCC876421DB5B72600E623F2 /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC876401DB5B72600E623F2 /* HomeTableViewCell.m */; };
 		BCC876431DB5B72600E623F2 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCC876411DB5B72600E623F2 /* HomeTableViewCell.xib */; };
 		BCC8764C1DB6166B00E623F2 /* OnLineMerchantCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC8764A1DB6166B00E623F2 /* OnLineMerchantCityViewController.m */; };
-		BCC8764D1DB6166B00E623F2 /* OnLineMerchantCityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCC8764B1DB6166B00E623F2 /* OnLineMerchantCityViewController.xib */; };
 		BCDB18181DF7B2A200E99BED /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCDB18171DF7B2A200E99BED /* MAMapKit.framework */; };
 		BCDB181B1DF7D49C00E99BED /* LoveAccountAlerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDB181A1DF7D49C00E99BED /* LoveAccountAlerView.m */; };
 		BCDB181D1DF7D4AA00E99BED /* LoveAccountAlerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCDB181C1DF7D4AA00E99BED /* LoveAccountAlerView.xib */; };
@@ -928,6 +934,17 @@
 		BC172B591DF00393005467D6 /* OldWithDrewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OldWithDrewTableViewCell.m; sourceTree = "<group>"; };
 		BC172B5A1DF00393005467D6 /* OldWithDrewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OldWithDrewTableViewCell.h; sourceTree = "<group>"; };
 		BC172B5B1DF00393005467D6 /* OldWithDrewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OldWithDrewTableViewCell.xib; sourceTree = "<group>"; };
+		BC2CF83E1E52A27D00A69A94 /* HomeIndustryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeIndustryTableViewCell.h; sourceTree = "<group>"; };
+		BC2CF83F1E52A27D00A69A94 /* HomeIndustryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeIndustryTableViewCell.m; sourceTree = "<group>"; };
+		BC2CF8401E52A27D00A69A94 /* HomeIndustryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeIndustryTableViewCell.xib; sourceTree = "<group>"; };
+		BC2CF8431E52A2A400A69A94 /* SquaredUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SquaredUpView.h; sourceTree = "<group>"; };
+		BC2CF8441E52A2A400A69A94 /* SquaredUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SquaredUpView.m; sourceTree = "<group>"; };
+		BC2CF8451E52A2A400A69A94 /* CustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomButton.h; sourceTree = "<group>"; };
+		BC2CF8461E52A2A400A69A94 /* CustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomButton.m; sourceTree = "<group>"; };
+		BC2CF8491E52B28300A69A94 /* PopularMerchantsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopularMerchantsTableViewCell.h; sourceTree = "<group>"; };
+		BC2CF84A1E52B28300A69A94 /* PopularMerchantsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopularMerchantsTableViewCell.m; sourceTree = "<group>"; };
+		BC2CF84B1E52B28300A69A94 /* PopularMerchantsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopularMerchantsTableViewCell.xib; sourceTree = "<group>"; };
+		BC2CF84E1E52B3DF00A69A94 /* NewVisonHome.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = NewVisonHome.xcassets; sourceTree = "<group>"; };
 		BC3974721DD43F68008DDF67 /* MyLoveAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLoveAccountViewController.h; sourceTree = "<group>"; };
 		BC3974731DD43F68008DDF67 /* MyLoveAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLoveAccountViewController.m; sourceTree = "<group>"; };
 		BC3974741DD43F68008DDF67 /* MyLoveAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyLoveAccountViewController.xib; sourceTree = "<group>"; };
@@ -963,7 +980,6 @@
 		BCC876411DB5B72600E623F2 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		BCC876491DB6166B00E623F2 /* OnLineMerchantCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnLineMerchantCityViewController.h; sourceTree = "<group>"; };
 		BCC8764A1DB6166B00E623F2 /* OnLineMerchantCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnLineMerchantCityViewController.m; sourceTree = "<group>"; };
-		BCC8764B1DB6166B00E623F2 /* OnLineMerchantCityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnLineMerchantCityViewController.xib; sourceTree = "<group>"; };
 		BCDB18171DF7B2A200E99BED /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
 		BCDB18191DF7D49C00E99BED /* LoveAccountAlerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoveAccountAlerView.h; sourceTree = "<group>"; };
 		BCDB181A1DF7D49C00E99BED /* LoveAccountAlerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoveAccountAlerView.m; sourceTree = "<group>"; };
@@ -2179,9 +2195,20 @@
 				BC39B7C41E5192D9009A7D50 /* NewHomeTableViewCell.h */,
 				BC39B7C51E5192D9009A7D50 /* NewHomeTableViewCell.m */,
 				BC39B7C61E5192D9009A7D50 /* NewHomeTableViewCell.xib */,
+				BC2CF83E1E52A27D00A69A94 /* HomeIndustryTableViewCell.h */,
+				BC2CF83F1E52A27D00A69A94 /* HomeIndustryTableViewCell.m */,
+				BC2CF8401E52A27D00A69A94 /* HomeIndustryTableViewCell.xib */,
+				BC2CF8491E52B28300A69A94 /* PopularMerchantsTableViewCell.h */,
+				BC2CF84A1E52B28300A69A94 /* PopularMerchantsTableViewCell.m */,
+				BC2CF84B1E52B28300A69A94 /* PopularMerchantsTableViewCell.xib */,
+				BC2CF8431E52A2A400A69A94 /* SquaredUpView.h */,
+				BC2CF8441E52A2A400A69A94 /* SquaredUpView.m */,
+				BC2CF8451E52A2A400A69A94 /* CustomButton.h */,
+				BC2CF8461E52A2A400A69A94 /* CustomButton.m */,
 				BC39B7C91E519CDD009A7D50 /* NewIndustryCollectionViewCell.h */,
 				BC39B7CA1E519CDD009A7D50 /* NewIndustryCollectionViewCell.m */,
 				BC39B7CB1E519CDD009A7D50 /* NewIndustryCollectionViewCell.xib */,
+				BC2CF84E1E52B3DF00A69A94 /* NewVisonHome.xcassets */,
 			);
 			path = newVsionHome;
 			sourceTree = "<group>";
@@ -2199,7 +2226,6 @@
 			children = (
 				BCC876491DB6166B00E623F2 /* OnLineMerchantCityViewController.h */,
 				BCC8764A1DB6166B00E623F2 /* OnLineMerchantCityViewController.m */,
-				BCC8764B1DB6166B00E623F2 /* OnLineMerchantCityViewController.xib */,
 				BCBA43651DB61A6200E9E7E8 /* OnlineMerCityTableViewCell.h */,
 				BCBA43661DB61A6200E9E7E8 /* OnlineMerCityTableViewCell.m */,
 				BCBA43671DB61A6200E9E7E8 /* OnlineMerCityTableViewCell.xib */,
@@ -2406,7 +2432,6 @@
 				2DB94F8F1D2A8CCF003A6DEA /* BussessMapViewController.xib in Resources */,
 				BC39B7C81E5192D9009A7D50 /* NewHomeTableViewCell.xib in Resources */,
 				2DAE6DCB1D3DF96400FB1EC0 /* ScanPayViewController.xib in Resources */,
-				BCC8764D1DB6166B00E623F2 /* OnLineMerchantCityViewController.xib in Resources */,
 				2DB94F701D2A3EC5003A6DEA /* SharkResultView.xib in Resources */,
 				2DE488DA1D2375E200472681 /* ForgetPasswordOneViewController.xib in Resources */,
 				2D01FC8E1D26780400D37E04 /* IndustryCollectionViewCell.xib in Resources */,
@@ -2414,6 +2439,7 @@
 				2DE489171D23D1B000472681 /* MyWallectCollectionViewCell.xib in Resources */,
 				2D4C43911D17E9A90011C48F /* MerchantListViewController.xib in Resources */,
 				2DBDB3B31D1CDC650033F09E /* ShippingALTableViewCell.xib in Resources */,
+				BC2CF8421E52A27D00A69A94 /* HomeIndustryTableViewCell.xib in Resources */,
 				2DB94F611D2A2EF4003A6DEA /* RewardRecordViewController.xib in Resources */,
 				2D67CCAC1D1BCBE600BB99B4 /* WalletDymicViewController.xib in Resources */,
 				2DBDB3B81D1CE6630033F09E /* ShippingAlerTableViewCell.xib in Resources */,
@@ -2427,6 +2453,7 @@
 				2DB94FFF1D2A8E33003A6DEA /* xiang@2x.png in Resources */,
 				2D452B891D50A2C600C9D897 /* WaitingAuthenticationViewController.xib in Resources */,
 				2D95D8161D222BE000021F31 /* ChooseTypeTableViewCell.xib in Resources */,
+				BC2CF84D1E52B28300A69A94 /* PopularMerchantsTableViewCell.xib in Resources */,
 				2DE488E81D23A92800472681 /* RealNameAutViewController.xib in Resources */,
 				2DF504F01D3237C000F18498 /* SureGoodsOrderTableViewCell.xib in Resources */,
 				2DE488DF1D2378BE00472681 /* ForgetPasswordTwoViewController.xib in Resources */,
@@ -2441,6 +2468,7 @@
 				2DA973C41D127DCF00A605F9 /* unicode_to_hanyu_pinyin.txt in Resources */,
 				2DB94FF61D2A8E33003A6DEA /* paizhao.png in Resources */,
 				2DDEC9081D1A6EBD00C91DDF /* BankCardManageViewController.xib in Resources */,
+				BC2CF84F1E52B3DF00A69A94 /* NewVisonHome.xcassets in Resources */,
 				2DB94F751D2A41DD003A6DEA /* TheWinningView.xib in Resources */,
 				2DB94FF31D2A8E33003A6DEA /* AssetsPickerChecked.png in Resources */,
 				2DBDB3A91D1CD1C50033F09E /* RevisePasswordViewController.xib in Resources */,
@@ -2623,6 +2651,7 @@
 				2DE488D91D2375E200472681 /* ForgetPasswordOneViewController.m in Sources */,
 				BCF7D5E41DF6AF6E00D912CA /* MANaviAnnotation.m in Sources */,
 				2D566D8B1D191EF600B19EC6 /* MineViewController.m in Sources */,
+				BC2CF8481E52A2A400A69A94 /* CustomButton.m in Sources */,
 				2DA973491D124F3000A605F9 /* TTXForConsumer.xcdatamodeld in Sources */,
 				2D95D80C1D22296400021F31 /* TypeView.m in Sources */,
 				2D452B881D50A2C600C9D897 /* WaitingAuthenticationViewController.m in Sources */,
@@ -2636,6 +2665,7 @@
 				2DB94F8E1D2A8CCF003A6DEA /* BussessMapViewController.m in Sources */,
 				2D95D86A1D225BB000021F31 /* MoCurveLayer.m in Sources */,
 				2D67CCBB1D1BD99900BB99B4 /* SetTableViewCell.m in Sources */,
+				BC2CF8471E52A2A400A69A94 /* SquaredUpView.m in Sources */,
 				2D4C43951D17EBB90011C48F /* MerchantTableViewCell.m in Sources */,
 				2D0092641D30BAB000E00DB8 /* WithDrewSuccessView.m in Sources */,
 				2D67CCB01D1BCEA700BB99B4 /* WalletTableViewCell.m in Sources */,
@@ -2669,6 +2699,7 @@
 				2DA974431D1291E600A605F9 /* MASCompositeConstraint.m in Sources */,
 				2DA974491D1291E600A605F9 /* NSArray+MASAdditions.m in Sources */,
 				2D01FC841D2614D500D37E04 /* MallOrderModel.m in Sources */,
+				BC2CF84C1E52B28300A69A94 /* PopularMerchantsTableViewCell.m in Sources */,
 				2DBE74761D5C2B18005B58E8 /* RootViewController.m in Sources */,
 				2DBDB3A81D1CD1C50033F09E /* RevisePasswordViewController.m in Sources */,
 				2DBDB3B21D1CDC650033F09E /* ShippingALTableViewCell.m in Sources */,
@@ -2705,6 +2736,7 @@
 				2DA974471D1291E600A605F9 /* MASViewAttribute.m in Sources */,
 				2DB950181D2A8E33003A6DEA /* ZLPhotoPickerImageView.m in Sources */,
 				2DA973B81D127DCF00A605F9 /* ButtonGroupView.m in Sources */,
+				BC2CF8411E52A27D00A69A94 /* HomeIndustryTableViewCell.m in Sources */,
 				2D95D8151D222BE000021F31 /* ChooseTypeTableViewCell.m in Sources */,
 				BC39747A1DD440AF008DDF67 /* LoveAccountTableViewCell.m in Sources */,
 				2DA973BE1D127DCF00A605F9 /* ChineseToPinyinResource.m in Sources */,

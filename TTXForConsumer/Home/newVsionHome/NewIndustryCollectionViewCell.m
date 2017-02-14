@@ -63,6 +63,7 @@
     
     self.name_label.text = _goodsSortModel.name;
     [self.industry_image sd_setImageWithURL:[NSURL URLWithString:_goodsSortModel.icon] placeholderImage:[UIImage imageNamed:@"icon_list_default"]];
+
 }
 
 @end

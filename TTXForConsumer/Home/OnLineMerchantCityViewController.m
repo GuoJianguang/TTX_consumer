@@ -36,6 +36,7 @@
     self.naviBar.detailImage = [UIImage imageNamed:@"icon_mall_search"];
     self.naviBar.delegate = self;
     self.naviBar.hiddenDetailBtn = NO;
+    self.naviBar.hiddenBackBtn = YES;
     [self addChildViewController:self.searchVC];[self addChildViewController:self.searchVC];
 
     self.tableView.backgroundColor = [UIColor clearColor];

@@ -37,15 +37,6 @@
 
 @end
 
-@interface  NewHomeActivityModel: BaseModel
-
-@property (nonatomic, copy)NSString *seqId;
-@property (nonatomic, copy)NSString *name;
-@property (nonatomic, copy)NSString *coverImg;
-@property (nonatomic, copy)NSString *sort;
-
-@end
-
 
 @interface NewHomeTableViewCell : BaseTableViewCell
 

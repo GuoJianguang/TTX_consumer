@@ -22,6 +22,10 @@
 #import "AppDelegate.h"
 #import "HomeTableViewCell.h"
 #import "NewHomeTableViewCell.h"
+#import "HomeIndustryTableViewCell.h"
+#import "PopularMerchantsTableViewCell.h"
+#import "MerchantTableViewCell.h"
+
 
 
 
@@ -78,15 +82,15 @@
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         weak_self.isAlreadyRefrefsh = YES;
         [weak_self.tableView reloadData];
-//        weak_self.page = 1;
-//        [self detailReqest:YES andCity:self.currentCity];
+        weak_self.page = 1;
+        [self detailReqest:YES andCity:self.currentCity];
 //        [self getActicityRequest];
         [weak_self.tableView.mj_header endRefreshing];
     }];
-//    self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
-//        [self detailReqest:NO andCity:self.currentCity];
-//    }];
-//    
+    self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        [self detailReqest:NO andCity:self.currentCity];
+    }];
+//
     [self.tableView addNoDatasouceWithCallback:^{
         [self.tableView.mj_header beginRefreshing];
     } andAlertSting:@"暂时没有数据" andErrorImage:@"pic_2" andRefreshBtnHiden:YES];
@@ -327,59 +331,63 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    if (indexPath.row == 0) {
-//        HomeBannerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[HomeBannerTableViewCell indentify]];
-//        if (!cell) {
-//            cell = [HomeBannerTableViewCell newCell];
-//        }
-//        cell.isAlreadyRefrefsh = self.isAlreadyRefrefsh;
-//        return cell;
-//    }
-//    HomeBusinessListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[HomeBusinessListTableViewCell indentify]];
-//    if (!cell) {
-//        cell = [HomeBusinessListTableViewCell newCell];
-//    }
-//    cell.dataModel = self.highQualityArray[indexPath.row - 1];
-//    return cell;
-    
-    NewHomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[HomeTableViewCell indentify]];
-    if (!cell) {
-        cell = [NewHomeTableViewCell newCell];
+    if (indexPath.row == 0) {
+        NewHomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[HomeTableViewCell indentify]];
+        if (!cell) {
+            cell = [NewHomeTableViewCell newCell];
+        }
+        cell.isAlreadyRefrefsh = self.isAlreadyRefrefsh;
+        return cell;
+    }else if (indexPath.row == 1){
+        HomeIndustryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[HomeIndustryTableViewCell indentify]];
+        if (!cell) {
+            cell = [HomeIndustryTableViewCell newCell];
+        }
+        cell.isAlreadyRefrefsh = self.isAlreadyRefrefsh;
+        return cell;
     }
-    cell.isAlreadyRefrefsh = self.isAlreadyRefrefsh;
+    else if (indexPath.row == 2){
+        PopularMerchantsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[PopularMerchantsTableViewCell indentify]];
+        if (!cell) {
+            cell = [PopularMerchantsTableViewCell newCell];
+        }
+        cell.isAlreadyRefrefsh = self.isAlreadyRefrefsh;
+        return cell;
+    }
 
+    MerchantTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[MerchantTableViewCell indentify]];
+    if (!cell) {
+        cell = [MerchantTableViewCell newCell];
+    }
+    cell.dataModel = self.highQualityArray[indexPath.row - 3];
     return cell;
-    
+        
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    if (indexPath.row == 0) {
-//        if (self.isHasActiviy) {
-//            return TWitdh *(360/750.) + 5 + TWitdh*(396/750.)+TWitdh*(190/750.) +4+TWitdh*(212/750.) + 80;
-//        }else{
-//            return TWitdh *(360/750.) + 5 + TWitdh*(396/750.) +4+TWitdh*(212/750.) + 80;
-//        }
-//    }
-//    
-//    return TWitdh*(95./320.);
-    
-    return THeight - 64- 49;
-
+    if (indexPath.row == 0) {
+        return TWitdh*(15/75.);
+    }else if (indexPath.row == 1){
+        return TWitdh*(37/75.);
+    }else if (indexPath.row == 2){
+        return TWitdh*(610/750.);
+    }
+    return TWitdh*(220/750.);
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-//    return self.highQualityArray.count + 1;
-    return 1;
+    return self.highQualityArray.count + 3;
+//    return 3;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 0) {
+    if (indexPath.row < 3) {
         return;
     }
-    HomeBusinessList *model = self.highQualityArray[indexPath.row - 1];
+    HomeBusinessList *model = self.highQualityArray[indexPath.row - 3];
     MerchantDetailViewController *merDVC = [[MerchantDetailViewController alloc]init];
     merDVC.merchantCode = model.code;
     [self.navigationController pushViewController:merDVC animated:YES];

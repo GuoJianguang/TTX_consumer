@@ -16,14 +16,9 @@
 @property (nonatomic,copy)NSString *name;
 @property (nonatomic,copy)NSString *icon;
 
-
 @end
 
 @interface NewIndustryCollectionViewCell : BaseCollectionViewCell
-
-
-
-
 
 @property (weak, nonatomic) IBOutlet UIView *item_view;
 

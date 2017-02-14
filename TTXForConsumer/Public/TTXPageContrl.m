@@ -37,7 +37,7 @@
             subview.backgroundColor = MacoColor;
 //            [subview setImage:[UIImage imageNamed:@"icon_mall_asterisk"]];
         else
-            subview.backgroundColor = [UIColor whiteColor];
+            subview.backgroundColor = MacoGrayColor;
 //            [subview setImage:[UIImage imageNamed:@"icon_v4_white"]];
     }
 }
