@@ -46,6 +46,45 @@
             </objects>
             <point key="canvasLocation" x="337" y="116"/>
         </scene>
+        <!--发现-->
+        <scene sceneID="2h9-xt-zlJ">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="vFT-28-woQ" customClass="DiscoveryViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5aq-M6-iRp"/>
+                        <viewControllerLayoutGuide type="bottom" id="EHU-ag-pe8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MxV-dV-t8z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rEL-Ak-vK7">
+                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="vFT-28-woQ" id="xlR-pf-bFj"/>
+                                    <outlet property="delegate" destination="vFT-28-woQ" id="sjC-PE-Y1Y"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="rEL-Ak-vK7" secondAttribute="trailing" id="AoX-DQ-C01"/>
+                            <constraint firstItem="rEL-Ak-vK7" firstAttribute="leading" secondItem="MxV-dV-t8z" secondAttribute="leading" id="aHp-6F-h3A"/>
+                            <constraint firstItem="EHU-ag-pe8" firstAttribute="top" secondItem="rEL-Ak-vK7" secondAttribute="bottom" id="beh-L2-hW0"/>
+                            <constraint firstItem="rEL-Ak-vK7" firstAttribute="top" secondItem="MxV-dV-t8z" secondAttribute="top" constant="44" id="rpc-ax-tQZ"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <tabBarItem key="tabBarItem" title="发现" image="tab_discovery_nor" selectedImage="tab_discovery_sel" id="uYC-Gj-BCh"/>
+                    <connections>
+                        <outlet property="tableView" destination="rEL-Ak-vK7" id="izx-47-2p9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YkF-jl-5EI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1850" y="358"/>
+        </scene>
         <!--商城-->
         <scene sceneID="d4J-sr-e4c">
             <objects>
@@ -58,7 +97,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Jbz-M7-YKu">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Jbz-M7-YKu">
                                 <rect key="frame" x="0.0" y="44" width="375" height="574"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -82,7 +121,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9mk-EY-WSk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1033" y="304"/>
+            <point key="canvasLocation" x="-682" y="373"/>
         </scene>
         <!--首页-->
         <scene sceneID="fPu-xr-5e9">
@@ -232,6 +271,7 @@
                     <connections>
                         <segue destination="tw4-yF-y3x" kind="relationship" relationship="viewControllers" id="tRN-uB-8IL"/>
                         <segue destination="rTA-I1-edr" kind="relationship" relationship="viewControllers" id="TKd-rR-qQ5"/>
+                        <segue destination="vFT-28-woQ" kind="relationship" relationship="viewControllers" id="Hxb-wb-pfl"/>
                         <segue destination="N6L-cC-2Ok" kind="relationship" relationship="viewControllers" id="ijw-qS-9Od"/>
                     </connections>
                 </tabBarController>
@@ -244,6 +284,8 @@
         <image name="icon_home_pulldown" width="7" height="7"/>
         <image name="icon_scan" width="40" height="40"/>
         <image name="search" width="40" height="40"/>
+        <image name="tab_discovery_nor" width="30" height="30"/>
+        <image name="tab_discovery_sel" width="30" height="30"/>
         <image name="tab_home_nor" width="30" height="30"/>
         <image name="tab_home_sel" width="30" height="30"/>
         <image name="tab_mall_nor" width="30" height="30"/>

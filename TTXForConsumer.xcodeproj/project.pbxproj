@@ -332,6 +332,9 @@
 		2DF504F01D3237C000F18498 /* SureGoodsOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DF504EF1D3237C000F18498 /* SureGoodsOrderTableViewCell.xib */; };
 		8F88938659FF13352B77A710 /* libPods-TTXForConsumer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E774D5DE23C8831077C2BD2C /* libPods-TTXForConsumer.a */; };
 		BC021E9A1E07739F0080E844 /* BaiduMobAdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC021E991E07739F0080E844 /* BaiduMobAdSDK.framework */; };
+		BC0502031E554F4B001F51FE /* DiscoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0502021E554F4B001F51FE /* DiscoveryViewController.m */; };
+		BC0502071E5550F0001F51FE /* DiscoveryHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0502051E5550F0001F51FE /* DiscoveryHomeTableViewCell.m */; };
+		BC0502081E5550F0001F51FE /* DiscoveryHomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC0502061E5550F0001F51FE /* DiscoveryHomeTableViewCell.xib */; };
 		BC166E231DEF2ECF00D4E284 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC166E221DEF2ECF00D4E284 /* SafariServices.framework */; };
 		BC172B5C1DF00393005467D6 /* OldWithDrewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC172B591DF00393005467D6 /* OldWithDrewTableViewCell.m */; };
 		BC172B5D1DF00393005467D6 /* OldWithDrewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC172B5B1DF00393005467D6 /* OldWithDrewTableViewCell.xib */; };
@@ -929,6 +932,11 @@
 		2DF504EF1D3237C000F18498 /* SureGoodsOrderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SureGoodsOrderTableViewCell.xib; sourceTree = "<group>"; };
 		9224DB1A4C1073BF7D34FE20 /* Pods-TTXForConsumer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTXForConsumer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TTXForConsumer/Pods-TTXForConsumer.debug.xcconfig"; sourceTree = "<group>"; };
 		BC021E991E07739F0080E844 /* BaiduMobAdSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMobAdSDK.framework; sourceTree = "<group>"; };
+		BC0502011E554F4B001F51FE /* DiscoveryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoveryViewController.h; sourceTree = "<group>"; };
+		BC0502021E554F4B001F51FE /* DiscoveryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoveryViewController.m; sourceTree = "<group>"; };
+		BC0502041E5550F0001F51FE /* DiscoveryHomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoveryHomeTableViewCell.h; sourceTree = "<group>"; };
+		BC0502051E5550F0001F51FE /* DiscoveryHomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoveryHomeTableViewCell.m; sourceTree = "<group>"; };
+		BC0502061E5550F0001F51FE /* DiscoveryHomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiscoveryHomeTableViewCell.xib; sourceTree = "<group>"; };
 		BC166E201DEF2EA900D4E284 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		BC166E221DEF2ECF00D4E284 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		BC172B591DF00393005467D6 /* OldWithDrewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OldWithDrewTableViewCell.m; sourceTree = "<group>"; };
@@ -1375,6 +1383,7 @@
 				2DA973471D124F3000A605F9 /* TTXForConsumer.xcdatamodeld */,
 				2DA973881D12700300A605F9 /* Home */,
 				2D566D881D191E5700B19EC6 /* Mine */,
+				BC0502001E554F31001F51FE /* Discovery */,
 				2DA974181D1291C000A605F9 /* Base */,
 				2DA9738E1D127BC500A605F9 /* ThirdAPI */,
 				2DA973711D125C6900A605F9 /* Public */,
@@ -2173,6 +2182,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BC0502001E554F31001F51FE /* Discovery */ = {
+			isa = PBXGroup;
+			children = (
+				BC0502011E554F4B001F51FE /* DiscoveryViewController.h */,
+				BC0502021E554F4B001F51FE /* DiscoveryViewController.m */,
+				BC0502041E5550F0001F51FE /* DiscoveryHomeTableViewCell.h */,
+				BC0502051E5550F0001F51FE /* DiscoveryHomeTableViewCell.m */,
+				BC0502061E5550F0001F51FE /* DiscoveryHomeTableViewCell.xib */,
+			);
+			path = Discovery;
+			sourceTree = "<group>";
+		};
 		BC39746D1DD43EFB008DDF67 /* myLoveAccount */ = {
 			isa = PBXGroup;
 			children = (
@@ -2405,6 +2426,7 @@
 				2D549F911D32289500CBCFD9 /* LaunchScreen.storyboard in Resources */,
 				2DA974281D1291C000A605F9 /* BaseNavigationBar.xib in Resources */,
 				2DB94FFC1D2A8E33003A6DEA /* nav_delete_btn.png in Resources */,
+				BC0502081E5550F0001F51FE /* DiscoveryHomeTableViewCell.xib in Resources */,
 				2DE489021D23C8E900472681 /* Public.xcassets in Resources */,
 				2D67CC611D1B840600BB99B4 /* Login.storyboard in Resources */,
 				BCF301C91DCAD8AC000C7BE7 /* HttpClient_Readme.txt in Resources */,
@@ -2716,6 +2738,7 @@
 				2DB9500C1D2A8E33003A6DEA /* ZLPhotoPickerCustomToolBarView.m in Sources */,
 				2DE220321D211869008D7F05 /* UIScrollView+JYPaging.m in Sources */,
 				BCC876421DB5B72600E623F2 /* HomeTableViewCell.m in Sources */,
+				BC0502031E554F4B001F51FE /* DiscoveryViewController.m in Sources */,
 				2DB9500D1D2A8E33003A6DEA /* ZLPhotoAssets.m in Sources */,
 				2DA974251D1291C000A605F9 /* BaseCollectionViewCell.m in Sources */,
 				2DB9500B1D2A8E33003A6DEA /* ZLPhotoPickerBrowserPhotoView.m in Sources */,
@@ -2735,6 +2758,7 @@
 				2DB94F691D2A39F7003A6DEA /* ShakRecordView.m in Sources */,
 				2DA974471D1291E600A605F9 /* MASViewAttribute.m in Sources */,
 				2DB950181D2A8E33003A6DEA /* ZLPhotoPickerImageView.m in Sources */,
+				BC0502071E5550F0001F51FE /* DiscoveryHomeTableViewCell.m in Sources */,
 				2DA973B81D127DCF00A605F9 /* ButtonGroupView.m in Sources */,
 				BC2CF8411E52A27D00A69A94 /* HomeIndustryTableViewCell.m in Sources */,
 				2D95D8151D222BE000021F31 /* ChooseTypeTableViewCell.m in Sources */,

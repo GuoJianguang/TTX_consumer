@@ -50,6 +50,7 @@
 //        button.titleLabel.backgroundColor = [UIColor greenColor];
         
         button.titleLabel.textAlignment = NSTextAlignmentCenter;
+        button.titleLabel.adjustsFontSizeToFitWidth = YES;
         button.tag = idx;
         button.titleLabel.font = [UIFont systemFontOfSize:12];
         [button setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
