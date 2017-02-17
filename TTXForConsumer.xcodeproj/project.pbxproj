@@ -355,6 +355,15 @@
 		BC39B7C81E5192D9009A7D50 /* NewHomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC39B7C61E5192D9009A7D50 /* NewHomeTableViewCell.xib */; };
 		BC39B7CC1E519CDD009A7D50 /* NewIndustryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC39B7CA1E519CDD009A7D50 /* NewIndustryCollectionViewCell.m */; };
 		BC39B7CD1E519CDD009A7D50 /* NewIndustryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC39B7CB1E519CDD009A7D50 /* NewIndustryCollectionViewCell.xib */; };
+		BC78D7451E56983900C623CD /* DiscoveryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC78D7431E56983900C623CD /* DiscoveryDetailViewController.m */; };
+		BC78D7461E56983900C623CD /* DiscoveryDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC78D7441E56983900C623CD /* DiscoveryDetailViewController.xib */; };
+		BC78D7481E56993000C623CD /* Discovery.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC78D7471E56993000C623CD /* Discovery.xcassets */; };
+		BC78D74C1E56AA1500C623CD /* DiscoveryWaitTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC78D74A1E56AA1500C623CD /* DiscoveryWaitTableViewCell.m */; };
+		BC78D74D1E56AA1500C623CD /* DiscoveryWaitTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC78D74B1E56AA1500C623CD /* DiscoveryWaitTableViewCell.xib */; };
+		BC78D7511E56CB2500C623CD /* DisCoverYetTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC78D74F1E56CB2500C623CD /* DisCoverYetTableViewCell.m */; };
+		BC78D7521E56CB2500C623CD /* DisCoverYetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC78D7501E56CB2500C623CD /* DisCoverYetTableViewCell.xib */; };
+		BC78D7551E56D02100C623CD /* DiscoveryDeatailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC78D7541E56D02100C623CD /* DiscoveryDeatailModel.m */; };
+		BC78D7581E56F72700C623CD /* CountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = BC78D7571E56F72700C623CD /* CountDown.m */; };
 		BCA19E8F1DED675A0089C1FC /* 213955937960616.cer in Resources */ = {isa = PBXBuildFile; fileRef = BCA19E8E1DED675A0089C1FC /* 213955937960616.cer */; };
 		BCAE30FA1DF925C30026E231 /* UMMobClick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCAE30F91DF925C30026E231 /* UMMobClick.framework */; };
 		BCAE30FD1DF928F20026E231 /* libSocialWeChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCAE30FB1DF928F20026E231 /* libSocialWeChat.a */; };
@@ -968,6 +977,20 @@
 		BC39B7C91E519CDD009A7D50 /* NewIndustryCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewIndustryCollectionViewCell.h; sourceTree = "<group>"; };
 		BC39B7CA1E519CDD009A7D50 /* NewIndustryCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewIndustryCollectionViewCell.m; sourceTree = "<group>"; };
 		BC39B7CB1E519CDD009A7D50 /* NewIndustryCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewIndustryCollectionViewCell.xib; sourceTree = "<group>"; };
+		BC78D7421E56983900C623CD /* DiscoveryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoveryDetailViewController.h; sourceTree = "<group>"; };
+		BC78D7431E56983900C623CD /* DiscoveryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoveryDetailViewController.m; sourceTree = "<group>"; };
+		BC78D7441E56983900C623CD /* DiscoveryDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiscoveryDetailViewController.xib; sourceTree = "<group>"; };
+		BC78D7471E56993000C623CD /* Discovery.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Discovery.xcassets; sourceTree = "<group>"; };
+		BC78D7491E56AA1500C623CD /* DiscoveryWaitTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoveryWaitTableViewCell.h; sourceTree = "<group>"; };
+		BC78D74A1E56AA1500C623CD /* DiscoveryWaitTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoveryWaitTableViewCell.m; sourceTree = "<group>"; };
+		BC78D74B1E56AA1500C623CD /* DiscoveryWaitTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiscoveryWaitTableViewCell.xib; sourceTree = "<group>"; };
+		BC78D74E1E56CB2500C623CD /* DisCoverYetTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisCoverYetTableViewCell.h; sourceTree = "<group>"; };
+		BC78D74F1E56CB2500C623CD /* DisCoverYetTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisCoverYetTableViewCell.m; sourceTree = "<group>"; };
+		BC78D7501E56CB2500C623CD /* DisCoverYetTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DisCoverYetTableViewCell.xib; sourceTree = "<group>"; };
+		BC78D7531E56D02100C623CD /* DiscoveryDeatailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoveryDeatailModel.h; sourceTree = "<group>"; };
+		BC78D7541E56D02100C623CD /* DiscoveryDeatailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoveryDeatailModel.m; sourceTree = "<group>"; };
+		BC78D7561E56F72700C623CD /* CountDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountDown.h; sourceTree = "<group>"; };
+		BC78D7571E56F72700C623CD /* CountDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountDown.m; sourceTree = "<group>"; };
 		BCA19E8E1DED675A0089C1FC /* 213955937960616.cer */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 213955937960616.cer; sourceTree = "<group>"; };
 		BCAE30F91DF925C30026E231 /* UMMobClick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMMobClick.framework; sourceTree = "<group>"; };
 		BCAE30FB1DF928F20026E231 /* libSocialWeChat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialWeChat.a; sourceTree = "<group>"; };
@@ -2190,6 +2213,20 @@
 				BC0502041E5550F0001F51FE /* DiscoveryHomeTableViewCell.h */,
 				BC0502051E5550F0001F51FE /* DiscoveryHomeTableViewCell.m */,
 				BC0502061E5550F0001F51FE /* DiscoveryHomeTableViewCell.xib */,
+				BC78D7421E56983900C623CD /* DiscoveryDetailViewController.h */,
+				BC78D7431E56983900C623CD /* DiscoveryDetailViewController.m */,
+				BC78D7441E56983900C623CD /* DiscoveryDetailViewController.xib */,
+				BC78D7491E56AA1500C623CD /* DiscoveryWaitTableViewCell.h */,
+				BC78D74A1E56AA1500C623CD /* DiscoveryWaitTableViewCell.m */,
+				BC78D74B1E56AA1500C623CD /* DiscoveryWaitTableViewCell.xib */,
+				BC78D74E1E56CB2500C623CD /* DisCoverYetTableViewCell.h */,
+				BC78D74F1E56CB2500C623CD /* DisCoverYetTableViewCell.m */,
+				BC78D7501E56CB2500C623CD /* DisCoverYetTableViewCell.xib */,
+				BC78D7531E56D02100C623CD /* DiscoveryDeatailModel.h */,
+				BC78D7541E56D02100C623CD /* DiscoveryDeatailModel.m */,
+				BC78D7561E56F72700C623CD /* CountDown.h */,
+				BC78D7571E56F72700C623CD /* CountDown.m */,
+				BC78D7471E56993000C623CD /* Discovery.xcassets */,
 			);
 			path = Discovery;
 			sourceTree = "<group>";
@@ -2399,6 +2436,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC78D74D1E56AA1500C623CD /* DiscoveryWaitTableViewCell.xib in Resources */,
 				2DE2201A1D20DA03008D7F05 /* OderListViewController.xib in Resources */,
 				2DE220141D20D128008D7F05 /* AboutUsTableViewCell.xib in Resources */,
 				2DBDB3BD1D1CEC670033F09E /* EditShippingAddressViewController.xib in Resources */,
@@ -2425,6 +2463,7 @@
 				2DDEC8F81D1A389300C91DDF /* WithDrewMoneyViewController.xib in Resources */,
 				2D549F911D32289500CBCFD9 /* LaunchScreen.storyboard in Resources */,
 				2DA974281D1291C000A605F9 /* BaseNavigationBar.xib in Resources */,
+				BC78D7461E56983900C623CD /* DiscoveryDetailViewController.xib in Resources */,
 				2DB94FFC1D2A8E33003A6DEA /* nav_delete_btn.png in Resources */,
 				BC0502081E5550F0001F51FE /* DiscoveryHomeTableViewCell.xib in Resources */,
 				2DE489021D23C8E900472681 /* Public.xcassets in Resources */,
@@ -2478,6 +2517,7 @@
 				BC2CF84D1E52B28300A69A94 /* PopularMerchantsTableViewCell.xib in Resources */,
 				2DE488E81D23A92800472681 /* RealNameAutViewController.xib in Resources */,
 				2DF504F01D3237C000F18498 /* SureGoodsOrderTableViewCell.xib in Resources */,
+				BC78D7521E56CB2500C623CD /* DisCoverYetTableViewCell.xib in Resources */,
 				2DE488DF1D2378BE00472681 /* ForgetPasswordTwoViewController.xib in Resources */,
 				2D452B841D50951B00C9D897 /* OtherdiquRealNameAutViewController.xib in Resources */,
 				2DB94F6B1D2A3A15003A6DEA /* ShakRecordView.xib in Resources */,
@@ -2494,6 +2534,7 @@
 				2DB94F751D2A41DD003A6DEA /* TheWinningView.xib in Resources */,
 				2DB94FF31D2A8E33003A6DEA /* AssetsPickerChecked.png in Resources */,
 				2DBDB3A91D1CD1C50033F09E /* RevisePasswordViewController.xib in Resources */,
+				BC78D7481E56993000C623CD /* Discovery.xcassets in Resources */,
 				2D566D821D18F88000B19EC6 /* GoodsListViewController.xib in Resources */,
 				2DE488F81D23BFD000472681 /* MessageTableViewCell.xib in Resources */,
 				BCA19E8F1DED675A0089C1FC /* 213955937960616.cer in Resources */,
@@ -2616,6 +2657,7 @@
 				2DB950161D2A8E33003A6DEA /* ZLPhotoPickerGroupTableViewCell.m in Sources */,
 				2DA9742A1D1291C000A605F9 /* BaseViewController.m in Sources */,
 				2DA973C01D127DCF00A605F9 /* NSString+PinYin4Cocoa.m in Sources */,
+				BC78D7511E56CB2500C623CD /* DisCoverYetTableViewCell.m in Sources */,
 				2DBDB3AD1D1CDBEB0033F09E /* ShippingAddressViewController.m in Sources */,
 				2D67CCAB1D1BCBE600BB99B4 /* WalletDymicViewController.m in Sources */,
 				2DA973C51D127DCF00A605F9 /* ZYPinYinSearch.m in Sources */,
@@ -2661,6 +2703,7 @@
 				2D4C43821D17C8340011C48F /* GoodsListTableViewCell.m in Sources */,
 				2DA974071D128FFE00A605F9 /* LBXScanWrapper.m in Sources */,
 				2DDEC8FC1D1A3D1800C91DDF /* WithDrewTableViewCell.m in Sources */,
+				BC78D7581E56F72700C623CD /* CountDown.m in Sources */,
 				2DA9738B1D12704000A605F9 /* HomeViewController.m in Sources */,
 				2DA9744A1D1291E600A605F9 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				2D67CC4E1D1B822000BB99B4 /* Verify.m in Sources */,
@@ -2693,6 +2736,7 @@
 				2D67CCB01D1BCEA700BB99B4 /* WalletTableViewCell.m in Sources */,
 				2DA973C21D127DCF00A605F9 /* PinYinForObjc.m in Sources */,
 				2DDEC90B1D1A88B500C91DDF /* BankPickView.m in Sources */,
+				BC78D74C1E56AA1500C623CD /* DiscoveryWaitTableViewCell.m in Sources */,
 				2D67CCB61D1BD94700BB99B4 /* SetViewController.m in Sources */,
 				2DE4890B1D23CB5900472681 /* MessageDetailTableViewCell.m in Sources */,
 				2DA973E71D1285B800A605F9 /* LocationManager.m in Sources */,
@@ -2783,6 +2827,8 @@
 				2DB950081D2A8E33003A6DEA /* ZLPhotoPickerBrowserViewController.m in Sources */,
 				2DB9501E1D2A8E77003A6DEA /* UIImage+ImageOrientation.m in Sources */,
 				2DB950151D2A8E33003A6DEA /* ZLPhotoPickerFooterCollectionReusableView.m in Sources */,
+				BC78D7451E56983900C623CD /* DiscoveryDetailViewController.m in Sources */,
+				BC78D7551E56D02100C623CD /* DiscoveryDeatailModel.m in Sources */,
 				2D95D87C1D2284BB00021F31 /* RegisterOneViewController.m in Sources */,
 				2DBDB3BC1D1CEC670033F09E /* EditShippingAddressViewController.m in Sources */,
 				2DEE95FD1D279A4900B46AB1 /* GoodsSearchViewController.m in Sources */,

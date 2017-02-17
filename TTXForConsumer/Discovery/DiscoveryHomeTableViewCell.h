@@ -7,10 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+@interface DiscoverHome : BaseModel
+
+@property (nonatomic, copy)NSString *discoverId;
+@property (nonatomic, copy)NSString *jumpWay;
+@property (nonatomic, copy)NSString *jumpValue;
+@property (nonatomic, copy)NSString *pic;
+@property (nonatomic, copy)NSString *name;
+
+
+@end
 
 @interface DiscoveryHomeTableViewCell : BaseTableViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *activityImage;
+
+@property (nonatomic, strong)DiscoverHome *dataModel;
 
 
 

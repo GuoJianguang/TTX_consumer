@@ -1,0 +1,183 @@
+//
+//  DiscoveryDetailViewController.m
+//  TTXForConsumer
+//
+//  Created by Guo on 2017/2/17.
+//  Copyright © 2017年 ttx. All rights reserved.
+//
+
+#import "DiscoveryDetailViewController.h"
+#import "DiscoveryWaitTableViewCell.h"
+#import "DisCoverYetTableViewCell.h"
+#import "DiscoveryDeatailModel.h"
+
+@interface DiscoveryDetailViewController ()<UITableViewDelegate,UITableViewDataSource,BasenavigationDelegate>
+
+
+@property (nonatomic, assign)NSInteger page;
+
+@property (nonatomic, strong)NSMutableArray *dataSocueArray;
+
+@property (nonatomic, assign)BOOL isFirstEnd;
+
+@end
+
+@implementation DiscoveryDetailViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view from its nib.
+    self.naviBar.hiddenDetailBtn = NO;
+    self.naviBar.detailImage = [UIImage imageNamed:@"icon_explain"];
+    self.naviBar.delegate = self;
+    self.naviBar.title = self.model.name;
+    self.tableView.backgroundColor = [UIColor clearColor];
+    
+    self.isFirstEnd = YES;
+    
+    __weak DiscoveryDetailViewController * weak_self = self;
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        weak_self.page = 1;
+        [weak_self getDetailRequest:YES];
+        
+    }];
+    
+    self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        [weak_self getDetailRequest:NO];
+    }];
+    
+    [self.tableView addNoDatasouceWithCallback:^{
+        [weak_self.tableView.mj_header beginRefreshing];
+    } andAlertSting:@"网络连接不好，请重试" andErrorImage:@"pic_2" andRefreshBtnHiden:NO];
+    [weak_self.tableView.mj_header beginRefreshing];
+    
+}
+
+
+- (NSMutableArray *)dataSocueArray
+{
+    if (!_dataSocueArray) {
+        _dataSocueArray = [NSMutableArray array];
+    }
+    return _dataSocueArray;
+}
+
+#pragma mark - 帮助
+- (void)detailBtnClick{
+    
+}
+
+
+#pragma mark - 网络请求
+
+- (void)getDetailRequest:(BOOL)isHeader{
+    NSDictionary *prams = @{@"pageNo":@(self.page),
+                            @"pageSize":MacoRequestPageCount};
+    [HttpClient POST:@"find/draw/detail" parameters:prams success:^(NSURLSessionDataTask *operation, id jsonObject) {
+        if (IsRequestTrue) {
+            [self.tableView hiddenNoDataSouce];
+            if (isHeader) {
+                self.isFirstEnd = YES;
+                [self.dataSocueArray removeAllObjects];
+                [self.tableView.mj_header endRefreshing];
+            }else{
+                self.isFirstEnd = NO;
+                [self.tableView.mj_footer endRefreshing];
+            }
+            NSArray *array = jsonObject[@"data"][@"pageData"][@"data"];
+            if (array.count > 0) {
+                self.page ++;
+            }
+            for (int i = 0; i < array.count ; i ++) {
+                DiscoveryDeatailModel *model = [DiscoveryDeatailModel modelWithDic:array[i]];
+                if (![model.state isEqualToString:@"0"] && self.isFirstEnd) {
+                    model.isFirstEnd = YES;
+                    self.isFirstEnd = NO;
+                }else if(![model.state isEqualToString:@"0"] && !self.isFirstEnd){
+                    model.isFirstEnd = NO;
+                }else{
+                    self.isFirstEnd = YES;
+                }
+                model.systmTime = [NullToNumber(jsonObject[@"data"][@"sysTime"]) longLongValue];
+                [self.dataSocueArray addObject:model];
+            }
+            [self.tableView judgeIsHaveDataSouce:self.dataSocueArray];
+            [self.tableView reloadData];
+        }
+        if (isHeader) {
+            [self.tableView.mj_header endRefreshing];
+        }else{
+            [self.tableView.mj_footer endRefreshing];
+        }
+        
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
+        if (isHeader) {
+            [self.tableView.mj_header endRefreshing];
+        }else{
+            [self.tableView.mj_footer endRefreshing];
+        }
+        [self.tableView showNoDataSouce];
+    }];
+
+}
+
+
+#pragma mark - UITableView
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.dataSocueArray.count;
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    DiscoveryDeatailModel *model = self.dataSocueArray[indexPath.row];
+    if ([model.state isEqualToString:@"0"]) {
+        DiscoveryWaitTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[DiscoveryWaitTableViewCell indentify]];
+        if (!cell) {
+            cell = [DiscoveryWaitTableViewCell newCell];
+        }
+        cell.dataModel = self.dataSocueArray[indexPath.row];
+        return cell;
+    }else{
+        DisCoverYetTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[DisCoverYetTableViewCell indentify]];
+        if (!cell) {
+            cell = [DisCoverYetTableViewCell newCell];
+        }
+        cell.dataModel = self.dataSocueArray[indexPath.row];
+        return cell;
+    }
+ 
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    DiscoveryDeatailModel *model = self.dataSocueArray[indexPath.row];
+
+    if ([model.state isEqualToString:@"0"]) {
+        return TWitdh*(665/750.);
+    }else if(![model.state isEqualToString:@"0"] && model.isFirstEnd){
+        return TWitdh*(240/750.);
+    }else{
+        return TWitdh*(160/750.);
+    }
+}
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+@end

@@ -81,11 +81,10 @@
     __weak HomeViewController *weak_self = self;
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         weak_self.isAlreadyRefrefsh = YES;
-        [weak_self.tableView reloadData];
+//        [weak_self.tableView reloadData];
         weak_self.page = 1;
         [self detailReqest:YES andCity:self.currentCity];
 //        [self getActicityRequest];
-        [weak_self.tableView.mj_header endRefreshing];
     }];
     self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
         [self detailReqest:NO andCity:self.currentCity];
