@@ -44,7 +44,6 @@
 
 - (IBAction)luckyDrawBtn:(id)sender {
     
-    NSLog(@"luckyDraw");
     [(DiscoveryDetailViewController *)self.viewController buyLuckyDarw:self.dataModel.detailId] ;
     
 }

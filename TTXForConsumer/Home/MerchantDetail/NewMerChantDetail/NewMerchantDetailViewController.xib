@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewMerchantDetailViewController">
+            <connections>
+                <outlet property="buyBtn" destination="kLj-if-hcb" id="60l-Hb-dqi"/>
+                <outlet property="buyBtnView" destination="egx-hk-kGi" id="dLV-9M-Lu8"/>
+                <outlet property="tableView" destination="ekC-vF-NI6" id="Tpy-dS-uAN"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ffc-mg-o7c">
+                    <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kLj-if-hcb">
+                            <rect key="frame" x="88" y="12.5" width="200" height="35"/>
+                            <color key="backgroundColor" red="0.8862745098" green="0.36470588240000001" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="200" id="DkN-ga-Df7"/>
+                                <constraint firstAttribute="height" constant="35" id="her-sU-lj1"/>
+                            </constraints>
+                            <state key="normal" title="立即购买">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="buyBtn:" destination="-1" eventType="touchUpInside" id="I22-V1-mym"/>
+                            </connections>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="egx-hk-kGi">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
+                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="16G-Uc-s6H"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="egx-hk-kGi" firstAttribute="top" secondItem="Ffc-mg-o7c" secondAttribute="top" id="0qi-Yw-UmF"/>
+                        <constraint firstItem="kLj-if-hcb" firstAttribute="centerY" secondItem="Ffc-mg-o7c" secondAttribute="centerY" id="4dA-y8-gw2"/>
+                        <constraint firstAttribute="height" constant="60" id="OuA-nk-WhJ"/>
+                        <constraint firstItem="kLj-if-hcb" firstAttribute="centerX" secondItem="Ffc-mg-o7c" secondAttribute="centerX" id="e2d-7I-3vh"/>
+                        <constraint firstAttribute="trailing" secondItem="egx-hk-kGi" secondAttribute="trailing" id="kye-cL-Z9I"/>
+                        <constraint firstItem="egx-hk-kGi" firstAttribute="leading" secondItem="Ffc-mg-o7c" secondAttribute="leading" id="pfF-RG-zBw"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ekC-vF-NI6">
+                    <rect key="frame" x="0.0" y="64" width="375" height="543"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="vFI-Xp-ieS"/>
+                        <outlet property="delegate" destination="-1" id="bVo-W7-U93"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Ffc-mg-o7c" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="QAh-CL-V6R"/>
+                <constraint firstAttribute="trailing" secondItem="Ffc-mg-o7c" secondAttribute="trailing" id="UQH-I6-kbJ"/>
+                <constraint firstAttribute="trailing" secondItem="ekC-vF-NI6" secondAttribute="trailing" id="VuE-gH-C9Z"/>
+                <constraint firstItem="Ffc-mg-o7c" firstAttribute="top" secondItem="ekC-vF-NI6" secondAttribute="bottom" id="dxO-xW-HMk"/>
+                <constraint firstAttribute="bottom" secondItem="Ffc-mg-o7c" secondAttribute="bottom" id="mez-6w-MFg"/>
+                <constraint firstItem="ekC-vF-NI6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="oB7-W1-rtU"/>
+                <constraint firstItem="ekC-vF-NI6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="veH-aH-a86"/>
+            </constraints>
+            <point key="canvasLocation" x="-302" y="13"/>
+        </view>
+    </objects>
+</document>
