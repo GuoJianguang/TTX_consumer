@@ -15,4 +15,7 @@
 
 @property (nonatomic, strong)DiscoverHome *model;
 
+- (void)buyLuckyDarw:(NSString *)detailId;
+
+
 @end

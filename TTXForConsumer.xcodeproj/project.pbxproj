@@ -364,6 +364,8 @@
 		BC78D7521E56CB2500C623CD /* DisCoverYetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC78D7501E56CB2500C623CD /* DisCoverYetTableViewCell.xib */; };
 		BC78D7551E56D02100C623CD /* DiscoveryDeatailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC78D7541E56D02100C623CD /* DiscoveryDeatailModel.m */; };
 		BC78D7581E56F72700C623CD /* CountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = BC78D7571E56F72700C623CD /* CountDown.m */; };
+		BC8A9E901E5ABBE30004C23E /* DiscoveryPayView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8A9E8F1E5ABBE30004C23E /* DiscoveryPayView.m */; };
+		BC8A9E921E5ABBF90004C23E /* DiscoveryPayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC8A9E911E5ABBF90004C23E /* DiscoveryPayView.xib */; };
 		BCA19E8F1DED675A0089C1FC /* 213955937960616.cer in Resources */ = {isa = PBXBuildFile; fileRef = BCA19E8E1DED675A0089C1FC /* 213955937960616.cer */; };
 		BCAE30FA1DF925C30026E231 /* UMMobClick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCAE30F91DF925C30026E231 /* UMMobClick.framework */; };
 		BCAE30FD1DF928F20026E231 /* libSocialWeChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCAE30FB1DF928F20026E231 /* libSocialWeChat.a */; };
@@ -991,6 +993,9 @@
 		BC78D7541E56D02100C623CD /* DiscoveryDeatailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoveryDeatailModel.m; sourceTree = "<group>"; };
 		BC78D7561E56F72700C623CD /* CountDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountDown.h; sourceTree = "<group>"; };
 		BC78D7571E56F72700C623CD /* CountDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountDown.m; sourceTree = "<group>"; };
+		BC8A9E8E1E5ABBE30004C23E /* DiscoveryPayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoveryPayView.h; sourceTree = "<group>"; };
+		BC8A9E8F1E5ABBE30004C23E /* DiscoveryPayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoveryPayView.m; sourceTree = "<group>"; };
+		BC8A9E911E5ABBF90004C23E /* DiscoveryPayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiscoveryPayView.xib; sourceTree = "<group>"; };
 		BCA19E8E1DED675A0089C1FC /* 213955937960616.cer */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 213955937960616.cer; sourceTree = "<group>"; };
 		BCAE30F91DF925C30026E231 /* UMMobClick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMMobClick.framework; sourceTree = "<group>"; };
 		BCAE30FB1DF928F20026E231 /* libSocialWeChat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialWeChat.a; sourceTree = "<group>"; };
@@ -2226,6 +2231,9 @@
 				BC78D7541E56D02100C623CD /* DiscoveryDeatailModel.m */,
 				BC78D7561E56F72700C623CD /* CountDown.h */,
 				BC78D7571E56F72700C623CD /* CountDown.m */,
+				BC8A9E8E1E5ABBE30004C23E /* DiscoveryPayView.h */,
+				BC8A9E8F1E5ABBE30004C23E /* DiscoveryPayView.m */,
+				BC8A9E911E5ABBF90004C23E /* DiscoveryPayView.xib */,
 				BC78D7471E56993000C623CD /* Discovery.xcassets */,
 			);
 			path = Discovery;
@@ -2519,6 +2527,7 @@
 				2DF504F01D3237C000F18498 /* SureGoodsOrderTableViewCell.xib in Resources */,
 				BC78D7521E56CB2500C623CD /* DisCoverYetTableViewCell.xib in Resources */,
 				2DE488DF1D2378BE00472681 /* ForgetPasswordTwoViewController.xib in Resources */,
+				BC8A9E921E5ABBF90004C23E /* DiscoveryPayView.xib in Resources */,
 				2D452B841D50951B00C9D897 /* OtherdiquRealNameAutViewController.xib in Resources */,
 				2DB94F6B1D2A3A15003A6DEA /* ShakRecordView.xib in Resources */,
 				BCDB181D1DF7D4AA00E99BED /* LoveAccountAlerView.xib in Resources */,
@@ -2723,6 +2732,7 @@
 				BC39B7C71E5192D9009A7D50 /* NewHomeTableViewCell.m in Sources */,
 				2D95D8711D225C0600021F31 /* PayView.m in Sources */,
 				2DDEC9021D1A6E9C00C91DDF /* BankCardTableViewCell.m in Sources */,
+				BC8A9E901E5ABBE30004C23E /* DiscoveryPayView.m in Sources */,
 				2D89A2AD1D2524B50042019B /* MchAllCommentViewController.m in Sources */,
 				2DA974151D1290C700A605F9 /* UIActionSheet+LBXAlertAction.m in Sources */,
 				BCF301CA1DCAD8AC000C7BE7 /* HttpClient.m in Sources */,

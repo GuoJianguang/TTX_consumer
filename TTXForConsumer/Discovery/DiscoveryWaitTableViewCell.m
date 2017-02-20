@@ -8,6 +8,7 @@
 
 #import "DiscoveryWaitTableViewCell.h"
 #import "CountDown.h"
+#import "DiscoveryDetailViewController.h"
 
 @interface DiscoveryWaitTableViewCell()
 
@@ -44,6 +45,7 @@
 - (IBAction)luckyDrawBtn:(id)sender {
     
     NSLog(@"luckyDraw");
+    [(DiscoveryDetailViewController *)self.viewController buyLuckyDarw:self.dataModel.detailId] ;
     
 }
 
@@ -54,6 +56,7 @@
     }
     return _countDown;
 }
+
 
 - (void)setDataModel:(DiscoveryDeatailModel *)dataModel
 {

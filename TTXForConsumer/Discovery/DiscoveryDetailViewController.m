@@ -10,6 +10,7 @@
 #import "DiscoveryWaitTableViewCell.h"
 #import "DisCoverYetTableViewCell.h"
 #import "DiscoveryDeatailModel.h"
+#import "DiscoveryPayView.h"
 
 @interface DiscoveryDetailViewController ()<UITableViewDelegate,UITableViewDataSource,BasenavigationDelegate>
 
@@ -19,6 +20,10 @@
 @property (nonatomic, strong)NSMutableArray *dataSocueArray;
 
 @property (nonatomic, assign)BOOL isFirstEnd;
+
+//支付的view
+@property (nonatomic, strong)DiscoveryPayView *payView;
+
 
 @end
 
@@ -60,6 +65,15 @@
         _dataSocueArray = [NSMutableArray array];
     }
     return _dataSocueArray;
+}
+
+- (DiscoveryPayView *)payView
+{
+    if (!_payView) {
+        _payView = [[DiscoveryPayView alloc]init];
+//        _payView.delegate = self;
+    }
+    return _payView;
 }
 
 #pragma mark - 帮助
@@ -164,6 +178,27 @@
     }
 }
 
+
+#pragma mark - 参加抽奖
+- (void)buyLuckyDarw:(NSString *)detailId
+{
+    [self.view addSubview:self.payView];
+    self.payView.detailId = detailId;
+    UIEdgeInsets insets = UIEdgeInsetsMake(0, 0, 0, 0);
+    [self.payView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view).insets(insets);
+    }];
+    [self PayViewanimation];
+
+}
+
+- (void)PayViewanimation
+{
+    self.payView.itemView.frame = CGRectMake(0, THeight , TWitdh, TWitdh*(11/10.));
+    [UIView animateWithDuration:0.5 animations:^{
+        self.payView.itemView.frame = CGRectMake(0, THeight - (TWitdh*(11/10.)), TWitdh, TWitdh*(11/10.));
+    }];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
