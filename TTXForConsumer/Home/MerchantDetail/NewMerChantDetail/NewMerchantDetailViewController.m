@@ -11,10 +11,19 @@
 #import "BussessDetailModel.h"
 #import "NewMerchantDetailTableViewCell.h"
 #import "GoodsListTableViewCell.h"
+#import "CommentTableViewCell.h"
 
 @interface NewMerchantDetailViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong)NSMutableArray *commentArray;
 @property (nonatomic, strong)NSMutableArray *goodsArray;
+
+
+@property (nonatomic, assign)CGFloat introduceHeight;
+
+
+@property (nonatomic, assign)CGFloat goodsHeight;
+
+@property (nonatomic, assign)CGFloat commentHeight;
 
 @end
 
@@ -33,6 +42,10 @@
     
     __weak NewMerchantDetailViewController *weak_self = self;
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        weak_self.introduceHeight = 0;
+        weak_self.commentHeight = 0;
+        weak_self.goodsHeight = 0;
+
         [weak_self detailRequest:self.merchantCode];
     }];
     
@@ -72,6 +85,12 @@
         [self.tableView.mj_header endRefreshing];
         if (IsRequestTrue) {
             self.dataModel = [BussessDetailModel modelWithDic:jsonObject[@"data"]];
+            if (![self.dataModel.desc isEqualToString:@""]) {
+                self.introduceHeight  = (TWitdh)*(19/30.)+TWitdh*(154/750.)+44+TWitdh*(88/750.)+TWitdh*(95/750.)*2+ [self cellHeight:_dataModel.desc]+ 55. + 55;
+            }else{
+                self.introduceHeight  = (TWitdh)*(19/30.)+TWitdh*(154/750.)+44+TWitdh*(88/750.)+TWitdh*(95/750.)*2;
+                
+            }
             [self getGoodsRequest:self.merchantCode];
         }
         
@@ -93,9 +112,9 @@
             for (NSDictionary *dic in array) {
                 [self.goodsArray addObject:[GoodsListModel modelWithDic:dic]];
             }
-            [self.tableView reloadData];
-            //            [self.goodsArray removeLastObject];
-//            [self commentRequest:self.merchantCode];
+            self.goodsHeight = TWitdh*(19/30.)+TWitdh*(154/750.)+44+TWitdh*(88/750.) + 80*self.goodsArray.count + 38;
+
+            [self commentRequest:self.merchantCode];
             
         }
     } failure:^(NSURLSessionDataTask *operation, NSError *error) {
@@ -104,37 +123,39 @@
     }];
 }
 
-//#pragma mark - 商户评论接口请求
-//- (void)commentRequest:(NSString *)mchCode
-//{
-//    NSDictionary *parms = @{@"mchCode":mchCode,
-//                            @"pageNo":@"1",
-//                            @"pageSize":@"5"};
-//    [HttpClient POST:@"mch/comment" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
-//        if (IsRequestTrue) {
-//            NSArray *array = jsonObject[@"data"][@"data"];
-//            [self.commentArray removeAllObjects];
-//            for (NSDictionary *dic in array) {
-//                [self.commentArray addObject:[BussessComment modelWithDic:dic]];
-//            }
-//            if (self.commentArray.count !=0) {
-//                CGFloat commentHeight = 0;
-//                for (BussessComment *comment in self.commentArray) {
-//                    if (comment.replyFlag) {
-//                        commentHeight += 120;
-//                    }else{
-//                        commentHeight += 70;
-//                    }
-//                }
-//                self.height = self.height + 38 + commentHeight;
-//            }
-//            self.height += 80;
-//            [self.tableView reloadData];
-//        }
-//    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
-//        
-//    }];
-//}
+#pragma mark - 商户评论接口请求
+- (void)commentRequest:(NSString *)mchCode
+{
+    NSDictionary *parms = @{@"mchCode":mchCode,
+                            @"pageNo":@"1",
+                            @"pageSize":@"3"};
+    [HttpClient POST:@"mch/comment" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
+        if (IsRequestTrue) {
+            NSArray *array = jsonObject[@"data"][@"data"];
+            [self.commentArray removeAllObjects];
+            for (NSDictionary *dic in array) {
+                [self.commentArray addObject:[BussessComment modelWithDic:dic]];
+            }
+            self.commentHeight = (TWitdh)*(19/30.)+TWitdh*(154/750.)+44+TWitdh*(88/750.);
+
+            if (self.commentArray.count !=0) {
+                CGFloat commentHeight = 0;
+                for (BussessComment *comment in self.commentArray) {
+                    if (comment.replyFlag) {
+                        commentHeight += 120;
+                    }else{
+                        commentHeight += 70;
+                    }
+                }
+                self.commentHeight = self.commentHeight + commentHeight;
+            }
+            self.commentHeight += 38;
+            [self.tableView reloadData];
+        }
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
+        
+    }];
+}
 
 #pragma mark - TalbeView
 
@@ -154,29 +175,31 @@
         cell.dataModel = self.dataModel;
     }
     cell.goodsArray = self.goodsArray;
+    cell.commentArray = self.commentArray;
 
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return THeight - 64- 60;
+    CGFloat height = self.introduceHeight>self.goodsHeight ? self.introduceHeight : self.goodsHeight;
+    height = height > self.commentHeight ? height : self.commentHeight;
+    return height;
 }
 
+
+#pragma mark - 计算cell的高度
+- (CGFloat)cellHeight:(NSString *)textSting
+{
+    CGSize size = [textSting boundingRectWithSize:CGSizeMake(TWitdh  - 30, 0) font:[UIFont systemFontOfSize:13]];
+    return size.height;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

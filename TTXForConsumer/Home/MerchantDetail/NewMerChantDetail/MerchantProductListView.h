@@ -25,5 +25,11 @@
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *goodsViewHeight;
 
+@property (weak, nonatomic) IBOutlet UILabel *alerLabel;
+
+@property (weak, nonatomic) IBOutlet UIButton *moreBtn;
+
+@property (weak, nonatomic) IBOutlet UIImageView *rightImageview;
+
 
 @end

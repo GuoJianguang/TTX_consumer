@@ -29,6 +29,7 @@
     [super awakeFromNib];
     self.talbeView.delegate = self;
     self.talbeView.dataSource = self;
+    self.alerLabel.textColor = MacoDetailColor;
     self.backgroundColor = [UIColor clearColor];
 }
 
@@ -56,6 +57,15 @@
 - (void)setGoodsArray:(NSMutableArray *)goodsArray
 {
     _goodsArray = goodsArray;
+    if (_goodsArray.count == 0) {
+        self.alerLabel.hidden = NO;
+        self.moreBtn.enabled = NO;
+    }else{
+        self.alerLabel.hidden = YES;
+        self.moreBtn.enabled = YES;
+    }
+    self.gengduoLabel.hidden = self.rightImageview.hidden= !self.alerLabel.hidden;
+
     [self.talbeView reloadData];
 
 }

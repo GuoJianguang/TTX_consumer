@@ -24,5 +24,6 @@
 - (IBAction)address:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UILabel *jisaoLabel;
 @property (weak, nonatomic) IBOutlet UILabel *introduceLabel;
+@property (weak, nonatomic) IBOutlet UIView *introdouceView;
 
 @end

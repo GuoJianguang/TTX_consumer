@@ -17,6 +17,12 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O1k-0E-Yu5">
                     <rect key="frame" x="0.0" y="629" width="375" height="38"/>
                     <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暂无商品" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yuy-RW-xxe">
+                            <rect key="frame" x="158.5" y="10.5" width="57.5" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_enter" translatesAutoresizingMaskIntoConstraints="NO" id="10c-8n-lyI">
                             <rect key="frame" x="335" y="4" width="30" height="30"/>
                             <constraints>
@@ -39,6 +45,7 @@
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EqW-EZ-4CO">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="37"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <connections>
                                 <action selector="moreBtn:" destination="NKk-Ut-vKr" eventType="touchUpInside" id="yie-nl-xvz"/>
                             </connections>
@@ -48,6 +55,7 @@
                     <constraints>
                         <constraint firstItem="EqW-EZ-4CO" firstAttribute="top" secondItem="O1k-0E-Yu5" secondAttribute="top" id="0T1-0p-uqV"/>
                         <constraint firstItem="EqW-EZ-4CO" firstAttribute="leading" secondItem="O1k-0E-Yu5" secondAttribute="leading" id="2CY-0z-n5p"/>
+                        <constraint firstItem="yuy-RW-xxe" firstAttribute="centerY" secondItem="O1k-0E-Yu5" secondAttribute="centerY" id="E9y-3r-fTc"/>
                         <constraint firstItem="10c-8n-lyI" firstAttribute="centerY" secondItem="O1k-0E-Yu5" secondAttribute="centerY" id="Jht-Ua-VTo"/>
                         <constraint firstAttribute="trailing" secondItem="10c-8n-lyI" secondAttribute="trailing" constant="10" id="PFb-lz-GMl"/>
                         <constraint firstAttribute="trailing" secondItem="gWR-Lk-yNn" secondAttribute="trailing" id="T8Q-BO-552"/>
@@ -58,6 +66,7 @@
                         <constraint firstAttribute="height" constant="38" id="lEE-7M-wYZ"/>
                         <constraint firstAttribute="bottom" secondItem="gWR-Lk-yNn" secondAttribute="bottom" id="oBz-FU-1iJ"/>
                         <constraint firstItem="eaP-HZ-bxa" firstAttribute="centerY" secondItem="O1k-0E-Yu5" secondAttribute="centerY" id="rhW-Pb-4u4"/>
+                        <constraint firstItem="yuy-RW-xxe" firstAttribute="centerX" secondItem="O1k-0E-Yu5" secondAttribute="centerX" id="tpd-BD-HTV"/>
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CFT-VX-uuV">
@@ -76,10 +85,13 @@
                 <constraint firstAttribute="trailing" secondItem="CFT-VX-uuV" secondAttribute="trailing" id="swA-dC-VpG"/>
             </constraints>
             <connections>
+                <outlet property="alerLabel" destination="yuy-RW-xxe" id="Rv1-Iw-7RI"/>
                 <outlet property="gengduoLabel" destination="eaP-HZ-bxa" id="3Le-I3-u5C"/>
+                <outlet property="moreBtn" destination="EqW-EZ-4CO" id="ayT-Vg-SNs"/>
+                <outlet property="rightImageview" destination="10c-8n-lyI" id="k7e-zr-e8s"/>
                 <outlet property="talbeView" destination="CFT-VX-uuV" id="1PI-OO-VbC"/>
             </connections>
-            <point key="canvasLocation" x="-825" y="35"/>
+            <point key="canvasLocation" x="-1236" y="-469"/>
         </view>
     </objects>
     <resources>

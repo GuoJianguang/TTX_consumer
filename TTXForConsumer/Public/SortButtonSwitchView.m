@@ -33,7 +33,7 @@
         [btn setTitleColor:MacoTitleColor forState:UIControlStateSelected];
         [btn setTitle:_titleArray[i] forState:UIControlStateNormal];
         [self addSubview:btn];
-        btn.titleLabel.font = [UIFont systemFontOfSize:13];
+        btn.titleLabel.font = [UIFont systemFontOfSize:14];
         btn.backgroundColor = [UIColor whiteColor];
         [btn addTarget:self action:@selector(sortBtn:) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -89,7 +89,7 @@
 
 - (void )setUI
 {
-    markHeight = 2;
+    markHeight = 1;
     CGFloat btnWidth = TWitdh/_titleArray.count;
     self.markImageView = [[UIImageView alloc]init];
     self.markImageView.frame = CGRectMake(0, self.frame.size.height - markHeight, btnWidth, markHeight);

@@ -9,11 +9,14 @@
 #import "NewMerchantDetailTableViewCell.h"
 #import "MerchantIntroduceView.h"
 #import "MerchantProductListView.h"
+#import "MerchantCommentLIstVIew.h"
+#import "CommentTableViewCell.h"
 
 @interface NewMerchantDetailTableViewCell()<SwipeViewDelegate,SwipeViewDataSource,SortButtonSwitchViewDelegate>
 
 @property (nonatomic, strong)MerchantIntroduceView *introduceView;
 @property (nonatomic, strong)MerchantProductListView *goodsListView;
+@property (nonatomic, strong)MerchantCommentLIstVIew *commentListView;
 
 @end
 @implementation NewMerchantDetailTableViewCell
@@ -29,6 +32,7 @@
     
     self.sortView.titleArray = @[@"商家简介",@"相关产品",@"评价"];
     self.sortView.delegate = self;
+    self.contentView.backgroundColor = self.backgroundColor = [UIColor clearColor];
 
 }
 
@@ -56,11 +60,21 @@
 }
 
 
+- (MerchantCommentLIstVIew *)commentListView
+{
+    if (!_commentListView) {
+        _commentListView = [[MerchantCommentLIstVIew alloc]init];
+    }
+    return _commentListView;
+}
+
+
 - (void)setDataModel:(BussessDetailModel *)dataModel
 {
     _dataModel = dataModel;
     self.mchantName.text = _dataModel.name;
     self.goodsListView.mchCode = _dataModel.code;
+    self.commentListView.mchCode = _dataModel.code;
     self.pageControl.numberOfPages = _dataModel.slidePic.count;
     if (_dataModel.slidePic.count == 0) {
         self.pageControl.hidden = YES;
@@ -74,6 +88,13 @@
 {
     _goodsArray = goodsArray;
     self.goodsListView.goodsArray = _goodsArray;
+    [self.itemSwipeView reloadData];
+}
+
+- (void)setCommentArray:(NSMutableArray *)commentArray
+{
+    _commentArray = commentArray;
+    self.commentListView.commentArray = _commentArray;
     [self.itemSwipeView reloadData];
 }
 
@@ -117,10 +138,13 @@
         }
         UIEdgeInsets insets = UIEdgeInsetsMake(0, 0, 0, 0);
         
+        for (UIView *subView in view.subviews) {
+            [subView removeFromSuperview];
+        }
         switch (index) {
             case 0:
             {
-
+                
                 [view addSubview:self.introduceView];
                 self.introduceView.dataModel = self.dataModel;
                 [self.introduceView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -145,7 +169,23 @@
                 break;
             case 2:
             {
-                view.backgroundColor = [UIColor redColor];
+                view.backgroundColor = [UIColor clearColor];
+                [view addSubview:self.commentListView];
+                CGFloat commentHeight = 0;
+                for (BussessComment *comment in self.commentArray) {
+                    if (comment.replyFlag) {
+                        commentHeight += 120;
+                    }else{
+                        commentHeight += 70;
+                    }
+                }
+                CGFloat commentViewHeght = 38 + commentHeight;
+                [self.commentListView mas_makeConstraints:^(MASConstraintMaker *make) {
+                    make.leading.equalTo(view).offset(0);
+                    make.trailing.equalTo(view).offset(0);
+                    make.top.equalTo(view).offset(0);
+                    make.height.equalTo(@(commentViewHeght));
+                }];
             }
                 break;
                 

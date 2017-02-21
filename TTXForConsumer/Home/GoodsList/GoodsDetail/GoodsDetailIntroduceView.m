@@ -8,12 +8,13 @@
 
 #import "GoodsDetailIntroduceView.h"
 #import "Watch.h"
-#import "MerchantDetailViewController.h"
+#import "NewMerchantDetailViewController.h"
 
 @implementation GoodsDetailIntroduceView
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
     self.price.textColor = MacoPriceColor;
     self.mchName.textColor = MacoTitleColor;
     self.kuaidi.textColor = MacoDetailColor;
@@ -43,7 +44,7 @@
 
 #pragma mark - 查看店铺
 - (IBAction)checkStoreBtn:(UIButton *)sender {
-    MerchantDetailViewController *detailVC = [[MerchantDetailViewController alloc]init];
+    NewMerchantDetailViewController *detailVC = [[NewMerchantDetailViewController alloc]init];
     detailVC.merchantCode = self.dataModel.mchCode;
     [self.viewController.navigationController pushViewController:detailVC animated:YES];
 }

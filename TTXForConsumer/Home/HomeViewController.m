@@ -13,7 +13,7 @@
 #import "SubLBXScanViewController.h"
 #import "HomeBannerTableViewCell.h"
 #import "HomeBusinessListTableViewCell.h"
-#import "MerchantDetailViewController.h"
+#import "NewMerchantDetailViewController.h"
 #import "MineViewController.h"
 #import "SharkItOffViewController.h"
 #import "UIImage+ColorImage.h"
@@ -387,7 +387,7 @@
         return;
     }
     HomeBusinessList *model = self.highQualityArray[indexPath.row - 3];
-    MerchantDetailViewController *merDVC = [[MerchantDetailViewController alloc]init];
+    NewMerchantDetailViewController *merDVC = [[NewMerchantDetailViewController alloc]init];
     merDVC.merchantCode = model.code;
     [self.navigationController pushViewController:merDVC animated:YES];
     

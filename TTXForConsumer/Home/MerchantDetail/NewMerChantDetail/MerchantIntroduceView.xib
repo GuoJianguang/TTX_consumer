@@ -138,7 +138,7 @@
                                 <constraint firstAttribute="height" constant="1" id="lOj-vC-CDu"/>
                             </constraints>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvn-On-egh">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvn-On-egh">
                             <rect key="frame" x="15" y="55" width="345" height="16"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -165,7 +165,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="KjX-VY-Md4" secondAttribute="trailing" id="3xD-If-Fs7"/>
                 <constraint firstItem="d5b-Wa-A6g" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="8j7-Zj-81p"/>
@@ -180,12 +180,13 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="address" destination="HRw-nY-JcY" id="y6r-fR-tQv"/>
+                <outlet property="introdouceView" destination="KjX-VY-Md4" id="DZ6-T8-lNO"/>
                 <outlet property="introduceLabel" destination="fvn-On-egh" id="H5P-BG-JXM"/>
                 <outlet property="jisaoLabel" destination="bn7-j5-BFJ" id="cBl-nP-Vdi"/>
                 <outlet property="phoneBtn" destination="XIE-3x-GRC" id="Ooc-Qp-LMt"/>
                 <outlet property="phoneNum" destination="FAe-D8-Il4" id="EPC-lp-o7B"/>
             </connections>
-            <point key="canvasLocation" x="-253.5" y="165.5"/>
+            <point key="canvasLocation" x="-410" y="138"/>
         </view>
     </objects>
     <resources>

@@ -386,6 +386,8 @@
 		BCBA43691DB61A6200E9E7E8 /* OnlineMerCityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCBA43671DB61A6200E9E7E8 /* OnlineMerCityTableViewCell.xib */; };
 		BCBA436D1DB61C9200E9E7E8 /* OnlineMerCityCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBA436B1DB61C9200E9E7E8 /* OnlineMerCityCollectionViewCell.m */; };
 		BCBA436E1DB61C9200E9E7E8 /* OnlineMerCityCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCBA436C1DB61C9200E9E7E8 /* OnlineMerCityCollectionViewCell.xib */; };
+		BCBFF3C71E5BD61000AFFE36 /* MerchantCommentLIstVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBFF3C61E5BD61000AFFE36 /* MerchantCommentLIstVIew.m */; };
+		BCBFF3C91E5BD64900AFFE36 /* MerchantCommentLIstVIew.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCBFF3C81E5BD64900AFFE36 /* MerchantCommentLIstVIew.xib */; };
 		BCC876421DB5B72600E623F2 /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC876401DB5B72600E623F2 /* HomeTableViewCell.m */; };
 		BCC876431DB5B72600E623F2 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCC876411DB5B72600E623F2 /* HomeTableViewCell.xib */; };
 		BCC8764C1DB6166B00E623F2 /* OnLineMerchantCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC8764A1DB6166B00E623F2 /* OnLineMerchantCityViewController.m */; };
@@ -1034,6 +1036,9 @@
 		BCBA436B1DB61C9200E9E7E8 /* OnlineMerCityCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlineMerCityCollectionViewCell.m; sourceTree = "<group>"; };
 		BCBA436C1DB61C9200E9E7E8 /* OnlineMerCityCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnlineMerCityCollectionViewCell.xib; sourceTree = "<group>"; };
 		BCBAA68E1D8FD3720090CDE6 /* TTXForConsumer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TTXForConsumer.entitlements; sourceTree = "<group>"; };
+		BCBFF3C51E5BD61000AFFE36 /* MerchantCommentLIstVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MerchantCommentLIstVIew.h; sourceTree = "<group>"; };
+		BCBFF3C61E5BD61000AFFE36 /* MerchantCommentLIstVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MerchantCommentLIstVIew.m; sourceTree = "<group>"; };
+		BCBFF3C81E5BD64900AFFE36 /* MerchantCommentLIstVIew.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MerchantCommentLIstVIew.xib; sourceTree = "<group>"; };
 		BCC8763F1DB5B72600E623F2 /* HomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
 		BCC876401DB5B72600E623F2 /* HomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
 		BCC876411DB5B72600E623F2 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
@@ -2320,6 +2325,9 @@
 				BC8A9EA61E5AE5AF0004C23E /* MerchantProductListView.h */,
 				BC8A9EA71E5AE5AF0004C23E /* MerchantProductListView.m */,
 				BC8A9EA91E5AE5BE0004C23E /* MerchantProductListView.xib */,
+				BCBFF3C51E5BD61000AFFE36 /* MerchantCommentLIstVIew.h */,
+				BCBFF3C61E5BD61000AFFE36 /* MerchantCommentLIstVIew.m */,
+				BCBFF3C81E5BD64900AFFE36 /* MerchantCommentLIstVIew.xib */,
 			);
 			path = NewMerChantDetail;
 			sourceTree = "<group>";
@@ -2509,6 +2517,7 @@
 				2D89A2A41D2505B10042019B /* GoodsDetailIntroduceView.xib in Resources */,
 				2DE488ED1D23B1F400472681 /* AuthenticationSuccessView.xib in Resources */,
 				2DE488F31D23BF2700472681 /* MessageViewController.xib in Resources */,
+				BCBFF3C91E5BD64900AFFE36 /* MerchantCommentLIstVIew.xib in Resources */,
 				2D95D85C1D225B4800021F31 /* MallSelectShippingAddressViewController.xib in Resources */,
 				2DB94FF71D2A8E33003A6DEA /* paizhao@2x.png in Resources */,
 				2DB94FFA1D2A8E33003A6DEA /* shanguangdeng2.png in Resources */,
@@ -2768,6 +2777,7 @@
 				BCBA43681DB61A6200E9E7E8 /* OnlineMerCityTableViewCell.m in Sources */,
 				2DA973831D125D2A00A605F9 /* JAlertViewHelper.m in Sources */,
 				2DBDB3C31D1D00D60033F09E /* PSCityPickerView.m in Sources */,
+				BCBFF3C71E5BD61000AFFE36 /* MerchantCommentLIstVIew.m in Sources */,
 				2DE220191D20DA03008D7F05 /* OderListViewController.m in Sources */,
 				2DA973401D124F3000A605F9 /* AppDelegate.m in Sources */,
 				2DB9500F1D2A8E33003A6DEA /* ZLPhotoPickerGroup.m in Sources */,

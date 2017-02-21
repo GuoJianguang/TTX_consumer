@@ -8,7 +8,7 @@
 
 #import "PopularMerchantsTableViewCell.h"
 #import <SDWebImage/UIButton+WebCache.h>
-#import "MerchantDetailViewController.h"
+#import "NewMerchantDetailViewController.h"
 #import "NewMerchantDetailViewController.h"
 
 @implementation PopularMerModel
@@ -109,7 +109,7 @@
     if (self.dataSouceArray.count<2) {
         return;
     }
-    MerchantDetailViewController *merchantDVC = [[MerchantDetailViewController alloc]init];
+    NewMerchantDetailViewController *merchantDVC = [[NewMerchantDetailViewController alloc]init];
     PopularMerModel *model = self.dataSouceArray[1];
     merchantDVC.merchantCode = model.mchCode;
     [self.viewController.navigationController pushViewController:merchantDVC animated:YES];
@@ -122,7 +122,7 @@
     if (self.dataSouceArray.count<3) {
         return;
     }
-    MerchantDetailViewController *merchantDVC = [[MerchantDetailViewController alloc]init];
+    NewMerchantDetailViewController *merchantDVC = [[NewMerchantDetailViewController alloc]init];
     PopularMerModel *model = self.dataSouceArray[2];
     merchantDVC.merchantCode = model.mchCode;
     [self.viewController.navigationController pushViewController:merchantDVC animated:YES];

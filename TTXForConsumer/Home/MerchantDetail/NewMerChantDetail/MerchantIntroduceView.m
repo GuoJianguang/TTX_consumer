@@ -45,6 +45,9 @@
     self.address.text = _dataModel.address;
     //介绍
     self.introduceLabel.text = _dataModel.desc;
+    if ([_dataModel.desc isEqualToString:@""]) {
+        self.introdouceView.hidden = YES;
+    }
 }
 
 #pragma mark - 拨打电话

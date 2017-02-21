@@ -11,7 +11,7 @@
 #import "GoodsListViewController.h"
 #import "HomeViewController.h"
 #import "GoodsDetailNewViewController.h"
-#import "MerchantDetailViewController.h"
+#import "NewMerchantDetailViewController.h"
 #import "MerchantSearchResultViewController.h"
 #import "SortCollectionViewCell.h"
 #import "GoodsSearchRsultViewController.h"
@@ -337,7 +337,7 @@
     switch ([model.jumpWay integerValue]) {
         case 1://跳转app商户详情
         {
-            MerchantDetailViewController *merchantDvc = [[MerchantDetailViewController alloc]init];
+            NewMerchantDetailViewController *merchantDvc = [[NewMerchantDetailViewController alloc]init];
             merchantDvc.merchantCode = model.jumpValue;
             [self.viewController.navigationController pushViewController:merchantDvc animated:YES];
 

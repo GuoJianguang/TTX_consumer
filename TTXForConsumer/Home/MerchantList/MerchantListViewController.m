@@ -10,7 +10,7 @@
 #import "SortCollectionViewCell.h"
 #import "MerchantTableViewCell.h"
 #import "HomeBusinessListTableViewCell.h"
-#import "MerchantDetailViewController.h"
+#import "NewMerchantDetailViewController.h"
 #import "MerchantSearchViewController.h"
 #import "MerchantSearchResultViewController.h"
 
@@ -297,7 +297,7 @@ minimumLineSpacingForSectionAtIndex:(NSInteger)section
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MerchantDetailViewController *merchantDVC = [[MerchantDetailViewController alloc]init];
+    NewMerchantDetailViewController *merchantDVC = [[NewMerchantDetailViewController alloc]init];
     HomeBusinessList *model = self.dataSouceArray[indexPath.row];
     merchantDVC.merchantCode = model.code;
     [self.navigationController pushViewController:merchantDVC animated:YES];

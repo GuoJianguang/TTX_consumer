@@ -7,7 +7,6 @@
 //
 
 #import "MerchantDetailTableViewCell.h"
-#import "MerchantDetailViewController.h"
 #import "VoucherCell.h"
 #import "GoodsListTableViewCell.h"
 #import "CommentTableViewCell.h"

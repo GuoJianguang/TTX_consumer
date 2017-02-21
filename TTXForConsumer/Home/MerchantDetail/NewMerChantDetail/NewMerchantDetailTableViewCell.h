@@ -28,6 +28,6 @@
 
 @property (nonatomic, strong)NSMutableArray *goodsArray;
 
-
+@property (nonatomic, strong)NSMutableArray *commentArray;
 
 @end

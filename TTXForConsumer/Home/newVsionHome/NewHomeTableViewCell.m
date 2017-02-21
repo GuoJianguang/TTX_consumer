@@ -11,12 +11,12 @@
 #import "GoodsListViewController.h"
 #import "HomeViewController.h"
 #import "GoodsDetailNewViewController.h"
-#import "MerchantDetailViewController.h"
 #import "MerchantSearchResultViewController.h"
 #import "SortCollectionViewCell.h"
 #import "GoodsSearchRsultViewController.h"
 #import "OnLineMerchantCityViewController.h"
 #import "NewIndustryCollectionViewCell.h"
+#import "NewMerchantDetailViewController.h"
 
 @interface NewHomeTableViewCell()<SwipeViewDelegate,SwipeViewDataSource>
 
@@ -161,9 +161,10 @@
     switch ([model.jumpWay integerValue]) {
         case 1://跳转app商户详情
         {
-            MerchantDetailViewController *merchantDvc = [[MerchantDetailViewController alloc]init];
-            merchantDvc.merchantCode = model.jumpValue;
-            [self.viewController.navigationController pushViewController:merchantDvc animated:YES];
+            NewMerchantDetailViewController *merchantDVC = [[NewMerchantDetailViewController alloc]init];
+            merchantDVC.merchantCode = model.jumpValue;
+            [self.viewController.navigationController pushViewController:merchantDVC animated:YES];
+            
         }
             break;
         case 2://跳转app产品详情
