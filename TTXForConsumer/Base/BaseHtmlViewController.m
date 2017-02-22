@@ -7,8 +7,9 @@
 //
 
 #import "BaseHtmlViewController.h"
+#import "NewMerchantDetailViewController.h"
 
-@interface BaseHtmlViewController ()<UIWebViewDelegate>
+@interface BaseHtmlViewController ()<UIWebViewDelegate,BasenavigationDelegate>
 
 @end
 
@@ -21,12 +22,28 @@
     self.webView = [[UIWebView alloc]initWithFrame:CGRectMake(0, 64, TWitdh, THeight-64)];
     [self.view addSubview:self.webView];
     
+    if (self.isAboutMerChant) {
+        self.naviBar.hiddenDetailBtn =  NO;
+        self.naviBar.detailTitle = @"查看商家";
+        self.naviBar.delegate = self;
+    }else{
+        self.naviBar.hiddenDetailBtn = YES;
+    }
+    
+    
     NSURL  *url = [NSURL URLWithString:self.htmlUrl];
     NSURLRequest *request = [[NSURLRequest alloc]initWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:15.];
     self.webView.delegate = self;
     [self.webView loadRequest:request];
 }
 
+
+- (void)detailBtnClick
+{
+    NewMerchantDetailViewController *merChantVC = [[NewMerchantDetailViewController alloc]init];
+    merChantVC.merchantCode = self.merchantCode;
+    [self.navigationController pushViewController:merChantVC animated:YES];
+}
 
 
 #pragma mark - webview

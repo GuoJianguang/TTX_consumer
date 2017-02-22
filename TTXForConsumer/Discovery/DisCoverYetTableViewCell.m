@@ -7,6 +7,8 @@
 //
 
 #import "DisCoverYetTableViewCell.h"
+#import "DiscoveryWinnersListViewController.h"
+
 
 @implementation DisCoverYetTableViewCell
 
@@ -19,6 +21,7 @@
     self.detailBtn.backgroundColor = [UIColor whiteColor];
     self.detailBtn.layer.cornerRadius = 5;
     self.detailBtn.layer.borderWidth = 1;
+    self.detailBtn.titleLabel.adjustsFontSizeToFitWidth = YES;
     self.detailBtn.layer.borderColor = MacoColor.CGColor;
     [self.detailBtn setTitleColor:MacoColor forState:UIControlStateNormal];
     self.detailBtn.layer.masksToBounds = YES;
@@ -72,7 +75,10 @@
 #pragma mark - 中奖名单
 
 - (IBAction)detailBtn:(id)sender {
-    
+    DiscoveryWinnersListViewController *detailVC = [[DiscoveryWinnersListViewController alloc]init];
+    detailVC.dataModel = self.dataModel;
+    [self.viewController.navigationController pushViewController:detailVC animated:YES];
+
     
 }
 @end

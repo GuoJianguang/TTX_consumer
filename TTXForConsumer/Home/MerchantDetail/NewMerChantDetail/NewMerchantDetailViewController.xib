@@ -32,7 +32,7 @@
                                 <constraint firstAttribute="width" constant="200" id="DkN-ga-Df7"/>
                                 <constraint firstAttribute="height" constant="35" id="her-sU-lj1"/>
                             </constraints>
-                            <state key="normal" title="立即购买">
+                            <state key="normal" title="在线支付">
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>

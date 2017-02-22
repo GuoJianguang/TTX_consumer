@@ -9,11 +9,12 @@
 #import "DiscoveryViewController.h"
 #import "DiscoveryHomeTableViewCell.h"
 #import "DiscoveryDetailViewController.h"
+#import "GoodsDetailNewViewController.h"
+#import "NewMerchantDetailViewController.h"
+#import "DiscoverSecondActivityViewController.h"
 
 
-
-
-@interface DiscoveryViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface DiscoveryViewController ()<SwipeViewDelegate,SwipeViewDataSource>
 
 @property (nonatomic, strong)NSMutableArray *datasouceArray;
 
@@ -26,15 +27,8 @@
     // Do any additional setup after loading the view.
     self.naviBar.title = @"发现";
     self.naviBar.hiddenBackBtn = YES;
-    self.tableView.backgroundColor = [UIColor clearColor];
-    __weak DiscoveryViewController *weak_self = self;
-    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [weak_self getRequest];
-    }];
-   [ self.tableView addNoDatasouceWithCallback:^{
-       [weak_self.tableView.mj_header beginRefreshing];
-   } andAlertSting:@"暂时没有活动或者网络连接不好" andErrorImage:@"pic_2" andRefreshBtnHiden:NO];
-    [self.tableView.mj_header beginRefreshing];
+    self.firstLabel.textColor = self.secondLabel.textColor = MacoTitleColor;
+    [self getRequest];
     
 }
 
@@ -52,70 +46,113 @@
 #pragma mark - 网络请求
 
 - (void)getRequest{
-    [HttpClient POST:@"find/list" parameters:nil success:^(NSURLSessionDataTask *operation, id jsonObject) {
+    [HttpClient POST:@"find/advert/list" parameters:nil success:^(NSURLSessionDataTask *operation, id jsonObject) {
         if (IsRequestTrue) {
             [self.datasouceArray removeAllObjects];
             NSArray *array = jsonObject[@"data"];
-            if (array.count ==0) {
-                [self.tableView showNoDataSouce];
-                [self.tableView reloadData];
+            if (array.count == 0) {
+                self.pageContrlView.hidden = YES;
+                self.swipeView.hidden = YES;
                 return;
             }
+            self.pageContrlView.hidden = NO;
+            self.swipeView.hidden = NO;
             for (NSDictionary *dic in array) {
                 [self.datasouceArray addObject:[DiscoverHome modelWithDic:dic]];
             }
-            [self.tableView hiddenNoDataSouce];
-            [self.tableView reloadData];
+            [[AutoScroller shareAutoScroller]autoSwipeView:self.swipeView WithPageView:self.pageContrlView WithDataSouceArray:self.datasouceArray];
+            self.pageContrlView.numberOfPages = self.datasouceArray.count;
+            [self.swipeView reloadData];
         }
-        [self.tableView.mj_header endRefreshing];
 
     } failure:^(NSURLSessionDataTask *operation, NSError *error) {
-        [self.tableView.mj_header endRefreshing];
-        [self.tableView showNoDataSouce];
+
+        self.pageContrlView.hidden = YES;
+        self.swipeView.hidden = YES;
     }];
 
 }
+- (void)swipeViewCurrentItemIndexDidChange:(SwipeView *)swipeView
+{
+    self.pageContrlView.currentPage = swipeView.currentPage;
+}
 
-#pragma mark - UITableView
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+
+#pragma mark - swipeView
+
+- (NSInteger)numberOfItemsInSwipeView:(SwipeView *)swipeView
 {
     return self.datasouceArray.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-        DiscoveryHomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[DiscoveryHomeTableViewCell indentify]];
-        if (!cell) {
-            cell = [DiscoveryHomeTableViewCell newCell];
-        }
-        cell.dataModel = self.datasouceArray[indexPath.row];
-        return cell;
 
+- (UIView *)swipeView:(SwipeView *)swipeView viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view
+{
+    UIImageView *imageView = nil;
+    if (nil == view) {
+        view = [[UIView alloc] initWithFrame:swipeView.bounds];
+        imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+        imageView.frame = CGRectMake(0, 0, TWitdh, self.swipeView.bounds.size.height);
+//        imageView.center = swipeView.center;
+        imageView.tag = 10;
+        [view addSubview:imageView];
+        imageView.contentMode = UIViewContentModeScaleAspectFill;
+        view.autoresizingMask = UIViewAutoresizingFlexibleHeight |
+        UIViewAutoresizingFlexibleWidth;
+        imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth |
+        UIViewAutoresizingFlexibleHeight;
+    }else {
+        imageView = (UIImageView*)[view viewWithTag:10];
+    }
+    view.backgroundColor = [UIColor cyanColor];
+    DiscoverHome *model = self.datasouceArray[index];
+    [imageView sd_setImageWithURL:[NSURL URLWithString:model.pic] placeholderImage:BannerLoadingErrorImage];
+
+    return view;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)swipeView:(SwipeView *)swipeView didSelectItemAtIndex:(NSInteger)index
 {
-    return TWitdh*(140/375.);
-}
-
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    DiscoverHome *model = self.datasouceArray[indexPath.row];
+    DiscoverHome *model = self.datasouceArray[index];
     switch ([model.jumpWay integerValue]) {
         case 1:
+        {
+            NewMerchantDetailViewController *merchantDVC = [[NewMerchantDetailViewController alloc]init];
+            merchantDVC.merchantCode = model.jumpValue;
+            [self.navigationController pushViewController:merchantDVC animated:YES];
             
+        }
             break;
         case 2:
-            
+        {
+            GoodsDetailNewViewController *goodsDVC = [[GoodsDetailNewViewController alloc]init];
+            goodsDVC.goodsID = model.jumpValue;
+            [self.navigationController pushViewController:goodsDVC animated:YES];
+        }
             break;
         case 3:
+        {
             
+            BaseHtmlViewController *htmlVC = [[BaseHtmlViewController alloc]init];
+            htmlVC.htmlUrl = model.jumpValue;
+            if ([htmlVC.htmlUrl containsString:@"E50BA6517F660E7CA4A40EFD4508217E"]) {
+                if (![TTXUserInfo shareUserInfos].currentLogined) {
+                    //判断是否先登录
+                    UINavigationController *navc = [LoginViewController controller];
+                    [self presentViewController:navc animated:YES completion:NULL];
+                    return;
+                }
+                htmlVC.htmlUrl = [NSString stringWithFormat:@"%@&token=%@",model.jumpValue,[TTXUserInfo shareUserInfos].token];
+            }
+            htmlVC.htmlTitle = model.name;
+            [self.navigationController pushViewController:htmlVC animated:YES];
+            
+        }
             break;
         case 4:{// 抽奖活动
             DiscoveryDetailViewController *discoveryDV = [[DiscoveryDetailViewController alloc]init];
-            discoveryDV.model = self.datasouceArray[indexPath.row];
+            discoveryDV.model = self.datasouceArray[index];
             [self.navigationController pushViewController:discoveryDV animated:YES];
         }
             
@@ -125,9 +162,8 @@
             break;
     }
 
-    
-    
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -144,4 +180,14 @@
 }
 */
 
+- (IBAction)firstBtn:(id)sender {
+    DiscoveryDetailViewController *discoveryDV = [[DiscoveryDetailViewController alloc]init];
+    [self.navigationController pushViewController:discoveryDV animated:YES];
+    
+}
+
+- (IBAction)secondBtn:(id)sender {
+    DiscoverSecondActivityViewController *actibityVC = [[DiscoverSecondActivityViewController alloc]init];
+    [self.navigationController pushViewController:actibityVC animated:YES];
+}
 @end

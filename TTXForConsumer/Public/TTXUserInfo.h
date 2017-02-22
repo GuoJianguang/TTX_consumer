@@ -39,6 +39,8 @@
 @property (nonatomic, copy)NSString *aviableBalance;
 //总消费金额
 @property (nonatomic, copy)NSString *totalConsumeAmount;
+//消费金
+@property (nonatomic, copy)NSString *consumeBalance;
 //待让利回馈金额
 @property (nonatomic, copy)NSString *totalExpectAmount;
 //未参与让利回馈金额

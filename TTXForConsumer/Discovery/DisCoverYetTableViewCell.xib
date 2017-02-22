@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -58,10 +59,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YxS-P5-IXw">
-                                <rect key="frame" x="211" y="46.5" width="70" height="30"/>
+                                <rect key="frame" x="211" y="48" width="70" height="28"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="ayo-Uc-KJt"/>
-                                    <constraint firstAttribute="width" constant="70" id="ikp-ez-TtT"/>
+                                    <constraint firstAttribute="width" secondItem="YxS-P5-IXw" secondAttribute="height" multiplier="7/2.8" id="c5T-qX-pEu"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" title="中奖名单">
@@ -76,6 +76,7 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="rpE-E6-oIQ" secondAttribute="bottom" constant="20" id="1OC-PU-9iw"/>
                             <constraint firstItem="44K-f0-cbI" firstAttribute="top" secondItem="oqO-PT-aXl" secondAttribute="top" constant="11" id="2Lj-8N-veT"/>
+                            <constraint firstItem="YxS-P5-IXw" firstAttribute="width" secondItem="oqO-PT-aXl" secondAttribute="width" multiplier="18/75" id="4Cz-tN-90R"/>
                             <constraint firstAttribute="trailing" secondItem="YxS-P5-IXw" secondAttribute="trailing" constant="11" id="52d-nW-uw5"/>
                             <constraint firstItem="YxS-P5-IXw" firstAttribute="leading" secondItem="rpE-E6-oIQ" secondAttribute="trailing" constant="8" id="5As-G7-d4V"/>
                             <constraint firstItem="rpE-E6-oIQ" firstAttribute="leading" secondItem="44K-f0-cbI" secondAttribute="trailing" constant="10" id="EPv-hR-VAa"/>
@@ -107,7 +108,7 @@
                 <outlet property="endViewHeight" destination="bnD-bI-Cq6" id="cnO-85-7v8"/>
                 <outlet property="nameLabel" destination="RrN-XM-gOb" id="89o-1g-rzH"/>
             </connections>
-            <point key="canvasLocation" x="-44" y="61"/>
+            <point key="canvasLocation" x="281" y="51"/>
         </tableViewCell>
     </objects>
     <resources>

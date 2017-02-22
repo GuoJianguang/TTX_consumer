@@ -36,6 +36,9 @@
     self.naviBar.detailImage = [UIImage imageNamed:@"icon_explain"];
     self.naviBar.delegate = self;
     self.naviBar.title = self.model.name;
+    if (!self.model) {
+        self.naviBar.title = @"活动";
+    }
     self.tableView.backgroundColor = [UIColor clearColor];
     
     self.isFirstEnd = YES;
@@ -170,11 +173,11 @@
     DiscoveryDeatailModel *model = self.dataSocueArray[indexPath.row];
 
     if ([model.state isEqualToString:@"0"]) {
-        return TWitdh*(665/750.);
+        return TWitdh*(40/75.) + 135;
     }else if(![model.state isEqualToString:@"0"] && model.isFirstEnd){
-        return TWitdh*(240/750.);
+        return TWitdh*(280/750.);
     }else{
-        return TWitdh*(160/750.);
+        return TWitdh*(196/750.);
     }
 }
 

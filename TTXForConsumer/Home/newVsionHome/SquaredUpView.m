@@ -77,7 +77,9 @@
     //pageControl
     self.squaredUpViewPageControl.numberOfPages = pages;
     self.squaredUpViewPageControl.bounds = CGRectMake(0, 0, WIDTH, 7);
-    self.squaredUpViewPageControl.center = CGPointMake(WIDTH/2.0, CGRectGetHeight(self.frame)-7);
+//    self.squaredUpViewPageControl.center = CGPointMake(WIDTH/2.0, CGRectGetHeight(self.frame)-4);
+    self.squaredUpViewPageControl.frame = CGRectMake(0, CGRectGetHeight(self.frame)-10, TWitdh, 7);
+
     self.squaredUpViewPageControl.currentPageIndicatorTintColor = [UIColor greenColor];
     self.squaredUpViewPageControl.pageIndicatorTintColor = [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1];
     

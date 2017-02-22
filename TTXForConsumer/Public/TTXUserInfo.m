@@ -62,6 +62,7 @@ static TTXUserInfo *instance;
     instance.unPayOrderCount = NullToNumber(dic[@"unPayOrderCount"]);
     instance.idcard = NullToSpace(dic[@"idcard"]);
     instance.idcardName = NullToSpace(dic[@"idcardName"]);
+    instance.consumeBalance = NullToNumber(dic[@"consumeBalance"]);
 
     
     NSString *notPay = NullToNumber(dic[@"notConsumeDays"]);
@@ -91,6 +92,7 @@ static TTXUserInfo *instance;
         instance.unPayOrderCount = NullToNumber(unreadMsgCountVo[@"unPayorderCount"]);
         instance.completeCount = NullToNumber(unreadMsgCountVo[@"completeCount"]);
         instance.totalWaitCount = NullToNumber(unreadMsgCountVo[@"totalWaitCount"]);
+        instance.consumeBalance = NullToNumber(unreadMsgCountVo[@"consumeBalance"]);
 
     }
 //    instance.waitDeleverCount = @"2";

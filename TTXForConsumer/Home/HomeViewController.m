@@ -368,7 +368,13 @@
     if (indexPath.row == 0) {
         return TWitdh*(15/75.);
     }else if (indexPath.row == 1){
-        return TWitdh*(37/75.);
+        CGFloat intervalX = 50.0;/**<横向间隔*/
+        CGFloat intervalY = 15.0;/**<纵向间隔*/
+        NSInteger columnNum = 4;/**<九宫格列数*/
+        CGFloat widthAndHeightRatio = 2.0/3.0;/**<宽高比*/
+        CGFloat buttonWidth = (TWitdh - 40 - intervalX * (columnNum - 1))/(CGFloat)columnNum;/**<button的宽度*/
+        CGFloat buttonHeight = buttonWidth/widthAndHeightRatio;/**<button的高度*/
+        return buttonHeight * 2 + intervalY*2 + 18;
     }else if (indexPath.row == 2){
         return TWitdh*(610/750.);
     }

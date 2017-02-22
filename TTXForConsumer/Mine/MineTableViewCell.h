@@ -44,6 +44,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *WaitCashbackAmount;
 //总消费金额
 @property (weak, nonatomic) IBOutlet UILabel *totalConsumeAmount;
+//消费金
+@property (weak, nonatomic) IBOutlet UILabel *consumeBalanceLabel;
 
 @property (weak, nonatomic) IBOutlet UIImageView *mineBgIamge;
 

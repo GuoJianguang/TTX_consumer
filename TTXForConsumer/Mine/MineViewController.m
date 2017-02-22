@@ -82,7 +82,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return TWitdh*(963/750.) + 385 + 44;
+    return TWitdh*(1000./375.);
 }
 
 #pragma mark - 退出登录的操作

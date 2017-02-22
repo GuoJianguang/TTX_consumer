@@ -64,6 +64,7 @@
     self.myHelpLabel.textColor = MacoTitleColor;
     self.myAboutLabel.textColor = MacoTitleColor;
     self.accountBalance.textColor = MacoColor;
+    self.consumeBalanceLabel.textColor = MacoColor;
     self.accountBalance.adjustsFontSizeToFitWidth = YES;
     self.WaitCashbackAmount.adjustsFontSizeToFitWidth = YES;
     self.totalConsumeAmount.adjustsFontSizeToFitWidth = YES;
@@ -145,6 +146,7 @@
             self.accountBalance.text = [NSString stringWithFormat:@"%.2f",[[TTXUserInfo shareUserInfos].aviableBalance doubleValue]];
             self.WaitCashbackAmount.text = [NSString stringWithFormat:@"%.2f",[[TTXUserInfo shareUserInfos].totalExpectAmount doubleValue] + [[TTXUserInfo shareUserInfos].wiatJoinAmunt doubleValue]];
              self.totalConsumeAmount.text = [NSString stringWithFormat:@"%.2f",[[TTXUserInfo shareUserInfos].totalConsumeAmount doubleValue]];
+            self.consumeBalanceLabel.text = [NSString stringWithFormat:@"%.2f",[[TTXUserInfo shareUserInfos].consumeBalance doubleValue]];
             [self setYetWihtMessage];
         }
     } failure:^(NSURLSessionDataTask *operation, NSError *error) {
