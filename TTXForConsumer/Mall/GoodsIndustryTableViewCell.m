@@ -1,23 +1,21 @@
 //
-//  HomeIndustryTableViewCell.m
+//  GoodsIndustryTableViewCell.m
 //  TTXForConsumer
 //
-//  Created by Guo on 2017/2/14.
+//  Created by Guo on 2017/2/23.
 //  Copyright © 2017年 ttx. All rights reserved.
 //
 
-#import "HomeIndustryTableViewCell.h"
+#import "GoodsIndustryTableViewCell.h"
 #import "SquaredUpView.h"
 #import "CustomButton.h"
 #import <SDWebImage/UIButton+WebCache.h>
-#import "MerchantSearchResultViewController.h"
 
-
-@implementation NewHomeActivityModel
+@implementation GoodsIndrstryModel
 
 + (id)modelWithDic:(NSDictionary *)dic
 {
-    NewHomeActivityModel *model = [[NewHomeActivityModel alloc]init];
+    GoodsIndrstryModel *model = [[ GoodsIndrstryModel alloc]init];
     model.sortId = NullToSpace(dic[@"id"]);
     model.name = NullToSpace(dic[@"name"]);
     model.icon = NullToSpace(dic[@"icon"]);
@@ -34,26 +32,28 @@
     return model;
 }
 
+@end
+
+@interface GoodsIndustryTableViewCell()<SquaredUpViewDelegate>
 
 @end
 
-@interface HomeIndustryTableViewCell()<SquaredUpViewDelegate>
-
-@end
-@implementation HomeIndustryTableViewCell
+@implementation GoodsIndustryTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.contentView.backgroundColor = [UIColor whiteColor];
     // Initialization code
     
-}
-
-- (void)setIsAlreadyRefrefsh:(BOOL)isAlreadyRefrefsh
-{
-    _isAlreadyRefrefsh = isAlreadyRefrefsh;
     [self getGoodsTypeRequest];
 }
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+
+    // Configure the view for the selected state
+}
+
 
 - (void)initSquaredUpView:(NSMutableArray *)datasouceArray {
     SquaredUpView *squaredUpView = [[SquaredUpView alloc] init];
@@ -62,23 +62,16 @@
     CGRect squaredeUpViewFrame = [squaredUpView layoutSquaredUpViewCellsFrameWithModelArray:datasouceArray];
     squaredUpView.frame = CGRectMake(0, 0, CGRectGetWidth(squaredeUpViewFrame), CGRectGetHeight(squaredeUpViewFrame));
     [squaredUpView.squaredUpViewCellArray enumerateObjectsUsingBlock:^(CustomButton *button, NSUInteger idx, BOOL * _Nonnull stop) {
-        NewHomeActivityModel *model = datasouceArray[idx];
+        GoodsIndrstryModel *model = datasouceArray[idx];
         [button setTitle:model.name forState:UIControlStateNormal];
         [button sd_setImageWithURL:[NSURL URLWithString:model.icon] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"icon_list_default"]];
     }];
 }
 
-
 - (void)jSquaredUpViewCell:(CustomButton *)cell didSelectedAtIndex:(NSInteger)index
 {
-    NewHomeActivityModel *model = self.sortDataSouceArray[cell.tag];
-    MerchantSearchResultViewController *resultVC = [[MerchantSearchResultViewController alloc]init];
-    resultVC.currentIndustry = model.name;
-    resultVC.keyWord = @"";
-    resultVC.currentCity = [TTXUserInfo shareUserInfos].locationCity;
-    [self.viewController.navigationController pushViewController:resultVC animated:YES];
+  
 }
-
 
 - (NSMutableArray *)sortDataSouceArray
 {
@@ -91,12 +84,12 @@
 //获取所有商品类型
 - (void)getGoodsTypeRequest
 {
-    [HttpClient GET:@"mch/trades" parameters:nil success:^(NSURLSessionDataTask *operation, id jsonObject) {
+    [HttpClient GET:@"shop/goodsType/get" parameters:nil success:^(NSURLSessionDataTask *operation, id jsonObject) {
         if (IsRequestTrue) {
             [self.sortDataSouceArray removeAllObjects];
             NSArray *array = jsonObject[@"data"];
             for (NSDictionary *dic in array) {
-                NewHomeActivityModel *model = [NewHomeActivityModel modelWithDic:dic];
+                GoodsIndrstryModel *model = [GoodsIndrstryModel modelWithDic:dic];
                 [self.sortDataSouceArray addObject:model];
             }
             [self initSquaredUpView:self.sortDataSouceArray];
@@ -106,12 +99,5 @@
     }];
 }
 
-
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
 
 @end

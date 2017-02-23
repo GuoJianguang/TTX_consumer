@@ -376,7 +376,7 @@
         CGFloat buttonHeight = buttonWidth/widthAndHeightRatio;/**<button的高度*/
         return buttonHeight * 2 + intervalY*2 + 18;
     }else if (indexPath.row == 2){
-        return TWitdh*(610/750.);
+        return TWitdh*(996/750.);
     }
     return TWitdh*(220/750.);
 }

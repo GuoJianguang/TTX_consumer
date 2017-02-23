@@ -12,8 +12,10 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    [super awakeFromNib];
     self.contentView.backgroundColor = [UIColor clearColor];
     self.backgroundColor = [UIColor clearColor];
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
 //返回重用标示

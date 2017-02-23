@@ -14,6 +14,7 @@
 #import "GoodsSearchViewController.h"
 
 
+
 @interface GoodsListViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UITableViewDelegate,UITableViewDataSource,BasenavigationDelegate>
 //分类
 @property (nonatomic, strong)NSMutableArray *sortDataSouceArray;

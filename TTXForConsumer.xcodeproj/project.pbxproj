@@ -379,6 +379,13 @@
 		BC8A9EA51E5AE0CC0004C23E /* MerchantIntroduceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC8A9EA41E5AE0CC0004C23E /* MerchantIntroduceView.xib */; };
 		BC8A9EA81E5AE5AF0004C23E /* MerchantProductListView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8A9EA71E5AE5AF0004C23E /* MerchantProductListView.m */; };
 		BC8A9EAA1E5AE5BE0004C23E /* MerchantProductListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC8A9EA91E5AE5BE0004C23E /* MerchantProductListView.xib */; };
+		BC9307591E5EAD6700E996C8 /* MallHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9307581E5EAD6700E996C8 /* MallHomeViewController.m */; };
+		BC93075D1E5EB23E00E996C8 /* GoodsIndustryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC93075B1E5EB23E00E996C8 /* GoodsIndustryTableViewCell.m */; };
+		BC93075E1E5EB23E00E996C8 /* GoodsIndustryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC93075C1E5EB23E00E996C8 /* GoodsIndustryTableViewCell.xib */; };
+		BC9307621E5EB96A00E996C8 /* MallDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9307601E5EB96A00E996C8 /* MallDetailTableViewCell.m */; };
+		BC9307631E5EB96A00E996C8 /* MallDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC9307611E5EB96A00E996C8 /* MallDetailTableViewCell.xib */; };
+		BC9307671E5ECC4F00E996C8 /* FlagshipCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9307651E5ECC4E00E996C8 /* FlagshipCollectionViewCell.m */; };
+		BC9307681E5ECC4F00E996C8 /* FlagshipCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC9307661E5ECC4E00E996C8 /* FlagshipCollectionViewCell.xib */; };
 		BCA19E8F1DED675A0089C1FC /* 213955937960616.cer in Resources */ = {isa = PBXBuildFile; fileRef = BCA19E8E1DED675A0089C1FC /* 213955937960616.cer */; };
 		BCAE30FA1DF925C30026E231 /* UMMobClick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCAE30F91DF925C30026E231 /* UMMobClick.framework */; };
 		BCAE30FD1DF928F20026E231 /* libSocialWeChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCAE30FB1DF928F20026E231 /* libSocialWeChat.a */; };
@@ -1037,6 +1044,17 @@
 		BC8A9EA61E5AE5AF0004C23E /* MerchantProductListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MerchantProductListView.h; sourceTree = "<group>"; };
 		BC8A9EA71E5AE5AF0004C23E /* MerchantProductListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MerchantProductListView.m; sourceTree = "<group>"; };
 		BC8A9EA91E5AE5BE0004C23E /* MerchantProductListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MerchantProductListView.xib; sourceTree = "<group>"; };
+		BC9307571E5EAD6700E996C8 /* MallHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MallHomeViewController.h; sourceTree = "<group>"; };
+		BC9307581E5EAD6700E996C8 /* MallHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MallHomeViewController.m; sourceTree = "<group>"; };
+		BC93075A1E5EB23E00E996C8 /* GoodsIndustryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsIndustryTableViewCell.h; sourceTree = "<group>"; };
+		BC93075B1E5EB23E00E996C8 /* GoodsIndustryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsIndustryTableViewCell.m; sourceTree = "<group>"; };
+		BC93075C1E5EB23E00E996C8 /* GoodsIndustryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoodsIndustryTableViewCell.xib; sourceTree = "<group>"; };
+		BC93075F1E5EB96A00E996C8 /* MallDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MallDetailTableViewCell.h; sourceTree = "<group>"; };
+		BC9307601E5EB96A00E996C8 /* MallDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MallDetailTableViewCell.m; sourceTree = "<group>"; };
+		BC9307611E5EB96A00E996C8 /* MallDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MallDetailTableViewCell.xib; sourceTree = "<group>"; };
+		BC9307641E5ECC4E00E996C8 /* FlagshipCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlagshipCollectionViewCell.h; sourceTree = "<group>"; };
+		BC9307651E5ECC4E00E996C8 /* FlagshipCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlagshipCollectionViewCell.m; sourceTree = "<group>"; };
+		BC9307661E5ECC4E00E996C8 /* FlagshipCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlagshipCollectionViewCell.xib; sourceTree = "<group>"; };
 		BCA19E8E1DED675A0089C1FC /* 213955937960616.cer */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 213955937960616.cer; sourceTree = "<group>"; };
 		BCAE30F91DF925C30026E231 /* UMMobClick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMMobClick.framework; sourceTree = "<group>"; };
 		BCAE30FB1DF928F20026E231 /* libSocialWeChat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialWeChat.a; sourceTree = "<group>"; };
@@ -1465,6 +1483,7 @@
 				2DA973471D124F3000A605F9 /* TTXForConsumer.xcdatamodeld */,
 				2DA973881D12700300A605F9 /* Home */,
 				2D566D881D191E5700B19EC6 /* Mine */,
+				BC9307561E5EAD4300E996C8 /* Mall */,
 				BC0502001E554F31001F51FE /* Discovery */,
 				2DA974181D1291C000A605F9 /* Base */,
 				2DA9738E1D127BC500A605F9 /* ThirdAPI */,
@@ -2372,6 +2391,24 @@
 			path = NewMerChantDetail;
 			sourceTree = "<group>";
 		};
+		BC9307561E5EAD4300E996C8 /* Mall */ = {
+			isa = PBXGroup;
+			children = (
+				BC9307571E5EAD6700E996C8 /* MallHomeViewController.h */,
+				BC9307581E5EAD6700E996C8 /* MallHomeViewController.m */,
+				BC93075A1E5EB23E00E996C8 /* GoodsIndustryTableViewCell.h */,
+				BC93075B1E5EB23E00E996C8 /* GoodsIndustryTableViewCell.m */,
+				BC93075C1E5EB23E00E996C8 /* GoodsIndustryTableViewCell.xib */,
+				BC93075F1E5EB96A00E996C8 /* MallDetailTableViewCell.h */,
+				BC9307601E5EB96A00E996C8 /* MallDetailTableViewCell.m */,
+				BC9307611E5EB96A00E996C8 /* MallDetailTableViewCell.xib */,
+				BC9307641E5ECC4E00E996C8 /* FlagshipCollectionViewCell.h */,
+				BC9307651E5ECC4E00E996C8 /* FlagshipCollectionViewCell.m */,
+				BC9307661E5ECC4E00E996C8 /* FlagshipCollectionViewCell.xib */,
+			);
+			path = Mall;
+			sourceTree = "<group>";
+		};
 		BCAE30F81DF925C30026E231 /* UMStatistics_4.1.4 */ = {
 			isa = PBXGroup;
 			children = (
@@ -2609,6 +2646,7 @@
 				BC2CF8421E52A27D00A69A94 /* HomeIndustryTableViewCell.xib in Resources */,
 				2DB94F611D2A2EF4003A6DEA /* RewardRecordViewController.xib in Resources */,
 				2D67CCAC1D1BCBE600BB99B4 /* WalletDymicViewController.xib in Resources */,
+				BC93075E1E5EB23E00E996C8 /* GoodsIndustryTableViewCell.xib in Resources */,
 				2DBDB3B81D1CE6630033F09E /* ShippingAlerTableViewCell.xib in Resources */,
 				2DB94F771D2A6046003A6DEA /* TabBar.xcassets in Resources */,
 				BC39747B1DD440AF008DDF67 /* LoveAccountTableViewCell.xib in Resources */,
@@ -2650,6 +2688,7 @@
 				2DE4890C1D23CB5900472681 /* MessageDetailTableViewCell.xib in Resources */,
 				2DE2202F1D2104EE008D7F05 /* GoodsIntroduceViewController.xib in Resources */,
 				2DA9738D1D12781000A605F9 /* Home.xcassets in Resources */,
+				BC9307681E5ECC4F00E996C8 /* FlagshipCollectionViewCell.xib in Resources */,
 				BCBA436E1DB61C9200E9E7E8 /* OnlineMerCityCollectionViewCell.xib in Resources */,
 				2D95D8111D222B4200021F31 /* ChooseTypeView.xib in Resources */,
 				2DE489151D23D1B000472681 /* MyInvitationViewController.xib in Resources */,
@@ -2668,6 +2707,7 @@
 				BCC876431DB5B72600E623F2 /* HomeTableViewCell.xib in Resources */,
 				2D4C43961D17EBB90011C48F /* MerchantTableViewCell.xib in Resources */,
 				2D566D901D191FD200B19EC6 /* MineTableViewCell.xib in Resources */,
+				BC9307631E5EB96A00E996C8 /* MallDetailTableViewCell.xib in Resources */,
 				BC3974801DD445EB008DDF67 /* JoinLoveAccountViewController.xib in Resources */,
 				2D67CCBC1D1BD99900BB99B4 /* SetTableViewCell.xib in Resources */,
 				2D95D85E1D225B4800021F31 /* MallShippingALTableViewCell.xib in Resources */,
@@ -2805,6 +2845,7 @@
 				2DE488E71D23A92800472681 /* RealNameAutViewController.m in Sources */,
 				2D7216981D12A55000D3F7D6 /* SwipeView.m in Sources */,
 				2DA9744B1D1291E600A605F9 /* View+MASAdditions.m in Sources */,
+				BC9307621E5EB96A00E996C8 /* MallDetailTableViewCell.m in Sources */,
 				2DA973C11D127DCF00A605F9 /* PinyinFormatter.m in Sources */,
 				2D67CCC01D1BE00400BB99B4 /* EditNickNameViewController.m in Sources */,
 				2DB9500E1D2A8E33003A6DEA /* ZLPhotoPickerDatas.m in Sources */,
@@ -2833,6 +2874,7 @@
 				BC2CF8481E52A2A400A69A94 /* CustomButton.m in Sources */,
 				2DA973491D124F3000A605F9 /* TTXForConsumer.xcdatamodeld in Sources */,
 				2D95D80C1D22296400021F31 /* TypeView.m in Sources */,
+				BC9307671E5ECC4F00E996C8 /* FlagshipCollectionViewCell.m in Sources */,
 				2D452B881D50A2C600C9D897 /* WaitingAuthenticationViewController.m in Sources */,
 				BC39B7C71E5192D9009A7D50 /* NewHomeTableViewCell.m in Sources */,
 				2D95D8711D225C0600021F31 /* PayView.m in Sources */,
@@ -2848,6 +2890,7 @@
 				2D67CCBB1D1BD99900BB99B4 /* SetTableViewCell.m in Sources */,
 				BC2CF8471E52A2A400A69A94 /* SquaredUpView.m in Sources */,
 				2D4C43951D17EBB90011C48F /* MerchantTableViewCell.m in Sources */,
+				BC93075D1E5EB23E00E996C8 /* GoodsIndustryTableViewCell.m in Sources */,
 				2D0092641D30BAB000E00DB8 /* WithDrewSuccessView.m in Sources */,
 				2D67CCB01D1BCEA700BB99B4 /* WalletTableViewCell.m in Sources */,
 				2DA973C21D127DCF00A605F9 /* PinYinForObjc.m in Sources */,
@@ -2978,6 +3021,7 @@
 				2DA974051D128FFE00A605F9 /* LBXScanViewController.m in Sources */,
 				2D95D8751D225C3900021F31 /* OrderModel.m in Sources */,
 				2DA973B61D127DCF00A605F9 /* AreaTableViewCell.m in Sources */,
+				BC9307591E5EAD6700E996C8 /* MallHomeViewController.m in Sources */,
 				2DB94F7A1D2A6177003A6DEA /* UIImage+ColorImage.m in Sources */,
 				2DA973B91D127DCF00A605F9 /* CityButton.m in Sources */,
 				2DE488F71D23BFD000472681 /* MessageTableViewCell.m in Sources */,
