@@ -97,12 +97,12 @@
         return;
     }
     
-    if (self.payWay_type == Online_Payway_type_banlance) {
-        //        在用余额支付的时候必须先进行实名认证
-        if ([self gotRealNameRu:@"在您用余额支付之前，请先进行实名认证"]) {
-            return;
-        }
-    }
+//    if (self.payWay_type == Online_Payway_type_banlance) {
+//        //        在用余额支付的时候必须先进行实名认证
+//        if ([self gotRealNameRu:@"在您用余额支付之前，请先进行实名认证"]) {
+//            return;
+//        }
+//    }
 
     if ([self.moneyTF.text isEqualToString:@""] ||[self.moneyTF.text doubleValue] ==0) {
         [[JAlertViewHelper shareAlterHelper]showTint:@"请输入正确的金额" duration:2.];

@@ -43,11 +43,21 @@
     //电话
     self.phoneNum.text = _dataModel.phone;
     self.address.text = _dataModel.address;
+    
+    self.introduceHeight.constant  = [self cellHeight:_dataModel.desc]+ 55. + 25.;
+
     //介绍
     self.introduceLabel.text = _dataModel.desc;
     if ([_dataModel.desc isEqualToString:@""]) {
         self.introdouceView.hidden = YES;
     }
+}
+
+#pragma mark - 计算cell的高度
+- (CGFloat)cellHeight:(NSString *)textSting
+{
+    CGSize size = [textSting boundingRectWithSize:CGSizeMake(TWitdh  - 30, 0) font:[UIFont systemFontOfSize:13]];
+    return size.height;
 }
 
 #pragma mark - 拨打电话

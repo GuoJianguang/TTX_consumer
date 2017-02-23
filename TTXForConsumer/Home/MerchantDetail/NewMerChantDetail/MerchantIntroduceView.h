@@ -26,4 +26,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *introduceLabel;
 @property (weak, nonatomic) IBOutlet UIView *introdouceView;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *introduceHeight;
+
+
+
 @end

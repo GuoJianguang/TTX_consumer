@@ -85,15 +85,13 @@ static TTXUserInfo *instance;
         NSDictionary *unreadMsgCountVo = dic[@"unreadMsgCountVo"];
         instance.feedbackCount = NullToNumber(unreadMsgCountVo[@"feedbackCount"]);
         instance.messageCount = NullToNumber(unreadMsgCountVo[@"messageCount"]);
-        instance.orderCount = NullToNumber(unreadMsgCountVo[@"orderCount"]);
+//        instance.orderCount = NullToNumber(unreadMsgCountVo[@"orderCount"]);
         instance.withdrawCount = NullToNumber(unreadMsgCountVo[@"withdrawCount"]);
         instance.waitDeleverCount = NullToNumber(unreadMsgCountVo[@"waitDeliverCount"]);
         instance.waitConfirmCount = NullToNumber(unreadMsgCountVo[@"waitConfirmCount"]);
         instance.unPayOrderCount = NullToNumber(unreadMsgCountVo[@"unPayorderCount"]);
         instance.completeCount = NullToNumber(unreadMsgCountVo[@"completeCount"]);
         instance.totalWaitCount = NullToNumber(unreadMsgCountVo[@"totalWaitCount"]);
-        instance.consumeBalance = NullToNumber(unreadMsgCountVo[@"consumeBalance"]);
-
     }
 //    instance.waitDeleverCount = @"2";
 //    instance.waitConfirmCount = @"3";

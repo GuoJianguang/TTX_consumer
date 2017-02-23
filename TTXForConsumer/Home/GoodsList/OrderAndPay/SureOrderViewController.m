@@ -138,7 +138,7 @@
 
 - (CGFloat )tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return TWitdh/3.2 + 366 + 144 + 40;
+    return TWitdh/3.2 + 366 + 40;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -148,16 +148,19 @@
 
 
 - (IBAction)sureBtn:(UIButton *)sender {
-    SureGoodsOrderTableViewCell *cell = self.tableView.visibleCells[0];
-    if (cell.wexinPayBtn.selected) {
-        [self weixinPay];
-    }else{
-//        在用余额支付的时候必须先进行实名认证
-        if ([self gotRealNameRu:@"在您用余额支付之前，请先进行实名认证"]) {
-            return;
-        } ;
-        [self balancePay];
-    }
+//    SureGoodsOrderTableViewCell *cell = self.tableView.visibleCells[0];
+//    if (cell.wexinPayBtn.selected) {
+//        [self weixinPay];
+//    }else{
+////        在用余额支付的时候必须先进行实名认证
+//        if ([self gotRealNameRu:@"在您用余额支付之前，请先进行实名认证"]) {
+//            return;
+//        } ;
+//        [self balancePay];
+//    }
+//    
+    [self balancePay];
+
 }
 
 - (void)weixinPay
@@ -186,6 +189,7 @@
                             @"message":NullToSpace(cell.liuyanTF.text),
                             @"sign":sign
                             };
+    
     [WeXinPayObject startWexinPay:prams];
 }
 
@@ -203,6 +207,7 @@
     //    分别将商品ID、数量、交易金额、加密盐值(T2t0X16)等参数值拼接做md5加密，公式：md5(goodsId+price+ quantity+tranAmount+T2t0X16)
     NSString *md5Str = [NSString stringWithFormat:@"%@%@%@%@",self.mch_model.mch_id,cell.numberTF.text,totalMoney,OrderWithMd5Key];
     NSString *sign = [md5Str md5_32];
+    
     //    NSString *password = [[NSString stringWithFormat:@"%@%@",self.password_tf.text,PasswordKey]md5_32];
     NSDictionary *prams = @{@"token":[TTXUserInfo shareUserInfos].token,
                             @"priceId":NullToSpace(self.mch_model.priceId),
