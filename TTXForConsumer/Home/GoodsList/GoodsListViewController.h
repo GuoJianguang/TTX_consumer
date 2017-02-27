@@ -7,6 +7,7 @@
 //
 
 #import "BaseViewController.h"
+#import "SortCollectionViewCell.h"
 
 @interface GoodsListViewController : BaseViewController
 
@@ -32,5 +33,15 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *priceImage;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+
+
+//分类数据源
+@property (nonatomic, strong)NSMutableArray *sortDataSouceArray;
+
+//类型id
+@property (nonatomic, strong)NSString *typeId;
+
+@property (nonatomic, strong)GoodsSort *dataModel;
+
 
 @end

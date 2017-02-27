@@ -73,7 +73,6 @@
     }
     self.sortLabel.numberOfLines = 2;
 //    self.sortLabel.adjustsFontSizeToFitWidth = YES;
-    
     self.pointView.hidden =  !_dataModel.isShowRedPoint;
 }
 

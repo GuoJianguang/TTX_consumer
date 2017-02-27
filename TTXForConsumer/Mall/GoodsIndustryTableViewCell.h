@@ -7,28 +7,29 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SortCollectionViewCell.h"
 
 
-@interface GoodsIndrstryModel : BaseModel
-/**
- * 类别id
- */
-
-@property (nonatomic, copy)NSString *sortId;
-/**
- * 类别名称
- */
-@property (nonatomic, copy)NSString *name;
-/*
- 图标
- */
-@property (nonatomic, copy)NSString *icon;
-/*
- 
- 类别图片
- */
-
-@property (nonatomic, copy)NSString *pic;
+@interface GoodsIndrstryModel : GoodsSort
+///**
+// * 类别id
+// */
+//
+//@property (nonatomic, copy)NSString *sortId;
+///**
+// * 类别名称
+// */
+//@property (nonatomic, copy)NSString *name;
+///*
+// 图标
+// */
+//@property (nonatomic, copy)NSString *icon;
+///*
+// 
+// 类别图片
+// */
+//
+//@property (nonatomic, copy)NSString *pic;
 
 @end
 

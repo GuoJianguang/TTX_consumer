@@ -247,6 +247,9 @@
                                                         <rect key="frame" x="40" y="0.0" width="319" height="36"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="rTA-I1-edr" id="7HK-ic-Mpa"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                                 <constraints>
@@ -310,7 +313,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9mk-EY-WSk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-682" y="324"/>
+            <point key="canvasLocation" x="-682" y="326"/>
         </scene>
         <!--首页-->
         <scene sceneID="fPu-xr-5e9">

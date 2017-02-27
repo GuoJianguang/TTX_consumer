@@ -359,6 +359,16 @@
 		BC39B7C81E5192D9009A7D50 /* NewHomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC39B7C61E5192D9009A7D50 /* NewHomeTableViewCell.xib */; };
 		BC39B7CC1E519CDD009A7D50 /* NewIndustryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC39B7CA1E519CDD009A7D50 /* NewIndustryCollectionViewCell.m */; };
 		BC39B7CD1E519CDD009A7D50 /* NewIndustryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC39B7CB1E519CDD009A7D50 /* NewIndustryCollectionViewCell.xib */; };
+		BC695CA31E63F8DF006A334C /* MallImage.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC695CA21E63F8DF006A334C /* MallImage.xcassets */; };
+		BC695CB31E640DC1006A334C /* SXColorGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC695CA61E640DC1006A334C /* SXColorGradientView.m */; };
+		BC695CB41E640DC1006A334C /* SXColorLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC695CA81E640DC1006A334C /* SXColorLabel.m */; };
+		BC695CB51E640DC1006A334C /* SXHeadLine.m in Sources */ = {isa = PBXBuildFile; fileRef = BC695CAA1E640DC1006A334C /* SXHeadLine.m */; };
+		BC695CB61E640DC1006A334C /* SXMarquee.m in Sources */ = {isa = PBXBuildFile; fileRef = BC695CAC1E640DC1006A334C /* SXMarquee.m */; };
+		BC695CB71E640DC1006A334C /* UIColor+Separate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC695CAE1E640DC1006A334C /* UIColor+Separate.m */; };
+		BC695CB81E640DC1006A334C /* UIColor+Wonderful.m in Sources */ = {isa = PBXBuildFile; fileRef = BC695CB01E640DC1006A334C /* UIColor+Wonderful.m */; };
+		BC695CB91E640DC1006A334C /* UILabel+Wonderful.m in Sources */ = {isa = PBXBuildFile; fileRef = BC695CB21E640DC1006A334C /* UILabel+Wonderful.m */; };
+		BC695CBD1E6427A9006A334C /* FlagShipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC695CBB1E6427A9006A334C /* FlagShipViewController.m */; };
+		BC695CBE1E6427A9006A334C /* FlagShipViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC695CBC1E6427A9006A334C /* FlagShipViewController.xib */; };
 		BC78D7451E56983900C623CD /* DiscoveryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC78D7431E56983900C623CD /* DiscoveryDetailViewController.m */; };
 		BC78D7461E56983900C623CD /* DiscoveryDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC78D7441E56983900C623CD /* DiscoveryDetailViewController.xib */; };
 		BC78D7481E56993000C623CD /* Discovery.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC78D7471E56993000C623CD /* Discovery.xcassets */; };
@@ -386,6 +396,8 @@
 		BC9307631E5EB96A00E996C8 /* MallDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC9307611E5EB96A00E996C8 /* MallDetailTableViewCell.xib */; };
 		BC9307671E5ECC4F00E996C8 /* FlagshipCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9307651E5ECC4E00E996C8 /* FlagshipCollectionViewCell.m */; };
 		BC9307681E5ECC4F00E996C8 /* FlagshipCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC9307661E5ECC4E00E996C8 /* FlagshipCollectionViewCell.xib */; };
+		BC9D09A21E5FC719003E34E8 /* PrivateCustomCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9D09A01E5FC719003E34E8 /* PrivateCustomCollectionViewCell.m */; };
+		BC9D09A31E5FC719003E34E8 /* PrivateCustomCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC9D09A11E5FC719003E34E8 /* PrivateCustomCollectionViewCell.xib */; };
 		BCA19E8F1DED675A0089C1FC /* 213955937960616.cer in Resources */ = {isa = PBXBuildFile; fileRef = BCA19E8E1DED675A0089C1FC /* 213955937960616.cer */; };
 		BCAE30FA1DF925C30026E231 /* UMMobClick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCAE30F91DF925C30026E231 /* UMMobClick.framework */; };
 		BCAE30FD1DF928F20026E231 /* libSocialWeChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCAE30FB1DF928F20026E231 /* libSocialWeChat.a */; };
@@ -1013,6 +1025,24 @@
 		BC39B7C91E519CDD009A7D50 /* NewIndustryCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewIndustryCollectionViewCell.h; sourceTree = "<group>"; };
 		BC39B7CA1E519CDD009A7D50 /* NewIndustryCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewIndustryCollectionViewCell.m; sourceTree = "<group>"; };
 		BC39B7CB1E519CDD009A7D50 /* NewIndustryCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewIndustryCollectionViewCell.xib; sourceTree = "<group>"; };
+		BC695CA21E63F8DF006A334C /* MallImage.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MallImage.xcassets; sourceTree = "<group>"; };
+		BC695CA51E640DC1006A334C /* SXColorGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXColorGradientView.h; sourceTree = "<group>"; };
+		BC695CA61E640DC1006A334C /* SXColorGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXColorGradientView.m; sourceTree = "<group>"; };
+		BC695CA71E640DC1006A334C /* SXColorLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXColorLabel.h; sourceTree = "<group>"; };
+		BC695CA81E640DC1006A334C /* SXColorLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXColorLabel.m; sourceTree = "<group>"; };
+		BC695CA91E640DC1006A334C /* SXHeadLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXHeadLine.h; sourceTree = "<group>"; };
+		BC695CAA1E640DC1006A334C /* SXHeadLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXHeadLine.m; sourceTree = "<group>"; };
+		BC695CAB1E640DC1006A334C /* SXMarquee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXMarquee.h; sourceTree = "<group>"; };
+		BC695CAC1E640DC1006A334C /* SXMarquee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXMarquee.m; sourceTree = "<group>"; };
+		BC695CAD1E640DC1006A334C /* UIColor+Separate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Separate.h"; sourceTree = "<group>"; };
+		BC695CAE1E640DC1006A334C /* UIColor+Separate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Separate.m"; sourceTree = "<group>"; };
+		BC695CAF1E640DC1006A334C /* UIColor+Wonderful.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Wonderful.h"; sourceTree = "<group>"; };
+		BC695CB01E640DC1006A334C /* UIColor+Wonderful.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Wonderful.m"; sourceTree = "<group>"; };
+		BC695CB11E640DC1006A334C /* UILabel+Wonderful.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Wonderful.h"; sourceTree = "<group>"; };
+		BC695CB21E640DC1006A334C /* UILabel+Wonderful.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Wonderful.m"; sourceTree = "<group>"; };
+		BC695CBA1E6427A9006A334C /* FlagShipViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlagShipViewController.h; sourceTree = "<group>"; };
+		BC695CBB1E6427A9006A334C /* FlagShipViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlagShipViewController.m; sourceTree = "<group>"; };
+		BC695CBC1E6427A9006A334C /* FlagShipViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlagShipViewController.xib; sourceTree = "<group>"; };
 		BC78D7421E56983900C623CD /* DiscoveryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoveryDetailViewController.h; sourceTree = "<group>"; };
 		BC78D7431E56983900C623CD /* DiscoveryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoveryDetailViewController.m; sourceTree = "<group>"; };
 		BC78D7441E56983900C623CD /* DiscoveryDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiscoveryDetailViewController.xib; sourceTree = "<group>"; };
@@ -1055,6 +1085,9 @@
 		BC9307641E5ECC4E00E996C8 /* FlagshipCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlagshipCollectionViewCell.h; sourceTree = "<group>"; };
 		BC9307651E5ECC4E00E996C8 /* FlagshipCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlagshipCollectionViewCell.m; sourceTree = "<group>"; };
 		BC9307661E5ECC4E00E996C8 /* FlagshipCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlagshipCollectionViewCell.xib; sourceTree = "<group>"; };
+		BC9D099F1E5FC719003E34E8 /* PrivateCustomCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivateCustomCollectionViewCell.h; sourceTree = "<group>"; };
+		BC9D09A01E5FC719003E34E8 /* PrivateCustomCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivateCustomCollectionViewCell.m; sourceTree = "<group>"; };
+		BC9D09A11E5FC719003E34E8 /* PrivateCustomCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrivateCustomCollectionViewCell.xib; sourceTree = "<group>"; };
 		BCA19E8E1DED675A0089C1FC /* 213955937960616.cer */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 213955937960616.cer; sourceTree = "<group>"; };
 		BCAE30F91DF925C30026E231 /* UMMobClick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMMobClick.framework; sourceTree = "<group>"; };
 		BCAE30FB1DF928F20026E231 /* libSocialWeChat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialWeChat.a; sourceTree = "<group>"; };
@@ -1614,6 +1647,7 @@
 		2DA9738E1D127BC500A605F9 /* ThirdAPI */ = {
 			isa = PBXGroup;
 			children = (
+				BC695CA41E640DC1006A334C /* Wonderful */,
 				BC021E991E07739F0080E844 /* BaiduMobAdSDK.framework */,
 				BCAE30F81DF925C30026E231 /* UMStatistics_4.1.4 */,
 				2DB94F9C1D2A8E33003A6DEA /* ZLPhotoLib */,
@@ -2357,6 +2391,9 @@
 				BC2CF8491E52B28300A69A94 /* PopularMerchantsTableViewCell.h */,
 				BC2CF84A1E52B28300A69A94 /* PopularMerchantsTableViewCell.m */,
 				BC2CF84B1E52B28300A69A94 /* PopularMerchantsTableViewCell.xib */,
+				BC9D099F1E5FC719003E34E8 /* PrivateCustomCollectionViewCell.h */,
+				BC9D09A01E5FC719003E34E8 /* PrivateCustomCollectionViewCell.m */,
+				BC9D09A11E5FC719003E34E8 /* PrivateCustomCollectionViewCell.xib */,
 				BC2CF8431E52A2A400A69A94 /* SquaredUpView.h */,
 				BC2CF8441E52A2A400A69A94 /* SquaredUpView.m */,
 				BC2CF8451E52A2A400A69A94 /* CustomButton.h */,
@@ -2367,6 +2404,27 @@
 				BC2CF84E1E52B3DF00A69A94 /* NewVisonHome.xcassets */,
 			);
 			path = newVsionHome;
+			sourceTree = "<group>";
+		};
+		BC695CA41E640DC1006A334C /* Wonderful */ = {
+			isa = PBXGroup;
+			children = (
+				BC695CA51E640DC1006A334C /* SXColorGradientView.h */,
+				BC695CA61E640DC1006A334C /* SXColorGradientView.m */,
+				BC695CA71E640DC1006A334C /* SXColorLabel.h */,
+				BC695CA81E640DC1006A334C /* SXColorLabel.m */,
+				BC695CA91E640DC1006A334C /* SXHeadLine.h */,
+				BC695CAA1E640DC1006A334C /* SXHeadLine.m */,
+				BC695CAB1E640DC1006A334C /* SXMarquee.h */,
+				BC695CAC1E640DC1006A334C /* SXMarquee.m */,
+				BC695CAD1E640DC1006A334C /* UIColor+Separate.h */,
+				BC695CAE1E640DC1006A334C /* UIColor+Separate.m */,
+				BC695CAF1E640DC1006A334C /* UIColor+Wonderful.h */,
+				BC695CB01E640DC1006A334C /* UIColor+Wonderful.m */,
+				BC695CB11E640DC1006A334C /* UILabel+Wonderful.h */,
+				BC695CB21E640DC1006A334C /* UILabel+Wonderful.m */,
+			);
+			path = Wonderful;
 			sourceTree = "<group>";
 		};
 		BC8A9E931E5AD0910004C23E /* NewMerChantDetail */ = {
@@ -2405,6 +2463,10 @@
 				BC9307641E5ECC4E00E996C8 /* FlagshipCollectionViewCell.h */,
 				BC9307651E5ECC4E00E996C8 /* FlagshipCollectionViewCell.m */,
 				BC9307661E5ECC4E00E996C8 /* FlagshipCollectionViewCell.xib */,
+				BC695CBA1E6427A9006A334C /* FlagShipViewController.h */,
+				BC695CBB1E6427A9006A334C /* FlagShipViewController.m */,
+				BC695CBC1E6427A9006A334C /* FlagShipViewController.xib */,
+				BC695CA21E63F8DF006A334C /* MallImage.xcassets */,
 			);
 			path = Mall;
 			sourceTree = "<group>";
@@ -2649,8 +2711,10 @@
 				BC93075E1E5EB23E00E996C8 /* GoodsIndustryTableViewCell.xib in Resources */,
 				2DBDB3B81D1CE6630033F09E /* ShippingAlerTableViewCell.xib in Resources */,
 				2DB94F771D2A6046003A6DEA /* TabBar.xcassets in Resources */,
+				BC695CA31E63F8DF006A334C /* MallImage.xcassets in Resources */,
 				BC39747B1DD440AF008DDF67 /* LoveAccountTableViewCell.xib in Resources */,
 				2DB94F661D2A2F85003A6DEA /* RewardRecordTableViewCell.xib in Resources */,
+				BC695CBE1E6427A9006A334C /* FlagShipViewController.xib in Resources */,
 				2DB94F811D2A83AC003A6DEA /* Grade.xcassets in Resources */,
 				2DD916531D2B919900C9D988 /* GoodsMoreIntroduceView.xib in Resources */,
 				2D4C43831D17C8340011C48F /* GoodsListTableViewCell.xib in Resources */,
@@ -2683,6 +2747,7 @@
 				2DBDB3A91D1CD1C50033F09E /* RevisePasswordViewController.xib in Resources */,
 				BC78D7481E56993000C623CD /* Discovery.xcassets in Resources */,
 				2D566D821D18F88000B19EC6 /* GoodsListViewController.xib in Resources */,
+				BC9D09A31E5FC719003E34E8 /* PrivateCustomCollectionViewCell.xib in Resources */,
 				2DE488F81D23BFD000472681 /* MessageTableViewCell.xib in Resources */,
 				BCA19E8F1DED675A0089C1FC /* 213955937960616.cer in Resources */,
 				2DE4890C1D23CB5900472681 /* MessageDetailTableViewCell.xib in Resources */,
@@ -2908,6 +2973,7 @@
 				2DA973C31D127DCF00A605F9 /* PinyinHelper.m in Sources */,
 				2DE2201E1D20DB3E008D7F05 /* OrderTableViewCell.m in Sources */,
 				2DA974011D128FFE00A605F9 /* LBXScanNative.m in Sources */,
+				BC695CB81E640DC1006A334C /* UIColor+Wonderful.m in Sources */,
 				2DB9500A1D2A8E33003A6DEA /* ZLPhotoPickerBrowserPhotoScrollView.m in Sources */,
 				2DE488E21D2398D200472681 /* ChangeHeadImage.m in Sources */,
 				2D4C437D1D17BDC80011C48F /* VoucherCell.m in Sources */,
@@ -2936,9 +3002,11 @@
 				2D4C43781D17A1220011C48F /* MerchantDetailViewController.m in Sources */,
 				2DA974441D1291E600A605F9 /* MASConstraint.m in Sources */,
 				2D95D80F1D222B2900021F31 /* ChooseTypeView.m in Sources */,
+				BC695CB91E640DC1006A334C /* UILabel+Wonderful.m in Sources */,
 				2DA974021D128FFE00A605F9 /* LBXScanNetAnimation.m in Sources */,
 				BCB530C51E5D3AFF003E0C57 /* DiscoveryWinnersListViewController.m in Sources */,
 				2D67CCA61D1B8BE300BB99B4 /* WeXinPayObject.m in Sources */,
+				BC695CB31E640DC1006A334C /* SXColorGradientView.m in Sources */,
 				2D95D8611D225B4800021F31 /* SureGoodsOrderTableViewCell.m in Sources */,
 				2DA973921D127BE700A605F9 /* Colours.m in Sources */,
 				2DB9500C1D2A8E33003A6DEA /* ZLPhotoPickerCustomToolBarView.m in Sources */,
@@ -2970,6 +3038,7 @@
 				BC2CF8411E52A27D00A69A94 /* HomeIndustryTableViewCell.m in Sources */,
 				2D95D8151D222BE000021F31 /* ChooseTypeTableViewCell.m in Sources */,
 				BC39747A1DD440AF008DDF67 /* LoveAccountTableViewCell.m in Sources */,
+				BC695CBD1E6427A9006A334C /* FlagShipViewController.m in Sources */,
 				2DA973BE1D127DCF00A605F9 /* ChineseToPinyinResource.m in Sources */,
 				2DB950141D2A8E33003A6DEA /* ZLPhotoPickerCollectionViewCell.m in Sources */,
 				2D4C43761D17A1220011C48F /* MerchantDetailTableViewCell.m in Sources */,
@@ -2980,6 +3049,7 @@
 				BC26C7E81E5D731700CC8100 /* DiscoverSecondActivityViewController.m in Sources */,
 				BCDB181B1DF7D49C00E99BED /* LoveAccountAlerView.m in Sources */,
 				2DB950021D2A8E33003A6DEA /* ZLAnimationScrollView.m in Sources */,
+				BC9D09A21E5FC719003E34E8 /* PrivateCustomCollectionViewCell.m in Sources */,
 				2DB950051D2A8E33003A6DEA /* ZLCameraView.m in Sources */,
 				2DE489061D23CA9700472681 /* MessageDetailViewController.m in Sources */,
 				2DBDB3CD1D1D13F00033F09E /* OpinionViewController.m in Sources */,
@@ -2991,6 +3061,7 @@
 				2DB950081D2A8E33003A6DEA /* ZLPhotoPickerBrowserViewController.m in Sources */,
 				2DB9501E1D2A8E77003A6DEA /* UIImage+ImageOrientation.m in Sources */,
 				2DB950151D2A8E33003A6DEA /* ZLPhotoPickerFooterCollectionReusableView.m in Sources */,
+				BC695CB61E640DC1006A334C /* SXMarquee.m in Sources */,
 				BC78D7451E56983900C623CD /* DiscoveryDetailViewController.m in Sources */,
 				BC78D7551E56D02100C623CD /* DiscoveryDeatailModel.m in Sources */,
 				2D95D87C1D2284BB00021F31 /* RegisterOneViewController.m in Sources */,
@@ -3006,6 +3077,7 @@
 				2DB950111D2A8E33003A6DEA /* ZLPhotoPickerGroupViewController.m in Sources */,
 				2DE489141D23D1B000472681 /* MyInvitationViewController.m in Sources */,
 				2DB950101D2A8E33003A6DEA /* ZLPhotoPickerAssetsViewController.m in Sources */,
+				BC695CB51E640DC1006A334C /* SXHeadLine.m in Sources */,
 				2DA974291D1291C000A605F9 /* BaseTableViewCell.m in Sources */,
 				2D95D8631D225B4800021F31 /* SureOrderViewController.m in Sources */,
 				2DB950131D2A8E33003A6DEA /* ZLPhotoPickerCollectionView.m in Sources */,
@@ -3014,12 +3086,14 @@
 				2D95D86D1D225BDB00021F31 /* Watch.m in Sources */,
 				BCF7D5E91DF6AF7800D912CA /* LineDashPolyline.m in Sources */,
 				2D95D8781D227D4C00021F31 /* LoginViewController.m in Sources */,
+				BC695CB71E640DC1006A334C /* UIColor+Separate.m in Sources */,
 				BCF301CB1DCAD8AC000C7BE7 /* HttpClientAlertViewHelper.m in Sources */,
 				BC3974751DD43F68008DDF67 /* MyLoveAccountViewController.m in Sources */,
 				BC8A9EA01E5AD8E30004C23E /* SortButtonSwitchView.m in Sources */,
 				2D4C439A1D17EE690011C48F /* SortCollectionViewCell.m in Sources */,
 				2DA974051D128FFE00A605F9 /* LBXScanViewController.m in Sources */,
 				2D95D8751D225C3900021F31 /* OrderModel.m in Sources */,
+				BC695CB41E640DC1006A334C /* SXColorLabel.m in Sources */,
 				2DA973B61D127DCF00A605F9 /* AreaTableViewCell.m in Sources */,
 				BC9307591E5EAD6700E996C8 /* MallHomeViewController.m in Sources */,
 				2DB94F7A1D2A6177003A6DEA /* UIImage+ColorImage.m in Sources */,

@@ -10,6 +10,8 @@
 #import "SquaredUpView.h"
 #import "CustomButton.h"
 #import <SDWebImage/UIButton+WebCache.h>
+#import "GoodsListViewController.h"
+
 
 @implementation GoodsIndrstryModel
 
@@ -70,7 +72,16 @@
 
 - (void)jSquaredUpViewCell:(CustomButton *)cell didSelectedAtIndex:(NSInteger)index
 {
-  
+    for (GoodsIndrstryModel *model in self.sortDataSouceArray) {
+        model.isSelect = NO;
+    }
+    ((GoodsIndrstryModel *)self.sortDataSouceArray[cell.tag]).isSelect = YES;
+    
+    GoodsListViewController *listVC = [[GoodsListViewController alloc]init];
+    listVC.dataModel =  (GoodsIndrstryModel *)self.sortDataSouceArray[cell.tag];
+    listVC.sortDataSouceArray = self.sortDataSouceArray;
+    listVC.typeId = ((GoodsIndrstryModel *)self.sortDataSouceArray[cell.tag]).sortId;
+    [self.viewController.navigationController pushViewController:listVC animated:YES];
 }
 
 - (NSMutableArray *)sortDataSouceArray
@@ -98,6 +109,9 @@
         
     }];
 }
+
+
+
 
 
 @end

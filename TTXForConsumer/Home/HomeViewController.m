@@ -381,6 +381,7 @@
     return TWitdh*(220/750.);
 }
 
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.highQualityArray.count + 3;

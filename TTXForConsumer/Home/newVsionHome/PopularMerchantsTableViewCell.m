@@ -10,6 +10,8 @@
 #import <SDWebImage/UIButton+WebCache.h>
 #import "NewMerchantDetailViewController.h"
 #import "NewMerchantDetailViewController.h"
+#import "PrivateCustomCollectionViewCell.h"
+#import "SecondActivityTableViewCell.h"
 
 @implementation PopularMerModel
 
@@ -24,9 +26,12 @@
 }
 @end
 
-@interface PopularMerchantsTableViewCell()
+@interface PopularMerchantsTableViewCell()<UICollectionViewDataSource,UICollectionViewDelegate>
 
 @property (nonatomic, strong)NSMutableArray *dataSouceArray;
+
+
+@property (nonatomic, strong)NSMutableArray *privteDataSouceArray;
 
 @end
 
@@ -34,7 +39,12 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.popularLabel.textColor = self.goodMLabel.textColor = MacoTitleColor;
+    self.popularLabel.textColor = self.goodMLabel.textColor = self.shirenLabel.textColor = MacoTitleColor;
+    
+    self.collectionView.delegate =self;
+    self.collectionView.dataSource = self;
+    self.collectionView.backgroundColor = [UIColor clearColor];
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -46,6 +56,8 @@
 {
     _isAlreadyRefrefsh = isAlreadyRefrefsh;
     [self getPopularMRequest];
+    //私人定制接口
+    [self getRequest];
     
 }
 
@@ -56,6 +68,14 @@
         _dataSouceArray = [NSMutableArray array];
     }
     return _dataSouceArray;
+}
+
+- (NSMutableArray *)privteDataSouceArray
+{
+    if (!_privteDataSouceArray) {
+        _privteDataSouceArray = [NSMutableArray array];
+    }
+    return _privteDataSouceArray;
 }
 
 - (void)getPopularMRequest{
@@ -93,6 +113,23 @@
 }
 
 
+- (void)getRequest{
+    [HttpClient POST:@"find/mch/list" parameters:nil success:^(NSURLSessionDataTask *operation, id jsonObject) {
+        if (IsRequestTrue) {
+            [self.privteDataSouceArray removeAllObjects];
+            NSArray *array = jsonObject[@"data"];
+            for (NSDictionary *dic in array) {
+                [self.privteDataSouceArray addObject:[SecondACtivityModel modelWithDic:dic]];
+            }
+            [self.collectionView reloadData];
+        }
+        
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
+        
+    }];
+}
+
+
 - (IBAction)button1stAction:(id)sender {
     
     if (self.dataSouceArray.count<1) {
@@ -113,7 +150,6 @@
     PopularMerModel *model = self.dataSouceArray[1];
     merchantDVC.merchantCode = model.mchCode;
     [self.viewController.navigationController pushViewController:merchantDVC animated:YES];
-    
 }
 
 
@@ -127,5 +163,97 @@
     merchantDVC.merchantCode = model.mchCode;
     [self.viewController.navigationController pushViewController:merchantDVC animated:YES];
 }
+
+
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+   
+    return self.privteDataSouceArray.count;
+}
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 1;
+}
+
+//每个UICollectionView展示的内容
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    NSString *identifier =[PrivateCustomCollectionViewCell indentify];
+    static BOOL nibri =NO;
+    if(!nibri)
+    {
+        UINib *nib = [PrivateCustomCollectionViewCell newCell];
+        [collectionView registerNib:nib forCellWithReuseIdentifier:identifier];
+        nibri =YES;
+    }
+    PrivateCustomCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
+    cell.dataModel = self.privteDataSouceArray[indexPath.item];
+    nibri=NO;
+    return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    SecondACtivityModel *model = self.privteDataSouceArray[indexPath.item];
+    switch ([model.jumpWay integerValue]) {
+        case 3:
+        {
+            BaseHtmlViewController *htmlVC = [[BaseHtmlViewController alloc]init];
+            htmlVC.htmlUrl = model.jumpValue;
+            if ([model.remark isEqualToString:@""] ) {
+                htmlVC.isAboutMerChant = NO;
+            }else{
+                htmlVC.isAboutMerChant = YES;
+                htmlVC.merchantCode = model.remark;
+            }
+            htmlVC.htmlTitle = model.name;
+            [self.viewController.navigationController pushViewController:htmlVC animated:YES];
+        }
+            
+            break;
+            
+        default:
+            break;
+    }
+    
+    
+}
+
+
+//定义每个UICollectionView 的大小
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    //    if (self.sortDataSouceArray.count < 5) {
+    //        return CGSizeMake(TWitdh/self.sortDataSouceArray.count, 50);
+    //    }
+    return CGSizeMake((TWitdh- 24)/3., TWitdh * (26/75.));
+}
+
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView
+                        layout:(UICollectionViewLayout *)collectionViewLayout
+        insetForSectionAtIndex:(NSInteger)section
+{
+    return UIEdgeInsetsMake(0, 0, 0, 0);
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView
+                   layout:(UICollectionViewLayout *)collectionViewLayout
+minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
+{
+    return 0;
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView
+                   layout:(UICollectionViewLayout *)collectionViewLayout
+minimumLineSpacingForSectionAtIndex:(NSInteger)section
+{
+    return 0;
+}
+
+
 
 @end

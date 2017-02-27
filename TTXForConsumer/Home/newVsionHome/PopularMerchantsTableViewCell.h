@@ -46,4 +46,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *label3st;
 @property (weak, nonatomic) IBOutlet UILabel *goodMLabel;
 
+
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+
+@property (weak, nonatomic) IBOutlet UILabel *shirenLabel;
+
+
 @end

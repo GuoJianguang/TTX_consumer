@@ -17,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="502"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="501.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="501"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6IF-NL-TmX">
@@ -211,7 +211,7 @@
                                 </collectionViewFlowLayout>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="LGM-Kz-OlA" firstAttribute="leading" secondItem="XtP-ij-Orc" secondAttribute="leading" constant="9" id="0F7-lt-y4v"/>
                             <constraint firstAttribute="width" secondItem="XtP-ij-Orc" secondAttribute="height" multiplier="750/260" id="EcK-5W-5xW"/>
@@ -265,13 +265,15 @@
                 <outlet property="button1st" destination="WB0-Ax-6kI" id="GPg-WO-50Y"/>
                 <outlet property="button2st" destination="Ctd-O4-ihQ" id="LQL-VN-6SN"/>
                 <outlet property="button3st" destination="wO6-d4-Dd7" id="wqH-6r-xIC"/>
+                <outlet property="collectionView" destination="LGM-Kz-OlA" id="3SN-sE-DqJ"/>
                 <outlet property="goodMLabel" destination="nfG-gs-Tmy" id="KD1-x9-FgA"/>
                 <outlet property="label1st" destination="csi-uu-dRK" id="xzV-3G-WEn"/>
                 <outlet property="label2st" destination="yyk-TG-r9X" id="7ST-Vw-EcA"/>
                 <outlet property="label3st" destination="Iko-85-vI9" id="eh5-XK-D0H"/>
                 <outlet property="popularLabel" destination="s54-gt-XHh" id="3w4-Ma-dwv"/>
+                <outlet property="shirenLabel" destination="bUH-Yl-9aQ" id="7y7-0W-MDr"/>
             </connections>
-            <point key="canvasLocation" x="-175.5" y="177"/>
+            <point key="canvasLocation" x="-382" y="78"/>
         </tableViewCell>
     </objects>
     <resources>

@@ -76,14 +76,14 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gui-CC-FRf">
                             <rect key="frame" x="0.0" y="0.0" width="125" height="44"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="价格排序" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8N-8X-LCB">
-                                    <rect key="frame" x="22.5" y="13.5" width="60" height="18"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="价格排序" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8N-8X-LCB">
+                                    <rect key="frame" x="22" y="13.5" width="61.5" height="18"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="icon_mall_price_ranking_nor" translatesAutoresizingMaskIntoConstraints="NO" id="wku-iT-FpN">
-                                    <rect key="frame" x="87.5" y="13" width="7" height="17"/>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_mall_price_ranking_nor" translatesAutoresizingMaskIntoConstraints="NO" id="wku-iT-FpN">
+                                    <rect key="frame" x="88.5" y="13" width="7" height="17"/>
                                 </imageView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Qd-pd-bpX">
                                     <rect key="frame" x="0.0" y="0.0" width="125" height="44"/>

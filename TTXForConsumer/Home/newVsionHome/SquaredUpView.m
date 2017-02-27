@@ -93,6 +93,7 @@
 }
 
 
+
 #pragma mark -
 #pragma mark - Seter && Geter
 - (TTXPageContrl *)squaredUpViewPageControl {

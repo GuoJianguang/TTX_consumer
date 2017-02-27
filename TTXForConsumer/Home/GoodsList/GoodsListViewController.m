@@ -7,7 +7,6 @@
 //
 
 #import "GoodsListViewController.h"
-#import "SortCollectionViewCell.h"
 #import "GoodsTableViewCell.h"
 #import "GoodsDetailNewViewController.h"
 #import "Watch.h"
@@ -16,15 +15,13 @@
 
 
 @interface GoodsListViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UITableViewDelegate,UITableViewDataSource,BasenavigationDelegate>
-//分类
-@property (nonatomic, strong)NSMutableArray *sortDataSouceArray;
+
 //商品列表数据源
 @property (nonatomic, strong)NSMutableArray *dataSouceArray;
 
 @property (nonatomic, assign)NSInteger page;
 
-//类型id
-@property (nonatomic, strong)NSString *typeId;
+
 //搜索的商品名称
 @property (nonatomic, strong)NSString *searchName;
 //排序方式取值：price （按价格）salenum(按销量)
@@ -42,6 +39,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.naviBar.title = @"商品";
+    if (self.dataModel) {
+        self.naviBar.title = self.dataModel.name;
+    }
     self.naviBar.hiddenDetailBtn = NO;
     self.naviBar.detailImage = [UIImage imageNamed:@"icon_mall_search"];
     self.naviBar.delegate = self;
@@ -60,12 +60,16 @@
     [self.tableView addNoDatasouceWithCallback:^{
         [weak_self.tableView.mj_header beginRefreshing];
     } andAlertSting:@"暂时没有相关的商品" andErrorImage:@"pic_3" andRefreshBtnHiden:YES];
-    [self getGoodsTypeRequest];
-    [self addChildViewController:self.searchVC];[self addChildViewController:self.searchVC];
+//    [self getGoodsTypeRequest];
+    [self addChildViewController:self.searchVC];
     
     self.priceLabel.textColor = MacoTitleColor;
     [self.defaltBtn setTitleColor:MacoTitleColor forState:UIControlStateNormal];
     [self.saleBtn setTitleColor:MacoTitleColor forState:UIControlStateNormal];
+    
+    
+    [self.tableView.mj_header beginRefreshing];
+
 }
 
 - (GoodsSearchViewController *)searchVC
@@ -146,9 +150,9 @@
                                      @"isSelect":@1,
                                      @"id":@"0"};
             MerchantSort *allsort =[GoodsSort modelWithDic:alldic];
+            //            [self.sortDataSouceArray insertObject:allsort atIndex:0];
             NSDictionary *dic = @{@"name":@"更多",
                                   @"isSelect":@0};
-            [self.sortDataSouceArray insertObject:allsort atIndex:0];
             GoodsSort *sort =[GoodsSort modelWithDic:dic];
             if (self.sortDataSouceArray.count > 4) {
                 [self.sortDataSouceArray insertObject:sort atIndex:3];
@@ -169,12 +173,29 @@
 
 #pragma mark- 懒加载
 
-- (NSMutableArray *)sortDataSouceArray
+//- (NSMutableArray *)sortDataSouceArray
+//{
+//    if (!_sortDataSouceArray) {
+//        _sortDataSouceArray = [NSMutableArray array];
+//    }
+//    return _sortDataSouceArray;
+//}
+
+- (void)setSortDataSouceArray:(NSMutableArray *)sortDataSouceArray
 {
-    if (!_sortDataSouceArray) {
-        _sortDataSouceArray = [NSMutableArray array];
+    _sortDataSouceArray = [NSMutableArray array];
+    [_sortDataSouceArray addObjectsFromArray:sortDataSouceArray];
+    NSDictionary *dic = @{@"name":@"更多",
+                          @"isSelect":@0};
+    GoodsSort *sort =[GoodsSort modelWithDic:dic];
+    if (self.sortDataSouceArray.count > 4) {
+        [self.sortDataSouceArray insertObject:sort atIndex:3];
+    }else{
+        [self.sortDataSouceArray addObject:sort];
     }
-    return _sortDataSouceArray;
+
+    [self.sortCollectionView reloadData];
+
 }
 
 - (NSMutableArray *)dataSouceArray

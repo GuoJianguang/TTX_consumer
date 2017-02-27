@@ -23,11 +23,14 @@
                         <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GP4-Y6-pMf">
-                        <rect key="frame" x="5" y="84" width="131" height="25"/>
+                        <rect key="frame" x="2" y="86" width="137" height="25"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic_mall_bg" translatesAutoresizingMaskIntoConstraints="NO" id="Spn-nK-rNH">
+                                <rect key="frame" x="0.0" y="0.0" width="137" height="25"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="三叶草" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OtC-hw-HIa">
-                                <rect key="frame" x="0.0" y="4" width="131" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <rect key="frame" x="0.0" y="4.5" width="137" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -35,24 +38,35 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="OtC-hw-HIa" firstAttribute="centerY" secondItem="GP4-Y6-pMf" secondAttribute="centerY" id="4oT-oN-FIi"/>
+                            <constraint firstItem="Spn-nK-rNH" firstAttribute="top" secondItem="GP4-Y6-pMf" secondAttribute="top" id="EaU-zn-Qrf"/>
                             <constraint firstItem="OtC-hw-HIa" firstAttribute="leading" secondItem="GP4-Y6-pMf" secondAttribute="leading" id="INa-DI-6zC"/>
+                            <constraint firstAttribute="bottom" secondItem="Spn-nK-rNH" secondAttribute="bottom" id="Qh1-2B-pJs"/>
                             <constraint firstAttribute="trailing" secondItem="OtC-hw-HIa" secondAttribute="trailing" id="ad2-Iy-5bm"/>
+                            <constraint firstAttribute="trailing" secondItem="Spn-nK-rNH" secondAttribute="trailing" id="dih-DS-wgP"/>
                             <constraint firstAttribute="height" constant="25" id="gpE-0I-W0M"/>
+                            <constraint firstItem="Spn-nK-rNH" firstAttribute="leading" secondItem="GP4-Y6-pMf" secondAttribute="leading" id="ioy-Sz-5LT"/>
                         </constraints>
                     </view>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="GP4-Y6-pMf" secondAttribute="bottom" constant="5" id="AG9-wz-Mxq"/>
+                <constraint firstAttribute="bottom" secondItem="GP4-Y6-pMf" secondAttribute="bottom" constant="3" id="AG9-wz-Mxq"/>
                 <constraint firstItem="XGz-7a-IzX" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="2" id="DXd-fn-HCp"/>
                 <constraint firstItem="XGz-7a-IzX" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="3" id="GrE-LY-jbG"/>
                 <constraint firstAttribute="trailing" secondItem="XGz-7a-IzX" secondAttribute="trailing" constant="2" id="Qua-D0-jEj"/>
                 <constraint firstAttribute="bottom" secondItem="XGz-7a-IzX" secondAttribute="bottom" constant="3" id="aqJ-Xk-jLT"/>
-                <constraint firstAttribute="trailing" secondItem="GP4-Y6-pMf" secondAttribute="trailing" constant="5" id="cP2-Yf-DUQ"/>
-                <constraint firstItem="GP4-Y6-pMf" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="ltj-NN-OhH"/>
+                <constraint firstAttribute="trailing" secondItem="GP4-Y6-pMf" secondAttribute="trailing" constant="2" id="cP2-Yf-DUQ"/>
+                <constraint firstItem="GP4-Y6-pMf" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="2" id="ltj-NN-OhH"/>
             </constraints>
             <size key="customSize" width="141" height="114"/>
-            <point key="canvasLocation" x="-51" y="64"/>
+            <connections>
+                <outlet property="shipImageView" destination="XGz-7a-IzX" id="sJd-hO-seB"/>
+                <outlet property="shipName" destination="OtC-hw-HIa" id="e0U-6d-DkT"/>
+            </connections>
+            <point key="canvasLocation" x="-102" y="-5"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="pic_mall_bg" width="113" height="23"/>
+    </resources>
 </document>
