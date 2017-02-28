@@ -101,4 +101,23 @@
 
 @property (nonatomic, strong)NSString *priceId;
 
+/**
+ * 折扣限时开始时间
+ */
+
+@property (nonatomic, strong)NSString *startTime;
+/**
+ * 折扣限时结束时间
+ */
+
+@property (nonatomic, strong)NSString *endTime;
+/**
+ * 原价
+ */
+
+@property (nonatomic, strong)NSString *originalPrice;
+
+
+
+
 @end

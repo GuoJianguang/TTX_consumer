@@ -50,6 +50,11 @@
     
     model.mchCode = NullToSpace(dic[@"mchCode"]);
     
+    model.startTime = NullToNumber(dic[@"startTime"]);
+    model.endTime = NullToNumber(dic[@"endTime"]);
+    model.originalPrice = NullToNumber(dic[@"originalPrice"]);
+    
+    
     return model;
     
 }

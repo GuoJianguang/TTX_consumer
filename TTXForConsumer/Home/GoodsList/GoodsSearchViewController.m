@@ -10,6 +10,7 @@
 #import "SortCollectionViewCell.h"
 #import "IndustryCollectionViewCell.h"
 #import "GoodsSearchRsultViewController.h"
+#import "MoreDisCountViewController.h"
 
 @interface GoodsSearchViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UITextFieldDelegate>
 
@@ -106,6 +107,14 @@
 {
     GoodsSort *model = self.sortDataSouceArray[indexPath.item];
     [self.view removeFromSuperview];
+    
+    if (self.isDisCount) {
+        MoreDisCountViewController *disCountVC = [[MoreDisCountViewController alloc]init];
+        disCountVC.searchName = @"";
+        disCountVC.typeId = model.sortId;
+        [self.navigationController pushViewController:disCountVC animated:YES];
+        return;
+    }
     GoodsSearchRsultViewController *resultVC = [[GoodsSearchRsultViewController alloc]init];
     resultVC.typeId = model.sortId;
     resultVC.searchName = @"";
@@ -163,6 +172,14 @@ minimumLineSpacingForSectionAtIndex:(NSInteger)section
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [self.view removeFromSuperview];
+    if (self.isDisCount) {
+        MoreDisCountViewController *disCountVC = [[MoreDisCountViewController alloc]init];
+        disCountVC.searchName = textField.text;
+        textField.text = @"";
+        [self.navigationController pushViewController:disCountVC animated:YES];
+        return YES;
+    }
+    
     GoodsSearchRsultViewController *resultVC = [[GoodsSearchRsultViewController alloc]init];
     resultVC.searchName = textField.text;
     textField.text = @"";

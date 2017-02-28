@@ -9,7 +9,6 @@
 #import "BaseViewController.h"
 #import "ChooseTypeView.h"
 
-
 @interface GoodsDetailNewViewController : BaseViewController
 
 @property (nonatomic, strong)UIScrollView *scrollView;
@@ -25,4 +24,7 @@
 @property (nonatomic, strong)NSString *goodsID;
 
 - (void)setOrderViewSureBtn:(BOOL)isCanBuy;
+//是否是限时折扣商品
+@property (nonatomic, assign)BOOL isDisCount;
+
 @end

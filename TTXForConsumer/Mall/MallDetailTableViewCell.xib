@@ -37,32 +37,42 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_tianketoutiao" translatesAutoresizingMaskIntoConstraints="NO" id="Bc8-sw-3Mk">
-                                <rect key="frame" x="12" y="15" width="58" height="16"/>
+                                <rect key="frame" x="12" y="15.5" width="58" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Bc8-sw-3Mk" secondAttribute="height" multiplier="136:36" id="Szl-RD-DFD"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4R1-el-fH7">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="46"/>
+                                <connections>
+                                    <action selector="moreTopLine:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ZXf-Wb-O7F"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Bc8-sw-3Mk" firstAttribute="leading" secondItem="zlV-Gn-MEp" secondAttribute="leading" constant="12" id="0Y6-CU-pdk"/>
+                            <constraint firstAttribute="bottom" secondItem="4R1-el-fH7" secondAttribute="bottom" id="42I-wX-oct"/>
                             <constraint firstItem="QWM-tr-7AO" firstAttribute="leading" secondItem="7jj-DC-bsK" secondAttribute="trailing" constant="13" id="84e-BC-KBR"/>
                             <constraint firstAttribute="trailing" secondItem="QWM-tr-7AO" secondAttribute="trailing" constant="8" id="8RZ-Ma-Kbf"/>
                             <constraint firstAttribute="bottom" secondItem="7jj-DC-bsK" secondAttribute="bottom" constant="5" id="GMZ-8k-30V"/>
                             <constraint firstItem="QWM-tr-7AO" firstAttribute="top" secondItem="zlV-Gn-MEp" secondAttribute="top" constant="8" id="NBS-aY-f9G"/>
                             <constraint firstItem="7jj-DC-bsK" firstAttribute="top" secondItem="zlV-Gn-MEp" secondAttribute="top" constant="5" id="TvJ-yR-gfr"/>
+                            <constraint firstItem="4R1-el-fH7" firstAttribute="top" secondItem="zlV-Gn-MEp" secondAttribute="top" id="Zoh-eG-wLE"/>
                             <constraint firstItem="Bc8-sw-3Mk" firstAttribute="centerY" secondItem="zlV-Gn-MEp" secondAttribute="centerY" id="b2o-j7-C6F"/>
                             <constraint firstAttribute="width" secondItem="zlV-Gn-MEp" secondAttribute="height" multiplier="750/108" id="ePz-Ib-OmL"/>
                             <constraint firstItem="Bc8-sw-3Mk" firstAttribute="width" secondItem="zlV-Gn-MEp" secondAttribute="width" multiplier="136/750" id="eYv-Zb-ee6"/>
+                            <constraint firstAttribute="trailing" secondItem="4R1-el-fH7" secondAttribute="trailing" id="hVG-sE-r7H"/>
                             <constraint firstItem="QWM-tr-7AO" firstAttribute="centerY" secondItem="zlV-Gn-MEp" secondAttribute="centerY" id="mFY-0R-Bki"/>
+                            <constraint firstItem="4R1-el-fH7" firstAttribute="leading" secondItem="zlV-Gn-MEp" secondAttribute="leading" id="mX8-2o-H94"/>
                             <constraint firstItem="7jj-DC-bsK" firstAttribute="leading" secondItem="Bc8-sw-3Mk" secondAttribute="trailing" constant="10" id="wLT-2y-nTx"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TBy-zS-edc" customClass="SwipeView">
-                        <rect key="frame" x="0.0" y="66" width="320" height="137"/>
+                        <rect key="frame" x="0.0" y="66" width="320" height="136.5"/>
                         <subviews>
                             <pageControl hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="o97-eS-blS" customClass="TTXPageContrl">
-                                <rect key="frame" x="141" y="100" width="39" height="37"/>
+                                <rect key="frame" x="141" y="99.5" width="39" height="37"/>
                             </pageControl>
                         </subviews>
                         <constraints>
@@ -72,31 +82,31 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="STJ-KD-xwI">
-                        <rect key="frame" x="0.0" y="213" width="320" height="209"/>
+                        <rect key="frame" x="0.0" y="212.5" width="320" height="209"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SOH-RW-688">
-                                <rect key="frame" x="0.0" y="1" width="320" height="34"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="34"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_brand" translatesAutoresizingMaskIntoConstraints="NO" id="KJy-Sg-Dsi">
-                                        <rect key="frame" x="12" y="8" width="20" height="20"/>
+                                        <rect key="frame" x="12" y="7" width="20" height="20"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="品牌旗舰店" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xpc-sC-HqY">
-                                        <rect key="frame" x="42" y="10" width="72" height="17"/>
+                                        <rect key="frame" x="42" y="8.5" width="72" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="更多品牌" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u8P-yd-qql">
-                                        <rect key="frame" x="224" y="10" width="54" height="16"/>
+                                        <rect key="frame" x="224" y="9" width="54" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" red="0.94206172229999996" green="0.45400470500000001" blue="0.26261004809999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_enter" translatesAutoresizingMaskIntoConstraints="NO" id="pO8-fY-Xf9">
-                                        <rect key="frame" x="278" y="3" width="30" height="30"/>
+                                        <rect key="frame" x="278" y="2" width="30" height="30"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ayI-Bf-ly7">
-                                        <rect key="frame" x="0.0" y="1" width="320" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="34"/>
                                         <connections>
                                             <action selector="moreTopShip:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="BHf-uA-MQp"/>
                                         </connections>
@@ -120,7 +130,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="WlZ-ka-zkz">
-                                <rect key="frame" x="8" y="35" width="304" height="172"/>
+                                <rect key="frame" x="8" y="34" width="304" height="172"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aGO-lI-Al9">
                                     <size key="itemSize" width="50" height="50"/>
@@ -143,13 +153,13 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ILu-5a-0Ud">
-                        <rect key="frame" x="0.0" y="422" width="320" height="34"/>
+                        <rect key="frame" x="0.0" y="421.5" width="320" height="34"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_new" translatesAutoresizingMaskIntoConstraints="NO" id="rJ9-ec-TSd">
-                                <rect key="frame" x="12" y="8" width="20" height="20"/>
+                                <rect key="frame" x="12" y="7" width="20" height="20"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新品任你选" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8UC-ht-pwM">
-                                <rect key="frame" x="42" y="10" width="72" height="17"/>
+                                <rect key="frame" x="42" y="8.5" width="72" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -187,7 +197,7 @@
                 <outlet property="swipeView" destination="TBy-zS-edc" id="pgH-xi-Ua7"/>
                 <outlet property="topLineLabel" destination="QWM-tr-7AO" id="qHa-Yb-obs"/>
             </connections>
-            <point key="canvasLocation" x="-285" y="-654"/>
+            <point key="canvasLocation" x="-368" y="-708"/>
         </tableViewCell>
     </objects>
     <resources>

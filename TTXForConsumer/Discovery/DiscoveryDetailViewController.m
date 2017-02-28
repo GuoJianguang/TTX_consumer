@@ -82,6 +82,11 @@
 #pragma mark - 帮助
 - (void)detailBtnClick{
     
+    BaseHtmlViewController *htmlVC = [[BaseHtmlViewController alloc]init];
+    htmlVC.htmlTitle = @"活动说明";
+    htmlVC.htmlUrl = @"https://baidu.com";
+    [self.navigationController pushViewController:htmlVC animated:YES];
+    
 }
 
 

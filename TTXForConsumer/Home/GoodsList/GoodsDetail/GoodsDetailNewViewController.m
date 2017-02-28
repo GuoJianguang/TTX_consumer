@@ -9,6 +9,7 @@
 #import "GoodsDetailNewViewController.h"
 #import "GoodsDetailIntroduceView.h"
 #import "Watch.h"
+#import "CountDown.h"
 #import "MchAllCommentViewController.h"
 
 
@@ -17,15 +18,13 @@
 @property (nonatomic, strong)SwipeView *swipeView;
 @property (nonatomic, strong)TTXPageContrl *pageControl;
 @property (strong, nonatomic) HomeImageSwitchIndicatorView *pageView;
-
-
-
 @property (strong, nonatomic) GoodsDetailIntroduceView *detailView;
 
 @property (nonatomic, strong)NSMutableArray *imageHeightArray;
 @property (nonatomic, assign)NSInteger imageCount;
 @property (nonatomic, assign)CGFloat imageArrayHeight;
 
+@property (strong, nonatomic)  CountDown *countDown;
 
 @property (nonatomic, strong)UIButton *backBtn;
 
@@ -36,6 +35,8 @@
 
 //用于记录高度
 @property (nonatomic, assign)CGFloat naviGationHeight;
+
+@property (nonnull, strong)UILabel *showDisCountTimeLabel;
 
 
 
@@ -50,14 +51,20 @@
     
     [self.view addSubview:self.scrollView];
     self.scrollView.delegate = self;
+    
     [self.scrollView addSubview:self.swipeView];
     [self.swipeView addSubview:self.pageControl];
+    if (self.isDisCount) {
+        UIView *disCountView = [[UIView alloc]init];
+        disCountView.backgroundColor = [UIColor colorFromHexString:@"f3b59d"];
+        disCountView.frame = CGRectMake(0, THeight*(528/1334.), TWitdh, TWitdh *(78/750.));
+        [self.scrollView addSubview:disCountView];
+        [self setDiscontView:disCountView];
+    }
     [self.scrollView addSubview:self.detailView];
     [self.view bringSubviewToFront:self.naviBar];
-    
     //获取商品详情
     [self getGoodsDetail:self.goodsID];
-    
     //添加返回按钮
     self.backBtn = [[UIButton alloc]initWithFrame:CGRectMake(12, 22, 40, 40)];
     [self.view addSubview:self.backBtn];
@@ -72,8 +79,9 @@
     self.buyBtn.layer.masksToBounds = YES;
     
     self.naviGationHeight = 0;
-    
 }
+
+
 
 
 - (TTXPageContrl *)pageControl
@@ -93,6 +101,32 @@
     }
     return _choosetypeView;
 }
+
+#pragma mark - 限时折扣设置
+- (void)setDiscontView:(UIView *)disContView
+{
+    UILabel *alerlabel = [[UILabel alloc]initWithFrame:CGRectMake(12, (TWitdh *(78/750.) -TWitdh*(44/750.))/2., TWitdh *(154/750.), TWitdh*(44/750.))];
+    alerlabel.text = @"限时抢购中";
+    alerlabel.font = [UIFont systemFontOfSize:12];
+    alerlabel.backgroundColor = MacoColor;
+    alerlabel.layer.cornerRadius = 5;
+    alerlabel.layer.masksToBounds = YES;
+    alerlabel.textAlignment = NSTextAlignmentCenter;
+    alerlabel.adjustsFontSizeToFitWidth = YES;
+    alerlabel.textColor = [UIColor whiteColor];
+    [disContView addSubview:alerlabel];
+    
+    if (!self.showDisCountTimeLabel) {
+        self.showDisCountTimeLabel = [[UILabel alloc]init];
+    }
+    self.showDisCountTimeLabel.frame = CGRectMake(CGRectGetMaxX(alerlabel.frame)+ 20, (TWitdh *(78/750.) -TWitdh*(44/750.))/2., TWitdh - CGRectGetWidth(alerlabel.frame) - 20 - 25, TWitdh*(44/750.));
+    self.showDisCountTimeLabel.textColor = MacoTitleColor;
+    self.showDisCountTimeLabel.font = [UIFont systemFontOfSize:11];
+    self.showDisCountTimeLabel.textAlignment = NSTextAlignmentRight;
+    [disContView addSubview:self.showDisCountTimeLabel];
+}
+
+
 #pragma mark - 返回按钮点击事件
 
 - (void)backBtn:(UIButton *)btn
@@ -111,15 +145,37 @@
         if (IsRequestTrue) {
             self.dataModel = [Watch modelWithDic:jsonObject[@"data"]];
             CGFloat detailViewHeight = [self cellHeight:self.dataModel.name] + 125 + 15;
-            self.detailView.frame = CGRectMake(0, THeight*(528/1334.), TWitdh, detailViewHeight);
-            self.naviGationHeight = detailViewHeight + THeight*(528/1334.);
             self.detailView.dataModel = self.dataModel;
             self.pageControl.numberOfPages =  self.dataModel.slideImage.count;
             self.pageControl.currentPage = 0;
             [self.swipeView reloadData];
-            
-            [self addFengeView:detailViewHeight +THeight*(528/1334.) withImageArray:jsonObject[@"data"][@"picDesc"] withDetaiViewheight:detailViewHeight];
-            
+            if (self.isDisCount) {
+                self.detailView.frame = CGRectMake(0, THeight*(528/1334.) + TWitdh*(78/750.), TWitdh, detailViewHeight);
+                self.naviGationHeight = detailViewHeight + THeight*(528/1334.) + TWitdh*(78/750.);
+                 [self addFengeView:detailViewHeight +THeight*(528/1334.)+ TWitdh*(78/750.) withImageArray:jsonObject[@"data"][@"picDesc"] withDetaiViewheight:detailViewHeight];
+            }else{
+                self.detailView.frame = CGRectMake(0, THeight*(528/1334.), TWitdh, detailViewHeight);
+                self.naviGationHeight = detailViewHeight + THeight*(528/1334.);
+
+                 [self addFengeView:detailViewHeight +THeight*(528/1334.) withImageArray:jsonObject[@"data"][@"picDesc"] withDetaiViewheight:detailViewHeight];
+            }
+            //倒计时
+            if (self.isDisCount) {
+                __weak GoodsDetailNewViewController *weak_self = self;
+                NSUInteger endtime = [NullToNumber(jsonObject[@"data"][@"endTime"]) longLongValue];
+                NSTimeInterval endinterval= endtime/ 1000.0;
+                NSUInteger nowTime = [NullToNumber(jsonObject[@"data"][@"nowTime"]) longLongValue];
+                NSTimeInterval nowinterval= nowTime/ 1000.0;
+                NSDate *enddate = [NSDate dateWithTimeIntervalSince1970:endinterval];
+                NSDate *nowDate = [NSDate dateWithTimeIntervalSinceNow:nowinterval];
+                NSDateFormatter *objDateformat = [[NSDateFormatter alloc] init];
+                [objDateformat setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+                NSString * endtimeStr = [NSString stringWithFormat:@"%@",[objDateformat stringFromDate: enddate]];
+                NSString *nowTimeStr = [NSString stringWithFormat:@"%@",[objDateformat stringFromDate:nowDate]];
+                [self.countDown countDownWithPER_SECBlock:^{
+                    self.showDisCountTimeLabel.text = [weak_self getNowTimeWithStringEndTime:endtimeStr withStartTime:nowDate withShowLabel:nil];
+                }];
+            }
         }
     } failure:^(NSURLSessionDataTask *operation, NSError *error) {
         [SVProgressHUD dismiss];
@@ -171,6 +227,7 @@
     }else{
         [self.scrollView viewWithTag:100].frame = CGRectMake(0, self.naviGationHeight, TWitdh ,44 );
     }
+    
     if ((scrollView.contentOffset.y + 64) /(THeight*(528/1334.)) < 1.) {
         self.naviBar.alpha = scrollView.contentOffset.y/(THeight*(528/1334.));
         self.backBtn.alpha = 1-self.naviBar.alpha;
@@ -194,7 +251,7 @@
 - (HomeImageSwitchIndicatorView *)pageView
 {
     if (!_pageView) {
-        _pageView = [[HomeImageSwitchIndicatorView alloc]initWithFrame:CGRectMake(100, THeight*(528/1334.) - 20, TWitdh - 200, 3)];
+        _pageView = [[HomeImageSwitchIndicatorView alloc]initWithFrame:CGRectMake(100, THeight*(528/1334.) - 10, TWitdh - 200, 3)];
     }
     return _pageView;
 }
@@ -363,13 +420,12 @@
             UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, y, TWitdh, [heightArray[i] floatValue])];
             [imageView sd_setImageWithURL:[NSURL URLWithString:NullToSpace(imageArray[i][@"url"])] placeholderImage:LoadingErrorImage];
             [self.imageSuperView addSubview:imageView];
-            
         }
     }
     UIView *dowmlineView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, TWitdh, 1)];
     dowmlineView.backgroundColor = MacolayerColor;
     [self.imageSuperView addSubview:dowmlineView];
-    self.scrollView.contentSize = CGSizeMake(TWitdh, THeight*(528/1334.)+ detailViewHeight+ 44+ 10 + totalHeight    );
+    self.scrollView.contentSize = CGSizeMake(TWitdh, THeight*(528/1334.)+ detailViewHeight+ 44+ 10 + totalHeight);
 }
 
 
@@ -387,6 +443,62 @@
     [self.choosetypeView.buyBtn setTitle:@"暂时没有此规格的商品" forState:UIControlStateNormal];
     self.choosetypeView.buyBtn.titleLabel.adjustsFontSizeToFitWidth = YES;
 }
+
+
+#pragma mark - 倒计时计数
+- (CountDown *)countDown
+{
+    if (!_countDown) {
+        _countDown = [[CountDown alloc]init];
+    }
+    return _countDown;
+}
+
+
+-(NSString *)getNowTimeWithStringEndTime:(NSString *)aTimeString withStartTime:(NSDate *)startTime withShowLabel:(UILabel *)showlabel{
+    NSDateFormatter* formater = [[NSDateFormatter alloc] init];
+    [formater setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    // 截止时间date格式
+    NSDate  *expireDate = [formater dateFromString:aTimeString];
+    NSDate  *nowDate = [NSDate date];
+    // 当前时间字符串格式
+    NSString *nowDateStr = [formater stringFromDate:nowDate];
+    // 当前时间date格式
+    nowDate = [formater dateFromString:nowDateStr];
+    
+    NSTimeInterval timeInterval =[expireDate timeIntervalSinceDate:nowDate];
+    
+    int days = (int)(timeInterval/(3600*24));
+    int hours = (int)((timeInterval-days*24*3600)/3600);
+    int minutes = (int)(timeInterval-days*24*3600-hours*3600)/60;
+    int seconds = timeInterval-days*24*3600-hours*3600-minutes*60;
+    
+    NSString *dayStr;NSString *hoursStr;NSString *minutesStr;NSString *secondsStr;
+    //天
+    dayStr = [NSString stringWithFormat:@"%d",days];
+    //小时
+    hoursStr = [NSString stringWithFormat:@"%d",hours];
+    //分钟
+    if(minutes<10)
+        minutesStr = [NSString stringWithFormat:@"0%d",minutes];
+    else
+        minutesStr = [NSString stringWithFormat:@"%d",minutes];
+    //秒
+    if(seconds < 10)
+        secondsStr = [NSString stringWithFormat:@"0%d", seconds];
+    else
+        secondsStr = [NSString stringWithFormat:@"%d",seconds];
+    if (hours<=0&&minutes<=0&&seconds<=0) {
+        return @"活动已经结束！";
+    }else{
+        
+    }
+    if (days) {
+        return [NSString stringWithFormat:@"还剩%@天%@小时%@分%@秒结束", dayStr,hoursStr, minutesStr,secondsStr];
+    }
+    return [NSString stringWithFormat:@"还剩%@小时%@分%@秒结束",hoursStr , minutesStr,secondsStr];
+}
+
 
 
 - (void)didReceiveMemoryWarning {

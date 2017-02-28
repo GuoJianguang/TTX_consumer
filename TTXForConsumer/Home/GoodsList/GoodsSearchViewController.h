@@ -26,4 +26,7 @@
 
 @property (nonatomic, assign)BOOL isSerach;
 
+
+@property (nonatomic, assign)BOOL isDisCount;
+
 @end

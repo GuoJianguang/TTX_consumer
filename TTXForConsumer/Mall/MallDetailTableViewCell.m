@@ -13,6 +13,10 @@
 #import "SXMarquee.h"
 #import "SXHeadLine.h"
 #import "FlagShipViewController.h"
+#import "TopLineModel.h"
+#import "TopLineViewController.h"
+#import "DisCountViewController.h"
+
 
 @implementation DiscountModel
 
@@ -83,8 +87,8 @@
     [_topLineArray removeAllObjects];
     [_topLineArray addObjectsFromArray:topLineArray];
     if (_topLineArray.count > 0) {
-        self.topLineLabel.text = NullToSpace(_topLineArray[0][@"name"]);
-
+        TopLineModel *model = _topLineArray[0];
+        self.topLineLabel.text = model.name;
     }
 }
 
@@ -139,7 +143,8 @@
 
 -(void)swipeView:(SwipeView *)swipeView didSelectItemAtIndex:(NSInteger)index
 {
-    DiscountModel *model = self.disCountArray[index];
+    DisCountViewController *disCountVC = [[DisCountViewController alloc]init];
+    [self.viewController.navigationController pushViewController:disCountVC animated:YES];
 }
 
 
@@ -234,5 +239,11 @@ minimumLineSpacingForSectionAtIndex:(NSInteger)section
     FlagShipViewController *shipVC = [[FlagShipViewController alloc]init];
     shipVC.flagShipArray = self.flagShipArray;
     [self.viewController.navigationController pushViewController:shipVC animated:YES];
+}
+
+- (IBAction)moreTopLine:(id)sender {
+    TopLineViewController *topLineVC = [[TopLineViewController alloc]init];
+    topLineVC.dataSouceArray = self.topLineArray;
+    [self.viewController.navigationController pushViewController:topLineVC animated:YES];
 }
 @end

@@ -425,6 +425,17 @@
 		BCDB181D1DF7D4AA00E99BED /* LoveAccountAlerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCDB181C1DF7D4AA00E99BED /* LoveAccountAlerView.xib */; };
 		BCDB18201DF7F2FD00E99BED /* libUMessage_Sdk_1.4.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCDB181E1DF7F2FD00E99BED /* libUMessage_Sdk_1.4.0.a */; };
 		BCDB18241DF80EB800E99BED /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCDB18211DF80EB800E99BED /* libWeChatSDK.a */; };
+		BCDD3D321E65086F007832B7 /* TopLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDD3D301E65086F007832B7 /* TopLineViewController.m */; };
+		BCDD3D331E65086F007832B7 /* TopLineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCDD3D311E65086F007832B7 /* TopLineViewController.xib */; };
+		BCDD3D3B1E650B62007832B7 /* TopLineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDD3D3A1E650B62007832B7 /* TopLineModel.m */; };
+		BCDD3D3F1E65132A007832B7 /* TopLineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDD3D3D1E65132A007832B7 /* TopLineTableViewCell.m */; };
+		BCDD3D401E65132A007832B7 /* TopLineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCDD3D3E1E65132A007832B7 /* TopLineTableViewCell.xib */; };
+		BCDD3D441E6517AB007832B7 /* DisCountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDD3D421E6517AB007832B7 /* DisCountViewController.m */; };
+		BCDD3D451E6517AB007832B7 /* DisCountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCDD3D431E6517AB007832B7 /* DisCountViewController.xib */; };
+		BCDD3D491E651BCD007832B7 /* DisCountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDD3D471E651BCD007832B7 /* DisCountTableViewCell.m */; };
+		BCDD3D4A1E651BCD007832B7 /* DisCountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCDD3D481E651BCD007832B7 /* DisCountTableViewCell.xib */; };
+		BCDD3D4E1E652EA7007832B7 /* MoreDisCountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDD3D4C1E652EA7007832B7 /* MoreDisCountViewController.m */; };
+		BCDD3D4F1E652EA7007832B7 /* MoreDisCountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCDD3D4D1E652EA7007832B7 /* MoreDisCountViewController.xib */; };
 		BCF301C81DCAD8AC000C7BE7 /* BaseHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF301C01DCAD8AC000C7BE7 /* BaseHttpClient.m */; };
 		BCF301C91DCAD8AC000C7BE7 /* HttpClient_Readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = BCF301C11DCAD8AC000C7BE7 /* HttpClient_Readme.txt */; };
 		BCF301CA1DCAD8AC000C7BE7 /* HttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF301C31DCAD8AC000C7BE7 /* HttpClient.m */; };
@@ -1129,6 +1140,23 @@
 		BCDB18211DF80EB800E99BED /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
 		BCDB18221DF80EB800E99BED /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		BCDB18231DF80EB800E99BED /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		BCDD3D2F1E65086F007832B7 /* TopLineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopLineViewController.h; sourceTree = "<group>"; };
+		BCDD3D301E65086F007832B7 /* TopLineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopLineViewController.m; sourceTree = "<group>"; };
+		BCDD3D311E65086F007832B7 /* TopLineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopLineViewController.xib; sourceTree = "<group>"; };
+		BCDD3D391E650B62007832B7 /* TopLineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopLineModel.h; sourceTree = "<group>"; };
+		BCDD3D3A1E650B62007832B7 /* TopLineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopLineModel.m; sourceTree = "<group>"; };
+		BCDD3D3C1E65132A007832B7 /* TopLineTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopLineTableViewCell.h; sourceTree = "<group>"; };
+		BCDD3D3D1E65132A007832B7 /* TopLineTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopLineTableViewCell.m; sourceTree = "<group>"; };
+		BCDD3D3E1E65132A007832B7 /* TopLineTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopLineTableViewCell.xib; sourceTree = "<group>"; };
+		BCDD3D411E6517AB007832B7 /* DisCountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisCountViewController.h; sourceTree = "<group>"; };
+		BCDD3D421E6517AB007832B7 /* DisCountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisCountViewController.m; sourceTree = "<group>"; };
+		BCDD3D431E6517AB007832B7 /* DisCountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DisCountViewController.xib; sourceTree = "<group>"; };
+		BCDD3D461E651BCD007832B7 /* DisCountTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisCountTableViewCell.h; sourceTree = "<group>"; };
+		BCDD3D471E651BCD007832B7 /* DisCountTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisCountTableViewCell.m; sourceTree = "<group>"; };
+		BCDD3D481E651BCD007832B7 /* DisCountTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DisCountTableViewCell.xib; sourceTree = "<group>"; };
+		BCDD3D4B1E652EA7007832B7 /* MoreDisCountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreDisCountViewController.h; sourceTree = "<group>"; };
+		BCDD3D4C1E652EA7007832B7 /* MoreDisCountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreDisCountViewController.m; sourceTree = "<group>"; };
+		BCDD3D4D1E652EA7007832B7 /* MoreDisCountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreDisCountViewController.xib; sourceTree = "<group>"; };
 		BCF301BF1DCAD8AC000C7BE7 /* BaseHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseHttpClient.h; sourceTree = "<group>"; };
 		BCF301C01DCAD8AC000C7BE7 /* BaseHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseHttpClient.m; sourceTree = "<group>"; };
 		BCF301C11DCAD8AC000C7BE7 /* HttpClient_Readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HttpClient_Readme.txt; sourceTree = "<group>"; };
@@ -2466,6 +2494,23 @@
 				BC695CBA1E6427A9006A334C /* FlagShipViewController.h */,
 				BC695CBB1E6427A9006A334C /* FlagShipViewController.m */,
 				BC695CBC1E6427A9006A334C /* FlagShipViewController.xib */,
+				BCDD3D2F1E65086F007832B7 /* TopLineViewController.h */,
+				BCDD3D301E65086F007832B7 /* TopLineViewController.m */,
+				BCDD3D311E65086F007832B7 /* TopLineViewController.xib */,
+				BCDD3D3C1E65132A007832B7 /* TopLineTableViewCell.h */,
+				BCDD3D3D1E65132A007832B7 /* TopLineTableViewCell.m */,
+				BCDD3D3E1E65132A007832B7 /* TopLineTableViewCell.xib */,
+				BCDD3D391E650B62007832B7 /* TopLineModel.h */,
+				BCDD3D3A1E650B62007832B7 /* TopLineModel.m */,
+				BCDD3D411E6517AB007832B7 /* DisCountViewController.h */,
+				BCDD3D421E6517AB007832B7 /* DisCountViewController.m */,
+				BCDD3D431E6517AB007832B7 /* DisCountViewController.xib */,
+				BCDD3D461E651BCD007832B7 /* DisCountTableViewCell.h */,
+				BCDD3D471E651BCD007832B7 /* DisCountTableViewCell.m */,
+				BCDD3D481E651BCD007832B7 /* DisCountTableViewCell.xib */,
+				BCDD3D4B1E652EA7007832B7 /* MoreDisCountViewController.h */,
+				BCDD3D4C1E652EA7007832B7 /* MoreDisCountViewController.m */,
+				BCDD3D4D1E652EA7007832B7 /* MoreDisCountViewController.xib */,
 				BC695CA21E63F8DF006A334C /* MallImage.xcassets */,
 			);
 			path = Mall;
@@ -2644,6 +2689,8 @@
 				2D4C43771D17A1220011C48F /* MerchantDetailTableViewCell.xib in Resources */,
 				2D0092661D30BAC800E00DB8 /* WithDrewSuccessView.xib in Resources */,
 				2DEE95F91D276C8D00B46AB1 /* MerchantSearchResultViewController.xib in Resources */,
+				BCDD3D4F1E652EA7007832B7 /* MoreDisCountViewController.xib in Resources */,
+				BCDD3D401E65132A007832B7 /* TopLineTableViewCell.xib in Resources */,
 				BC8A9E981E5AD0AF0004C23E /* NewMerchantDetailViewController.xib in Resources */,
 				2DB950171D2A8E33003A6DEA /* ZLPhotoPickerGroupTableViewCell.xib in Resources */,
 				2DB94FFD1D2A8E33003A6DEA /* nav_delete_btn@2x.png in Resources */,
@@ -2688,6 +2735,7 @@
 				2D95D87D1D2284BB00021F31 /* RegisterOneViewController.xib in Resources */,
 				BC39B7CD1E519CDD009A7D50 /* NewIndustryCollectionViewCell.xib in Resources */,
 				2DA973461D124F3000A605F9 /* Main.storyboard in Resources */,
+				BCDD3D4A1E651BCD007832B7 /* DisCountTableViewCell.xib in Resources */,
 				2D4C43791D17A1220011C48F /* MerchantDetailViewController.xib in Resources */,
 				2D4C437E1D17BDC80011C48F /* VoucherCell.xib in Resources */,
 				BC8A9E9D1E5AD29A0004C23E /* NewMerchantDetailTableViewCell.xib in Resources */,
@@ -2754,6 +2802,7 @@
 				2DE2202F1D2104EE008D7F05 /* GoodsIntroduceViewController.xib in Resources */,
 				2DA9738D1D12781000A605F9 /* Home.xcassets in Resources */,
 				BC9307681E5ECC4F00E996C8 /* FlagshipCollectionViewCell.xib in Resources */,
+				BCDD3D331E65086F007832B7 /* TopLineViewController.xib in Resources */,
 				BCBA436E1DB61C9200E9E7E8 /* OnlineMerCityCollectionViewCell.xib in Resources */,
 				2D95D8111D222B4200021F31 /* ChooseTypeView.xib in Resources */,
 				2DE489151D23D1B000472681 /* MyInvitationViewController.xib in Resources */,
@@ -2781,6 +2830,7 @@
 				2DB94FFB1D2A8E33003A6DEA /* shanguangdeng2@2x.png in Resources */,
 				2DEE961F1D27BD7B00B46AB1 /* SharkItOffViewController.xib in Resources */,
 				2D89A29C1D24BBEA0042019B /* MerchantCommentListViewController.xib in Resources */,
+				BCDD3D451E6517AB007832B7 /* DisCountViewController.xib in Resources */,
 				2DE2200F1D20D04C008D7F05 /* AboutUsViewController.xib in Resources */,
 				2D67CCC11D1BE00400BB99B4 /* EditNickNameViewController.xib in Resources */,
 				BC26C7E91E5D731700CC8100 /* DiscoverSecondActivityViewController.xib in Resources */,
@@ -2895,6 +2945,7 @@
 				BC39747F1DD445EB008DDF67 /* JoinLoveAccountViewController.m in Sources */,
 				2DB94F9B1D2A8DEF003A6DEA /* ImageViewer.m in Sources */,
 				2DA974481D1291E600A605F9 /* MASViewConstraint.m in Sources */,
+				BCDD3D4E1E652EA7007832B7 /* MoreDisCountViewController.m in Sources */,
 				2DA0C0C51D193BB80074DC4D /* HomeVerticalBtn.m in Sources */,
 				2D01FC881D26707C00D37E04 /* MerchantSearchViewController.m in Sources */,
 				2D4C43901D17E9A90011C48F /* MerchantListViewController.m in Sources */,
@@ -2937,10 +2988,12 @@
 				BCF7D5E41DF6AF6E00D912CA /* MANaviAnnotation.m in Sources */,
 				2D566D8B1D191EF600B19EC6 /* MineViewController.m in Sources */,
 				BC2CF8481E52A2A400A69A94 /* CustomButton.m in Sources */,
+				BCDD3D441E6517AB007832B7 /* DisCountViewController.m in Sources */,
 				2DA973491D124F3000A605F9 /* TTXForConsumer.xcdatamodeld in Sources */,
 				2D95D80C1D22296400021F31 /* TypeView.m in Sources */,
 				BC9307671E5ECC4F00E996C8 /* FlagshipCollectionViewCell.m in Sources */,
 				2D452B881D50A2C600C9D897 /* WaitingAuthenticationViewController.m in Sources */,
+				BCDD3D321E65086F007832B7 /* TopLineViewController.m in Sources */,
 				BC39B7C71E5192D9009A7D50 /* NewHomeTableViewCell.m in Sources */,
 				2D95D8711D225C0600021F31 /* PayView.m in Sources */,
 				2DDEC9021D1A6E9C00C91DDF /* BankCardTableViewCell.m in Sources */,
@@ -2953,6 +3006,7 @@
 				2DB94F8E1D2A8CCF003A6DEA /* BussessMapViewController.m in Sources */,
 				2D95D86A1D225BB000021F31 /* MoCurveLayer.m in Sources */,
 				2D67CCBB1D1BD99900BB99B4 /* SetTableViewCell.m in Sources */,
+				BCDD3D3B1E650B62007832B7 /* TopLineModel.m in Sources */,
 				BC2CF8471E52A2A400A69A94 /* SquaredUpView.m in Sources */,
 				2D4C43951D17EBB90011C48F /* MerchantTableViewCell.m in Sources */,
 				BC93075D1E5EB23E00E996C8 /* GoodsIndustryTableViewCell.m in Sources */,
@@ -3006,6 +3060,7 @@
 				2DA974021D128FFE00A605F9 /* LBXScanNetAnimation.m in Sources */,
 				BCB530C51E5D3AFF003E0C57 /* DiscoveryWinnersListViewController.m in Sources */,
 				2D67CCA61D1B8BE300BB99B4 /* WeXinPayObject.m in Sources */,
+				BCDD3D3F1E65132A007832B7 /* TopLineTableViewCell.m in Sources */,
 				BC695CB31E640DC1006A334C /* SXColorGradientView.m in Sources */,
 				2D95D8611D225B4800021F31 /* SureGoodsOrderTableViewCell.m in Sources */,
 				2DA973921D127BE700A605F9 /* Colours.m in Sources */,
@@ -3027,6 +3082,7 @@
 				2DBDB3B71D1CE6630033F09E /* ShippingAlerTableViewCell.m in Sources */,
 				2DBDB3C81D1D12E90033F09E /* HelpViewController.m in Sources */,
 				BCB530CF1E5D3E04003E0C57 /* WinnerListTableViewCell.m in Sources */,
+				BCDD3D491E651BCD007832B7 /* DisCountTableViewCell.m in Sources */,
 				2DA974261D1291C000A605F9 /* BaseHtmlViewController.m in Sources */,
 				2DB950121D2A8E33003A6DEA /* ZLPhotoPickerViewController.m in Sources */,
 				2DE220131D20D128008D7F05 /* AboutUsTableViewCell.m in Sources */,

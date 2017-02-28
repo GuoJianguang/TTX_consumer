@@ -14,6 +14,7 @@
 #import "GoodsSearchViewController.h"
 #import "GoodsDetailNewViewController.h"
 #import "FlagshipCollectionViewCell.h"
+#import "TopLineModel.h"
 
 @interface MallHomeViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 
@@ -264,7 +265,7 @@
             }
             NSArray *lineListArray = jsonObject[@"data"][@"topLineList"];
             for (NSDictionary *dic in lineListArray) {
-                [self.topLineDataSouceArray addObject:dic];
+                [self.topLineDataSouceArray addObject:[TopLineModel modelWithDic:dic]];
             }
             [self.tableView reloadData];
         }
