@@ -24,6 +24,8 @@
 //支付的view
 @property (nonatomic, strong)DiscoveryPayView *payView;
 
+@property (nonatomic, strong)NSString *htmlUrl;
+
 
 @end
 
@@ -79,12 +81,20 @@
     return _payView;
 }
 
+- (NSString *)htmlUrl
+{
+    if (!_htmlUrl) {
+        _htmlUrl = [NSString string];
+    }
+    return _htmlUrl;
+}
+
 #pragma mark - 帮助
 - (void)detailBtnClick{
     
     BaseHtmlViewController *htmlVC = [[BaseHtmlViewController alloc]init];
     htmlVC.htmlTitle = @"活动说明";
-    htmlVC.htmlUrl = @"https://baidu.com";
+    htmlVC.htmlUrl = self.htmlUrl;
     [self.navigationController pushViewController:htmlVC animated:YES];
     
 }
@@ -95,8 +105,11 @@
 - (void)getDetailRequest:(BOOL)isHeader{
     NSDictionary *prams = @{@"pageNo":@(self.page),
                             @"pageSize":MacoRequestPageCount};
+    [SVProgressHUD showWithStatus:@"正在加载..." maskType:3];
     [HttpClient POST:@"find/draw/detail" parameters:prams success:^(NSURLSessionDataTask *operation, id jsonObject) {
+        [SVProgressHUD dismiss];
         if (IsRequestTrue) {
+            self.htmlUrl = NullToSpace(jsonObject[@"data"][@"description"]);
             [self.tableView hiddenNoDataSouce];
             if (isHeader) {
                 self.isFirstEnd = YES;
@@ -133,6 +146,7 @@
         }
         
     } failure:^(NSURLSessionDataTask *operation, NSError *error) {
+        [SVProgressHUD dismiss];
         if (isHeader) {
             [self.tableView.mj_header endRefreshing];
         }else{

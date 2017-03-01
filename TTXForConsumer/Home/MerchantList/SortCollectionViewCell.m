@@ -57,6 +57,8 @@
     self.pointView.layer.cornerRadius = 3;
     self.pointView.backgroundColor = MacoColor;
     self.pointView.hidden = YES;
+    [self.contentView bringSubviewToFront:self.markView];
+
 }
 
 

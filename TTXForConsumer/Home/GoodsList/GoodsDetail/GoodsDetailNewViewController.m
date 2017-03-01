@@ -36,9 +36,12 @@
 //用于记录高度
 @property (nonatomic, assign)CGFloat naviGationHeight;
 
-@property (nonnull, strong)UILabel *showDisCountTimeLabel;
+@property (nonatomic, strong)UILabel *showDisCountTimeLabel;
+
+@property (nonatomic, strong)UILabel *disCountLabel;
 
 
+@property (nonatomic, assign)NSTimeInterval tempTime;
 
 @end
 
@@ -64,6 +67,7 @@
     [self.scrollView addSubview:self.detailView];
     [self.view bringSubviewToFront:self.naviBar];
     //获取商品详情
+    self.tempTime = 0;
     [self getGoodsDetail:self.goodsID];
     //添加返回按钮
     self.backBtn = [[UIButton alloc]initWithFrame:CGRectMake(12, 22, 40, 40)];
@@ -102,24 +106,33 @@
     return _choosetypeView;
 }
 
+- (UILabel *)disCountLabel
+{
+    if (!_disCountLabel) {
+        _disCountLabel = [[UILabel alloc]init];
+    }
+    return _disCountLabel;
+}
+
 #pragma mark - 限时折扣设置
 - (void)setDiscontView:(UIView *)disContView
 {
-    UILabel *alerlabel = [[UILabel alloc]initWithFrame:CGRectMake(12, (TWitdh *(78/750.) -TWitdh*(44/750.))/2., TWitdh *(154/750.), TWitdh*(44/750.))];
-    alerlabel.text = @"限时抢购中";
-    alerlabel.font = [UIFont systemFontOfSize:12];
-    alerlabel.backgroundColor = MacoColor;
-    alerlabel.layer.cornerRadius = 5;
-    alerlabel.layer.masksToBounds = YES;
-    alerlabel.textAlignment = NSTextAlignmentCenter;
-    alerlabel.adjustsFontSizeToFitWidth = YES;
-    alerlabel.textColor = [UIColor whiteColor];
-    [disContView addSubview:alerlabel];
+    
+    self.disCountLabel.frame = CGRectMake(12, (TWitdh *(78/750.) -TWitdh*(44/750.))/2., TWitdh *(154/750.), TWitdh*(44/750.));
+    self.disCountLabel.text = @"限时抢购中";
+    self.disCountLabel.font = [UIFont systemFontOfSize:12];
+    self.disCountLabel.backgroundColor = MacoColor;
+    self.disCountLabel.layer.cornerRadius = 5;
+    self.disCountLabel.layer.masksToBounds = YES;
+    self.disCountLabel.textAlignment = NSTextAlignmentCenter;
+    self.disCountLabel.adjustsFontSizeToFitWidth = YES;
+    self.disCountLabel.textColor = [UIColor whiteColor];
+    [disContView addSubview:self.disCountLabel];
     
     if (!self.showDisCountTimeLabel) {
         self.showDisCountTimeLabel = [[UILabel alloc]init];
     }
-    self.showDisCountTimeLabel.frame = CGRectMake(CGRectGetMaxX(alerlabel.frame)+ 20, (TWitdh *(78/750.) -TWitdh*(44/750.))/2., TWitdh - CGRectGetWidth(alerlabel.frame) - 20 - 25, TWitdh*(44/750.));
+    self.showDisCountTimeLabel.frame = CGRectMake(CGRectGetMaxX(self.disCountLabel.frame)+ 20, (TWitdh *(78/750.) -TWitdh*(44/750.))/2., TWitdh - CGRectGetWidth(self.disCountLabel.frame) - 20 - 25, TWitdh*(44/750.));
     self.showDisCountTimeLabel.textColor = MacoTitleColor;
     self.showDisCountTimeLabel.font = [UIFont systemFontOfSize:11];
     self.showDisCountTimeLabel.textAlignment = NSTextAlignmentRight;
@@ -136,6 +149,9 @@
 
 
 #pragma mark - 商品详情的网络请求
+
+
+
 - (void)getGoodsDetail:(NSString *)goodsCode
 {
     NSDictionary *prams = @{@"id":goodsCode};
@@ -167,13 +183,15 @@
                 NSUInteger nowTime = [NullToNumber(jsonObject[@"data"][@"nowTime"]) longLongValue];
                 NSTimeInterval nowinterval= nowTime/ 1000.0;
                 NSDate *enddate = [NSDate dateWithTimeIntervalSince1970:endinterval];
-                NSDate *nowDate = [NSDate dateWithTimeIntervalSinceNow:nowinterval];
+                NSDate *nowDate = [NSDate dateWithTimeIntervalSince1970:nowinterval];
                 NSDateFormatter *objDateformat = [[NSDateFormatter alloc] init];
                 [objDateformat setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-                NSString * endtimeStr = [NSString stringWithFormat:@"%@",[objDateformat stringFromDate: enddate]];
-                NSString *nowTimeStr = [NSString stringWithFormat:@"%@",[objDateformat stringFromDate:nowDate]];
+                
+                self.tempTime =[enddate timeIntervalSinceDate:nowDate];
                 [self.countDown countDownWithPER_SECBlock:^{
-                    self.showDisCountTimeLabel.text = [weak_self getNowTimeWithStringEndTime:endtimeStr withStartTime:nowDate withShowLabel:nil];
+                    [weak_self getNowTimeWithStringEndTime];
+                    self.tempTime --;
+                    
                 }];
             }
         }
@@ -455,23 +473,13 @@
 }
 
 
--(NSString *)getNowTimeWithStringEndTime:(NSString *)aTimeString withStartTime:(NSDate *)startTime withShowLabel:(UILabel *)showlabel{
-    NSDateFormatter* formater = [[NSDateFormatter alloc] init];
-    [formater setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    // 截止时间date格式
-    NSDate  *expireDate = [formater dateFromString:aTimeString];
-    NSDate  *nowDate = [NSDate date];
-    // 当前时间字符串格式
-    NSString *nowDateStr = [formater stringFromDate:nowDate];
-    // 当前时间date格式
-    nowDate = [formater dateFromString:nowDateStr];
+-( void)getNowTimeWithStringEndTime{
+
     
-    NSTimeInterval timeInterval =[expireDate timeIntervalSinceDate:nowDate];
-    
-    int days = (int)(timeInterval/(3600*24));
-    int hours = (int)((timeInterval-days*24*3600)/3600);
-    int minutes = (int)(timeInterval-days*24*3600-hours*3600)/60;
-    int seconds = timeInterval-days*24*3600-hours*3600-minutes*60;
+    int days = (int)(self.tempTime/(3600*24));
+    int hours = (int)((self.tempTime-days*24*3600)/3600);
+    int minutes = (int)(self.tempTime-days*24*3600-hours*3600)/60;
+    int seconds = self.tempTime-days*24*3600-hours*3600-minutes*60;
     
     NSString *dayStr;NSString *hoursStr;NSString *minutesStr;NSString *secondsStr;
     //天
@@ -484,19 +492,30 @@
     else
         minutesStr = [NSString stringWithFormat:@"%d",minutes];
     //秒
+    
+    
     if(seconds < 10)
         secondsStr = [NSString stringWithFormat:@"0%d", seconds];
     else
         secondsStr = [NSString stringWithFormat:@"%d",seconds];
     if (hours<=0&&minutes<=0&&seconds<=0) {
-        return @"活动已经结束！";
-    }else{
+        [self.countDown destoryTimer];
+        self.disCountLabel.text = @"活动已结束";
         
+        [self.buyBtn setBackgroundColor:MacoIntrodouceColor];
+        self.buyBtn.enabled = NO;
+        [self.buyBtn setTitle:@"活动结束" forState:UIControlStateNormal];
+        self.buyBtn.titleLabel.adjustsFontSizeToFitWidth = YES;
+        self.showDisCountTimeLabel.text = @"活动已结束";
+        
+        return;
     }
+    self.disCountLabel.text = @"限时抢购中";
+
     if (days) {
-        return [NSString stringWithFormat:@"还剩%@天%@小时%@分%@秒结束", dayStr,hoursStr, minutesStr,secondsStr];
+        self.showDisCountTimeLabel.text = [NSString stringWithFormat:@"还剩%@天%@小时%@分%@秒结束", dayStr,hoursStr, minutesStr,secondsStr];
     }
-    return [NSString stringWithFormat:@"还剩%@小时%@分%@秒结束",hoursStr , minutesStr,secondsStr];
+    self.showDisCountTimeLabel.text = [NSString stringWithFormat:@"还剩%@小时%@分%@秒结束",hoursStr , minutesStr,secondsStr];
 }
 
 

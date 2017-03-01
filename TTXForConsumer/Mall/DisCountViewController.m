@@ -225,9 +225,9 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     if (self.sortDataSouceArray.count < 5) {
-        return CGSizeMake(TWitdh/self.sortDataSouceArray.count, 50);
+        return CGSizeMake(TWitdh/self.sortDataSouceArray.count, TWitdh *(9/75.));
     }
-    return CGSizeMake(TWitdh/4, 44);
+    return CGSizeMake(TWitdh/4, TWitdh *(9/75.));
 }
 
 

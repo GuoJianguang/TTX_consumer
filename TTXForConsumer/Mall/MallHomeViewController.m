@@ -162,9 +162,12 @@
         return buttonHeight * 2 + intervalY*2 + 18;
     }else if (indexPath.row == 1){
         if (self.flagShipDatasouceArray.count > 3) {
-            return TWitdh*(1050./750.);
+            return TWitdh*(1060./750.);
         }else{
-            return TWitdh*(868./750.);
+            if (TWitdh > 320) {
+                return TWitdh*(876./750.);
+            }
+            return TWitdh*(890./750.);
 
         }
         

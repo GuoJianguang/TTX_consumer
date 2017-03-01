@@ -8,6 +8,7 @@
 
 #import "DisCountTableViewCell.h"
 #import "Watch.h"
+#import "GoodsDetailNewViewController.h"
 
 @implementation DisCountTableViewCell
 
@@ -43,13 +44,19 @@
     [self.goodsImage sd_setImageWithURL:[NSURL URLWithString:_dataModel.coverImage] placeholderImage:LoadingErrorImage options:SDWebImageRefreshCached];
     
     self.discountPrice.text = [NSString stringWithFormat:@"¥ %@",_dataModel.price];
-    self.oldPrice.text = [NSString stringWithFormat:@"¥ %@",_dataModel.originalPrice];
     self.progressView.progress = 1- [_dataModel.inventory doubleValue]/([_dataModel.inventory doubleValue]+[_dataModel.salenum doubleValue]);
     
     self.yetLabel.text = [NSString stringWithFormat:@"已抢%@件",_dataModel.salenum];
+    NSDictionary *attribtDic = @{NSStrikethroughStyleAttributeName: [NSNumber numberWithInteger:NSUnderlineStyleSingle]};
+    NSMutableAttributedString *attribtStr = [[NSMutableAttributedString alloc]initWithString:[NSString stringWithFormat:@"¥ %@",_dataModel.originalPrice] attributes:attribtDic];
+    self.oldPrice.attributedText = attribtStr ;
 
 }
 
 - (IBAction)buyBtn:(id)sender {
+    GoodsDetailNewViewController *detailVC = [[GoodsDetailNewViewController alloc]init];
+    detailVC.isDisCount = YES;
+    detailVC.goodsID = self.dataModel.mch_id;
+    [self.viewController.navigationController pushViewController:detailVC animated:YES];
 }
 @end

@@ -12,6 +12,7 @@
 #import "GoodsDetailNewViewController.h"
 #import "NewMerchantDetailViewController.h"
 #import "DiscoverSecondActivityViewController.h"
+#import "DisCountViewController.h"
 
 
 @interface DiscoveryViewController ()<SwipeViewDelegate,SwipeViewDataSource>
@@ -156,6 +157,12 @@
             [self.navigationController pushViewController:discoveryDV animated:YES];
         }
             
+            break;
+        case 5:{//限时折扣
+                DisCountViewController *discountVC = [[DisCountViewController alloc]init];
+                [self.navigationController pushViewController:discountVC animated:YES];
+            
+        }
             break;
             
         default:

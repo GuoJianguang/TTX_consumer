@@ -82,17 +82,17 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nVO-uv-ijj">
-                                <rect key="frame" x="177" y="55.5" width="20.5" height="16"/>
+                                <rect key="frame" x="174" y="55.5" width="20.5" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3be-Zh-6Qb">
-                                <rect key="frame" x="228" y="64" width="60" height="28"/>
+                                <rect key="frame" x="235.5" y="71" width="52.5" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="y0o-Fv-K6L"/>
+                                    <constraint firstAttribute="width" secondItem="3be-Zh-6Qb" secondAttribute="height" multiplier="126/50" id="Qn2-Rf-9wO"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="马上抢"/>
                                 <connections>
                                     <action selector="buyBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="tEI-xP-TNm"/>
@@ -101,6 +101,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="3be-Zh-6Qb" firstAttribute="width" secondItem="tEW-fF-T9I" secondAttribute="width" multiplier="126/710" id="2Mw-cK-FiD"/>
                             <constraint firstAttribute="bottom" secondItem="cqX-wS-3L1" secondAttribute="bottom" constant="8" id="2n2-63-S1V"/>
                             <constraint firstAttribute="trailing" secondItem="ool-lT-4gi" secondAttribute="trailing" id="574-Km-yZE"/>
                             <constraint firstItem="ool-lT-4gi" firstAttribute="top" secondItem="ClP-Gv-6BB" secondAttribute="bottom" constant="8" id="5ZZ-tQ-2i9"/>
@@ -128,7 +129,7 @@
                             <constraint firstItem="wWl-vW-U1x" firstAttribute="leading" secondItem="tEW-fF-T9I" secondAttribute="leading" id="rgj-Nn-XSd"/>
                             <constraint firstAttribute="trailing" secondItem="wWl-vW-U1x" secondAttribute="trailing" id="tAl-ad-eNW"/>
                             <constraint firstItem="ClP-Gv-6BB" firstAttribute="width" secondItem="tEW-fF-T9I" secondAttribute="width" multiplier="202/726" id="tjU-4L-T7l"/>
-                            <constraint firstItem="nVO-uv-ijj" firstAttribute="leading" secondItem="hQl-ls-HMQ" secondAttribute="trailing" constant="10" id="wl0-pW-4iF"/>
+                            <constraint firstItem="nVO-uv-ijj" firstAttribute="leading" secondItem="hQl-ls-HMQ" secondAttribute="trailing" constant="7" id="wl0-pW-4iF"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -148,7 +149,7 @@
                 <outlet property="progressView" destination="ClP-Gv-6BB" id="liu-1R-mxj"/>
                 <outlet property="yetLabel" destination="vZb-qz-tkK" id="Se5-NN-WnH"/>
             </connections>
-            <point key="canvasLocation" x="-138" y="77"/>
+            <point key="canvasLocation" x="-135" y="76"/>
         </tableViewCell>
     </objects>
 </document>

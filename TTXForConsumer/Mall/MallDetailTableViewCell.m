@@ -63,7 +63,6 @@
     }else{
         self.flagShipHeight.constant = TWitdh*(310/750.);
     }
-    
     [self.collectionView reloadData];
 }
 
@@ -195,10 +194,17 @@
 //定义每个UICollectionView 的大小
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-//    if (self.sortDataSouceArray.count < 5) {
-//        return CGSizeMake(TWitdh/self.sortDataSouceArray.count, 50);
+//    if (_flagShipArray.count > 3) {
+//        self.flagShipHeight.constant = TWitdh*(492/750.);
+//    }else{
+//        self.flagShipHeight.constant = TWitdh*(310/750.);
 //    }
-    return CGSizeMake((TWitdh- 16)/3., (TWitdh*(490/750.)-(TWitdh *(8/75.)))/2.);
+
+    if (_flagShipArray.count > 3) {
+        return CGSizeMake((TWitdh- 16)/3., (TWitdh*(485/750.)-(TWitdh *(8/75.)))/2.);
+    }else{
+        return CGSizeMake((TWitdh- 16)/3., TWitdh*(310/750.)-(TWitdh *(8/75.)));
+    }
 }
 
 
