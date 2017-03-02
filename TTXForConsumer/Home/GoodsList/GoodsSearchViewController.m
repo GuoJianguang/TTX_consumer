@@ -128,7 +128,7 @@
 //    if (self.sortDataSouceArray.count < 5) {
 //        return CGSizeMake(TWitdh/self.sortDataSouceArray.count, 50);
 //    }
-    return CGSizeMake(TWitdh/3, TWitdh/3. *0.6);
+    return CGSizeMake(TWitdh/3, TWitdh/3. *0.60);
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView

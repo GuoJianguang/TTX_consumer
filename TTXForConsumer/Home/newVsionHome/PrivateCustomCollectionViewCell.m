@@ -15,6 +15,10 @@
     // Initialization code
     self.privateCustomName.textColor = MacoTitleColor;
     self.contentView.backgroundColor = [UIColor clearColor];
+    self.privateCustomImageView.layer.masksToBounds = YES;
+    
+    self.privateCustomImageView.layer.cornerRadius = 3;
+    
 }
 
 

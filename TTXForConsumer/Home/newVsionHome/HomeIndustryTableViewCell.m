@@ -68,7 +68,6 @@
     }];
 }
 
-
 - (void)jSquaredUpViewCell:(CustomButton *)cell didSelectedAtIndex:(NSInteger)index
 {
     NewHomeActivityModel *model = self.sortDataSouceArray[cell.tag];

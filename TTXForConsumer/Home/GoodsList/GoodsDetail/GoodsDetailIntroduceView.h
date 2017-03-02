@@ -17,6 +17,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *kuaidi;
 
 @property (nonatomic, strong)Watch *dataModel;
+
+@property (weak, nonatomic) IBOutlet UILabel *oldprice;
+
 @property (weak, nonatomic) IBOutlet UIButton *checkStoreBtn;
 
 - (IBAction)checkStoreBtn:(UIButton *)sender;

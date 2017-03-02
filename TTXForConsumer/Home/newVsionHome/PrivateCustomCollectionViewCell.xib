@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="145" height="132"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading_error" translatesAutoresizingMaskIntoConstraints="NO" id="796-hX-ZQ5">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading_error" translatesAutoresizingMaskIntoConstraints="NO" id="796-hX-ZQ5">
                         <rect key="frame" x="0.0" y="0.0" width="145" height="91"/>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8MX-fz-B4b">
@@ -40,23 +40,63 @@
                             <constraint firstAttribute="trailing" secondItem="Nl8-NS-s1G" secondAttribute="trailing" constant="8" id="hyS-Ro-e1Q"/>
                         </constraints>
                     </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kmF-eg-J2g">
+                        <rect key="frame" x="0.0" y="131" width="145" height="1"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="9gh-pO-UDh"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZWu-SZ-QG4">
+                        <rect key="frame" x="0.0" y="0.0" width="145" height="1"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="9lb-bB-6Nd"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bdM-ro-AzI">
+                        <rect key="frame" x="0.0" y="1" width="1" height="130"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="1" id="2mn-YH-TLp"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kMp-CQ-jHg">
+                        <rect key="frame" x="144" y="0.0" width="1" height="132"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="1" id="4VB-NU-ybZ"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstItem="796-hX-ZQ5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="1Sf-gc-swR"/>
                 <constraint firstItem="8MX-fz-B4b" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="2zB-pD-ve9"/>
+                <constraint firstAttribute="trailing" secondItem="kmF-eg-J2g" secondAttribute="trailing" id="9HK-R3-KeP"/>
+                <constraint firstItem="kmF-eg-J2g" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="9XP-Re-h3r"/>
+                <constraint firstAttribute="bottom" secondItem="kMp-CQ-jHg" secondAttribute="bottom" id="AkC-VL-Brs"/>
+                <constraint firstItem="bdM-ro-AzI" firstAttribute="top" secondItem="ZWu-SZ-QG4" secondAttribute="bottom" id="FZM-8s-DUB"/>
                 <constraint firstItem="8MX-fz-B4b" firstAttribute="top" secondItem="796-hX-ZQ5" secondAttribute="bottom" id="HwQ-DI-r1E"/>
+                <constraint firstAttribute="bottom" secondItem="kmF-eg-J2g" secondAttribute="bottom" id="Jyo-Dr-PBf"/>
+                <constraint firstItem="kmF-eg-J2g" firstAttribute="top" secondItem="bdM-ro-AzI" secondAttribute="bottom" id="SKi-CY-YzN"/>
+                <constraint firstItem="ZWu-SZ-QG4" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Yiv-Sd-R8j"/>
+                <constraint firstItem="bdM-ro-AzI" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="bd0-W6-9dP"/>
                 <constraint firstItem="796-hX-ZQ5" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="dv2-y3-O4m"/>
+                <constraint firstItem="ZWu-SZ-QG4" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="fxP-pT-Ei9"/>
+                <constraint firstAttribute="trailing" secondItem="ZWu-SZ-QG4" secondAttribute="trailing" id="j39-1e-E8D"/>
+                <constraint firstAttribute="trailing" secondItem="kMp-CQ-jHg" secondAttribute="trailing" id="n7k-Ic-IKn"/>
                 <constraint firstAttribute="trailing" secondItem="8MX-fz-B4b" secondAttribute="trailing" id="q0x-mv-oaz"/>
                 <constraint firstAttribute="bottom" secondItem="8MX-fz-B4b" secondAttribute="bottom" id="qer-Dt-6Bg"/>
                 <constraint firstAttribute="trailing" secondItem="796-hX-ZQ5" secondAttribute="trailing" id="sWd-G1-EPM"/>
+                <constraint firstItem="kMp-CQ-jHg" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="x1U-ss-f0s"/>
             </constraints>
             <size key="customSize" width="145" height="132"/>
             <connections>
                 <outlet property="privateCustomImageView" destination="796-hX-ZQ5" id="psk-nO-dmL"/>
                 <outlet property="privateCustomName" destination="Nl8-NS-s1G" id="oXV-uv-o2a"/>
             </connections>
-            <point key="canvasLocation" x="-81" y="109"/>
+            <point key="canvasLocation" x="-14.5" y="109"/>
         </collectionViewCell>
     </objects>
     <resources>

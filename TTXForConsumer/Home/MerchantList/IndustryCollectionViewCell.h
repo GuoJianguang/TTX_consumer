@@ -38,7 +38,6 @@
 
 @property (nonatomic, strong)GoodsSort *goodsSortModel;
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *imagWidth;
 
 
 @end

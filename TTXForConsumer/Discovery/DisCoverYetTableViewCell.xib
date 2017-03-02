@@ -71,21 +71,61 @@
                                     <action selector="detailBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="MKn-CR-dCV"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LtT-Qt-304">
+                                <rect key="frame" x="0.0" y="0.0" width="292" height="1"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="E2v-2h-0Uh"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jgk-fr-xKU">
+                                <rect key="frame" x="0.0" y="87.5" width="292" height="1"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="HI2-8v-Spg"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RXP-An-h7I">
+                                <rect key="frame" x="0.0" y="1" width="1" height="86.5"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="1" id="qX3-WK-sZe"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="blu-Jf-nRr">
+                                <rect key="frame" x="291" y="1" width="1" height="86.5"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="1" id="Kxh-Sx-17s"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="rpE-E6-oIQ" secondAttribute="bottom" constant="20" id="1OC-PU-9iw"/>
                             <constraint firstItem="44K-f0-cbI" firstAttribute="top" secondItem="oqO-PT-aXl" secondAttribute="top" constant="11" id="2Lj-8N-veT"/>
+                            <constraint firstAttribute="trailing" secondItem="blu-Jf-nRr" secondAttribute="trailing" id="2nq-FA-U1i"/>
+                            <constraint firstItem="LtT-Qt-304" firstAttribute="top" secondItem="oqO-PT-aXl" secondAttribute="top" id="46P-er-Wdu"/>
                             <constraint firstItem="YxS-P5-IXw" firstAttribute="width" secondItem="oqO-PT-aXl" secondAttribute="width" multiplier="18/75" id="4Cz-tN-90R"/>
                             <constraint firstAttribute="trailing" secondItem="YxS-P5-IXw" secondAttribute="trailing" constant="11" id="52d-nW-uw5"/>
                             <constraint firstItem="YxS-P5-IXw" firstAttribute="leading" secondItem="rpE-E6-oIQ" secondAttribute="trailing" constant="8" id="5As-G7-d4V"/>
+                            <constraint firstItem="blu-Jf-nRr" firstAttribute="top" secondItem="oqO-PT-aXl" secondAttribute="top" constant="1" id="5eM-wR-6Zf"/>
+                            <constraint firstItem="RXP-An-h7I" firstAttribute="top" secondItem="LtT-Qt-304" secondAttribute="bottom" id="BCu-t7-z5W"/>
                             <constraint firstItem="rpE-E6-oIQ" firstAttribute="leading" secondItem="44K-f0-cbI" secondAttribute="trailing" constant="10" id="EPv-hR-VAa"/>
                             <constraint firstItem="RrN-XM-gOb" firstAttribute="top" secondItem="oqO-PT-aXl" secondAttribute="top" constant="11" id="Jrx-5M-rZ1"/>
+                            <constraint firstAttribute="bottom" secondItem="jgk-fr-xKU" secondAttribute="bottom" id="MQj-zL-bt9"/>
+                            <constraint firstItem="jgk-fr-xKU" firstAttribute="top" secondItem="RXP-An-h7I" secondAttribute="bottom" id="O9S-Ww-8qH"/>
+                            <constraint firstItem="jgk-fr-xKU" firstAttribute="leading" secondItem="oqO-PT-aXl" secondAttribute="leading" id="PBK-Aw-bsn"/>
+                            <constraint firstAttribute="trailing" secondItem="jgk-fr-xKU" secondAttribute="trailing" id="QhM-91-z8m"/>
                             <constraint firstItem="44K-f0-cbI" firstAttribute="leading" secondItem="oqO-PT-aXl" secondAttribute="leading" constant="10" id="YH0-Nl-yMI"/>
                             <constraint firstItem="YxS-P5-IXw" firstAttribute="centerY" secondItem="rpE-E6-oIQ" secondAttribute="centerY" id="cPT-16-Wba"/>
+                            <constraint firstItem="LtT-Qt-304" firstAttribute="leading" secondItem="oqO-PT-aXl" secondAttribute="leading" id="iUb-GH-dbk"/>
                             <constraint firstAttribute="trailing" secondItem="RrN-XM-gOb" secondAttribute="trailing" constant="10" id="k72-WQ-tko"/>
+                            <constraint firstAttribute="trailing" secondItem="LtT-Qt-304" secondAttribute="trailing" id="qbx-RJ-1hW"/>
+                            <constraint firstItem="RXP-An-h7I" firstAttribute="leading" secondItem="oqO-PT-aXl" secondAttribute="leading" id="rwA-qf-kxG"/>
                             <constraint firstItem="RrN-XM-gOb" firstAttribute="leading" secondItem="44K-f0-cbI" secondAttribute="trailing" constant="10" id="scB-1a-BK3"/>
                             <constraint firstAttribute="bottom" secondItem="44K-f0-cbI" secondAttribute="bottom" constant="10" id="u3v-e3-gjH"/>
+                            <constraint firstAttribute="bottom" secondItem="blu-Jf-nRr" secondAttribute="bottom" constant="1" id="wro-in-n3k"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -108,7 +148,7 @@
                 <outlet property="endViewHeight" destination="bnD-bI-Cq6" id="cnO-85-7v8"/>
                 <outlet property="nameLabel" destination="RrN-XM-gOb" id="89o-1g-rzH"/>
             </connections>
-            <point key="canvasLocation" x="281" y="51"/>
+            <point key="canvasLocation" x="246" y="-10"/>
         </tableViewCell>
     </objects>
     <resources>

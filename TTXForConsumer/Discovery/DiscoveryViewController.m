@@ -29,7 +29,6 @@
     self.naviBar.title = @"发现";
     self.naviBar.hiddenBackBtn = YES;
     self.firstLabel.textColor = self.secondLabel.textColor = MacoTitleColor;
-    [self getRequest];
     
 }
 
@@ -175,6 +174,13 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self getRequest];
+
 }
 
 /*

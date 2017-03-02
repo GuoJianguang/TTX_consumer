@@ -24,10 +24,45 @@
     // Do any additional setup after loading the view from its nib.
     self.naviBar.title = @"添客头条";
     self.tableView.backgroundColor = [UIColor clearColor];
-    [self.tableView reloadData];
+
+    __weak TopLineViewController *weak_self = self;
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [weak_self getActivityRequest];
+    }];
+
+    [self.tableView.mj_header beginRefreshing];
+    
     
 }
 
+#pragma mark - 接口请求
+- (void)getActivityRequest
+{
+    [HttpClient POST:@"shop/index/activity" parameters:nil success:^(NSURLSessionDataTask *operation, id jsonObject) {
+        [self.tableView.mj_header endRefreshing];
+        if (IsRequestTrue) {
+            [self.dataSouceArray removeAllObjects];
+            NSArray *lineListArray = jsonObject[@"data"][@"topLineList"];
+            for (NSDictionary *dic in lineListArray) {
+                [self.dataSouceArray addObject:[TopLineModel modelWithDic:dic]];
+            }
+            [self.tableView reloadData];
+        }
+        
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
+        [self.tableView.mj_header endRefreshing];
+
+    }];
+    
+}
+
+- (NSMutableArray *)dataSouceArray
+{
+    if (!_dataSouceArray) {
+        _dataSouceArray = [NSMutableArray array];
+    }
+    return _dataSouceArray;
+}
 
 #pragma mark - UITableView
 
@@ -78,7 +113,7 @@
         {
             BaseHtmlViewController *htmlVC = [[BaseHtmlViewController alloc]init];
             htmlVC.htmlUrl = model.jumpValue;
-            htmlVC.htmlTitle = @"广告";
+            htmlVC.htmlTitle = model.name;
             [self.navigationController pushViewController:htmlVC animated:YES];
         }
             break;

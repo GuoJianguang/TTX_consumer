@@ -26,6 +26,7 @@
 #import "BaiduMobAdSDK/BaiduMobAdSetting.h"
 
 
+
 @interface MineTableViewCell()<BaiduMobAdViewDelegate>
 
 {

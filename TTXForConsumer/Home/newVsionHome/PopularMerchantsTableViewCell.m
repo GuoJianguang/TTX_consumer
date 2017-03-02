@@ -28,10 +28,6 @@
 
 @interface PopularMerchantsTableViewCell()<UICollectionViewDataSource,UICollectionViewDelegate>
 
-@property (nonatomic, strong)NSMutableArray *dataSouceArray;
-
-
-@property (nonatomic, strong)NSMutableArray *privteDataSouceArray;
 
 @end
 
@@ -55,27 +51,64 @@
 - (void)setIsAlreadyRefrefsh:(BOOL)isAlreadyRefrefsh
 {
     _isAlreadyRefrefsh = isAlreadyRefrefsh;
-    [self getPopularMRequest];
+//    [self getPopularMRequest];
     //私人定制接口
-    [self getRequest];
+//    [self getRequest];
     
 }
 
 
-- (NSMutableArray *)dataSouceArray
+//- (NSMutableArray *)dataSouceArray
+//{
+//    if (!_dataSouceArray) {
+//        _dataSouceArray = [NSMutableArray array];
+//    }
+//    return _dataSouceArray;
+//}
+
+- (void)setDataSouceArray:(NSMutableArray *)dataSouceArray
 {
-    if (!_dataSouceArray) {
-        _dataSouceArray = [NSMutableArray array];
+    
+ 
+    _dataSouceArray = dataSouceArray;
+    if (self.dataSouceArray.count >0) {
+        self.label1st.text = ((PopularMerModel *)self.dataSouceArray[0]).mchName;
+        [self.button1st sd_setBackgroundImageWithURL:[NSURL URLWithString:((PopularMerModel *)self.dataSouceArray[0]).pic] forState:UIControlStateNormal placeholderImage:LoadingErrorImage];
+        
     }
-    return _dataSouceArray;
+    if (self.dataSouceArray.count >1) {
+        self.label2st.text = ((PopularMerModel *)self.dataSouceArray[1]).mchName;
+        [self.button2st sd_setBackgroundImageWithURL:[NSURL URLWithString:((PopularMerModel *)self.dataSouceArray[1]).pic] forState:UIControlStateNormal placeholderImage:LoadingErrorImage];
+        
+    }
+    if (self.dataSouceArray.count >2) {
+        self.label3st.text = ((PopularMerModel *)self.dataSouceArray[2]).mchName;
+        [self.button3st sd_setBackgroundImageWithURL:[NSURL URLWithString:((PopularMerModel *)self.dataSouceArray[2]).pic] forState:UIControlStateNormal placeholderImage:LoadingErrorImage];
+        
+    }
+
 }
 
-- (NSMutableArray *)privteDataSouceArray
+//- (NSMutableArray *)privteDataSouceArray
+//{
+//    if (!_privteDataSouceArray) {
+//        _privteDataSouceArray = [NSMutableArray array];
+//    }
+//    return _privteDataSouceArray;
+//}
+
+- (void)setPrivteDataSouceArray:(NSMutableArray *)privteDataSouceArray
 {
-    if (!_privteDataSouceArray) {
-        _privteDataSouceArray = [NSMutableArray array];
+    _privteDataSouceArray = privteDataSouceArray;
+    if (_privteDataSouceArray.count > 0) {
+        self.viewHeight.constant = TWitdh*(36/75.);
+        self.personalView.hidden = NO;
+    }else{
+        self.personalView.hidden = YES;
+        self.viewHeight.constant = 0;
     }
-    return _privteDataSouceArray;
+    [self.collectionView reloadData];
+
 }
 
 - (void)getPopularMRequest{
@@ -114,7 +147,10 @@
 
 
 - (void)getRequest{
-    [HttpClient POST:@"find/mch/list" parameters:nil success:^(NSURLSessionDataTask *operation, id jsonObject) {
+    
+    NSDictionary *parms = @{@"longitude":NullToNumber(@([TTXUserInfo shareUserInfos].locationCoordinate.longitude)),
+                            @"latitude":NullToNumber(@([TTXUserInfo shareUserInfos].locationCoordinate.latitude))};
+    [HttpClient POST:@"user/personal" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
         if (IsRequestTrue) {
             [self.privteDataSouceArray removeAllObjects];
             NSArray *array = jsonObject[@"data"];

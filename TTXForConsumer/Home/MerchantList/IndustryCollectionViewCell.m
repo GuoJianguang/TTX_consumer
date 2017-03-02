@@ -41,11 +41,10 @@
 //    self.backgroundColor = [UIColor clearColor];
 //    self.contentView.backgroundColor = [UIColor colorFromHexString:@"#cfdbe4"];
 //    self.item_view.backgroundColor = [UIColor colorWithRed:231/255. green:230/255. blue:221/255. alpha:1.];
-    
+    [super awakeFromNib];
     self.name_label.textColor = MacoTitleColor;
     self.industry_image.layer.masksToBounds = YES;
     
-    self.imagWidth.constant = TWitdh*(80/750.);
     
 }
 

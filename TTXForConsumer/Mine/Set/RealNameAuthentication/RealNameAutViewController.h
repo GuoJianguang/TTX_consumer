@@ -37,7 +37,18 @@
 
 - (IBAction)ManualCerBtn:(UIButton *)sender;
 
+@property (weak, nonatomic) IBOutlet UIButton *frontBtn;
 
+- (IBAction)frontBtn:(UIButton *)sender;
+
+
+@property (weak, nonatomic) IBOutlet UIButton *backBtn;
+
+- (IBAction)backBtn:(UIButton *)sender;
+
+@property (weak, nonatomic) IBOutlet UILabel *uploadimageLabel;
+@property (weak, nonatomic) IBOutlet UILabel *frontLabel;
+@property (weak, nonatomic) IBOutlet UILabel *backLabel;
 
 
 

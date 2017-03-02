@@ -25,9 +25,8 @@
 #import "HomeIndustryTableViewCell.h"
 #import "PopularMerchantsTableViewCell.h"
 #import "MerchantTableViewCell.h"
-
-
-
+#import "PopularMerchantsTableViewCell.h"
+#import "SecondActivityTableViewCell.h"
 
 @interface HomeViewController()<CityListViewDelegate,UITableViewDelegate,UITableViewDataSource,UITabBarControllerDelegate,UITextFieldDelegate,MerchantSearchViewDelegate>
 //定位城市
@@ -43,8 +42,10 @@
 
 @property (nonatomic, assign)BOOL isHasActiviy;
 
-
 @property (nonatomic, assign)BOOL isAlreadyRefrefsh;
+
+@property (nonatomic, strong)NSMutableArray *privteDataSouceArray;
+@property (nonatomic, strong)NSMutableArray *popularDataSouceArray;
 
 @end
 
@@ -109,6 +110,8 @@
         [((AppDelegate *)[UIApplication sharedApplication].delegate).customSplashView removeFromSuperview];
     }
 }
+
+#pragma mark -懒加载
 - (MerchantSearchViewController *)searchVC
 {
     if (!_searchVC) {
@@ -118,6 +121,23 @@
     }
     return _searchVC;
 }
+
+- (NSMutableArray *)privteDataSouceArray
+{
+    if (!_privteDataSouceArray) {
+        _privteDataSouceArray = [NSMutableArray array];
+    }
+    return _privteDataSouceArray;
+}
+
+- (NSMutableArray *)popularDataSouceArray
+{
+    if (!_popularDataSouceArray) {
+        _popularDataSouceArray = [NSMutableArray array];
+    }
+    return _popularDataSouceArray;
+}
+
 
 #pragma mark - 请求是否有第5个活动
 - (void)getActicityRequest
@@ -283,7 +303,7 @@
     }
     return _highQualityArray;
 }
-//获取优质商家的网络请求
+#pragma mark - 获取优质商家的网络请求
 - (void)detailReqest:(BOOL)isHeader andCity:(NSString *)city
 {
     NSString *searchCity = [self.currentCity substringToIndex:2];
@@ -312,7 +332,7 @@
             [self.tableView hiddenNoDataSouce];
 //            [self.tableView judgeIsHaveDataSouce:self.highQualityArray];
             //判断数据源有无数据
-            [self.tableView reloadData];
+            [self getPopularMRequest];
         }
         
     } failure:^(NSURLSessionDataTask *operation, NSError *error) {
@@ -325,6 +345,46 @@
         }
         [self.tableView showRereshBtnwithALerString:@"网络连接不好"];
     }];
+}
+
+#pragma mark - 请求人气商家，私人定制接口
+
+- (void)getPersonalRequest{
+    
+    NSDictionary *parms = @{@"longitude":NullToNumber(@([TTXUserInfo shareUserInfos].locationCoordinate.longitude)),
+                            @"latitude":NullToNumber(@([TTXUserInfo shareUserInfos].locationCoordinate.latitude))};
+    [HttpClient POST:@"user/personal" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
+        if (IsRequestTrue) {
+            [self.privteDataSouceArray removeAllObjects];
+            NSArray *array = jsonObject[@"data"];
+            for (NSDictionary *dic in array) {
+                [self.privteDataSouceArray addObject:[SecondACtivityModel modelWithDic:dic]];
+            }
+            [self.tableView reloadData];
+        }
+        
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
+        
+    }];
+}
+
+- (void)getPopularMRequest{
+    NSDictionary *parms = @{@"city":[TTXUserInfo shareUserInfos].locationCity};
+    [HttpClient POST:@"mch/hotMchs" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
+        if (IsRequestTrue) {
+            [self.popularDataSouceArray removeAllObjects];
+            for (NSDictionary *dic in jsonObject[@"data"]) {
+                PopularMerModel *model = [PopularMerModel modelWithDic:dic];
+                [self.popularDataSouceArray addObject:model];
+            }
+            
+            [self getPersonalRequest];
+        }
+        
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
+        
+    }];
+    
 }
 
 
@@ -350,6 +410,8 @@
         if (!cell) {
             cell = [PopularMerchantsTableViewCell newCell];
         }
+        cell.dataSouceArray = self.popularDataSouceArray;
+        cell.privteDataSouceArray = self.privteDataSouceArray;
         cell.isAlreadyRefrefsh = self.isAlreadyRefrefsh;
         return cell;
     }
@@ -376,7 +438,11 @@
         CGFloat buttonHeight = buttonWidth/widthAndHeightRatio;/**<button的高度*/
         return buttonHeight * 2 + intervalY*2 + 18;
     }else if (indexPath.row == 2){
-        return TWitdh*(996/750.);
+        if (self.privteDataSouceArray.count > 0) {
+            return TWitdh*(996/750.);
+        }
+        return TWitdh*(636/750.);
+
     }
     return TWitdh*(220/750.);
 }

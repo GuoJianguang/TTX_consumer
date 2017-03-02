@@ -91,7 +91,7 @@
                     </constraints>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="p8N-Vj-zu6">
-                    <rect key="frame" x="0.0" y="79" width="375" height="588"/>
+                    <rect key="frame" x="0.0" y="74" width="375" height="593"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="uhi-uK-aH1">
                         <size key="itemSize" width="50" height="50"/>
@@ -111,7 +111,7 @@
                 <constraint firstAttribute="trailing" secondItem="p8N-Vj-zu6" secondAttribute="trailing" id="DFT-T0-VCE"/>
                 <constraint firstItem="Gc3-Tp-JxP" firstAttribute="leading" secondItem="etP-Nh-VyT" secondAttribute="leading" id="YIa-v5-Nln"/>
                 <constraint firstItem="Gc3-Tp-JxP" firstAttribute="top" secondItem="etP-Nh-VyT" secondAttribute="top" id="ccL-O2-pcc"/>
-                <constraint firstItem="p8N-Vj-zu6" firstAttribute="top" secondItem="Gc3-Tp-JxP" secondAttribute="bottom" constant="15" id="kzK-dG-Ft5"/>
+                <constraint firstItem="p8N-Vj-zu6" firstAttribute="top" secondItem="Gc3-Tp-JxP" secondAttribute="bottom" constant="10" id="kzK-dG-Ft5"/>
                 <constraint firstAttribute="bottom" secondItem="p8N-Vj-zu6" secondAttribute="bottom" id="tlD-qU-Nxy"/>
                 <constraint firstItem="p8N-Vj-zu6" firstAttribute="leading" secondItem="etP-Nh-VyT" secondAttribute="leading" id="xC2-BO-fGb"/>
             </constraints>

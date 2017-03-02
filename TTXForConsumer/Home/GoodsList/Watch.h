@@ -111,13 +111,17 @@
  */
 
 @property (nonatomic, strong)NSString *endTime;
+
+@property (nonatomic, strong)NSString *nowTime;
 /**
  * 原价
  */
 
+
 @property (nonatomic, strong)NSString *originalPrice;
 
-
+//0普通商品  1分销商品 2限时折扣',
+@property (nonatomic, strong)NSString *goods_type;
 
 
 @end

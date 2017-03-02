@@ -10,6 +10,7 @@
 #import "GoodsListTableViewCell.h"
 #import "GoodsDetailNewViewController.h"
 #import "GoodsListViewController.h"
+#import "GoodsIndustryTableViewCell.h"
 
 @interface MchchantAllgoodsViewController ()<UITableViewDelegate,UITableViewDataSource,BasenavigationDelegate>
 @property (nonatomic, assign)NSInteger page;
@@ -53,8 +54,25 @@
 
 - (void)detailBtnClick
 {
+    
+    
     GoodsListViewController *goodslistVC = [[GoodsListViewController alloc]init];
-    [self.navigationController pushViewController:goodslistVC animated:YES];
+    
+    [HttpClient GET:@"shop/goodsType/get" parameters:nil success:^(NSURLSessionDataTask *operation, id jsonObject) {
+        if (IsRequestTrue) {
+            NSArray *array = jsonObject[@"data"];
+            NSMutableArray *indrstyarray =[NSMutableArray array];
+            for (NSDictionary *dic in array) {
+                GoodsIndrstryModel *model = [GoodsIndrstryModel modelWithDic:dic];
+                [indrstyarray addObject:model];
+            }
+            goodslistVC.sortDataSouceArray = indrstyarray;
+            [self.navigationController pushViewController:goodslistVC animated:YES];
+        }
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
+        
+    }];
+
 }
 
 

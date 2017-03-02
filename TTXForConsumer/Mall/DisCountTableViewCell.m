@@ -49,7 +49,19 @@
     self.yetLabel.text = [NSString stringWithFormat:@"已抢%@件",_dataModel.salenum];
     NSDictionary *attribtDic = @{NSStrikethroughStyleAttributeName: [NSNumber numberWithInteger:NSUnderlineStyleSingle]};
     NSMutableAttributedString *attribtStr = [[NSMutableAttributedString alloc]initWithString:[NSString stringWithFormat:@"¥ %@",_dataModel.originalPrice] attributes:attribtDic];
-    self.oldPrice.attributedText = attribtStr ;
+    self.oldPrice.attributedText = attribtStr;
+    
+    NSUInteger endtime = [_dataModel.endTime longLongValue];
+    NSUInteger nowTime = [_dataModel.nowTime longLongValue];
+    NSUInteger startTime = [_dataModel.startTime longLongValue];
+    if (nowTime > endtime) {
+        [self.butBtn setTitle:@"已结束" forState:UIControlStateNormal];
+    }else if (nowTime < endtime && nowTime < startTime){
+        [self.butBtn setTitle:@"未开始" forState:UIControlStateNormal];
+    }else{
+        [self.butBtn setTitle:@"马上抢" forState:UIControlStateNormal];
+
+    }
 
 }
 

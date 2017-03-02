@@ -52,4 +52,15 @@
 @property (weak, nonatomic) IBOutlet UILabel *shirenLabel;
 
 
+@property (nonatomic, strong)NSMutableArray *privteDataSouceArray;
+
+
+@property (nonatomic, strong)NSMutableArray *dataSouceArray;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *viewHeight;
+
+@property (weak, nonatomic) IBOutlet UIView *personalView;
+
+
+
 @end

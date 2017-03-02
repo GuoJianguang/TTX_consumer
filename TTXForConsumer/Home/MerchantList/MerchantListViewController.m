@@ -310,7 +310,6 @@ minimumLineSpacingForSectionAtIndex:(NSInteger)section
     [self.searchVC.view removeFromSuperview];
 }
 
-
 - (void)sureSearch:(NSString *)keyWord city:(NSString *)cityName
 {
     [self.searchVC.view removeFromSuperview];

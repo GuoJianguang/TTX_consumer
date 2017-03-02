@@ -161,15 +161,20 @@
         CGFloat buttonHeight = buttonWidth/widthAndHeightRatio;/**<button的高度*/
         return buttonHeight * 2 + intervalY*2 + 18;
     }else if (indexPath.row == 1){
-        if (self.flagShipDatasouceArray.count > 3) {
-            return TWitdh*(1060./750.);
-        }else{
-            if (TWitdh > 320) {
-                return TWitdh*(876./750.);
-            }
-            return TWitdh*(890./750.);
-
+//        if (self.flagShipDatasouceArray.count > 3) {
+//            return TWitdh*(1060./750.);
+//        }else{
+//            if (TWitdh > 320) {
+//                return TWitdh*(876./750.);
+//            }
+//            return TWitdh*(890./750.);
+//
+//        }
+        
+        if (TWitdh > 320) {
+            return TWitdh*(876./750.);
         }
+        return TWitdh*(890./750.);
         
     }
     return THeight*(205/1334.);

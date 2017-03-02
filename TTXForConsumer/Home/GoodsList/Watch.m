@@ -52,8 +52,9 @@
     
     model.startTime = NullToNumber(dic[@"startTime"]);
     model.endTime = NullToNumber(dic[@"endTime"]);
+    model.nowTime = NullToNumber(dic[@"nowTime"]);
     model.originalPrice = NullToNumber(dic[@"originalPrice"]);
-    
+    model.goods_type = NullToNumber(dic[@"goodsType"]);
     
     return model;
     

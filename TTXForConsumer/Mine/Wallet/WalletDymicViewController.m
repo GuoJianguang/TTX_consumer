@@ -313,9 +313,9 @@ minimumLineSpacingForSectionAtIndex:(NSInteger)section
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (TWitdh == 320) {
-        return TWitdh* (140/750.);
+        return TWitdh* (150/750.);
     }
-    return TWitdh* (128/750.);
+    return TWitdh* (140/750.);
 }
 
 

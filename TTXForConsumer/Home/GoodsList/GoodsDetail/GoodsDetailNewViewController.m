@@ -64,11 +64,9 @@
         [self.scrollView addSubview:disCountView];
         [self setDiscontView:disCountView];
     }
-    [self.scrollView addSubview:self.detailView];
     [self.view bringSubviewToFront:self.naviBar];
     //获取商品详情
     self.tempTime = 0;
-    [self getGoodsDetail:self.goodsID];
     //添加返回按钮
     self.backBtn = [[UIButton alloc]initWithFrame:CGRectMake(12, 22, 40, 40)];
     [self.view addSubview:self.backBtn];
@@ -83,6 +81,14 @@
     self.buyBtn.layer.masksToBounds = YES;
     
     self.naviGationHeight = 0;
+    
+    [self.scrollView noDataSouce];
+    
+    self.scrollView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self getGoodsDetail:self.goodsID];
+    }];
+
+    [self.scrollView.mj_header beginRefreshing];
 }
 
 
@@ -157,10 +163,12 @@
     NSDictionary *prams = @{@"id":goodsCode};
     [SVProgressHUD showWithStatus:@"正在加载..." maskType:SVProgressHUDMaskTypeGradient];
     [HttpClient GET:@"shop/goodsInfo/get" parameters:prams success:^(NSURLSessionDataTask *operation, id jsonObject) {
+        [self.scrollView.mj_header endRefreshing];
         [SVProgressHUD dismiss];
         if (IsRequestTrue) {
+            [self.scrollView addSubview:self.detailView];
             self.dataModel = [Watch modelWithDic:jsonObject[@"data"]];
-            CGFloat detailViewHeight = [self cellHeight:self.dataModel.name] + 125 + 15;
+            CGFloat detailViewHeight = [self cellHeight:self.dataModel.name] + 123;
             self.detailView.dataModel = self.dataModel;
             self.pageControl.numberOfPages =  self.dataModel.slideImage.count;
             self.pageControl.currentPage = 0;
@@ -181,13 +189,22 @@
                 NSUInteger endtime = [NullToNumber(jsonObject[@"data"][@"endTime"]) longLongValue];
                 NSTimeInterval endinterval= endtime/ 1000.0;
                 NSUInteger nowTime = [NullToNumber(jsonObject[@"data"][@"nowTime"]) longLongValue];
+                NSUInteger startTime = [NullToNumber(jsonObject[@"data"][@"startTime"]) longLongValue];
+
                 NSTimeInterval nowinterval= nowTime/ 1000.0;
                 NSDate *enddate = [NSDate dateWithTimeIntervalSince1970:endinterval];
                 NSDate *nowDate = [NSDate dateWithTimeIntervalSince1970:nowinterval];
                 NSDateFormatter *objDateformat = [[NSDateFormatter alloc] init];
                 [objDateformat setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-                
                 self.tempTime =[enddate timeIntervalSinceDate:nowDate];
+                if (startTime > nowTime) {
+                    self.disCountLabel.text = self.showDisCountTimeLabel.text = @"活动未开始";
+                    [self.buyBtn setBackgroundColor:MacoIntrodouceColor];
+                    self.buyBtn.enabled = NO;
+                    [self.buyBtn setTitle:@"活动未开始" forState:UIControlStateNormal];
+                    self.buyBtn.titleLabel.adjustsFontSizeToFitWidth = YES;
+                    return;
+                }
                 [self.countDown countDownWithPER_SECBlock:^{
                     [weak_self getNowTimeWithStringEndTime];
                     self.tempTime --;
@@ -196,6 +213,7 @@
             }
         }
     } failure:^(NSURLSessionDataTask *operation, NSError *error) {
+        [self.scrollView.mj_header endRefreshing];
         [SVProgressHUD dismiss];
     }];
 }
@@ -501,19 +519,18 @@
     if (hours<=0&&minutes<=0&&seconds<=0) {
         [self.countDown destoryTimer];
         self.disCountLabel.text = @"活动已结束";
-        
         [self.buyBtn setBackgroundColor:MacoIntrodouceColor];
         self.buyBtn.enabled = NO;
         [self.buyBtn setTitle:@"活动结束" forState:UIControlStateNormal];
         self.buyBtn.titleLabel.adjustsFontSizeToFitWidth = YES;
         self.showDisCountTimeLabel.text = @"活动已结束";
-        
         return;
     }
     self.disCountLabel.text = @"限时抢购中";
 
     if (days) {
         self.showDisCountTimeLabel.text = [NSString stringWithFormat:@"还剩%@天%@小时%@分%@秒结束", dayStr,hoursStr, minutesStr,secondsStr];
+        return;
     }
     self.showDisCountTimeLabel.text = [NSString stringWithFormat:@"还剩%@小时%@分%@秒结束",hoursStr , minutesStr,secondsStr];
 }

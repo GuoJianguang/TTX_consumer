@@ -28,7 +28,7 @@
 //
 
     if (self.isHandmoveAu) {
-        [self.navigationController popToViewController:self.navigationController.viewControllers[self.navigationController.viewControllers.count - 4] animated:YES];
+        [self.navigationController popToViewController:self.navigationController.viewControllers[self.navigationController.viewControllers.count - 3] animated:YES];
         return;
     }
     [self.navigationController popViewControllerAnimated:YES];

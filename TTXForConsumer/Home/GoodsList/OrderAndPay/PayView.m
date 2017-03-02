@@ -10,9 +10,14 @@
 //#import "WaitPayViewController.h"
 #import "WeXinPayObject.h"
 
+@interface PayView()
 
+@property (nonatomic, assign)double xiaofeiJinMoney;
+
+@end
 
 @implementation PayView
+
 
 
 - (instancetype)init
@@ -94,17 +99,6 @@
     
 }
 
-//- (NSMutableDictionary *)mallOrderParms
-//{
-//    if (!_mallOrderParms) {
-//        _mallOrderParms = [NSMutableDictionary dictionary];
-//        
-//        double xiaofeiJin = [[TTXUserInfo shareUserInfos].consumeBalance doubleValue];
-//        double payMoney = NullToNumber(_mallOrderParms)
-//    }
-//    return _mallOrderParms;
-//}
-
 
 - (void)setMallOrderParms:(NSMutableDictionary *)mallOrderParms
 {
@@ -126,12 +120,14 @@
     
     if (xiaofeiJin >= payMoney) {
         self.yueLabel.text = [NSString stringWithFormat:@"余额支付(消费金%.2f元)",payMoney];
+        self.xiaofeiJinMoney = xiaofeiJin - payMoney;
     }else if (payMoney > xiaofeiJin && payMoney - xiaofeiJin < yuE && xiaofeiJin !=0){
         self.yueLabel.text = [NSString stringWithFormat:@"余额支付(消费金%.2f元+余额%.2f元)",xiaofeiJin,(payMoney - xiaofeiJin)];
+        self.xiaofeiJinMoney = 0;
     }else if(xiaofeiJin==0 && payMoney < yuE){
         self.yueLabel.text = [NSString stringWithFormat:@"余额支付(余额%.2f元)",payMoney];
+        self.xiaofeiJinMoney = 0;
     }else if(payMoney > yuE + xiaofeiJin){
-        
         self.yueLabel.text = [NSString stringWithFormat:@"余额和消费金额不足，请用微信支付"];
         self.password_view.hidden = YES;
 
@@ -180,6 +176,7 @@
             sender.enabled = YES;
             if (IsRequestTrue) {
                 if ([self.delegate respondsToSelector:@selector(paysuccess:)]) {
+                    [TTXUserInfo shareUserInfos].consumeBalance = [NSString stringWithFormat:@"%.2f",self.xiaofeiJinMoney];
                     [self.delegate paysuccess:@"余额支付"];
                 }
             }
@@ -211,6 +208,7 @@
                     }];
                 }
                 if ([self.delegate respondsToSelector:@selector(paysuccess:)]) {
+                    [TTXUserInfo shareUserInfos].consumeBalance = [NSString stringWithFormat:@"%.2f",self.xiaofeiJinMoney];
                     [self.delegate paysuccess:@"余额支付"];
                 }
             }else if([NullToNumber(jsonObject[@"code"]) isEqualToString:@"-1"]){
@@ -223,6 +221,7 @@
             }else if([NullToNumber(jsonObject[@"code"]) isEqualToString:@"-2"]){
                 [self removeFromSuperview];
                 if ([self.delegate respondsToSelector:@selector(paysuccess:)]) {
+                    [TTXUserInfo shareUserInfos].consumeBalance = [NSString stringWithFormat:@"%.2f",self.xiaofeiJinMoney];
                     [self.delegate paysuccess:@"余额支付"];
                 }
             }
@@ -236,6 +235,7 @@
             sender.enabled = YES;
             if (IsRequestTrue) {
                 if ([self.delegate respondsToSelector:@selector(paysuccess:)]) {
+                    [TTXUserInfo shareUserInfos].consumeBalance = [NSString stringWithFormat:@"%.2f",self.xiaofeiJinMoney];
                     [self.delegate paysuccess:@"余额支付"];
                 }
             }

@@ -17,6 +17,7 @@
     model.fanxianId = NullToSpace(dic[@"id"]);
     model.tranTime = NullToSpace(dic[@"tranTime"]);
     model.amount = NullToNumber(dic[@"amount"]);
+    model.descript = NullToSpace(dic[@"description"]);
     return model;
 }
 
@@ -136,8 +137,10 @@
     _fanxianModel = fanxianModel;
     self.name.text = @"平台让利回馈";
     self.typeImage.image = [UIImage imageNamed:@"icon_mine_platform_return"];
-    self.money.text = [NSString stringWithFormat:@"%.2f",[_fanxianModel.amount doubleValue]] ;
+//    self.money.text = [NSString stringWithFormat:@"%.2f",[_fanxianModel.amount doubleValue]] ;
+    self.money.text = _fanxianModel.descript;
     self.time.text = _fanxianModel.tranTime;
+    
     
 }
 

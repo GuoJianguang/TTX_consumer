@@ -62,7 +62,8 @@
 
 #pragma mark - 拨打电话
 - (IBAction)phoneBtn:(UIButton *)sender {
-    
+    sender.enabled = NO;
+    [self performSelector:@selector(sendCallBtn) withObject:nil afterDelay:4.5];
     if ([self.dataModel.phone containsString:@","]) {
         NSArray *arry =   [self.dataModel.phone componentsSeparatedByString:@","];
         
@@ -71,6 +72,7 @@
             [sheet addButtonWithTitle:arry[i]];
         }
         [sheet showInView:self.viewController.view];
+
     }else{
         //只有一个电话号码
         NSMutableString * str=[[NSMutableString alloc] initWithFormat:@"tel:%@",self.dataModel.phone];
@@ -79,6 +81,11 @@
         [self.viewController.view addSubview:callWebview];
     }
 }
+
+- (void)sendCallBtn{
+    self.phoneBtn.enabled = YES;
+}
+
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {

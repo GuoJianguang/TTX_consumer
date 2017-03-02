@@ -81,6 +81,10 @@
         [self.viewController presentViewController:navc animated:YES completion:NULL];
         return;
     }
+    if ([self gotRealNameRu:@"请先进行实名认证"]) {
+        return;
+    }
+    
     sender.enabled = NO;
     NSDictionary *prams = @{@"token":[TTXUserInfo shareUserInfos].token,
                             @"id":NullToSpace(self.detailId),
@@ -125,4 +129,28 @@
         }
     }];
 }
+
+#pragma mark - 去进行实名认证
+- (BOOL)gotRealNameRu:(NSString *)alerTitle
+{
+    if (![TTXUserInfo shareUserInfos].identityFlag) {
+        UIAlertController *alertcontroller = [UIAlertController alertControllerWithTitle:@"重要提示" message:alerTitle preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+            
+        }];
+        
+        UIAlertAction *otherAction = [UIAlertAction actionWithTitle:@"去认证" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            //去进行实名认证
+            RealNameAutViewController *realNVC = [[RealNameAutViewController alloc]init];
+            realNVC.isYetAut = NO;
+            [self.viewController.navigationController pushViewController:realNVC animated:YES];
+        }];
+        [alertcontroller addAction:cancelAction];
+        [alertcontroller addAction:otherAction];
+        [self.viewController presentViewController:alertcontroller animated:YES completion:NULL];
+        return YES;
+    }
+    return NO;
+}
+
 @end

@@ -26,6 +26,7 @@
  */
 @property (nonatomic,copy)NSString *amount;
 
+@property (nonatomic, copy)NSString *descript;
 
 @end
 

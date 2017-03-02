@@ -17,7 +17,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qUd-eu-x6S">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="47.5"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_seller_call" translatesAutoresizingMaskIntoConstraints="NO" id="5zA-uR-zNE">
                             <rect key="frame" x="15" y="14" width="20" height="20"/>
@@ -33,7 +33,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Oz-99-Klo">
-                            <rect key="frame" x="15" y="47" width="345" height="1"/>
+                            <rect key="frame" x="15" y="46.5" width="345" height="1"/>
                             <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="tcn-uM-1Aq"/>
@@ -47,7 +47,7 @@
                             </constraints>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XIE-3x-GRC">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="47.5"/>
                             <connections>
                                 <action selector="phoneBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="v0t-La-a9s"/>
                             </connections>
@@ -73,37 +73,37 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d5b-Wa-A6g">
-                    <rect key="frame" x="0.0" y="48" width="375" height="47"/>
+                    <rect key="frame" x="0.0" y="47.5" width="375" height="47.5"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_seller_location_black" translatesAutoresizingMaskIntoConstraints="NO" id="c7D-gE-zS5">
-                            <rect key="frame" x="15" y="14" width="20" height="20"/>
+                            <rect key="frame" x="15" y="14.5" width="20" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="7rM-9G-neP"/>
                                 <constraint firstAttribute="width" constant="20" id="yuV-WF-hIT"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HRw-nY-JcY">
-                            <rect key="frame" x="43" y="16" width="284" height="16"/>
+                            <rect key="frame" x="43" y="16.5" width="284" height="16"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SvB-ph-bzI">
-                            <rect key="frame" x="0.0" y="46" width="375" height="1"/>
+                            <rect key="frame" x="0.0" y="46.5" width="375" height="1"/>
                             <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="3RK-s6-8ZG"/>
                             </constraints>
                         </view>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_enter" translatesAutoresizingMaskIntoConstraints="NO" id="CcW-tb-hJc">
-                            <rect key="frame" x="335" y="9" width="30" height="30"/>
+                            <rect key="frame" x="335" y="9.5" width="30" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="PMi-lw-1BC"/>
                                 <constraint firstAttribute="width" constant="30" id="aDf-A7-LEH"/>
                             </constraints>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kcA-YQ-cmu">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="47"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="47.5"/>
                             <connections>
                                 <action selector="address:" destination="iN0-l3-epB" eventType="touchUpInside" id="a7q-N9-zXQ"/>
                             </connections>
@@ -187,7 +187,7 @@
                 <outlet property="phoneBtn" destination="XIE-3x-GRC" id="Ooc-Qp-LMt"/>
                 <outlet property="phoneNum" destination="FAe-D8-Il4" id="EPC-lp-o7B"/>
             </connections>
-            <point key="canvasLocation" x="-98" y="135"/>
+            <point key="canvasLocation" x="33" y="139"/>
         </view>
     </objects>
     <resources>

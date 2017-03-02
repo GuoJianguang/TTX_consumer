@@ -58,11 +58,13 @@
     }
     [_flagShipArray removeAllObjects];
     [_flagShipArray addObjectsFromArray:flagShipArray];
-    if (_flagShipArray.count > 3) {
-        self.flagShipHeight.constant = TWitdh*(492/750.);
-    }else{
-        self.flagShipHeight.constant = TWitdh*(310/750.);
-    }
+//    if (_flagShipArray.count > 3) {
+//        self.flagShipHeight.constant = TWitdh*(492/750.);
+//    }else{
+//        self.flagShipHeight.constant = TWitdh*(310/750.);
+//    }
+    self.flagShipHeight.constant = TWitdh*(310/750.);
+
     [self.collectionView reloadData];
 }
 
@@ -199,12 +201,12 @@
 //    }else{
 //        self.flagShipHeight.constant = TWitdh*(310/750.);
 //    }
+    return CGSizeMake((TWitdh- 16)/3., TWitdh*(310/750.)-(TWitdh *(8/75.)));
 
-    if (_flagShipArray.count > 3) {
-        return CGSizeMake((TWitdh- 16)/3., (TWitdh*(485/750.)-(TWitdh *(8/75.)))/2.);
-    }else{
-        return CGSizeMake((TWitdh- 16)/3., TWitdh*(310/750.)-(TWitdh *(8/75.)));
-    }
+//    if (_flagShipArray.count > 3) {
+//        return CGSizeMake((TWitdh- 16)/3., (TWitdh*(485/750.)-(TWitdh *(8/75.)))/2.);
+//    }else{
+//    }
 }
 
 

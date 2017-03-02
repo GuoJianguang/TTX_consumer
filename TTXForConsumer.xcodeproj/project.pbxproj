@@ -342,6 +342,8 @@
 		BC26C7E91E5D731700CC8100 /* DiscoverSecondActivityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC26C7E71E5D731700CC8100 /* DiscoverSecondActivityViewController.xib */; };
 		BC26C7ED1E5D73C000CC8100 /* SecondActivityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC26C7EB1E5D73C000CC8100 /* SecondActivityTableViewCell.m */; };
 		BC26C7EE1E5D73C000CC8100 /* SecondActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC26C7EC1E5D73C000CC8100 /* SecondActivityTableViewCell.xib */; };
+		BC2CD4731E67FFED006A9B97 /* QiniuUploadHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2CD4701E67FFED006A9B97 /* QiniuUploadHelper.m */; };
+		BC2CD4741E67FFED006A9B97 /* UploadImageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2CD4721E67FFED006A9B97 /* UploadImageTool.m */; };
 		BC2CF8411E52A27D00A69A94 /* HomeIndustryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2CF83F1E52A27D00A69A94 /* HomeIndustryTableViewCell.m */; };
 		BC2CF8421E52A27D00A69A94 /* HomeIndustryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC2CF8401E52A27D00A69A94 /* HomeIndustryTableViewCell.xib */; };
 		BC2CF8471E52A2A400A69A94 /* SquaredUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2CF8441E52A2A400A69A94 /* SquaredUpView.m */; };
@@ -1010,6 +1012,10 @@
 		BC26C7EA1E5D73C000CC8100 /* SecondActivityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondActivityTableViewCell.h; sourceTree = "<group>"; };
 		BC26C7EB1E5D73C000CC8100 /* SecondActivityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondActivityTableViewCell.m; sourceTree = "<group>"; };
 		BC26C7EC1E5D73C000CC8100 /* SecondActivityTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondActivityTableViewCell.xib; sourceTree = "<group>"; };
+		BC2CD46F1E67FFED006A9B97 /* QiniuUploadHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QiniuUploadHelper.h; sourceTree = "<group>"; };
+		BC2CD4701E67FFED006A9B97 /* QiniuUploadHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QiniuUploadHelper.m; sourceTree = "<group>"; };
+		BC2CD4711E67FFED006A9B97 /* UploadImageTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadImageTool.h; sourceTree = "<group>"; };
+		BC2CD4721E67FFED006A9B97 /* UploadImageTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadImageTool.m; sourceTree = "<group>"; };
 		BC2CF83E1E52A27D00A69A94 /* HomeIndustryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeIndustryTableViewCell.h; sourceTree = "<group>"; };
 		BC2CF83F1E52A27D00A69A94 /* HomeIndustryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeIndustryTableViewCell.m; sourceTree = "<group>"; };
 		BC2CF8401E52A27D00A69A94 /* HomeIndustryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeIndustryTableViewCell.xib; sourceTree = "<group>"; };
@@ -2243,6 +2249,7 @@
 				2D452B851D50A2C600C9D897 /* WaitingAuthenticationViewController.h */,
 				2D452B861D50A2C600C9D897 /* WaitingAuthenticationViewController.m */,
 				2D452B871D50A2C600C9D897 /* WaitingAuthenticationViewController.xib */,
+				BC2CD46E1E67FFED006A9B97 /* UploadImage */,
 			);
 			path = RealNameAuthentication;
 			sourceTree = "<group>";
@@ -2389,6 +2396,17 @@
 				BC78D7471E56993000C623CD /* Discovery.xcassets */,
 			);
 			path = Discovery;
+			sourceTree = "<group>";
+		};
+		BC2CD46E1E67FFED006A9B97 /* UploadImage */ = {
+			isa = PBXGroup;
+			children = (
+				BC2CD46F1E67FFED006A9B97 /* QiniuUploadHelper.h */,
+				BC2CD4701E67FFED006A9B97 /* QiniuUploadHelper.m */,
+				BC2CD4711E67FFED006A9B97 /* UploadImageTool.h */,
+				BC2CD4721E67FFED006A9B97 /* UploadImageTool.m */,
+			);
+			path = UploadImage;
 			sourceTree = "<group>";
 		};
 		BC39746D1DD43EFB008DDF67 /* myLoveAccount */ = {
@@ -3048,6 +3066,7 @@
 				BC2CF84C1E52B28300A69A94 /* PopularMerchantsTableViewCell.m in Sources */,
 				2DBE74761D5C2B18005B58E8 /* RootViewController.m in Sources */,
 				2DBDB3A81D1CD1C50033F09E /* RevisePasswordViewController.m in Sources */,
+				BC2CD4731E67FFED006A9B97 /* QiniuUploadHelper.m in Sources */,
 				2DBDB3B21D1CDC650033F09E /* ShippingALTableViewCell.m in Sources */,
 				2DDEC8F71D1A389300C91DDF /* WithDrewMoneyViewController.m in Sources */,
 				2DA973BC1D127DCF00A605F9 /* CityListViewController.m in Sources */,
@@ -3140,6 +3159,7 @@
 				BCF301C81DCAD8AC000C7BE7 /* BaseHttpClient.m in Sources */,
 				2DA973BD1D127DCF00A605F9 /* ChineseInclude.m in Sources */,
 				2D95D86D1D225BDB00021F31 /* Watch.m in Sources */,
+				BC2CD4741E67FFED006A9B97 /* UploadImageTool.m in Sources */,
 				BCF7D5E91DF6AF7800D912CA /* LineDashPolyline.m in Sources */,
 				2D95D8781D227D4C00021F31 /* LoginViewController.m in Sources */,
 				BC695CB71E640DC1006A334C /* UIColor+Separate.m in Sources */,

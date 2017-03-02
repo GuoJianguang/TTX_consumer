@@ -49,7 +49,12 @@
         [weak_self detailRequest:self.merchantCode];
     }];
     
+    [self.tableView addNoDatasouceWithCallback:^{
+        self.tableView.scrollEnabled = YES;
+        [self.tableView.mj_header beginRefreshing];
+    } andAlertSting:@"网络连接不好，请刷新重试！" andErrorImage:@"pic_4" andRefreshBtnHiden:YES];
     [self.tableView.mj_header beginRefreshing];
+    
 }
 
 
@@ -84,6 +89,8 @@
     [HttpClient GET:@"mch/get" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
         [self.tableView.mj_header endRefreshing];
         if (IsRequestTrue) {
+            self.tableView.scrollEnabled = YES;
+            [self.tableView hiddenNoDataSouce];
             self.dataModel = [BussessDetailModel modelWithDic:jsonObject[@"data"]];
             if (![self.dataModel.desc isEqualToString:@""]) {
                 self.introduceHeight  = (TWitdh)*(19/30.)+TWitdh*(154/750.)+44+TWitdh*(88/750.)+TWitdh*(95/750.)*2+ [self cellHeight:_dataModel.desc]+ 55. + 55;
@@ -92,11 +99,14 @@
                 
             }
             [self getGoodsRequest:self.merchantCode];
+            return ;
         }
-        
+        self.tableView.scrollEnabled = NO;
+        [self.tableView showRereshBtnwithALerString:@"网络连接不好，请刷新重试"];
     } failure:^(NSURLSessionDataTask *operation, NSError *error) {
+        self.tableView.scrollEnabled = NO;
         [self.tableView.mj_header endRefreshing];
-
+        [self.tableView showRereshBtnwithALerString:@"网络连接不好，请刷新重试"];
     }];
 }
 
@@ -199,6 +209,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 
 

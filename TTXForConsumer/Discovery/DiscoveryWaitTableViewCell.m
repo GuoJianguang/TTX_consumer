@@ -118,8 +118,6 @@
     else
         minutesStr = [NSString stringWithFormat:@"%d",minutes];
     //秒
-    
-    
     if(seconds < 10)
         secondsStr = [NSString stringWithFormat:@"0%d", seconds];
     else
@@ -132,6 +130,7 @@
     }
     if (days) {
         self.timeLabel.text = [NSString stringWithFormat:@"还剩%@天%@小时%@分%@秒结束", dayStr,hoursStr, minutesStr,secondsStr];
+        return;
     }
     self.timeLabel.text = [NSString stringWithFormat:@"还剩%@小时%@分%@秒结束",hoursStr , minutesStr,secondsStr];
 }

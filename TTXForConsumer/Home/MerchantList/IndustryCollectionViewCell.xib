@@ -23,15 +23,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="104" height="79"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="美食餐饮" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kuo-hQ-azg">
-                                <rect key="frame" x="25.5" y="53" width="53.5" height="16"/>
+                                <rect key="frame" x="25.5" y="52" width="53.5" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="l6y-r0-kXA"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading_error" translatesAutoresizingMaskIntoConstraints="NO" id="Gek-hF-ye2">
-                                <rect key="frame" x="32" y="8" width="40" height="40"/>
+                                <rect key="frame" x="30" y="5" width="44" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="7uZ-lS-NR4"/>
                                     <constraint firstAttribute="width" secondItem="Gek-hF-ye2" secondAttribute="height" multiplier="1:1" id="85m-Ir-WBk"/>
                                 </constraints>
                             </imageView>
@@ -53,12 +55,13 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="br3-bL-CfR" secondAttribute="bottom" id="7c0-MI-cV8"/>
-                            <constraint firstAttribute="bottom" secondItem="kuo-hQ-azg" secondAttribute="bottom" constant="10" id="Dff-Ov-rlo"/>
+                            <constraint firstAttribute="bottom" secondItem="kuo-hQ-azg" secondAttribute="bottom" constant="7" id="Dff-Ov-rlo"/>
                             <constraint firstAttribute="trailing" secondItem="lLC-ir-WRL" secondAttribute="trailing" id="IYQ-NK-1cW"/>
-                            <constraint firstItem="Gek-hF-ye2" firstAttribute="top" secondItem="4Kc-U6-yyI" secondAttribute="top" constant="8" id="KPb-jD-6nU"/>
+                            <constraint firstItem="Gek-hF-ye2" firstAttribute="top" secondItem="4Kc-U6-yyI" secondAttribute="top" constant="5" id="KPb-jD-6nU"/>
                             <constraint firstAttribute="trailing" secondItem="br3-bL-CfR" secondAttribute="trailing" constant="20" id="Nyd-o7-4Gl"/>
                             <constraint firstItem="kuo-hQ-azg" firstAttribute="centerX" secondItem="4Kc-U6-yyI" secondAttribute="centerX" id="OWk-A1-dZE"/>
                             <constraint firstItem="Gek-hF-ye2" firstAttribute="centerX" secondItem="4Kc-U6-yyI" secondAttribute="centerX" id="YHe-ae-DKv"/>
+                            <constraint firstItem="kuo-hQ-azg" firstAttribute="top" secondItem="Gek-hF-ye2" secondAttribute="bottom" constant="3" id="g5b-Hk-b0x"/>
                             <constraint firstAttribute="bottom" secondItem="lLC-ir-WRL" secondAttribute="bottom" constant="20" id="jVh-UE-gqb"/>
                             <constraint firstItem="lLC-ir-WRL" firstAttribute="top" secondItem="4Kc-U6-yyI" secondAttribute="top" constant="20" id="jkR-SA-FQL"/>
                             <constraint firstItem="br3-bL-CfR" firstAttribute="leading" secondItem="4Kc-U6-yyI" secondAttribute="leading" constant="20" id="zCa-PM-O1Q"/>
@@ -75,12 +78,11 @@
             </constraints>
             <size key="customSize" width="104" height="79"/>
             <connections>
-                <outlet property="imagWidth" destination="7uZ-lS-NR4" id="pZq-33-FgB"/>
                 <outlet property="industry_image" destination="Gek-hF-ye2" id="jQi-fZ-Q2T"/>
                 <outlet property="item_view" destination="4Kc-U6-yyI" id="z39-4D-WTr"/>
                 <outlet property="name_label" destination="kuo-hQ-azg" id="KqH-3u-CbJ"/>
             </connections>
-            <point key="canvasLocation" x="262" y="157.5"/>
+            <point key="canvasLocation" x="160" y="97"/>
         </collectionViewCell>
     </objects>
     <resources>
