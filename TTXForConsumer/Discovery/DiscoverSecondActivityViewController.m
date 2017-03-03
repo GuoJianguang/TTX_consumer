@@ -19,13 +19,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.naviBar.title = @"添客圈";
     __weak DiscoverSecondActivityViewController *weak_self = self;
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [weak_self getRequest];
     }];
-    [self.tableView.mj_header beginRefreshing];
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.tableView.mj_header beginRefreshing];
+}
 
 - (NSMutableArray *)dataSouceArray
 {

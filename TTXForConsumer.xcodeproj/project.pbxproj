@@ -438,6 +438,8 @@
 		BCDD3D4A1E651BCD007832B7 /* DisCountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCDD3D481E651BCD007832B7 /* DisCountTableViewCell.xib */; };
 		BCDD3D4E1E652EA7007832B7 /* MoreDisCountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDD3D4C1E652EA7007832B7 /* MoreDisCountViewController.m */; };
 		BCDD3D4F1E652EA7007832B7 /* MoreDisCountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCDD3D4D1E652EA7007832B7 /* MoreDisCountViewController.xib */; };
+		BCEEBE841E690839007B1F70 /* DiscoveryinstructionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCEEBE821E690839007B1F70 /* DiscoveryinstructionsViewController.m */; };
+		BCEEBE851E690839007B1F70 /* DiscoveryinstructionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCEEBE831E690839007B1F70 /* DiscoveryinstructionsViewController.xib */; };
 		BCF301C81DCAD8AC000C7BE7 /* BaseHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF301C01DCAD8AC000C7BE7 /* BaseHttpClient.m */; };
 		BCF301C91DCAD8AC000C7BE7 /* HttpClient_Readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = BCF301C11DCAD8AC000C7BE7 /* HttpClient_Readme.txt */; };
 		BCF301CA1DCAD8AC000C7BE7 /* HttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF301C31DCAD8AC000C7BE7 /* HttpClient.m */; };
@@ -1163,6 +1165,9 @@
 		BCDD3D4B1E652EA7007832B7 /* MoreDisCountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreDisCountViewController.h; sourceTree = "<group>"; };
 		BCDD3D4C1E652EA7007832B7 /* MoreDisCountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreDisCountViewController.m; sourceTree = "<group>"; };
 		BCDD3D4D1E652EA7007832B7 /* MoreDisCountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreDisCountViewController.xib; sourceTree = "<group>"; };
+		BCEEBE811E690839007B1F70 /* DiscoveryinstructionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoveryinstructionsViewController.h; sourceTree = "<group>"; };
+		BCEEBE821E690839007B1F70 /* DiscoveryinstructionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoveryinstructionsViewController.m; sourceTree = "<group>"; };
+		BCEEBE831E690839007B1F70 /* DiscoveryinstructionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiscoveryinstructionsViewController.xib; sourceTree = "<group>"; };
 		BCF301BF1DCAD8AC000C7BE7 /* BaseHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseHttpClient.h; sourceTree = "<group>"; };
 		BCF301C01DCAD8AC000C7BE7 /* BaseHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseHttpClient.m; sourceTree = "<group>"; };
 		BCF301C11DCAD8AC000C7BE7 /* HttpClient_Readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HttpClient_Readme.txt; sourceTree = "<group>"; };
@@ -2365,6 +2370,9 @@
 				BC78D7421E56983900C623CD /* DiscoveryDetailViewController.h */,
 				BC78D7431E56983900C623CD /* DiscoveryDetailViewController.m */,
 				BC78D7441E56983900C623CD /* DiscoveryDetailViewController.xib */,
+				BCEEBE811E690839007B1F70 /* DiscoveryinstructionsViewController.h */,
+				BCEEBE821E690839007B1F70 /* DiscoveryinstructionsViewController.m */,
+				BCEEBE831E690839007B1F70 /* DiscoveryinstructionsViewController.xib */,
 				BC78D7491E56AA1500C623CD /* DiscoveryWaitTableViewCell.h */,
 				BC78D74A1E56AA1500C623CD /* DiscoveryWaitTableViewCell.m */,
 				BC78D74B1E56AA1500C623CD /* DiscoveryWaitTableViewCell.xib */,
@@ -2847,6 +2855,7 @@
 				2DEE96141D27B60100B46AB1 /* LogisticsViewController.xib in Resources */,
 				2DB94FFB1D2A8E33003A6DEA /* shanguangdeng2@2x.png in Resources */,
 				2DEE961F1D27BD7B00B46AB1 /* SharkItOffViewController.xib in Resources */,
+				BCEEBE851E690839007B1F70 /* DiscoveryinstructionsViewController.xib in Resources */,
 				2D89A29C1D24BBEA0042019B /* MerchantCommentListViewController.xib in Resources */,
 				BCDD3D451E6517AB007832B7 /* DisCountViewController.xib in Resources */,
 				2DE2200F1D20D04C008D7F05 /* AboutUsViewController.xib in Resources */,
@@ -3093,6 +3102,7 @@
 				2DEE96071D27A82500B46AB1 /* OrderCommentViewController.m in Sources */,
 				2DB94F651D2A2F85003A6DEA /* RewardRecordTableViewCell.m in Sources */,
 				2DB94F7E1D2A700A003A6DEA /* MchchantAllgoodsViewController.m in Sources */,
+				BCEEBE841E690839007B1F70 /* DiscoveryinstructionsViewController.m in Sources */,
 				BC39B7CC1E519CDD009A7D50 /* NewIndustryCollectionViewCell.m in Sources */,
 				2DE489161D23D1B000472681 /* MyWallectCollectionViewCell.m in Sources */,
 				2DB950001D2A8E33003A6DEA /* ZLAnimationBaseView.m in Sources */,

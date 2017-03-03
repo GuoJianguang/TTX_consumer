@@ -11,6 +11,8 @@
 #import "DisCoverYetTableViewCell.h"
 #import "DiscoveryDeatailModel.h"
 #import "DiscoveryPayView.h"
+#import "DiscoveryinstructionsViewController.h"
+
 
 @interface DiscoveryDetailViewController ()<UITableViewDelegate,UITableViewDataSource,BasenavigationDelegate>
 
@@ -39,7 +41,7 @@
     self.naviBar.delegate = self;
     self.naviBar.title = self.model.name;
     if (!self.model) {
-        self.naviBar.title = @"活动";
+        self.naviBar.title = @"幸运购";
     }
     self.tableView.backgroundColor = [UIColor clearColor];
     
@@ -92,10 +94,13 @@
 #pragma mark - 帮助
 - (void)detailBtnClick{
     
-    BaseHtmlViewController *htmlVC = [[BaseHtmlViewController alloc]init];
-    htmlVC.htmlTitle = @"活动说明";
-    htmlVC.htmlUrl = self.htmlUrl;
-    [self.navigationController pushViewController:htmlVC animated:YES];
+//    BaseHtmlViewController *htmlVC = [[BaseHtmlViewController alloc]init];
+//    htmlVC.htmlTitle = @"活动说明";
+//    htmlVC.htmlUrl = self.htmlUrl;
+//    [self.navigationController pushViewController:htmlVC animated:YES];
+    DiscoveryinstructionsViewController *instructinonsVC = [[DiscoveryinstructionsViewController alloc]init];
+    [self.navigationController pushViewController:instructinonsVC animated:YES];
+
     
 }
 

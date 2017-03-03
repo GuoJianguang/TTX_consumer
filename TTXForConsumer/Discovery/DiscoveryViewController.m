@@ -29,6 +29,8 @@
     self.naviBar.title = @"发现";
     self.naviBar.hiddenBackBtn = YES;
     self.firstLabel.textColor = self.secondLabel.textColor = MacoTitleColor;
+    self.firstLabel.text = @"幸运购";
+    self.secondLabel.text = @"添客圈";
     
 }
 

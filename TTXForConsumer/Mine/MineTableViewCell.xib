@@ -862,8 +862,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MlJ-ql-dKN">
                         <rect key="frame" x="0.0" y="843.5" width="375" height="45"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关于天添薪" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kf7-O8-KR4">
-                                <rect key="frame" x="12" y="13" width="77" height="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关于添客" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kf7-O8-KR4">
+                                <rect key="frame" x="12" y="13" width="61.5" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1018,7 +1018,7 @@
                 <outlet property="yetComplete" destination="pfG-5N-vxD" id="8ON-u2-kNT"/>
                 <outlet property="yetRealName" destination="k9C-0X-hDp" id="0xb-wo-qUi"/>
             </connections>
-            <point key="canvasLocation" x="240.5" y="-201"/>
+            <point key="canvasLocation" x="258" y="-314"/>
         </tableViewCell>
     </objects>
     <resources>

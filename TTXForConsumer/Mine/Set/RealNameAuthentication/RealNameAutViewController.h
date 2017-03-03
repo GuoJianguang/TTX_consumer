@@ -50,6 +50,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *frontLabel;
 @property (weak, nonatomic) IBOutlet UILabel *backLabel;
 
+@property (weak, nonatomic) IBOutlet UIView *photoView;
 
 
 @end

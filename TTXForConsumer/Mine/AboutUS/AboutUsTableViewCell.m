@@ -48,7 +48,8 @@
 
 #pragma mark - 拨打客服电话
 - (IBAction)callBtn:(UIButton *)sender {
-    NSArray *arry =  @[@"02862908389",@"02862908390",@"02862908391",@"02862908392"];
+//    NSArray *arry =  @[@"02862908389",@"02862908390",@"02862908391",@"02862908392"];
+    NSArray *arry =  @[@"4001619619"];
     UIActionSheet *sheet = [[UIActionSheet alloc]initWithTitle:@"拨打客服电话" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles: nil];
     for (int i = 0; i < arry.count; i ++) {
         [sheet addButtonWithTitle:arry[i]];

@@ -10,6 +10,7 @@
 #import "EditNickNameViewController.h"
 #import "RevisePasswordViewController.h"
 #import "ShippingAddressViewController.h"
+#import "WaitingAuthenticationViewController.h"
 
 @interface SetTableViewCell()<UIActionSheetDelegate>
 @property (nonatomic,strong) UIActionSheet *actionSheet;
@@ -72,9 +73,12 @@
 }
 
 //修改昵称
-- (IBAction)editNickname:(UIButton *)sender {
-//    EditNickNameViewController *nameVC = [[EditNickNameViewController alloc]init];
-//    [self.viewController.navigationController pushViewController:nameVC animated:YES];
+- (IBAction)editNickname:(UIButton *)sender {    
+    if ([TTXUserInfo shareUserInfos].idVerifyReqFlag) {
+        WaitingAuthenticationViewController *waitingVC = [[WaitingAuthenticationViewController alloc]init];
+        [self.viewController.navigationController pushViewController:waitingVC animated:YES];
+        return;
+    }
     RealNameAutViewController *realNVC = [[RealNameAutViewController alloc]init];
     if ([TTXUserInfo shareUserInfos].identityFlag) {
         realNVC.isYetAut = YES;

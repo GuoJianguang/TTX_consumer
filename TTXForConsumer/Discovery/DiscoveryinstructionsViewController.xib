@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DiscoveryinstructionsViewController">
+            <connections>
+                <outlet property="detialLabel" destination="hKq-eH-NNj" id="4RK-qT-VgJ"/>
+                <outlet property="statementLabel" destination="u7z-LZ-EHz" id="tje-hd-wkG"/>
+                <outlet property="titleLabel" destination="zZP-GO-U5F" id="vcw-0e-G5i"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C4c-zc-Hsn">
+                    <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="活动说明：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zZP-GO-U5F">
+                            <rect key="frame" x="12" y="10" width="82" height="19.5"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用户通过幸运购获得相应次数中奖机会，活动结束后系统随机抽取中奖用户直接获得相应商品，持有中奖次数越多中奖概率越大。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKq-eH-NNj">
+                            <rect key="frame" x="12" y="39.5" width="351" height="43"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="声明：幸运购只为添客用户提供一个抽奖的平台，所有商品由天添薪公司提供，与苹果公司无关。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7z-LZ-EHz">
+                            <rect key="frame" x="12" y="92.5" width="351" height="15"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="u7z-LZ-EHz" secondAttribute="trailing" constant="12" id="EFF-Kl-6og"/>
+                        <constraint firstItem="u7z-LZ-EHz" firstAttribute="top" secondItem="hKq-eH-NNj" secondAttribute="bottom" constant="10" id="KSJ-SQ-nIj"/>
+                        <constraint firstItem="zZP-GO-U5F" firstAttribute="leading" secondItem="C4c-zc-Hsn" secondAttribute="leading" constant="12" id="jhY-8H-qlf"/>
+                        <constraint firstItem="zZP-GO-U5F" firstAttribute="top" secondItem="C4c-zc-Hsn" secondAttribute="top" constant="10" id="lpu-Bv-Rga"/>
+                        <constraint firstItem="u7z-LZ-EHz" firstAttribute="leading" secondItem="C4c-zc-Hsn" secondAttribute="leading" constant="12" id="nd8-rP-2OA"/>
+                        <constraint firstItem="hKq-eH-NNj" firstAttribute="top" secondItem="zZP-GO-U5F" secondAttribute="bottom" constant="10" id="oI3-wg-qmg"/>
+                        <constraint firstAttribute="trailing" secondItem="hKq-eH-NNj" secondAttribute="trailing" constant="12" id="tvV-lQ-2Xm"/>
+                        <constraint firstItem="hKq-eH-NNj" firstAttribute="leading" secondItem="C4c-zc-Hsn" secondAttribute="leading" constant="12" id="wDz-Jv-KVm"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="C4c-zc-Hsn" secondAttribute="bottom" id="WaD-io-TUF"/>
+                <constraint firstItem="C4c-zc-Hsn" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="YQc-mk-rGE"/>
+                <constraint firstItem="C4c-zc-Hsn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="e8B-oK-0UT"/>
+                <constraint firstAttribute="trailing" secondItem="C4c-zc-Hsn" secondAttribute="trailing" id="hNv-0M-KEM"/>
+            </constraints>
+            <point key="canvasLocation" x="11" y="130"/>
+        </view>
+    </objects>
+</document>

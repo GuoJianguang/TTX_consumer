@@ -94,7 +94,11 @@
         if (IsRequestTrue) {
             [TTXUserInfo shareUserInfos].bankname = NullToSpace(jsonObject[@"data"][@"bankId"]);
             self.rate = NullToNumber(jsonObject[@"data"][@"withdrawRate"]);
-            self.alerLabel.text = NullToSpace(jsonObject[@"data"][@"withdrawRateDesc"]);
+            if ([NullToSpace(jsonObject[@"data"][@"withdrawRateDesc"]) isEqualToString:@""]) {
+                self.alerLabel.text = [NSString stringWithFormat:@"农行手续费2元，其他行手续费6元"];
+            }else{
+                self.alerLabel.text = [NSString stringWithFormat:@"%@,农行手续费2元，其他行手续费6元",NullToSpace(jsonObject[@"data"][@"withdrawRateDesc"])];
+            }
             
         }
     }failure:^(NSURLSessionDataTask *operation, NSError *error) {
@@ -250,8 +254,8 @@
     }else if ([self.editMoneyTF.text integerValue]%10 !=0){
         [[JAlertViewHelper shareAlterHelper]showTint:@"您的提现金额必须是10的整数倍" duration:1.5];
         return NO;
-    }else if (([self.editMoneyTF.text integerValue] <300 || [self.editMoneyTF.text integerValue] >1000) &&![[TTXUserInfo shareUserInfos].grade isEqualToString:@"10"]){
-        [[JAlertViewHelper shareAlterHelper]showTint:@"您的提现金额不能小于300，并且不能超过1000" duration:1.5];
+    }else if (([self.editMoneyTF.text integerValue] <100 || [self.editMoneyTF.text integerValue] >1000) &&![[TTXUserInfo shareUserInfos].grade isEqualToString:@"10"]){
+        [[JAlertViewHelper shareAlterHelper]showTint:@"您的提现金额不能小于100，并且不能超过1000" duration:1.5];
         return NO;
     }else if ([self emptyTextOfTextField:self.codeTF]) {
         [[JAlertViewHelper shareAlterHelper]showTint:@"请输入密码" duration:1.5];

@@ -88,9 +88,14 @@
         [self getGoodsDetail:self.goodsID];
     }];
 
-    [self.scrollView.mj_header beginRefreshing];
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.scrollView.mj_header beginRefreshing];
+
+}
 
 
 
@@ -168,7 +173,7 @@
         if (IsRequestTrue) {
             [self.scrollView addSubview:self.detailView];
             self.dataModel = [Watch modelWithDic:jsonObject[@"data"]];
-            CGFloat detailViewHeight = [self cellHeight:self.dataModel.name] + 123;
+            CGFloat detailViewHeight = [self cellHeight:self.dataModel.name] + 110;
             self.detailView.dataModel = self.dataModel;
             self.pageControl.numberOfPages =  self.dataModel.slideImage.count;
             self.pageControl.currentPage = 0;
@@ -190,6 +195,17 @@
                 NSTimeInterval endinterval= endtime/ 1000.0;
                 NSUInteger nowTime = [NullToNumber(jsonObject[@"data"][@"nowTime"]) longLongValue];
                 NSUInteger startTime = [NullToNumber(jsonObject[@"data"][@"startTime"]) longLongValue];
+                if (self.dataModel.inventoryFlag) {
+                    if ([self.dataModel.inventory isEqualToString:@"0"]) {
+                        self.disCountLabel.text = self.showDisCountTimeLabel.text = @"没有库存";
+                        [self.buyBtn setBackgroundColor:MacoIntrodouceColor];
+                        self.buyBtn.enabled = NO;
+                        [self.buyBtn setTitle:@"没有库存" forState:UIControlStateNormal];
+                        self.buyBtn.titleLabel.adjustsFontSizeToFitWidth = YES;
+                        return;
+
+                    }
+                }
 
                 NSTimeInterval nowinterval= nowTime/ 1000.0;
                 NSDate *enddate = [NSDate dateWithTimeIntervalSince1970:endinterval];
@@ -376,7 +392,7 @@
     [self.scrollView addSubview:view];
     UILabel *commentLabel = [[UILabel alloc]init];
     commentLabel.text = [NSString stringWithFormat:@"累计评论（%@）",_dataModel.totalCommentCount];
-    commentLabel.frame =CGRectMake(12,8, 200, 44-16);
+    commentLabel.frame =CGRectMake(15,8, 200, 44-16);
     commentLabel.textColor = MacoDetailColor;
     commentLabel.font = [UIFont systemFontOfSize:13];
     [view addSubview:commentLabel];
@@ -384,11 +400,16 @@
     UILabel *kucunLabel = [[UILabel alloc]init];
     kucunLabel.textColor = MacoDetailColor;
     kucunLabel.font = [UIFont systemFontOfSize:13];
-    if (_dataModel.inventoryFlag) {
-        kucunLabel.text = @"库存：有货";
-    }else{
+    if (!self.dataModel.inventoryFlag) {
         kucunLabel.text = @"库存：无货";
+        [self.buyBtn setBackgroundColor:MacoIntrodouceColor];
+        self.buyBtn.enabled = NO;
+        [self.buyBtn setTitle:@"没有库存" forState:UIControlStateNormal];
+        self.buyBtn.titleLabel.adjustsFontSizeToFitWidth = YES;
+    }else{
+        kucunLabel.text = @"库存：有货";
     }
+
     kucunLabel.frame =CGRectMake(TWitdh - 92 ,8, 80, 44-16);
     [view addSubview:kucunLabel];
     

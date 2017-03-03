@@ -32,6 +32,7 @@
     self.progressView.layer.borderWidth = 1;
     self.progressView.layer.cornerRadius = TWitdh*(12/1500.);
     self.progressView.progressTintColor = [UIColor colorFromHexString:@"#ffd862"];
+    self.progressView.layer.masksToBounds = YES;
     self.progressView.trackTintColor = [UIColor whiteColor];
     self.luckyDrawBtn.backgroundColor = MacoPriceColor;
     self.luckyDrawBtn.layer.cornerRadius = 5;

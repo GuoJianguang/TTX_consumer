@@ -61,8 +61,14 @@
         self.sureBtn.hidden = YES;
         self.ManualCerBtn.hidden = YES;
         self.alerLabel.hidden = YES;
+        self.photoView.hidden = YES;
         [self hideIDCardNum];
         return;
+    }
+    if (![[TTXUserInfo shareUserInfos].idcardName isEqualToString:@""] && ![[TTXUserInfo shareUserInfos].idcard isEqualToString:@""]) {
+        self.idCardNumTF.text = [TTXUserInfo shareUserInfos].idcard;
+        self.nameTF.text = [TTXUserInfo shareUserInfos].idcardName;
+        self.idCardNumTF.enabled = self.nameTF.enabled = NO;
     }
     
     //手动认证是否正在审核
@@ -130,6 +136,7 @@
         } failure:^{
     
             [[JAlertViewHelper shareAlterHelper]showTint:@"证件照上传失败，请重试" duration:2.];
+            sender.enabled = YES;
 
         }];
     }else{

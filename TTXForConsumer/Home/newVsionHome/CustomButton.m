@@ -13,10 +13,10 @@
 @implementation CustomButton
 
 - (CGRect)imageRectForContentRect:(CGRect)contentRect {
-    CGFloat imgViewWidth = contentRect.size.width;
+    CGFloat imgViewWidth = contentRect.size.width - 4;
     CGFloat imgViewHeight = contentRect.size.height * IMGandTIT_Ratio;
     
-    return CGRectMake(0, 0, imgViewWidth, imgViewHeight);
+    return CGRectMake(2, 0, imgViewWidth, imgViewWidth);
 }
 
 - (CGRect)titleRectForContentRect:(CGRect)contentRect {

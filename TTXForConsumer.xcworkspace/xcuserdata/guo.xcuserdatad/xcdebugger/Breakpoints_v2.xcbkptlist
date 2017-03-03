@@ -74,12 +74,12 @@
                   moduleName = "TTXForConsumer"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/guo/Desktop/TTXForGit/TTX_consumer/TTXForConsumer/Mine/Message/MessageViewController.m"
-                  timestampString = "510148495.388219"
+                  timestampString = "510229062.728082"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "136"
                   endingLineNumber = "136"
-                  offsetFromSymbolStart = "481">
+                  offsetFromSymbolStart = "470">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -89,12 +89,12 @@
                   moduleName = "TTXForConsumer"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/guo/Desktop/TTXForGit/TTX_consumer/TTXForConsumer/Mine/Message/MessageViewController.m"
-                  timestampString = "510148495.389705"
+                  timestampString = "510229062.730133"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "137"
                   endingLineNumber = "137"
-                  offsetFromSymbolStart = "97">
+                  offsetFromSymbolStart = "79">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -187,22 +187,6 @@
                   offsetFromSymbolStart = "123">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TTXForConsumer/Mine/Set/RealNameAuthentication/RealNameAutViewController.m"
-            timestampString = "510148493.462906"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "169"
-            endingLineNumber = "169"
-            landmarkName = "-sureRealNameAut:withimageName:"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

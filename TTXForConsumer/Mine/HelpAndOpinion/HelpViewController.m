@@ -164,7 +164,9 @@
 //    }
 //    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",@"4001028997"]]]];
 //    [self.view addSubview:webView];
-    NSArray *arry =  @[@"02862908389",@"02862908390",@"02862908391",@"02862908392"];
+//    NSArray *arry =  @[@"02862908389",@"02862908390",@"02862908391",@"02862908392"];
+    NSArray *arry =  @[@"4001619619"];
+
     UIActionSheet *sheet = [[UIActionSheet alloc]initWithTitle:@"拨打客服电话" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles: nil];
     for (int i = 0; i < arry.count; i ++) {
         [sheet addButtonWithTitle:arry[i]];

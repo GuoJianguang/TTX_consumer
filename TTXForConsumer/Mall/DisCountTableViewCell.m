@@ -21,6 +21,7 @@
     self.progressView.layer.borderColor = [UIColor colorFromHexString:@"#ffd862"].CGColor;
     self.progressView.layer.borderWidth = 1;
     self.progressView.layer.cornerRadius = 3.;
+    self.progressView.layer.masksToBounds = YES;
     self.progressView.progressTintColor = [UIColor colorFromHexString:@"#ffd862"];
     self.progressView.trackTintColor = [UIColor whiteColor];
     self.butBtn.backgroundColor = MacoColor;
