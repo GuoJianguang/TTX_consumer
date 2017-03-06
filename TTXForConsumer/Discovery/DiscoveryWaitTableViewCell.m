@@ -130,10 +130,10 @@
         return;
     }
     if (days) {
-        self.timeLabel.text = [NSString stringWithFormat:@"还剩%@天%@小时%@分%@秒结束", dayStr,hoursStr, minutesStr,secondsStr];
+        self.timeLabel.text = [NSString stringWithFormat:@"还剩%@天%@小时%@分%@秒", dayStr,hoursStr, minutesStr,secondsStr];
         return;
     }
-    self.timeLabel.text = [NSString stringWithFormat:@"还剩%@小时%@分%@秒结束",hoursStr , minutesStr,secondsStr];
+    self.timeLabel.text = [NSString stringWithFormat:@"还剩%@小时%@分%@秒",hoursStr , minutesStr,secondsStr];
 }
 
 @end

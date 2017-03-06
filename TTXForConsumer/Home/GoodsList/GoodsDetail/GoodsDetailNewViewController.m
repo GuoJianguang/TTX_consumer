@@ -381,6 +381,11 @@
     return size.height;
 }
 
+- (CGFloat)cellminHeight:(NSString *)textSting
+{
+    CGSize size = [textSting boundingRectWithSize:CGSizeMake(TWitdh  - 24, 0) font:[UIFont systemFontOfSize:15]];
+    return size.height;
+}
 
 #pragma mark - 加介绍商品评论销量的view
 - (void)addFengeView:(CGFloat)viewY withImageArray:(NSArray *)imageArray  withDetaiViewheight:(CGFloat)detailHeight;
@@ -391,9 +396,10 @@
     view.frame = CGRectMake(0, viewY, TWitdh, 44);
     [self.scrollView addSubview:view];
     UILabel *commentLabel = [[UILabel alloc]init];
-    commentLabel.text = [NSString stringWithFormat:@"累计评论（%@）",_dataModel.totalCommentCount];
+    commentLabel.text = [NSString stringWithFormat:@"累计评论(%@)",_dataModel.totalCommentCount];
     commentLabel.frame =CGRectMake(15,8, 200, 44-16);
     commentLabel.textColor = MacoDetailColor;
+    commentLabel.adjustsFontSizeToFitWidth = YES;
     commentLabel.font = [UIFont systemFontOfSize:13];
     [view addSubview:commentLabel];
     
@@ -421,11 +427,13 @@
     imageview.image = [UIImage imageNamed:@"icon_enter"];
     [view addSubview:imageview];
     
-    UILabel *saleLabel = [[UILabel alloc]initWithFrame:CGRectMake(imageview.frame.origin.x - 200, 8, 200, 44-16)];
-    saleLabel.text = [NSString stringWithFormat:@"销量：%@笔",_dataModel.salenum];
+    UILabel *saleLabel = [[UILabel alloc]initWithFrame:CGRectMake(imageview.frame.origin.x - (imageview.frame.origin.x - 15)*(2/5.), 8, (imageview.frame.origin.x - 15)*(2/5.), 44-16)];
+    commentLabel.frame =CGRectMake(15,8, (imageview.frame.origin.x-15)*(3/5.), 44-16);
+    saleLabel.text = [NSString stringWithFormat:@"销量:%@笔",_dataModel.salenum];
     saleLabel.textAlignment = NSTextAlignmentRight;
     saleLabel.textColor = MacoDetailColor;
     saleLabel.font = [UIFont systemFontOfSize:13];
+    saleLabel.adjustsFontSizeToFitWidth = YES;
     [view addSubview:saleLabel];
     
     UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(0, 0,lineView.frame.origin.x, 44)];
@@ -555,6 +563,7 @@
     }
     self.showDisCountTimeLabel.text = [NSString stringWithFormat:@"还剩%@小时%@分%@秒结束",hoursStr , minutesStr,secondsStr];
 }
+
 
 
 

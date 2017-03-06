@@ -34,14 +34,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zTg-JN-T5D">
-                                <rect key="frame" x="12" y="43" width="11" height="13.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zTg-JN-T5D">
+                                <rect key="frame" x="12" y="43" width="146.5" height="13.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBg-cq-G46">
-                                <rect key="frame" x="297" y="43" width="11" height="13.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBg-cq-G46">
+                                <rect key="frame" x="163.5" y="43" width="144.5" height="13.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="144.5" id="5Xf-He-z6P"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -103,6 +106,7 @@
                             <constraint firstItem="zTg-JN-T5D" firstAttribute="leading" secondItem="pEO-cu-yFY" secondAttribute="leading" constant="12" id="bXy-F6-svQ"/>
                             <constraint firstItem="Hii-u5-G0G" firstAttribute="centerY" secondItem="7FC-u0-1S9" secondAttribute="centerY" id="dMh-iw-xc1"/>
                             <constraint firstItem="YE8-bZ-s8R" firstAttribute="leading" secondItem="pEO-cu-yFY" secondAttribute="leading" constant="12" id="eu0-WZ-yZ4"/>
+                            <constraint firstItem="QBg-cq-G46" firstAttribute="leading" secondItem="zTg-JN-T5D" secondAttribute="trailing" constant="5" id="hg7-yP-PuS"/>
                             <constraint firstItem="HFJ-w4-9s6" firstAttribute="top" secondItem="zTg-JN-T5D" secondAttribute="bottom" constant="8" id="jNF-Ds-mPh"/>
                             <constraint firstAttribute="bottom" secondItem="g9L-44-iZ0" secondAttribute="bottom" id="pjd-U5-ZzE"/>
                             <constraint firstItem="7FC-u0-1S9" firstAttribute="top" secondItem="HFJ-w4-9s6" secondAttribute="bottom" constant="18" id="vfd-or-KIK"/>

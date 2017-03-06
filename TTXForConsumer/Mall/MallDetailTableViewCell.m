@@ -77,6 +77,12 @@
     [_disCountArray removeAllObjects];
     [_disCountArray addObjectsFromArray:disCountArray];
     self.pageView.numberOfPages = _disCountArray.count;
+    if (_disCountArray.count == 0 ) {
+        DiscountModel *model = [[DiscountModel alloc]init];
+        model.pic = @"";
+        model.disCountId = @"暂无";
+        [_disCountArray addObject:model];
+    }
     [self.swipeView reloadData];
 }
 
@@ -90,6 +96,8 @@
     if (_topLineArray.count > 0) {
         TopLineModel *model = _topLineArray[0];
         self.topLineLabel.text = model.name;
+    }else{
+        self.topLineLabel.text = @"暂无添客头条";
     }
 }
 
@@ -144,6 +152,11 @@
 
 -(void)swipeView:(SwipeView *)swipeView didSelectItemAtIndex:(NSInteger)index
 {
+    DiscountModel *model = self.disCountArray[index];
+    if ([model.disCountId isEqualToString:@"暂无"]) {
+        [[JAlertViewHelper shareAlterHelper]showTint:@"暂无限时折扣活动" duration:2.];
+        return;
+    }
     DisCountViewController *disCountVC = [[DisCountViewController alloc]init];
     [self.viewController.navigationController pushViewController:disCountVC animated:YES];
 }

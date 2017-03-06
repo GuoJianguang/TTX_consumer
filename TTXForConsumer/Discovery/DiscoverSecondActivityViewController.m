@@ -24,6 +24,9 @@
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [weak_self getRequest];
     }];
+    [self.tableView addNoDatasouceWithCallback:^{
+        [weak_self.tableView.mj_header beginRefreshing];
+    } andAlertSting:@"暂时没有数据或者网络连接不好" andErrorImage:@"pic_4" andRefreshBtnHiden:NO];
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -50,11 +53,21 @@
             for (NSDictionary *dic in array) {
                 [self.dataSouceArray addObject:[SecondACtivityModel modelWithDic:dic]];
             }
+            if (self.dataSouceArray.count == 0) {
+                [self.tableView showNoDataSouce];
+            }else{
+                [self.tableView hiddenNoDataSouce];
+            }
             [self.tableView reloadData];
         }
         [self.tableView.mj_header endRefreshing];
         
     } failure:^(NSURLSessionDataTask *operation, NSError *error) {
+        if (self.dataSouceArray.count == 0) {
+            [self.tableView showNoDataSouce];
+        }else{
+            [self.tableView hiddenNoDataSouce];
+        }
         [self.tableView.mj_header endRefreshing];
 
     }];

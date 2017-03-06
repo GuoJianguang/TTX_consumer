@@ -30,9 +30,10 @@
         [weak_self getActivityRequest];
     }];
 
+    [self.tableView addNoDatasouceWithCallback:^{
+        [self.tableView.mj_header beginRefreshing];
+    } andAlertSting:@"暂时没有数据" andErrorImage:@"pic_1" andRefreshBtnHiden:YES];
     [self.tableView.mj_header beginRefreshing];
-    
-    
 }
 
 #pragma mark - 接口请求
@@ -46,10 +47,16 @@
             for (NSDictionary *dic in lineListArray) {
                 [self.dataSouceArray addObject:[TopLineModel modelWithDic:dic]];
             }
+            if (self.dataSouceArray.count == 0) {
+                [self.tableView showNoDataSouce];
+            }else{
+                [self.tableView hiddenNoDataSouce];
+            }
             [self.tableView reloadData];
         }
         
     } failure:^(NSURLSessionDataTask *operation, NSError *error) {
+        [self.tableView showNoDataSouce];
         [self.tableView.mj_header endRefreshing];
 
     }];

@@ -35,7 +35,7 @@
 #define RequestSerializerEncoding UTF8Encoding
 #define ResponseSerializerEncoding UTF8Encoding
 
-// UTF8编码
+// UTF8编码 
 #define UTF8Encoding NSUTF8StringEncoding
 // GBK 编码
 #define GBKEncoding CFStringConvertEncodingToNSStringEncoding(0x0632)

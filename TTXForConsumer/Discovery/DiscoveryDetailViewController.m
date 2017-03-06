@@ -60,7 +60,7 @@
     
     [self.tableView addNoDatasouceWithCallback:^{
         [weak_self.tableView.mj_header beginRefreshing];
-    } andAlertSting:@"网络连接不好，请重试" andErrorImage:@"pic_2" andRefreshBtnHiden:NO];
+    } andAlertSting:@"暂时没有数据或者网络连接不好" andErrorImage:@"pic_4" andRefreshBtnHiden:NO];
     [weak_self.tableView.mj_header beginRefreshing];
     
 }
@@ -197,7 +197,7 @@
     DiscoveryDeatailModel *model = self.dataSocueArray[indexPath.row];
 
     if ([model.state isEqualToString:@"0"]) {
-        return TWitdh*(40/75.) + 135;
+        return TWitdh*(40/75.) + 140;
     }else if(![model.state isEqualToString:@"0"] && model.isFirstEnd){
         return TWitdh*(280/750.);
     }else{
@@ -232,14 +232,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
