@@ -17,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="465"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="464.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="464"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zlV-Gn-MEp">
@@ -37,9 +37,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_tianketoutiao" translatesAutoresizingMaskIntoConstraints="NO" id="Bc8-sw-3Mk">
-                                <rect key="frame" x="12" y="15.5" width="58" height="15"/>
+                                <rect key="frame" x="12" y="16.5" width="58" height="13"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="Bc8-sw-3Mk" secondAttribute="height" multiplier="136:36" id="Szl-RD-DFD"/>
+                                    <constraint firstAttribute="width" secondItem="Bc8-sw-3Mk" secondAttribute="height" multiplier="156:36" id="Szl-RD-DFD"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4R1-el-fH7">

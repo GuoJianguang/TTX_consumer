@@ -138,8 +138,6 @@
         self.wandiangView.hidden = NO;
         self.kaihuhangView.hidden = NO;
     }
-    
-    
 }
 //是否已经绑定银行卡
 - (void)setIsYetBingdingCard:(BOOL)isYetBingdingCard
