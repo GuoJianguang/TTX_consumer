@@ -62,7 +62,7 @@
         {
             self.wexiPayLabel.hidden = YES;
             self.ttxMoneyPayLabel.hidden = NO;
-            self.ttxMoneyPayLabel.text = [NSString stringWithFormat:@"微信支付¥%.2f",[_dataModel.price doubleValue]];
+            self.ttxMoneyPayLabel.text = [NSString stringWithFormat:@"银联支付¥%.2f",[_dataModel.price doubleValue]];
         }
             
             break;
@@ -71,7 +71,7 @@
             self.wexiPayLabel.hidden = NO;
             self.ttxMoneyPayLabel.hidden = NO;
             self.ttxMoneyPayLabel.text = [NSString stringWithFormat:@"余额支付¥%.2f",[_dataModel.balanceAmount doubleValue]];
-            self.wexiPayLabel.text = [NSString stringWithFormat:@"微信支付¥%.2f",[_dataModel.cashAmount doubleValue]];
+            self.wexiPayLabel.text = [NSString stringWithFormat:@"银联支付¥%.2f",[_dataModel.cashAmount doubleValue]];
         }
             break;
         case 3://现金待回馈
@@ -79,7 +79,7 @@
             self.wexiPayLabel.hidden = NO;
             self.ttxMoneyPayLabel.hidden = NO;
             self.ttxMoneyPayLabel.text = [NSString stringWithFormat:@"待回馈金额支付¥%.2f",[_dataModel.expectAmount doubleValue]];
-            self.wexiPayLabel.text = [NSString stringWithFormat:@"微信支付¥%.2f",[_dataModel.cashAmount doubleValue]];
+            self.wexiPayLabel.text = [NSString stringWithFormat:@"银联支付¥%.2f",[_dataModel.cashAmount doubleValue]];
         }
             break;
             

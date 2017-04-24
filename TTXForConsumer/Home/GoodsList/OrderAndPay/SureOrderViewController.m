@@ -219,8 +219,8 @@
                             @"message":NullToSpace(cell.liuyanTF.text),
                             @"sign":sign
                             };
-    
-    [WeXinPayObject startWexinPay:prams];
+    [UPPayObject startWexinPay:prams withController:self];
+//    [WeXinPayObject startWexinPay:prams];
 }
 
 
