@@ -339,7 +339,7 @@
             }
             if (![NullToNumber(jsonObject[@"code"]) isEqualToString:@"0"]) {
 //                [[JAlertViewHelper shareAlterHelper]showTint:jsonObject[@"message"] duration:1.5];
-                [[HttpClientAlertViewHelper sharedAlterHelper]showTint:jsonObject[@"message"] duration:2.0];
+                [[HttpClientAlertViewHelper sharedAlterHelper]showTint:jsonObject[@"message"] duration:2.5];
             }
         }
         success(operation,jsonObject);

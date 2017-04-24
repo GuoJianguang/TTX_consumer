@@ -38,6 +38,18 @@
     return self;
 }
 
+- (void)setIsHavieWechatPay:(BOOL)isHavieWechatPay
+{
+    _isHavieWechatPay  = isHavieWechatPay;
+    if (_isHavieWechatPay) {
+        self.wechatLabel.text = @"微信支付";
+        self.wechatImage.image = [UIImage imageNamed:@"icon_scan_weixin_payment_nor"];
+    }else{
+        self.wechatImage.image = [UIImage imageNamed:@"icon_unionpay_nor"];
+        self.wechatLabel.text = @"银联支付";
+    }
+}
+
 - (void)layoutSubviews
 {
     [super layoutSubviews];
@@ -108,11 +120,14 @@
     self.payWay_type = Payway_type_banlance;
     self.wechatBtn.selected = NO;
     self.yueImage.image = [UIImage imageNamed:@"icon_scan_balance_payment_sel"];
-    self.wechatImage.image = [UIImage imageNamed:@"icon_scan_weixin_payment_nor"];
+    if (self.isHavieWechatPay) {
+        self.wechatImage.image = [UIImage imageNamed:@"icon_scan_weixin_payment_nor"];
+    }else{
+        self.wechatImage.image = [UIImage imageNamed:@"icon_unionpay_nor"];
+    }
     self.yueBtn.selected = YES;
     self.yueLabel.textColor = MacoColor;
     self.wechatLabel.textColor = MacoTitleColor;
-    
     
     double xiaofeiJin = [[TTXUserInfo shareUserInfos].consumeBalance doubleValue];
     double payMoney = [NullToNumber(_mallOrderParms[@"tranAmount"]) doubleValue];
@@ -133,7 +148,11 @@
 
         self.payWay_type = Payway_type_wechat;
         self.yueImage.image = [UIImage imageNamed:@"icon_scan_balance_payment_nor"];
-        self.wechatImage.image = [UIImage imageNamed:@"icon_scan_weixin_payment_sel"];
+        if (self.isHavieWechatPay) {
+            self.wechatImage.image = [UIImage imageNamed:@"icon_scan_weixin_payment_sel"];
+        }else{
+            self.wechatImage.image = [UIImage imageNamed:@"icon_unionpay_sel"];
+        }
         self.yueBtn.selected = NO;
         self.wechatBtn.selected = YES;
         self.wechatLabel.textColor = MacoColor;
@@ -256,7 +275,11 @@
     self.payWay_type = Payway_type_banlance;
     self.wechatBtn.selected = NO;
     self.yueImage.image = [UIImage imageNamed:@"icon_scan_balance_payment_sel"];
-    self.wechatImage.image = [UIImage imageNamed:@"icon_scan_weixin_payment_nor"];
+    if (self.isHavieWechatPay) {
+        self.wechatImage.image = [UIImage imageNamed:@"icon_scan_weixin_payment_nor"];
+    }else{
+        self.wechatImage.image = [UIImage imageNamed:@"icon_unionpay_nor"];
+    }
     self.yueBtn.selected = YES;
     self.yueLabel.textColor = MacoColor;
     self.wechatLabel.textColor = MacoTitleColor;
@@ -266,7 +289,11 @@
     self.password_view.hidden = YES;
     self.payWay_type = Payway_type_wechat;
     self.yueImage.image = [UIImage imageNamed:@"icon_scan_balance_payment_nor"];
-    self.wechatImage.image = [UIImage imageNamed:@"icon_scan_weixin_payment_sel"];
+    if (self.isHavieWechatPay) {
+        self.wechatImage.image = [UIImage imageNamed:@"icon_scan_weixin_payment_sel"];
+    }else{
+        self.wechatImage.image = [UIImage imageNamed:@"icon_unionpay_sel"];
+    }
     self.yueBtn.selected = NO;
     self.wechatBtn.selected = YES;
     self.wechatLabel.textColor = MacoColor;
@@ -284,7 +311,8 @@
         case PayType_mallOrder:
         {
     
-            [WeXinPayObject startWexinPay:self.mallOrderParms];
+            //[WeXinPayObject startWexinPay:self.mallOrderParms];
+            [UPPayObject startWexinPay:self.mallOrderParms withController:self.viewController];
             
         }
             break;
@@ -317,7 +345,6 @@
         UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
             
         }];
-        
         UIAlertAction *otherAction = [UIAlertAction actionWithTitle:@"去认证" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
             //去进行实名认证
             RealNameAutViewController *realNVC = [[RealNameAutViewController alloc]init];

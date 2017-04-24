@@ -361,6 +361,8 @@
 		BC39B7C81E5192D9009A7D50 /* NewHomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC39B7C61E5192D9009A7D50 /* NewHomeTableViewCell.xib */; };
 		BC39B7CC1E519CDD009A7D50 /* NewIndustryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC39B7CA1E519CDD009A7D50 /* NewIndustryCollectionViewCell.m */; };
 		BC39B7CD1E519CDD009A7D50 /* NewIndustryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC39B7CB1E519CDD009A7D50 /* NewIndustryCollectionViewCell.xib */; };
+		BC506C4A1EAD9A25008880DC /* libPaymentControl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC506C491EAD9A25008880DC /* libPaymentControl.a */; };
+		BC506C4D1EADA329008880DC /* UPPayObject.m in Sources */ = {isa = PBXBuildFile; fileRef = BC506C4C1EADA329008880DC /* UPPayObject.m */; };
 		BC695CA31E63F8DF006A334C /* MallImage.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC695CA21E63F8DF006A334C /* MallImage.xcassets */; };
 		BC695CB31E640DC1006A334C /* SXColorGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC695CA61E640DC1006A334C /* SXColorGradientView.m */; };
 		BC695CB41E640DC1006A334C /* SXColorLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC695CA81E640DC1006A334C /* SXColorLabel.m */; };
@@ -626,7 +628,7 @@
 		2DA973381D124F3000A605F9 /* TTXForConsumer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTXForConsumer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DA9733C1D124F3000A605F9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2DA9733E1D124F3000A605F9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		2DA9733F1D124F3000A605F9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2DA9733F1D124F3000A605F9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		2DA973451D124F3000A605F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2DA973481D124F3000A605F9 /* TTXForConsumer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TTXForConsumer.xcdatamodel; sourceTree = "<group>"; };
 		2DA9734A1D124F3000A605F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -640,7 +642,7 @@
 		2DA973801D125CD600A605F9 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		2DA973811D125D2A00A605F9 /* JAlertViewHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JAlertViewHelper.h; sourceTree = "<group>"; };
 		2DA973821D125D2A00A605F9 /* JAlertViewHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JAlertViewHelper.m; sourceTree = "<group>"; };
-		2DA973841D125D6400A605F9 /* TTXMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTXMacro.h; sourceTree = "<group>"; };
+		2DA973841D125D6400A605F9 /* TTXMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = TTXMacro.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		2DA973851D125FDE00A605F9 /* TTXUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTXUserInfo.h; sourceTree = "<group>"; };
 		2DA973861D125FDE00A605F9 /* TTXUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTXUserInfo.m; sourceTree = "<group>"; };
 		2DA973891D12704000A605F9 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -783,7 +785,7 @@
 		2DB94F7D1D2A700A003A6DEA /* MchchantAllgoodsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MchchantAllgoodsViewController.xib; sourceTree = "<group>"; };
 		2DB94F801D2A83AC003A6DEA /* Grade.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Grade.xcassets; sourceTree = "<group>"; };
 		2DB94F831D2A8CCF003A6DEA /* BussessMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BussessMapViewController.h; sourceTree = "<group>"; };
-		2DB94F841D2A8CCF003A6DEA /* BussessMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BussessMapViewController.m; sourceTree = "<group>"; };
+		2DB94F841D2A8CCF003A6DEA /* BussessMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BussessMapViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		2DB94F851D2A8CCF003A6DEA /* BussessMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BussessMapViewController.xib; sourceTree = "<group>"; };
 		2DB94F941D2A8CDF003A6DEA /* Map.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Map.xcassets; sourceTree = "<group>"; };
 		2DB94F991D2A8DEF003A6DEA /* ImageViewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewer.h; sourceTree = "<group>"; };
@@ -1044,6 +1046,10 @@
 		BC39B7C91E519CDD009A7D50 /* NewIndustryCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewIndustryCollectionViewCell.h; sourceTree = "<group>"; };
 		BC39B7CA1E519CDD009A7D50 /* NewIndustryCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewIndustryCollectionViewCell.m; sourceTree = "<group>"; };
 		BC39B7CB1E519CDD009A7D50 /* NewIndustryCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewIndustryCollectionViewCell.xib; sourceTree = "<group>"; };
+		BC506C471EAD9A25008880DC /* UPPaymentControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPPaymentControl.h; sourceTree = "<group>"; };
+		BC506C491EAD9A25008880DC /* libPaymentControl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPaymentControl.a; sourceTree = "<group>"; };
+		BC506C4B1EADA329008880DC /* UPPayObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPPayObject.h; sourceTree = "<group>"; };
+		BC506C4C1EADA329008880DC /* UPPayObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPPayObject.m; sourceTree = "<group>"; };
 		BC695CA21E63F8DF006A334C /* MallImage.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MallImage.xcassets; sourceTree = "<group>"; };
 		BC695CA51E640DC1006A334C /* SXColorGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXColorGradientView.h; sourceTree = "<group>"; };
 		BC695CA61E640DC1006A334C /* SXColorGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXColorGradientView.m; sourceTree = "<group>"; };
@@ -1208,6 +1214,7 @@
 				BCAE31021DF9290F0026E231 /* UMSocialCore.framework in Frameworks */,
 				2DA973E41D12858300A605F9 /* Security.framework in Frameworks */,
 				2DA973E21D12857300A605F9 /* libc++.tbd in Frameworks */,
+				BC506C4A1EAD9A25008880DC /* libPaymentControl.a in Frameworks */,
 				BCAE30FA1DF925C30026E231 /* UMMobClick.framework in Frameworks */,
 				2DA973E01D12856300A605F9 /* libstdc++.6.0.9.tbd in Frameworks */,
 				2DA973DE1D12855400A605F9 /* libz.tbd in Frameworks */,
@@ -1604,6 +1611,8 @@
 				2DBDB3D51D1D37D00033F09E /* UILabel+StringFrame.m */,
 				2D67CCA41D1B8BE300BB99B4 /* WeXinPayObject.h */,
 				2D67CCA51D1B8BE300BB99B4 /* WeXinPayObject.m */,
+				BC506C4B1EADA329008880DC /* UPPayObject.h */,
+				BC506C4C1EADA329008880DC /* UPPayObject.m */,
 				2DA0C0C31D193BB80074DC4D /* HomeVerticalBtn.h */,
 				2DA0C0C41D193BB80074DC4D /* HomeVerticalBtn.m */,
 				2D7216991D12A58100D3F7D6 /* AutoScroller.h */,
@@ -1686,6 +1695,7 @@
 		2DA9738E1D127BC500A605F9 /* ThirdAPI */ = {
 			isa = PBXGroup;
 			children = (
+				BC506C451EAD9A25008880DC /* paymentcontrol */,
 				BC695CA41E640DC1006A334C /* Wonderful */,
 				BC021E991E07739F0080E844 /* BaiduMobAdSDK.framework */,
 				BCAE30F81DF925C30026E231 /* UMStatistics_4.1.4 */,
@@ -2460,6 +2470,31 @@
 			path = newVsionHome;
 			sourceTree = "<group>";
 		};
+		BC506C451EAD9A25008880DC /* paymentcontrol */ = {
+			isa = PBXGroup;
+			children = (
+				BC506C461EAD9A25008880DC /* inc */,
+				BC506C481EAD9A25008880DC /* libs */,
+			);
+			path = paymentcontrol;
+			sourceTree = "<group>";
+		};
+		BC506C461EAD9A25008880DC /* inc */ = {
+			isa = PBXGroup;
+			children = (
+				BC506C471EAD9A25008880DC /* UPPaymentControl.h */,
+			);
+			path = inc;
+			sourceTree = "<group>";
+		};
+		BC506C481EAD9A25008880DC /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				BC506C491EAD9A25008880DC /* libPaymentControl.a */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
 		BC695CA41E640DC1006A334C /* Wonderful */ = {
 			isa = PBXGroup;
 			children = (
@@ -2661,7 +2696,9 @@
 				TargetAttributes = {
 					2DA973371D124F3000A605F9 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = ECKZQ3Q728;
 						LastSwiftMigration = 0810;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Keychain = {
 								enabled = 0;
@@ -3095,6 +3132,7 @@
 				2DB9500C1D2A8E33003A6DEA /* ZLPhotoPickerCustomToolBarView.m in Sources */,
 				2DE220321D211869008D7F05 /* UIScrollView+JYPaging.m in Sources */,
 				BCC876421DB5B72600E623F2 /* HomeTableViewCell.m in Sources */,
+				BC506C4D1EADA329008880DC /* UPPayObject.m in Sources */,
 				BC0502031E554F4B001F51FE /* DiscoveryViewController.m in Sources */,
 				2DB9500D1D2A8E33003A6DEA /* ZLPhotoAssets.m in Sources */,
 				2DA974251D1291C000A605F9 /* BaseCollectionViewCell.m in Sources */,
@@ -3258,6 +3296,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: apples@tiantianxcn.com (JF853WA4J7)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -3303,6 +3342,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: apples@tiantianxcn.com (JF853WA4J7)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -3333,6 +3373,8 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = TTXForConsumer/TTXForConsumer.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Han Xu (34SW58A2P2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Han Xu (34SW58A2P2)";
+				DEVELOPMENT_TEAM = ECKZQ3Q728;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3353,6 +3395,7 @@
 					"$(PROJECT_DIR)/TTXForConsumer/ThirdAPI/share/UMessage_Sdk_1.2.3",
 					"$(PROJECT_DIR)/TTXForConsumer/ThirdAPI/share/UMSocial_Sdk_4.4",
 					"$(PROJECT_DIR)/TTXForConsumer/ThirdAPI/share/Wechat",
+					"$(PROJECT_DIR)/TTXForConsumer/ThirdAPI/paymentcontrol/libs",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -3391,6 +3434,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ttx.tiantianxin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "1f36622a-3a71-40e4-ac17-cc9627ece69c";
+				PROVISIONING_PROFILE_SPECIFIER = ttx_push;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -3406,6 +3450,8 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = TTXForConsumer/TTXForConsumer.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Han Xu (34SW58A2P2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Han Xu (34SW58A2P2)";
+				DEVELOPMENT_TEAM = ECKZQ3Q728;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3426,6 +3472,7 @@
 					"$(PROJECT_DIR)/TTXForConsumer/ThirdAPI/share/UMessage_Sdk_1.2.3",
 					"$(PROJECT_DIR)/TTXForConsumer/ThirdAPI/share/UMSocial_Sdk_4.4",
 					"$(PROJECT_DIR)/TTXForConsumer/ThirdAPI/share/Wechat",
+					"$(PROJECT_DIR)/TTXForConsumer/ThirdAPI/paymentcontrol/libs",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -3464,6 +3511,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ttx.tiantianxin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "1f36622a-3a71-40e4-ac17-cc9627ece69c";
+				PROVISIONING_PROFILE_SPECIFIER = ttx_push;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

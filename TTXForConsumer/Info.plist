@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.0.0</string>
+	<string>3.0.1</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleURLTypes</key>
@@ -40,11 +40,24 @@
 				<string>QQ05FC5B14</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>TTXForConsumer</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>29</string>
+	<string>30</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
+		<string>uppaysdk</string>
+		<string>uppaywallet</string>
+		<string>uppayx1</string>
+		<string>uppayx2</string>
+		<string>uppayx3</string>
 		<string>baidumobads</string>
 		<string>iosamap</string>
 		<string>wechat</string>
@@ -81,6 +94,20 @@
 	<string>需要您的同意才能获取多媒体资料</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>appcashier.95516.com</key>
+		<dict>
+			<key>NSIncludesSubdomains</key>
+			<false/>
+			<key>NSThirdPartyExceptionAllowsInsecureHTTPLoads</key>
+			<false/>
+			<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+			<true/>
+		</dict>
+	</dict>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

@@ -81,6 +81,7 @@
 {
     if (!_payView) {
         _payView = [[PayView alloc]init];
+        _payView.isHavieWechatPay = YES;
         _payView.delegate = self;
     }
     return _payView;
@@ -145,7 +146,6 @@
         make.edges.equalTo(self.view).insets(insets);
     }];
     [self PayViewanimation];
-
 }
 
 

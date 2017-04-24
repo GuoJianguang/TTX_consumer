@@ -33,6 +33,8 @@
 #import "ImageViewer.h"
 #import "TTXPageContrl.h"
 #import "RealNameAutViewController.h"
+#import "UPPaymentControl.h"
+#import "UPPayObject.h"
 
 
 

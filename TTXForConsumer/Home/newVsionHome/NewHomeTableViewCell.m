@@ -57,8 +57,6 @@
 {
     _isAlreadyRefrefsh = isAlreadyRefrefsh;
     [self getBannerRequest];
-    
-    
 }
 #pragma mark - 懒加载
 

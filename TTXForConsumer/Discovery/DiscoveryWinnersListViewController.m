@@ -40,6 +40,7 @@
     NSDictionary *parms = @{@"id":detailId};
     [HttpClient POST:@"find/draw/awardWiner" parameters:parms success:^(NSURLSessionDataTask *operation, id jsonObject) {
         if (IsRequestTrue) {
+            [self.dataSouceArray removeAllObjects];
             for (NSString *phone in jsonObject[@"data"]) {
                 [self.dataSouceArray  addObject:phone];
             }

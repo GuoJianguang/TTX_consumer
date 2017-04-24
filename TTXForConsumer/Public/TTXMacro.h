@@ -66,6 +66,10 @@
 
 //接收让利回馈信息的推送
 #define Upush_Notifi @"Upush_Fanxian_Notifi"
+
+//银联支付结果的通知标示
+#define UPPayResult @"UPPayResult"
+
 //账户提现信息推送
 #define Upush_tixian_Notifi @"Upush_tixian_Notifi"
 //待付款订单推送

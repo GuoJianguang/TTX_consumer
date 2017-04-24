@@ -170,6 +170,7 @@
     self.nameTF.text = _realnameAuDic[@"name"];
 }
 
+
 - (NSString *)normalNumToBankNum:(NSString *)num
 {
     if (num.length < 7) {

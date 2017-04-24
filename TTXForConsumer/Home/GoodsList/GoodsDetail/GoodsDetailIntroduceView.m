@@ -16,7 +16,7 @@
 {
     [super awakeFromNib];
     self.price.textColor = MacoPriceColor;
-    self.mchName.textColor = MacoTitleColor;
+    self.mchName.textColor = self.wexiPayLabel.textColor = self.ttxMoneyPayLabel.textColor =MacoTitleColor;
     self.kuaidi.textColor = MacoDetailColor;
     self.oldprice.textColor = MacoDetailColor;
     [self.checkStoreBtn setTitleColor:MacoColor forState:UIControlStateNormal];
@@ -50,6 +50,43 @@
     }else{
         self.oldprice.hidden= YES;
     }
+    
+    switch ([_dataModel.payTyp integerValue]) {
+        case 0://自由支付
+        {
+            self.wexiPayLabel.hidden=self.ttxMoneyPayLabel.hidden = YES;
+            
+        }
+            break;
+        case 1://现金
+        {
+            self.wexiPayLabel.hidden = YES;
+            self.ttxMoneyPayLabel.hidden = NO;
+            self.ttxMoneyPayLabel.text = [NSString stringWithFormat:@"微信支付¥%.2f",[_dataModel.price doubleValue]];
+        }
+            
+            break;
+        case 2://现金余额
+        {
+            self.wexiPayLabel.hidden = NO;
+            self.ttxMoneyPayLabel.hidden = NO;
+            self.ttxMoneyPayLabel.text = [NSString stringWithFormat:@"余额支付¥%.2f",[_dataModel.balanceAmount doubleValue]];
+            self.wexiPayLabel.text = [NSString stringWithFormat:@"微信支付¥%.2f",[_dataModel.cashAmount doubleValue]];
+        }
+            break;
+        case 3://现金待回馈
+        {
+            self.wexiPayLabel.hidden = NO;
+            self.ttxMoneyPayLabel.hidden = NO;
+            self.ttxMoneyPayLabel.text = [NSString stringWithFormat:@"待回馈金额支付¥%.2f",[_dataModel.expectAmount doubleValue]];
+            self.wexiPayLabel.text = [NSString stringWithFormat:@"微信支付¥%.2f",[_dataModel.cashAmount doubleValue]];
+        }
+            break;
+            
+        default:
+            break;
+    }
+    
 }
 
 
@@ -59,7 +96,6 @@
     detailVC.merchantCode = self.dataModel.mchCode;
     [self.viewController.navigationController pushViewController:detailVC animated:YES];
 }
-
 
 
 @end

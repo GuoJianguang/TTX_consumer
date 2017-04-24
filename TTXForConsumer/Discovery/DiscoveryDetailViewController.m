@@ -216,7 +216,6 @@
         make.edges.equalTo(self.view).insets(insets);
     }];
     [self PayViewanimation];
-
 }
 
 - (void)PayViewanimation

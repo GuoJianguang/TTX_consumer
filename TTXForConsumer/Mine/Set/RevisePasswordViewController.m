@@ -29,9 +29,7 @@
     self.pasword_tf.delegate = self;
     self.surePassword_tf.delegate = self;
     self.pasword_tf.delegate = self;
-    
     self.label1.textColor = self.label2.textColor = self.label3.textColor = MacoTitleColor;
-
 }
 
 - (void)setViewLayer:(UIView *)view

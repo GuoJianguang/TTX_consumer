@@ -1018,7 +1018,7 @@
                 <outlet property="yetComplete" destination="pfG-5N-vxD" id="8ON-u2-kNT"/>
                 <outlet property="yetRealName" destination="k9C-0X-hDp" id="0xb-wo-qUi"/>
             </connections>
-            <point key="canvasLocation" x="258" y="-314"/>
+            <point key="canvasLocation" x="288" y="-327"/>
         </tableViewCell>
     </objects>
     <resources>

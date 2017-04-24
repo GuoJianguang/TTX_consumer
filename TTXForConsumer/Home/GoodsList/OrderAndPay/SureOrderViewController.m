@@ -40,7 +40,9 @@
     self.totalLabel.text = [NSString stringWithFormat:@"￥ %.2f",totalMoney];
 
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(changeShippingAddress:) name:@"selectAddress" object:nil];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(weixinPayResult:) name:WeixinPayResult object:nil];
+//    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(weixinPayResult:) name:WeixinPayResult object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(upPayResult:) name:UPPayResult object:nil];
+
     self.sureBtn.backgroundColor = MacoColor;
     self.sureBtn.layer.cornerRadius = 35/2.;
     self.sureBtn.layer.masksToBounds = YES;
@@ -85,6 +87,7 @@
 {
     if (!_payView) {
         _payView = [[PayView alloc]init];
+        _payView.isHavieWechatPay = NO;
         _payView.delegate = self;
     }
     return _payView;
@@ -158,9 +161,36 @@
 //        } ;
 //        [self balancePay];
 //    }
-//    
-    [self balancePay];
+    switch ([self.mch_model.payTyp integerValue]) {
+        case 0:
+            [self balancePay];
+            break;
+        case 1:
+            [self weixinPay];
+            break;
+        case 2:
+        {
+//在用余额支付的时候必须先进行实名认证
+           if ([self gotRealNameRu:@"在您用混合支付之前，请先进行实名认证"]) {
+               return;
+            } ;
+            [self mixedPayment];
+        }
+            break;
+        case 3:
+        {
+//在用余额支付的时候必须先进行实名认证
+            if ([self gotRealNameRu:@"在您用混合支付之前，请先进行实名认证"]) {
+                return;
+            } ;
+            [self mixedPayment];
 
+            
+        }
+            break;
+        default:
+            break;
+    }
 }
 
 - (void)weixinPay
@@ -194,6 +224,7 @@
 }
 
 
+#pragma mark - 普通支付
 - (void)balancePay
 {
     if (!self.addressmodel.addressId) {
@@ -287,6 +318,24 @@
 }
 
 
+#pragma - 银联支付结果回调
+
+- (void)upPayResult:(NSNotification *)notification{
+    NSString *code = notification.userInfo[@"code"];
+    if([code isEqualToString:@"success"]) {
+        [self paysuccess:@"银联支付"];
+
+    }
+    else if([code isEqualToString:@"fail"]) {
+        //交易失败
+        [[JAlertViewHelper shareAlterHelper]showTint:@"支付失败" duration:2.];
+    }
+    else if([code isEqualToString:@"cancel"]) {
+        //交易取消
+        [[JAlertViewHelper shareAlterHelper]showTint:@"您已取消支付" duration:2.];
+    }
+}
+
 - (void)paysuccess:(NSString *)payWay
 {
     [self.payView removeFromSuperview];
@@ -334,7 +383,9 @@
 - (void)backBtnClick
 {
     [[NSNotificationCenter defaultCenter]removeObserver:self name:@"selectAddress" object:nil];
-    [[NSNotificationCenter defaultCenter]removeObserver:self name:WeixinPayResult object:nil];
+//    [[NSNotificationCenter defaultCenter]removeObserver:self name:WeixinPayResult object:nil];
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:UPPayResult object:nil];
+
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -361,6 +412,43 @@
         return YES;
     }
     return NO;
+}
+
+
+
+#pragma mark - 混合支付
+
+
+- (void)mixedPayment
+{
+    if (!self.addressmodel.addressId) {
+        [[JAlertViewHelper shareAlterHelper]showTint:@"请选择或者填写收货地址" duration:2.];
+        return;
+    }
+    SureGoodsOrderTableViewCell *cell = self.tableView.visibleCells[0];
+    NSString *totalMoney = [NSString stringWithFormat:@"%.2f",[cell.numberTF.text integerValue]* self.mch_model.actualPrice + [self.mch_model.freight doubleValue]];
+    //    分别将商品ID、数量、交易金额、加密盐值(T2t0X16)等参数值拼接做md5加密，公式：md5(goodsId+price+ quantity+tranAmount+T2t0X16)
+    NSString *md5Str = [NSString stringWithFormat:@"%@%@%@%@",self.mch_model.mch_id,cell.numberTF.text,totalMoney,OrderWithMd5Key];
+    NSString *sign = [md5Str md5_32];
+    
+    //    NSString *password = [[NSString stringWithFormat:@"%@%@",self.password_tf.text,PasswordKey]md5_32];
+    NSDictionary *prams = @{@"token":[TTXUserInfo shareUserInfos].token,
+                            @"payType":NullToNumber(self.mch_model.payTyp),
+                            @"priceId":NullToSpace(self.mch_model.priceId),
+                            @"cashAmount":NullToNumber(self.mch_model.cashAmount),
+                            @"balanceAmount":NullToNumber(self.mch_model.balanceAmount),
+                            @"expectAmount":NullToNumber(self.mch_model.expectAmount),
+                            @"addrId":NullToSpace(self.addressmodel.addressId),
+                            @"goodsId":self.mch_model.mch_id,
+                            @"spec":NullToSpace(self.goosPramsDic[@"yetSelcetPre"]),
+                            @"price":@(self.mch_model.actualPrice),
+                            @"quantity":NullToNumber(cell.numberTF.text),
+                            @"freight":self.mch_model.freight,
+                            @"tranAmount":totalMoney,
+                            @"message":NullToSpace(cell.liuyanTF.text),
+                            @"sign":sign
+                            };
+    [UPPayObject startMallMixedPayment:prams withController:self];
 }
 
 

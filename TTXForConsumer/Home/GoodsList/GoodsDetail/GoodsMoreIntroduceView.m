@@ -25,6 +25,7 @@
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
 //    self.backgroundColor = [UIColor whiteColor];
     self.comment.textColor = MacoDetailColor;
     self.sales.textColor = MacoDetailColor;

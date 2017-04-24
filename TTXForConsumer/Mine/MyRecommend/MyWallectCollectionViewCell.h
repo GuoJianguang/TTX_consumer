@@ -10,12 +10,11 @@
 
 
 #pragma mark - 邀请的Model
+
+@interface InnitationModel : BaseModel
 /**
  * 时间
  */
-
-@interface InnitationModel : BaseModel
-
 @property (nonatomic,copy)NSString *tranTime;
 /**
  * 商户号
@@ -37,8 +36,6 @@
  * 总收益金额
  */
 @property (nonatomic,copy)NSString *totalqueryAmount;
-
-
 
 @end
 

@@ -24,5 +24,10 @@
 
 - (IBAction)checkStoreBtn:(UIButton *)sender;
 
+@property (weak, nonatomic) IBOutlet UILabel *ttxMoneyPayLabel;
+@property (weak, nonatomic) IBOutlet UILabel *wexiPayLabel;
+
+
+
 
 @end

@@ -37,7 +37,6 @@
     self.serchTF.delegate = self;
     self.selectCityname = [TTXUserInfo shareUserInfos].locationCity;
     [self sortRequest];
-    
 //    [self loadDataUseLocation];
 }
 

@@ -18,8 +18,11 @@
 + (void)startWexinPay:(NSDictionary *)parms;
 
 //商家在线支付的时候发起的支付请求
-
 + (void)srarMachantWexinPay:(NSDictionary *)parms;
+
+
+//商城购买商品的时候发起的支付请求(混合支付)
++ (void)startMallMixedPayment:(NSDictionary *)parms;
 
 
 //爱心账户充值

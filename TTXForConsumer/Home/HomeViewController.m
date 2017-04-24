@@ -28,6 +28,7 @@
 #import "PopularMerchantsTableViewCell.h"
 #import "SecondActivityTableViewCell.h"
 
+
 @interface HomeViewController()<CityListViewDelegate,UITableViewDelegate,UITableViewDataSource,UITabBarControllerDelegate,UITextFieldDelegate,MerchantSearchViewDelegate>
 //定位城市
 @property (nonatomic, strong)NSString *locationCity;
@@ -404,8 +405,7 @@
         }
         cell.isAlreadyRefrefsh = self.isAlreadyRefrefsh;
         return cell;
-    }
-    else if (indexPath.row == 2){
+    }else if (indexPath.row == 2){
         PopularMerchantsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[PopularMerchantsTableViewCell indentify]];
         if (!cell) {
             cell = [PopularMerchantsTableViewCell newCell];
@@ -442,7 +442,6 @@
             return TWitdh*(996/750.);
         }
         return TWitdh*(636/750.);
-
     }
     return TWitdh*(220/750.);
 }
@@ -463,8 +462,6 @@
     NewMerchantDetailViewController *merDVC = [[NewMerchantDetailViewController alloc]init];
     merDVC.merchantCode = model.code;
     [self.navigationController pushViewController:merDVC animated:YES];
-    
-
 }
 
 
@@ -493,14 +490,12 @@
     return NO;
 }
 
-
 #pragma mark = MerchantSearchViewDelegate
 
 - (void)cancelSearch
 {
     [self.searchVC.view removeFromSuperview];
 }
-
 
 - (void)sureSearch:(NSString *)keyWord city:(NSString *)cityName
 {

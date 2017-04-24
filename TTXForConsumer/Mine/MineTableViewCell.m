@@ -88,7 +88,7 @@
     self.backTotal.text = [NSString stringWithFormat:@"欢迎您加入天添薪平台！"];
 
     
-    [self searchUserInfor];
+//    [self searchUserInfor];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(eidtUserNameSuccess) name:ChangeNickNameSucces object:nil];
     
     self.nameLabel.text = [TTXUserInfo shareUserInfos].nickName;
@@ -141,7 +141,6 @@
                 self.alerLabel.hidden = YES;
                 self.alerTop.constant = 10;
             }
-            
             CGFloat cumCashback = [[TTXUserInfo shareUserInfos].totalConsumeAmount doubleValue] -[[TTXUserInfo shareUserInfos].totalExpectAmount doubleValue]-[[TTXUserInfo shareUserInfos].wiatJoinAmunt doubleValue];
 //            self.backTotal.text = [NSString stringWithFormat:@"您已累计让利回馈%.2f元",cumCashback];
             self.accountBalance.text = [NSString stringWithFormat:@"%.2f",[[TTXUserInfo shareUserInfos].aviableBalance doubleValue]];

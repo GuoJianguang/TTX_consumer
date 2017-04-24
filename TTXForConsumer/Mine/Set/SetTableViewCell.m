@@ -86,7 +86,6 @@
         realNVC.isYetAut = NO;
     }
     [self.viewController.navigationController pushViewController:realNVC animated:YES];;
-
 }
 
 //修改密码

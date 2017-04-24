@@ -70,7 +70,6 @@
         self.nameTF.text = [TTXUserInfo shareUserInfos].idcardName;
         self.idCardNumTF.enabled = self.nameTF.enabled = NO;
     }
-    
     //手动认证是否正在审核
     if ([TTXUserInfo shareUserInfos].idVerifyReqFlag) {
         WaitingAuthenticationViewController *waitingVC = [[WaitingAuthenticationViewController alloc]init];
@@ -110,8 +109,6 @@
     view.layer.borderWidth = 1;
     view.layer.borderColor = MacolayerColor.CGColor;
 }
-
-
 //2035,"身份证实名认证失败"
 //2036,"实名认证失败,身份证与姓名不匹配"
 //2037,"未绑卡，现在去绑定银行卡吗？"

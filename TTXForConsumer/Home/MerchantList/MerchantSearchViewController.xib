@@ -184,7 +184,7 @@
                 <constraint firstItem="XN7-NU-iPd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="t89-wl-aR6"/>
                 <constraint firstItem="1P7-5k-OY3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="wPF-rT-dwF"/>
             </constraints>
-            <point key="canvasLocation" x="460" y="141"/>
+            <point key="canvasLocation" x="414" y="141"/>
         </view>
     </objects>
     <resources>

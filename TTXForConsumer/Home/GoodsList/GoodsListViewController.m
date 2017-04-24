@@ -67,9 +67,7 @@
     [self.defaltBtn setTitleColor:MacoTitleColor forState:UIControlStateNormal];
     [self.saleBtn setTitleColor:MacoTitleColor forState:UIControlStateNormal];
     
-    
     [self.tableView.mj_header beginRefreshing];
-
 }
 
 - (GoodsSearchViewController *)searchVC
@@ -150,7 +148,7 @@
                                      @"isSelect":@1,
                                      @"id":@"0"};
             MerchantSort *allsort =[GoodsSort modelWithDic:alldic];
-            //            [self.sortDataSouceArray insertObject:allsort atIndex:0];
+            [self.sortDataSouceArray insertObject:allsort atIndex:0];
             NSDictionary *dic = @{@"name":@"更多",
                                   @"isSelect":@0};
             GoodsSort *sort =[GoodsSort modelWithDic:dic];
@@ -185,6 +183,11 @@
 {
     _sortDataSouceArray = [NSMutableArray array];
     [_sortDataSouceArray addObjectsFromArray:sortDataSouceArray];
+    NSDictionary *alldic = @{@"name":@"全部分类",
+                             @"isSelect":@1,
+                             @"id":@"0"};
+    MerchantSort *allsort =[GoodsSort modelWithDic:alldic];
+    [_sortDataSouceArray insertObject:allsort atIndex:0];
     NSDictionary *dic = @{@"name":@"更多",
                           @"isSelect":@0};
     GoodsSort *sort =[GoodsSort modelWithDic:dic];
@@ -359,8 +362,8 @@ minimumLineSpacingForSectionAtIndex:(NSInteger)section
     [self.saleBtn setTitleColor:MacoTitleColor forState:UIControlStateNormal];
     [sender setTitleColor:MacoPriceColor forState:UIControlStateNormal];
     self.sort = @"";
-    self.naviBar.title = @"全部商品";
-    self.typeId = @"";
+//    self.naviBar.title = @"全部商品";
+//    self.typeId = @"";
     for (GoodsSort *sort in self.sortDataSouceArray) {
         sort.isSelect = NO;
     }

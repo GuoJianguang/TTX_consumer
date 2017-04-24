@@ -124,4 +124,16 @@
 @property (nonatomic, strong)NSString *goods_type;
 
 
+
+
+#pragma mark - 在线支付的新需求改变
+//（0自由支付 1现金 2现金余额 3现金待回馈）
+@property (nonatomic, copy)NSString *payTyp;
+//现金金额
+@property (nonatomic, copy)NSString *cashAmount;
+//余额金额
+@property (nonatomic, copy)NSString *balanceAmount;
+//待回馈金额
+@property (nonatomic, copy)NSString *expectAmount;
+
 @end

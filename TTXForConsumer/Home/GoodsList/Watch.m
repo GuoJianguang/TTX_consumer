@@ -56,6 +56,11 @@
     model.originalPrice = NullToNumber(dic[@"originalPrice"]);
     model.goods_type = NullToNumber(dic[@"goodsType"]);
     
+    model.payTyp = NullToNumber(dic[@"payType"]);
+    model.cashAmount = NullToNumber(dic[@"cashAmount"]);
+    model.balanceAmount = NullToNumber(dic[@"balanceAmount"]);
+    model.expectAmount = NullToNumber(dic[@"expectAmount"]);
+
     return model;
     
 }
