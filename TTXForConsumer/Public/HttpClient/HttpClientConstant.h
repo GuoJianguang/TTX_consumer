@@ -42,8 +42,8 @@
 
 //#define formal_html_base @"https://test.p.tiantianxcn.com/ttx-api/"
 #define formal_html_base @"https://api.tiantianxcn.com/ttx-api/"
-#define formal_base @"https://test.p.tiantianxcn.com/ttx-api/3.0.1/"
-//#define formal_base @"https://api.tiantianxcn.com/ttx-api/3.0.1/"
+//#define formal_base @"https://test.p.tiantianxcn.com/ttx-api/3.0.2/"
+#define formal_base @"https://api.tiantianxcn.com/ttx-api/3.0.2/"
 ////正式
 #define HttpClient_BaseUrl formal_base
 

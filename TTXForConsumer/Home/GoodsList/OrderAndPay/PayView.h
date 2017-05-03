@@ -96,6 +96,7 @@ typedef NS_ENUM(NSInteger,PayType){
 
 @property (nonatomic, assign)BOOL isHavieWechatPay;
 
+@property (weak, nonatomic) IBOutlet UIView *otherPayView;
 
 
 @end

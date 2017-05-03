@@ -40,7 +40,7 @@ static NSString *disEnvironment = @"00";
             NSString* tn = NullToSpace(jsonObject[@"data"][@"tn"]);
             if (tn != nil && tn.length > 0)
             {
-                [[UPPaymentControl defaultControl] startPay:tn fromScheme:@"TTXForConsumer" mode:testEnvironment viewController:controller];
+                [[UPPaymentControl defaultControl] startPay:tn fromScheme:@"TTXForConsumer" mode:disEnvironment viewController:controller];
                 
             }
         }
@@ -81,7 +81,7 @@ static NSString *disEnvironment = @"00";
             NSString* tn = NullToSpace(jsonObject[@"data"][@"tn"]);
             if (tn != nil && tn.length > 0)
             {
-                [[UPPaymentControl defaultControl] startPay:tn fromScheme:@"TTXForConsumer" mode:testEnvironment viewController:controller];
+                [[UPPaymentControl defaultControl] startPay:tn fromScheme:@"TTXForConsumer" mode:disEnvironment viewController:controller];
                 
             }
 

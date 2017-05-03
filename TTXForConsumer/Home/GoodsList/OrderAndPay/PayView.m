@@ -44,9 +44,11 @@
     if (_isHavieWechatPay) {
         self.wechatLabel.text = @"微信支付";
         self.wechatImage.image = [UIImage imageNamed:@"icon_scan_weixin_payment_nor"];
+        self.otherPayView.hidden = YES;
     }else{
         self.wechatImage.image = [UIImage imageNamed:@"icon_unionpay_nor"];
         self.wechatLabel.text = @"银联支付";
+        self.otherPayView.hidden = NO;
     }
 }
 
